@@ -74,8 +74,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     -->
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -205,13 +205,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 -->
 <!-- ROADMAP -->
-<!--
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Review project files for items that should be in the secrets.yaml file
+- [ ] Update the README
+    - [ ] Complete Integrations list (with links)
+    - [ ] Complete Custom Components section (with links)
+    - [ ] Improve the content in the About The Project section
+    - [ ] Update the Roadmap section
+- [ ] Add Roadmap items as Feature Requests in the Issues list
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
@@ -219,7 +221,6 @@ See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a f
 
 
 
--->
 <!-- CONTRIBUTING -->
 ## Contributing
 
