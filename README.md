@@ -236,6 +236,7 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 
 * [IOS Theme](https://github.com/basnijholt/lovelace-ios-themes/)
 * [A nicely documented configuration](https://github.com/basnijholt/home-assistant-config)
+* [Funky ASCII text file headers](https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
