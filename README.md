@@ -21,7 +21,8 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+[![Bugs][bugs-shield]][bugs-url]
+[![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -228,8 +229,10 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 [forks-url]: https://github.com/nzrunner/home-assistant/network/members
 [stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=for-the-badge
 [stars-url]: https://github.com/nzrunner/home-assistant/stargazers
-[issues-shield]: https://img.shields.io/github/issues/nzrunner/home-assistant.svg?style=for-the-badge
-[issues-url]: https://github.com/nzrunner/home-assistant/issues
+[bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
+[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug
+[features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
+[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
