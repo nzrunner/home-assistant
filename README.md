@@ -59,6 +59,8 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+        <li><a href="#custom-components">Custom Components</a></li>
       </ul>
     </li>
     <!--
@@ -104,6 +106,20 @@ Home Assistant (https://homeassistant.io) is an awesome open-source home automat
 * [![JQuery][JQuery.com]][JQuery-url]
 -->
 
+### Integrations
+<ul>
+  <li>Ubiquiti Unifi</li>
+  <li>Apple iCloud</li>
+  <li>Apple TV</li>
+</ul>
+
+### Custom Components
+<ul>
+  <li>HACS</li>
+  <li>Unifi Gateway</li>
+  <li>Auto Backup</li>
+  <li>Local Tuya</li>
+</ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
