@@ -214,7 +214,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Improve the content in the About The Project section
     - [ ] Update the Roadmap section
     - [ ] Add a Devices section (with links)
-        _ [ ] IoT devices
+        - [ ] IoT devices
         - [ ] Other devices
 - [ ] Add Roadmap items as Feature Requests in the Issues list
 - [ ] Logo
