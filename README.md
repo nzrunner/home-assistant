@@ -87,12 +87,34 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+Home Assistant (https://homeassistant.io) is an awesome open-source home automation product that I have deployed to run my house.
+
+I created this project to: -
+
+<ul>
+<li>Have a backup of my configuration</li>
+<li>Contribute to the open-source community</li>
+</ul>
+
 ### Primary Dashboard
 [![Product Name Screen Shot][product-screenshot]](images/home-assistant.png)
 ### Alerts Dashboard
 ![Home Assistant Alerts](images/home-assistant-alerts.png)
-
-Home Assistant (https://homeassistant.io) is an awesome open-source home automation product that I have deployed to run my house.
+### System Dashboard
+![Home Assistant System](images/home-assistant-system.png)
+### Network Dashboard
+![Home Assistant Network](images/home-assistant-network.png)
+### Security Dashboard
+![Home Assistant Security](images/home-assistant-security.png)
+### Entertainment Dashboard
+![Home Assistant Entertainment](images/home-assistant-entertainment.png)
+### Debugging Dashboard
+![Home Assistant Debugging](images/home-assistant-debugging.png)
+### Docker Server Dashboard
+![Home Assistant Docker Server](images/home-assistant-docker-1.png)
+### Docker Containers Dashboard
+![Home Assistant Docker Containers](images/home-assistant-docker-2.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,6 +140,7 @@ Home Assistant (https://homeassistant.io) is an awesome open-source home automat
   <li>Apple iCloud</li>
   <li>Apple TV</li>
 </ul>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Custom Components
@@ -127,6 +150,7 @@ Home Assistant (https://homeassistant.io) is an awesome open-source home automat
   <li>Auto Backup</li>
   <li>Local Tuya</li>
 </ul>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -226,9 +250,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Mark Matheson - [@nzrunner](https://twitter.com/nzrunner) - support@marathonsoftware.com.au
-
-Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nzrunner/home-assistant)
+<ul>
+<li>Mark Matheson - [@nzrunner](https://twitter.com/nzrunner)</li>
+<li>Project Link: https://github.com/nzrunner/home-assistant</li>
+</ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -237,10 +262,11 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [IOS Theme](https://github.com/basnijholt/lovelace-ios-themes/)
-* [A nicely documented configuration](https://github.com/basnijholt/home-assistant-config)
-* [Funky ASCII text file headers](https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)
-
+<ul>
+<li>The theme I use - IOS Theme (https://github.com/basnijholt/lovelace-ios-themes/)</li>
+<li>A really well document Home Assistant configuration (https://github.com/basnijholt/home-assistant-config)</li>
+<li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
+</ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
