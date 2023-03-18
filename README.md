@@ -42,8 +42,6 @@
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nzrunner/home-assistant">View Demo</a>
-    ·
     <a href="https://github.com/nzrunner/home-assistant/issues">Report Bug</a>
     ·
     <a href="https://github.com/nzrunner/home-assistant/issues">Request Feature</a>
@@ -62,6 +60,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <!--
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -71,6 +70,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    -->
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -82,10 +82,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+[![Product Name Screen Shot][product-screenshot]](home-assistant.png)
 
-![Home Assistant](home-assistant.png)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Home Assistant (https://homeassistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,7 +92,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
+* [![Home Assistant][Hass.io]][Hass-url]
+<!--
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
@@ -101,12 +101,14 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
+-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
+<!--
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -140,7 +142,9 @@ This is an example of how to list things you need to use the software and how to
 
 
 
+-->
 <!-- USAGE EXAMPLES -->
+<!--
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -151,7 +155,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
+-->
 <!-- ROADMAP -->
+<!--
 ## Roadmap
 
 - [ ] Feature 1
@@ -165,6 +171,7 @@ See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a f
 
 
 
+-->
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -195,7 +202,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@nzrunner](https://twitter.com/nzrunner) - web@marathonsoftware.com.au
+Your Name - [@nzrunner](https://twitter.com/nzrunner) - support@marathonsoftware.com.au
 
 Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nzrunner/home-assistant)
 
@@ -206,9 +213,8 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [IOS Theme](https://github.com/basnijholt/lovelace-ios-themes/)
+* [A nicely documented configuration](https://github.com/basnijholt/home-assistant-config)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -228,9 +234,10 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nzrunner
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
+[product-screenshot]: home-assistant.png
+[Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
+[Hass-url]: https://nextjs.org/
+<!--
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
@@ -245,3 +252,4 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+-->
