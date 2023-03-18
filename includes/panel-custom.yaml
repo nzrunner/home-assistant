@@ -1,0 +1,24 @@
+#################################################################################
+# Create Sidebar items
+#################################################################################
+
+# Logs
+- name: panel-redirect
+  # url_path needs to be unique for each panel_custom config
+  url_path: redirect-logs
+  sidebar_title: Logs
+  sidebar_icon: mdi:math-log
+  module_url: /local/panel-redirect.js
+  config:
+    # Where you want to redirect to
+    target: /config/logs
+# Backups (Supervisor)
+- name: panel-redirect
+  # url_path needs to be unique for each panel_custom config
+  url_path: redirect-backups
+  sidebar_title: Backups
+  sidebar_icon: mdi:backup-restore
+  module_url: /local/panel-redirect.js
+  config:
+    # Where you want to redirect to
+    target: /hassio/backups

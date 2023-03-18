@@ -1,0 +1,31 @@
+HangTheLaundry:
+  action:
+    service: "automation.trigger"
+    data:
+      entity_id: "automation.laundry_status"
+  speech:
+    text: "The laundry has been hung"
+
+LaundryInside:
+  action:
+    service: "automation.trigger"
+    data:
+      entity_id: "automation.laundry_status"
+  speech:
+    text: "The laundry has been brought inside"
+
+BinsOut:
+  action:
+    service: "automation.trigger"
+    data:
+      entity_id: "automation.system_rubbish_status"
+  speech:
+    text: "The rubbish bins are out"
+
+BinsIn:
+  action:
+    service: "automation.trigger"
+    data:
+      entity_id: "automation.system_rubbish_status"
+  speech:
+    text: "The rubbish bins are in"

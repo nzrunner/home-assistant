@@ -1,0 +1,10 @@
+#################################################################################
+# Configuration entry for nextcloud, calendars will be found automatically
+# https://www.home-assistant.io/integrations/caldav
+#################################################################################
+
+- platform: caldav
+  username: !secret caldav_user
+  password: !secret caldav_password
+  url: !secret caldav_url
+  days: 60

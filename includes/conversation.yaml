@@ -1,0 +1,12 @@
+intents:
+  HangTheLaundry:
+    - "[hang][ing] [the] laundry [out]"
+
+  LaundryInside:
+    - "[bring][ing] [the] laundry in"
+
+  BinsOut:
+    - "[put] [the] bins out"
+
+  BinsIn:
+    - "[bring] [the] bins in"

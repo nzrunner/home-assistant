@@ -1,0 +1,45 @@
+#################################################################################
+# Alert
+# https://www.home-assistant.io/integrations/alert
+#################################################################################
+kitchen_door:
+  name: Kitchen Door is open
+  title: Alert
+  done_message: Kitchen Door is closed
+  entity_id: binary_sensor.kitchen_door_open_closed
+  state: "on"
+  repeat:
+    - 1
+    - 15
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - mark_ios_devices
+
+side_sliding_door:
+  name: Side Sliding Door is open
+  title: Alert
+  done_message: Side Sliding Door is closed
+  entity_id: binary_sensor.side_sliding_door_open_close
+  state: "on"
+  repeat:
+    - 1
+    - 15
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - mark_ios_devices
+
+fridge_door:
+  name: Fridge Door is open
+  title: Alert
+  done_message: Fridge Door is closed
+  entity_id: binary_sensor.fridge_door_open_closed
+  state: "on"
+  repeat:
+    - 1
+    - 5
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - mark_ios_devices

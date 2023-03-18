@@ -1,0 +1,7 @@
+#################################################################################
+# System Log
+# Required for the Error Counter to work
+# https://www.home-assistant.io/integrations/counter/
+#################################################################################
+
+fire_event: true
