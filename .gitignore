@@ -4,8 +4,12 @@
 # You can whitelist files/folders with !, these will not be ignored.
 !*.yaml
 !.gitignore
+!.HA_VERSION
 !*.md
+!appdaemon/**
+!custom_components/**
 !includes/**
+!www/**
 
 # Ignore folders.
 .storage
@@ -16,4 +20,3 @@
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
-
