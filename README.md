@@ -208,6 +208,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Review project files for items that should be in the secrets.yaml file
+- [ ] Disable Bluetooth Tracker
 - [ ] Update the README
     - [ ] Complete Integrations list (with links)
     - [ ] Complete Custom Components section (with links)
