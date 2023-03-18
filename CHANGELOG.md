@@ -1,0 +1,52 @@
+- docs: Add items to Roadmap
+- style: Ignore jpg files
+- Merge branch 'master' of https://github.com/nzrunner/home-assistant
+- bug: Reset the TTS service to default
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Create config.yml
+- Update README.md
+- Update README.md
+- Add files via upload
+- Delete .gitkeep
+- Update README.md
+- Add files via upload
+- Create .gitkeep
+- Update TTS configuration
+- Update README.md
+- Revision to file header
+- File headers added
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update issue templates
+- Update issue templates
+- Update issue templates
+- Update README.md
+- Update README.md
+- Add files via upload
+- Update README.md
+- Update README.md
+- Merge pull request #1 from nzrunner/add-license-1
+- Create LICENSE.txt
+- Include additional folders
+- Modified .gitignore
+- Include addition folders
+- Merge branch 'master' of https://github.com/nzrunner/home-assistant
+- Include the includes folder
+- Update .gitignore
+- Merge branch 'master' of https://github.com/nzrunner/home-assistant
+- Initial commit of Home Assistant configuration files
+- Update README.md
+- Update README.md
+- Initial commit
