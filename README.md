@@ -223,6 +223,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Design a project specific image (Canva)
 - [ ] Add a Change Log
 - [ ] Redo screenshots with preferred theme colour
+- [ ] Write a Git Guide
+- [ ] Adopt a git commit message convention
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
