@@ -222,6 +222,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Use a file stored in the project
     - [ ] Design a project specific image (Canva)
 - [ ] Add a Change Log
+- [ ] Redo screenshots with preferred theme colour
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
