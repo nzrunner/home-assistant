@@ -37,7 +37,7 @@
 <h3 align="center">Matho's Home Assistant Configuration</h3>
 
   <p align="center">
-    My Home Assistant configuration files
+    My Home Assistant configuration
     <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
     <br />
