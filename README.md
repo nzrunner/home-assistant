@@ -214,6 +214,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Improve the content in the About The Project section
     - [ ] Update the Roadmap section
 - [ ] Add Roadmap items as Feature Requests in the Issues list
+- [ ] Logo
+    - [ ] Use a file stored in the project
+    - [ ] Design a project specific image (Canva)
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
