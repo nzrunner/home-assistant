@@ -236,7 +236,7 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 [linkedin-url]: https://linkedin.com/in/nzrunner
 [product-screenshot]: home-assistant.png
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
-[Hass-url]: https://nextjs.org/
+[Hass-url]: https://homeassistant.io/
 <!--
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
