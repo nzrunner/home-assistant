@@ -105,6 +105,7 @@ Home Assistant (https://homeassistant.io) is an awesome open-source home automat
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Integrations
 <ul>
@@ -112,6 +113,7 @@ Home Assistant (https://homeassistant.io) is an awesome open-source home automat
   <li>Apple iCloud</li>
   <li>Apple TV</li>
 </ul>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Custom Components
 <ul>
