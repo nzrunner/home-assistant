@@ -87,7 +87,10 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]](home-assistant.png)
+### Primary Dashboard
+[![Product Name Screen Shot][product-screenshot]](images/home-assistant.png)
+### Alerts Dashboard
+![Home Assistant Alerts](images/home-assistant-alerts.png)
 
 Home Assistant (https://homeassistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
@@ -258,7 +261,7 @@ Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nz
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nzrunner
-[product-screenshot]: home-assistant.png
+[product-screenshot]: images/home-assistant.png
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [Hass-url]: https://www.home-assistant.io/
 <!--
