@@ -24,7 +24,9 @@
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
+<!--
 [![LinkedIn][linkedin-shield]][linkedin-url]
+-->
 
 
 
