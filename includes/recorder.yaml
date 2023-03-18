@@ -24,6 +24,7 @@ exclude:
     - weather.marsfield*
     - sensor.sydney_olympic_park*
     - sensor.marsfield*
+    - sensor.washing_machine*
   entities:
     - sun.sun # Don't record sun data
     - sensor.last_boot # Comes from 'systemmonitor' sensor platform
