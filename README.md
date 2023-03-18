@@ -223,7 +223,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@nzrunner](https://twitter.com/nzrunner) - support@marathonsoftware.com.au
+Mark Matheson - [@nzrunner](https://twitter.com/nzrunner) - support@marathonsoftware.com.au
 
 Project Link: [https://github.com/nzrunner/home-assistant](https://github.com/nzrunner/home-assistant)
 
