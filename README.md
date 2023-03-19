@@ -225,17 +225,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Review project files for items that should be in the secrets.yaml file
 - [ ] Disable Bluetooth Tracker
 - [ ] Update the README
-    - [ ] Complete Integrations list (with links)
-    - [ ] Complete Custom Components section (with links)
-    - [ ] Improve the content in the About The Project section
-    - [ ] Update the Roadmap section
-    - [ ] Add a Devices section (with links)
-        - [ ] IoT devices
-        - [ ] Other devices
-- [ ] Logo
+  - [ ] Complete Integrations list (with links)
+  - [ ] Complete Custom Components section (with links)
+  - [ ] Improve the content in the About The Project section
+  - [ ] Update the Roadmap section
+  - [ ] Add a Devices section (with links)
+    - [ ] IoT devices
+    - [ ] Other devices
+- [x] Logo
+  - [x] Use a file stored in the project
+  - [x] Design a project specific image (Canva)
 - [ ] Add Roadmap items as Feature Requests in the Issues list
-    - [ ] Use a file stored in the project
-    - [ ] Design a project specific image (Canva)
 - [ ] Add a Change Log
 - [ ] Redo screenshots with preferred theme colour
 - [ ] Write a Git Guide
