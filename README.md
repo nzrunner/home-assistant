@@ -243,17 +243,17 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 ### Devices
 #### Network
 <ul>
-  <li>Ubiquiti Unifi USG 3 Router (https://ui.com/consoles)</li>
-  <li>Ubiquiti Unifi AP Lite (https://ui.com/wi-fi)</li>
-  <li>Ubiquiti Unifi Switches (https://ui.com/switching)</li>
-  <li>Ubiquiti Unifi Cloud Key GEN 1 (https://ui.com/consoles)</li>
+  <li>![Ubiquiti Unifi USG 3 Router](https://ui.com/consoles)</li>
+  <li>![Ubiquiti Unifi AP Lite](https://ui.com/wi-fi)</li>
+  <li>![Ubiquiti Unifi Switches](https://ui.com/switching)</li>
+  <li>![Ubiquiti Unifi Cloud Key GEN 1](https://ui.com/consoles)</li>
   <li>Brother L8250CDN Printer</li>
   <li>Synology DS1812+ NAS</li>
   <li>Synology DS1618+ NAS</li>
-  <li>Sonos One Speakers (https://www.sonos.com/en-au/shop/one-sl)</li>
-  <li>Google Home Mini Speakers (https://store.google.com/product/google_nest_mini?hl=en-AU)</li>
-  <li>Apple iPhone (https://www.apple.com/au/iphone/)</li>
-  <li>Apple iPad (https://www.apple.com/au/ipad/)</li>
+  <li>![Sonos One Speakers](https://www.sonos.com/en-au/shop/one-sl)</li>
+  <li>![Google Home Mini Speakers](https://store.google.com/product/google_nest_mini?hl=en-AU)</li>
+  <li>![Apple iPhone](https://www.apple.com/au/iphone/)</li>
+  <li>![Apple iPad](https://www.apple.com/au/ipad/)</li>
 </ul>
 
 #### IOT
