@@ -34,7 +34,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/nzrunner/home-assistant">
-    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
+    <img src="/images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
 
 <h3 align="center">Matho's Home Assistant Configuration</h3>
