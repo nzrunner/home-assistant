@@ -139,31 +139,130 @@ I created this project to: -
 
 ### Integrations
 <ul>
-  <li>Ubiquiti Unifi</li>
   <li>Apple iCloud</li>
   <li>Apple TV</li>
+  <li>Brother Printer</li>
+  <li>Sony Bravia TV</li>
+  <li>HD HomeRun DMS</li>
+  <li>My IP</li>
+  <li>Google Cast</li>
+  <li>Home Assistant Supervisor</li>
+  <li>HomeKit</li>
+  <li>Local IP</li>
+  <li>Mobile App</li>
+  <li>Philips Hue</li>
+  <li>Pi-Hole</li>
+  <li>Plex Media Server</li>
+  <li>Radarr</li>
+  <li>SABnzbd</li>
+  <li>Season</li>
+  <li>Sonarr</li>
+  <li>Sonos</li>
+  <li>SpeedTest</li>
+  <li>Sun</li>
+  <li>Synology DSM</li>
+  <li>Tautulli</li>
+  <li>TP-Link Kasa Smart</li>
+  <li>Unifi Network</li>
+  <li>Uptime</li>
+  <li>CONBEE II (Zigbee Home Automation)</li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Custom Components
+#### Integrations
 <ul>
   <li>HACS</li>
   <li>Unifi Gateway</li>
   <li>Auto Backup</li>
   <li>Local Tuya</li>
+  <li>FontAwesome</li>
+  <li>Browser_Mod</li>
+  <li>Monitor Docker</li>
+  <li>SimpleIcons</li>
+  <li>Garbage Collection</li>
+  <li>Radaarr Upcoming Media</li>
+  <li>Sonarr Upcoming Media</li>
+  <li>Bereau of Meteorology</li>
+  <li>Plex Recently Added</li>
+  <li>Average Sensor</li>
+  <li>Garmin Connect</li>
+  <li>ICS Calendar (iCalendar)</li>
+  <li>Uptime Kuma</li>
+  <li>Medisafe</li>
+</ul>
+
+#### Frontend
+<ul>
+  <li>Multiple-Entity-Row</li>
+  <li>Bar Card</li>
+  <li>Button-Card</li>
+  <li>Decluttering Card</li>
+  <li>ZHA Network Card</li>
+  <li>Text Divider Row</li>
+  <li>Mini Media Player</li>
+  <li>Auto-Entities</li>
+  <li>Card-Mod</li>
+  <li>Fold-Entity-Row</li>
+  <li>Slider-Entity-Row</li>
+  <li>Template-Entity-Row</li>
+  <li>IOS Themes - Dark Mode and Light Mode</li>
+  <li>Custom Brand Icons</li>
+  <li>Digital Clock</li>
+  <li>BigNumber-Card</li>
+  <li>Battery State Card</li>
+  <li>Hass Hue Icons</li>
+  <li>BOM Radar Card</li>
+  <li>Platinum Weather Card</li>
+</ul>
+
+#### Automation
+<ul>
+  <li>Config Check</li>
+</ul>
+
+#### Addons
+<ul>
+  <li>VS Code</li>
+  <li>Terminal and SSH</li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Devices
 #### Network
+<ul>
+  <li>Ubiquiti Unifi USG 3 Router (https://ui.com/consoles)</li>
+  <li>Ubiquiti Unifi AP Lite (https://ui.com/wi-fi)</li>
+  <li>Ubiquiti Unifi Switches (https://ui.com/switching)<li>
+  <li>Ubiquiti Unifi Cloud Key GEN 1 (https://ui.com/consoles)</li>
+  <li>Brother L8250CDN Printer</li>
+  <li>Synology DS1812+ NAS</li>
+  <li>Synology DS1618+ NAS</li>
+  <li>Sonos One Speakers (https://www.sonos.com/en-au/shop/one-sl)</li>
+  <li>Google Home Mini Speakers (https://store.google.com/product/google_nest_mini?hl=en-AU)</li>
+  <li>Apple iPhone (https://www.apple.com/au/iphone/)</li>
+  <li>Apple iPad (https://www.apple.com/au/ipad/)</li>
+</ul>
 
 #### IOT
 <ul>
-  <li>Aqara Motion sensors</li>
-  <li>Aqara Door sensors</li>
-  <li>Aqara Temperature sensors</li>
+  <li>Aqara Motion Sensors</li>
+  <li>Aqara Door Sensors</li>
+  <li>Aqara Temperature Sensors</li>
+  <li>Aqara Mini Switch</li>
+  <li>Aqara Blind Controller</li>
+  <li>Philips Hue Smart Bulbs</li>
+  <li>Philips Hue Motion Sensors</li>
+  <li>Philips Hue Dimmer Switch</li>
+  <li>IKEA Tradfri Motion Sensors<li>
+  <li>IKEA Tradfri Buttons</li>
+  <li>IKEA Tradfri Smart Bulbs</li>
+  <li>Arlec Smart Plugs</li>
+  <li>TP-Link HS110 Smart Plug</li>
+  <li>TP-Link KP303 Smart Powerboard</li>
+  <li>Security Cameras (x 2)</li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -239,7 +338,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Add a Change Log
 - [ ] Redo screenshots with preferred theme colour
 - [x] Write a Git Guide
-- [ ] Adopt a git commit message convention
+- [x] Adopt a git commit message convention
 - [ ] Publish the lovelace-ui.yaml
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
