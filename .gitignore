@@ -17,6 +17,12 @@ __pycache__
 .google.token
 deps
 
+# Specific keeps
+!.gitkeep
+!*.yaml
+!.gitignore
+!*.md
+
 # Specific file ignores
 ip_bans.yaml
 secrets.yaml
@@ -36,12 +42,6 @@ blueprints/*/homeassistant
 custom_components
 themes
 www/community
-
-# Specific keeps
-!.gitkeep
-!*.yaml
-!.gitignore
-!*.md
 
 # Temporary ignores
 .old_config
