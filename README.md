@@ -63,6 +63,7 @@
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#integrations">Integrations</a></li>
         <li><a href="#custom-components">Custom Components</a></li>
+        <li><a href="#devices">Devices</a></li>
       </ul>
     </li>
     <!--
@@ -153,6 +154,13 @@ I created this project to: -
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Devices
+#### Network
+
+#### IOT
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- GETTING STARTED -->
@@ -217,8 +225,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Add a Devices section (with links)
         - [ ] IoT devices
         - [ ] Other devices
-- [ ] Add Roadmap items as Feature Requests in the Issues list
 - [ ] Logo
+- [ ] Add Roadmap items as Feature Requests in the Issues list
     - [ ] Use a file stored in the project
     - [ ] Design a project specific image (Canva)
 - [ ] Add a Change Log
