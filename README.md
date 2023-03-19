@@ -235,7 +235,7 @@ I created this project to: -
 <ul>
   <li>Ubiquiti Unifi USG 3 Router (https://ui.com/consoles)</li>
   <li>Ubiquiti Unifi AP Lite (https://ui.com/wi-fi)</li>
-  <li>Ubiquiti Unifi Switches (https://ui.com/switching)<li>
+  <li>Ubiquiti Unifi Switches (https://ui.com/switching)</li>
   <li>Ubiquiti Unifi Cloud Key GEN 1 (https://ui.com/consoles)</li>
   <li>Brother L8250CDN Printer</li>
   <li>Synology DS1812+ NAS</li>
@@ -256,7 +256,7 @@ I created this project to: -
   <li>Philips Hue Smart Bulbs</li>
   <li>Philips Hue Motion Sensors</li>
   <li>Philips Hue Dimmer Switch</li>
-  <li>IKEA Tradfri Motion Sensors<li>
+  <li>IKEA Tradfri Motion Sensors</li>
   <li>IKEA Tradfri Buttons</li>
   <li>IKEA Tradfri Smart Bulbs</li>
   <li>Arlec Smart Plugs</li>
@@ -330,7 +330,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - [ ] Update the Roadmap section
   - [ ] Add a Devices section (with links)
     - [ ] IoT devices
-    - [ ] Other devices
+    - [x] Other devices
 - [x] Logo
   - [x] Use a file stored in the project
   - [x] Design a project specific image (Canva)
