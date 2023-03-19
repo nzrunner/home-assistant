@@ -24,13 +24,13 @@
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
+<br/>
+[![Project Maintenance][maintenance-shield]
+[![GitHub Activity][commits-shield]][commits]
+[![GitHub Last Commit][last-commit-shield]][commits]
 <!--
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
-<br/>
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
-[![GitHub Last Commit][last-commit-shield]][commits]
 
 
 
@@ -416,10 +416,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
-<!-->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/nzrunner
--->
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/frenck/home-assistant-config.svg
 [commits]: https://github.com/frenck/home-assistant-config/commits/master
@@ -428,6 +424,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [Hass-url]: https://www.home-assistant.io/
 <!--
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/nzrunner
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
