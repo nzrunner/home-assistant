@@ -336,8 +336,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Update the README
   - [ ] Complete Integrations list (with links)
   - [ ] Complete Custom Components section (with links)
-  - [-] Improve the content in the About The Project section
-  - [ ] Update the Roadmap section
+  - [x] Improve the content in the About The Project section
+  - [x] Update the Roadmap section
   - [ ] Add a Devices section (with links)
     - [ ] IoT devices
     - [x] Other devices
