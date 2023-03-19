@@ -158,6 +158,11 @@ I created this project to: -
 #### Network
 
 #### IOT
+<ul>
+  <li>Aqara Motion sensors</li>
+  <li>Aqara Door sensors</li>
+  <li>Aqara Temperature sensors</li>
+</ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
