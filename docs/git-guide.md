@@ -53,8 +53,8 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- GIT GUIDE -->
+## Git Guide
 
 This is currently just a dumping ground for git recources that I have found.
 
