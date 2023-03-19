@@ -34,7 +34,8 @@ homeassistant: !include includes/homeassistant.yaml
 http: !include includes/http.yaml
 
 # Logging and History
-device_tracker: !include includes/device_tracker.yaml
+# DISABLED - Was tracking too many of the neighbours devices
+# device_tracker: !include includes/device_tracker.yaml
 logger: !include includes/logger.yaml
 recorder: !include includes/recorder.yaml
 system_log: !include includes/system_log.yaml
