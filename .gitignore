@@ -1,5 +1,7 @@
-# Generic ignores
+# Ignore everything to start with
 *
+
+# Generic ignores (should be covered by above, but just in case)
 *.log
 *.log.*
 *.db
@@ -20,17 +22,10 @@ ip_bans.yaml
 secrets.yaml
 known_devices.yaml
 *.jpg
+*.png
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
-
-# ESPHome ignores
-esphome/.*/
-
-# Ignore add-on files
-aircast.xml
-airsonos.xml
-notebooks
 
 # Ignore files created by IDE's
 .vscode
