@@ -335,6 +335,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - [ ] Add a Devices section (with links)
     - [ ] IoT devices
     - [x] Other devices
+  - [ ] Update Built-With section, describing the hardware and OS configuration
 - [x] Logo
   - [x] Use a file stored in the project
   - [x] Design a project specific image (Canva)
