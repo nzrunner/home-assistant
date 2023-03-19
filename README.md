@@ -104,6 +104,12 @@ I created this project to: -
 <li>Contribute to the open-source community</li>
 </ul>
 
+As I continue to make improvements to my smart home, I will be updating my configuration regularly. Be sure to ⭐ my page and stay tuned for the latest updates.
+
+Hopefully, as I have learned from others and "borrowed" sectons of their code, others can benefit from my configuration.
+
+Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowldgements section.
+
 ### Primary Dashboard
 [![Product Name Screen Shot][product-screenshot]](images/home-assistant.png)
 ### Alerts Dashboard
