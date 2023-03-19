@@ -108,7 +108,7 @@ As I continue to make improvements to my smart home, I will be updating my confi
 
 Hopefully, as I have learned from others and "borrowed" sectons of their code, others can benefit from my configuration.
 
-Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowldgements section.
+Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowledgements section.
 
 ### Primary Dashboard
 [![Product Name Screen Shot][product-screenshot]](images/home-assistant.png)
@@ -336,7 +336,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Update the README
   - [ ] Complete Integrations list (with links)
   - [ ] Complete Custom Components section (with links)
-  - [ ] Improve the content in the About The Project section
+  - [-] Improve the content in the About The Project section
   - [ ] Update the Roadmap section
   - [ ] Add a Devices section (with links)
     - [ ] IoT devices
@@ -401,9 +401,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Acknowledgments
 
 <ul>
-<li>The theme I use - IOS Theme (https://github.com/basnijholt/lovelace-ios-themes/)</li>
-<li>A really well document Home Assistant configuration (https://github.com/basnijholt/home-assistant-config)</li>
+<li>IOS Theme - The theme I use (https://github.com/basnijholt/lovelace-ios-themes/)</li>
+<li>A really well documented Home Assistant configuration (https://github.com/basnijholt/home-assistant-config)</li>
 <li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
+<li>Swakes - Home Assistant gave me some design inspiration (https://github.com/pqpxo/SWAKES_hassio)</li>
 </ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
