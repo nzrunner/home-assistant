@@ -223,7 +223,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Review project files for items that should be in the secrets.yaml file
-- [ ] Disable Bluetooth Tracker
+- [x] Disable Bluetooth Tracker
 - [ ] Update the README
   - [ ] Complete Integrations list (with links)
   - [ ] Complete Custom Components section (with links)
@@ -236,9 +236,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - [x] Use a file stored in the project
   - [x] Design a project specific image (Canva)
 - [ ] Add Roadmap items as Feature Requests in the Issues list
-- [ ] Add a Change Log
+- [x] Add a Change Log
 - [ ] Redo screenshots with preferred theme colour
-- [ ] Write a Git Guide
+- [x] Write a Git Guide
 - [ ] Adopt a git commit message convention
 - [ ] Publish the lovelace-ui.yaml
 
