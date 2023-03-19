@@ -28,7 +28,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
 <br/>
-[![GitHub Actions][actions-shield]][actions]
+![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
 
@@ -416,8 +416,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
+<!-->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nzrunner
+-->
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/frenck/home-assistant-config.svg
+[commits]: https://github.com/frenck/home-assistant-config/commits/master
+[last-commit-shield]: https://img.shields.io/github/last-commit/frenck/home-assistant-config.svg
 [product-screenshot]: images/home-assistant.png
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [Hass-url]: https://www.home-assistant.io/
