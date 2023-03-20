@@ -405,6 +405,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <li>A really well documented Home Assistant configuration (https://github.com/basnijholt/home-assistant-config)</li>
 <li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
 <li>Swakes - Home Assistant gave me some design inspiration (https://github.com/pqpxo/SWAKES_hassio)</li>
+<li>Metbril's Home Assistant Configuration - Review Github workflow actions (https://github.com/metbril/home-assistant-config)</li>
 </ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
