@@ -11,8 +11,8 @@
 
 
 <!-- PROJECT LOGO -->
-<h1>Matho's Home Assistant Configuration</h3>
-<h2>Documenting my Home Assistant configuration</h4>
+# Matho's Home Assistant Configuration
+Documenting my Home Assistant configuration
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
     <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
