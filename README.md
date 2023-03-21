@@ -32,7 +32,7 @@
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
 <br/>
-![Project Complete](https://img.shields.io/badge/Complete%3F-No-blue)
+![Project Complete](https://img.shields.io/badge/Complete%3F-No-red)
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
