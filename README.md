@@ -414,7 +414,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <ul>
 <li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
 <li>Make cool shields (https://shields.io/)</li>
-<li>SVG Logos for popular brands to use with sheilds (https://simpleicons.org/)</li>
+<li>SVG Logos for popular brands to use with shields (https://simpleicons.org/)</li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
