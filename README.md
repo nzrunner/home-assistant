@@ -134,7 +134,9 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 ### Built With
 
-[![Home Assistant][Hass.io]][Hass-url]
+[![Home Assistant][Hass.io]][Hass-url] <br />
+[![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com)
+[![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
 <!--
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
@@ -438,6 +440,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg
 [product-screenshot]: images/home-assistant.png
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
+[Raspberry-Pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
 [Hass-url]: https://www.home-assistant.io/
 <!--
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
