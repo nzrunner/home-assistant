@@ -42,7 +42,7 @@ blueprints/*/homeassistant
 # Ignore vendored stuff
 custom_components
 themes
-www/community
+www
 
 # Temporary ignores
 .old_config
