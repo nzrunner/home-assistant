@@ -134,7 +134,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 ### Built With
 
-* [![Home Assistant][Hass.io]][Hass-url]
+[![Home Assistant][Hass.io]][Hass-url]
 <!--
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
