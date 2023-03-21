@@ -10,6 +10,14 @@
 
 
 
+<!-- PROJECT LOGO -->
+<h3 align="center">Matho's Home Assistant Configuration</h3>
+<br />
+<div align="center">
+  <a href="https://github.com/nzrunner/home-assistant">
+    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
+  </a>
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -33,16 +41,7 @@
 -->
 
 
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/nzrunner/home-assistant">
-    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
-  </a>
-
-<h3 align="center">Matho's Home Assistant Configuration</h3>
-
+<!-- PROJECT SHORT DESCRIPTION AND MENU -->
   <p align="center">
     My Home Assistant configuration
     <br />
@@ -406,6 +405,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
 <li>Swakes - Home Assistant gave me some design inspiration (https://github.com/pqpxo/SWAKES_hassio)</li>
 <li>Metbril's Home Assistant Configuration - Review Github workflow actions (https://github.com/metbril/home-assistant-config)</li>
+<li>Good source for Lovelace CCS variables, particularly colors (https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md)</li>
 </ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
