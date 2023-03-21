@@ -135,7 +135,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 ### Built With
 
 [![Home Assistant][Hass.io]][Hass-url] <br />
-[![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com)
+[![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com) <br />
 [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
 <!--
 * [![React][React.js]][React-url]
