@@ -11,9 +11,9 @@
 
 
 <!-- PROJECT LOGO -->
-<h3 align="center">Matho's Home Assistant Configuration</h3>
+<h3>Matho's Home Assistant Configuration</h3>
 <br />
-<!-- <div align="center"> -->
+<div>
   <a href="https://github.com/nzrunner/home-assistant">
     <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
@@ -42,7 +42,7 @@
 
 
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
-<!--  <p align="center"> -->
+  <p>
     My Home Assistant configuration
     <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
@@ -53,8 +53,8 @@
     <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement">Request Feature</a>
     .
     <a href="/docs/git-guide.md">Git Guide</a>
-  <!-- </p> -->
-<!-- </div> -->
+  </p>
+</div>
 
 
 
