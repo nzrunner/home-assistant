@@ -11,8 +11,8 @@
 
 
 <!-- PROJECT LOGO -->
-<h3>Matho's Home Assistant Configuration</h3>
-<h4>Documenting my Home Assistant configuration</h4>
+<h1>Matho's Home Assistant Configuration</h3>
+<h2>Documenting my Home Assistant configuration</h4>
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
     <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
@@ -342,7 +342,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - [ ] Add a Devices section (with links)
     - [ ] IoT devices
     - [x] Other devices
-  - [ ] Update Built-With section, describing the hardware and OS configuration
+  - [x] Update Built-With section, describing the hardware and OS configuration
 - [x] Logo
   - [x] Use a file stored in the project
   - [x] Design a project specific image (Canva)
