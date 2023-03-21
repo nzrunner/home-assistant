@@ -42,7 +42,7 @@
 
 
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
-  <p align="center">
+<!--  <p align="center"> -->
     My Home Assistant configuration
     <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
@@ -54,7 +54,7 @@
     .
     <a href="/docs/git-guide.md">Git Guide</a>
   </p>
-</div>
+<!-- </div> -->
 
 
 
