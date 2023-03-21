@@ -45,7 +45,6 @@
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
   <p>
     <br />
-    <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
     <br />
     <br />
