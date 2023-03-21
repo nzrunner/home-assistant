@@ -15,7 +15,7 @@
 <h4>Documenting my Home Assistant configuration</h4>
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
-    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
+    <img src="../images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
 
 <!-- PROJECT SHIELDS -->
@@ -143,6 +143,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nzrunner
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg
+[commits]: https://github.com/nzrunner/home-assistant/commits/master
+[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg
 [product-screenshot]: images/home-assistant.png
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [Hass-url]: https://www.home-assistant.io/
