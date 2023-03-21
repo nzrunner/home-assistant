@@ -10,6 +10,14 @@
 
 
 
+<!-- PROJECT LOGO -->
+<h3>Matho's Home Assistant Configuration</h3>
+<h4>Documenting my Home Assistant configuration</h4>
+<div>
+  <a href="https://github.com/nzrunner/home-assistant">
+    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
+  </a>
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -24,23 +32,18 @@
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
+<br/>
+![Project Complete](https://img.shields.io/badge/Complete%3F-No-red)
+![Project Maintenance][maintenance-shield]
+[![GitHub Activity][commits-shield]][commits]
+[![GitHub Last Commit][last-commit-shield]][commits]
 <!--
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
 
 
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/nzrunner/home-assistant">
-    <img src="/images/mark-matheson-digital-business-consultant.png" alt="Logo">
-  </a>
-
-<h3 align="center">Matho's Home Assistant Configuration</h3>
-
-  <p align="center">
-    My Home Assistant configuration
+<!-- PROJECT SHORT DESCRIPTION AND MENU -->
+  <p>
     <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
     <br />
@@ -52,6 +55,7 @@
     <a href="/docs/git-guide.md">Git Guide</a>
   </p>
 </div>
+
 
 
 
