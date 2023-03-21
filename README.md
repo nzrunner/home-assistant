@@ -399,14 +399,21 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
+### Home Assistant
 <ul>
 <li>IOS Theme - The theme I use (https://github.com/basnijholt/lovelace-ios-themes/)</li>
 <li>A really well documented Home Assistant configuration (https://github.com/basnijholt/home-assistant-config)</li>
-<li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
 <li>Swakes - Home Assistant gave me some design inspiration (https://github.com/pqpxo/SWAKES_hassio)</li>
 <li>Metbril's Home Assistant Configuration - Review Github workflow actions (https://github.com/metbril/home-assistant-config)</li>
 <li>Good source for Lovelace CCS variables, particularly colors (https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md)</li>
 </ul>
+
+### General
+<ul>
+<li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
+<li>Making cool shields (https://shields.io/)</li>
+</ul>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
