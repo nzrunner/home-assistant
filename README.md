@@ -12,7 +12,6 @@
 
 <!-- PROJECT LOGO -->
 # Matho's Home Assistant Configuration
-Documenting my Home Assistant configuration
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
     <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
@@ -99,6 +98,7 @@ Home Assistant (https://homeassistant.io) is an awesome open-source home automat
 I created this project to: -
 
 <ul>
+<li>Document my configuration (always a good thing)</li>
 <li>Have a backup of my configuration</li>
 <li>Contribute to the open-source community</li>
 </ul>
