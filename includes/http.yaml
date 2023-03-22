@@ -17,9 +17,9 @@
 ## Otherwise, incoming requests will always come from 127.0.0.1 and not the real IP address.
 ## So make sure to add the reverse proxy server ip in trusted_proxies
 trusted_proxies:
-  - 192.168.4.48 # Reverse Proxy
-  - 10.77.60.0/24 # IOTStack LAN
-  - 172.16.0.0/12 # IOTStack Internal Lan
+  - !secret reverse_proxy 192.168.4.48 # Reverse Proxy
+  - !secret iotstack_lan # IOTStack LAN
+  - !secret iotstack_internal_lan # IOTStack Internal Lan
 ## Required for reverse proxy
 use_x_forwarded_for: true
 ## Included for better security
