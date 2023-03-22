@@ -1,3 +1,66 @@
+- docs(README): Remove sections not required
+- docs(README): Remove LF
+- docs(README: Spelling error
+- Merge branch 'master' of https://github.com/nzrunner/home-assistant
+- docs(README): Add simple icons acknowledgement
+- Delete home-assistant.png
+- docs(README): Update header and About section
+- docs(README): Tweaking header style size
+- docs(README): Increase header style size
+- docs(README): Add LF for badges
+- docs(README): Add badges for RPi and Debian
+- docs(README): Remove bullet from Built With
+- docs(README): Split Acknowledgments
+- docs(GIT_GUIDE): Add missing variables
+- docs(GIT-GUIDE): Update the header
+- docs(README): Tweak the header
+- docs(README): Tweak the header
+- chore: Remove appdaemon folder
+- chore: Remove www and custom_components folders
+- docs(README): Color complete badge red
+- docs(README): Project complete badge
+- docs(README): Final fix of header centering
+- docs(README) Fix removal of header center element
+- docs(README): Remove header center element
+- docs(README): Reorder header section
+- chore: Deleted files
+- chore: Add www folder to blacklist
+- chore: deleted files
+- chore: Change computer fan target
+- chore: System-made automation changes
+- chore: Add uncludes folder to whitelist
+- docs(README): Add link to Acknowledgements
+- docs(README): Lists item links fail
+- docs(README). Change Network devices to links
+- docs(README): Update Roadmap items status
+- docs(README): Correct spelling of acknowledgements
+- docs(README): Update About the Project
+- chore: secrets file ignored. Order was wrong
+- chore: Trying to get secrets file ignored
+- chore: Further updates to .gitignore
+- chore: Update .gitignore parameters
+- docs(README): Add Roadmap item for Hardware config
+- docs(README): Remove square brackets not required
+- docs(README): Fix the github action links
+- docs: Resolve github badges issue (hopefully)
+- docs(README: Update Github actions
+- docs(README): github actions
+- docs(README): Fix closing li tags
+- docs(README): Update component List
+- docs: Mark Roadmap items as completed
+- docs: Correct Roadmap nesting
+- docs: Add link to Git Guide
+- docs(git-guide): Update heading
+- docs(git-guide): Update logo path
+- docs: Initial Git Guide
+- fix: Disabled Bluetoother tracker
+- docs: Initial IOT devices added to list
+- docs: Logo updated
+- style: Proposed logo updated
+- style: New proposed logo
+- docs: Add Devices heading (including a TOC item)
+- docs: Add lovelace-ui.yaml to Roadmap
+- docs(CHANGELOG): Create an initial CHANGELOG.md
 - docs: Add items to Roadmap
 - style: Ignore jpg files
 - Merge branch 'master' of https://github.com/nzrunner/home-assistant
