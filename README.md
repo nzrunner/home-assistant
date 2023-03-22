@@ -87,7 +87,7 @@ I created this project to: -
 
 <ul>
 <li>Document my configuration (always a good thing)</li>
-<li>Have a backup of my configuration (antoher good thing)</li>
+<li>Have a backup of my configuration (another good thing)</li>
 <li>Contribute to the open-source community</li>
 </ul>
 
