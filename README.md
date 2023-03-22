@@ -337,7 +337,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 | **Description** | **Link** |
 | :--- | :--- |
 | IOS Theme - The theme I use | https://github.com/basnijholt/lovelace-ios-themes/ |
-| A really well documented Home Assistant configuration } https://github.com/basnijholt/home-assistant-config |
+| A really well documented Home Assistant configuration | https://github.com/basnijholt/home-assistant-config |
 | Swakes - Home Assistant gave me some design inspiration | https://github.com/pqpxo/SWAKES_hassio !
 | Metbril's Home Assistant Configuration - Review Github workflow actions | https://github.com/metbril/home-assistant-config |
 | Good source for Lovelace CCS variables, particularly colors | https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md |
