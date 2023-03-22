@@ -284,6 +284,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 - [x] Write a Git Guide
 - [x] Adopt a git commit message convention
 - [x] Publish the lovelace-ui.yaml
+- [ ] Publish fake secrets.yaml for completeness
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
