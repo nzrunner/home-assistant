@@ -160,26 +160,26 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 ### Custom Components
 #### Integrations
-<ul>
-  <li>HACS</li>
-  <li>Unifi Gateway</li>
-  <li>Auto Backup</li>
-  <li>Local Tuya</li>
-  <li>FontAwesome</li>
-  <li>Browser_Mod</li>
-  <li>Monitor Docker</li>
-  <li>SimpleIcons</li>
-  <li>Garbage Collection</li>
-  <li>Radaarr Upcoming Media</li>
-  <li>Sonarr Upcoming Media</li>
-  <li>Bereau of Meteorology</li>
-  <li>Plex Recently Added</li>
-  <li>Average Sensor</li>
-  <li>Garmin Connect</li>
-  <li>ICS Calendar (iCalendar)</li>
-  <li>Uptime Kuma</li>
-  <li>Medisafe</li>
-</ul>
+| **Component** | **Repository** |
+| :--- | :--- |
+| HACS | (https://github.com/hacs/integration) |
+| Unifi Gateway |   |
+| Auto Backup |   |
+| Local Tuya |   |
+| Font Awesome |   |
+| Browser Mod |   |
+| Monitor Docker |   |
+| Simple Icons |   |
+| Garbage Collection |   |
+| Radarr Upcoming Media |   |
+| Sonarr Upcoming Media |   |
+| Bereau of Meteorology |   |
+| Plex Recently Added |   |
+| Average Sensor |   |
+| Garmin Conenct |   |
+| ICS Calendar (iCalendar) |   |
+| Uptime Kuma |   |
+| Medisafe |   |
 
 #### Frontend
 <ul>
