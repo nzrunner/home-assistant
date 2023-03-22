@@ -32,7 +32,7 @@
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
 <br/>
-![Project Complete](https://img.shields.io/badge/Complete%3F-No-red)
+![Project Complete](https://img.shields.io/badge/Complete%3F-Yes-green)
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
@@ -284,7 +284,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 - [x] Write a Git Guide
 - [x] Adopt a git commit message convention
 - [x] Publish the lovelace-ui.yaml
-- [ ] Publish fake secrets.yaml for completeness
+- [x] Publish fake secrets.yaml for completeness
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
