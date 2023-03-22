@@ -345,6 +345,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 | A great tool for generating funky text file headers | https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration
 | Make cool shields | https://shields.io/
 | SVG Logos for popular brands to use with shields | https://simpleicons.org/
+| The base for this README | https://github.com/othneildrew/Best-README-Template
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
