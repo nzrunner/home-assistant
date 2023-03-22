@@ -95,24 +95,19 @@ Hopefully, as I have learned from others and "borrowed" sectons of their code, o
 
 Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowledgements section.
 
-### 1. Primary Dashboard
-![Product Name Screen Shot](images/home-assistant-preferred.png)
-### 2. Alerts Dashboard
-![Home Assistant Alerts](images/home-assistant-alerts-preferred.png)
-### 3. System Dashboard
-![Home Assistant System](images/home-assistant-system-preferred.png)
-### 4. Network Dashboard
-![Home Assistant Network](images/home-assistant-network-preferred.png)
-### 5. Security Dashboard
-![Home Assistant Security](images/home-assistant-security-preferred.png)
-### 6. Entertainment Dashboard
-![Home Assistant Entertainment](images/home-assistant-entertainment-preferred.png)
-### 7. Debugging Dashboard
-![Home Assistant Debugging](images/home-assistant-debugging-preferred.png)
-### 8. Docker Server Dashboard
-![Home Assistant Docker Server](images/home-assistant-docker-1-preferred.png)
-### 9. Docker Containers Dashboard
-![Home Assistant Docker Containers](images/home-assistant-docker-2-preferred.png)
+### Dashboards
+
+| **Preferred Theme** | **Alternate Theme**
+| :---: | :---:
+| ![Home Assistant](images/home-assistant-preferred.png) | ![Home Assistant](images/home-assistant-alternate.png) |
+| ![Alerts](images/home-assistant-alerts-preferred.png) | ![Alerts](images/home-assistant-alerts-alternate.png)
+| ![System](images/home-assistant-system-preferred.png) | ![System](images/home-assistant-system-alternate.png)
+! ![Network](images/home-assistant-network-preferred.png) | ![Network](images/home-assistant-network-alternate.png)
+! ![Security](images/home-assistant-security-preferred.png) | ![Security](images/home-assistant-security-alternate.png)
+! ![Entertainment](images/home-assistant-entertainment-preferred.png) | ![Entertainment](images/home-assistant-entertainment-alternate.png)
+! ![Debugging](images/home-assistant-debugging-preferred.png) | ![Debugging](images/home-assistant-debugging-alternate.png)
+! ![Docker Server](images/home-assistant-docker-1-preferred.png) | ![Docker Server](images/home-assistant-docker-1-alternate.png)
+| ![Docker Containers](images/home-assistant-docker-2-preferred.png) | ![Docker Containers](images/home-assistant-docker-2-alternate.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
