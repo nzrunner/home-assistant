@@ -85,11 +85,11 @@ I created this project to: -
 
 <ul>
 <li>Document my configuration (always a good thing)</li>
-<li>Have a backup of my configuration</li>
+<li>Have a backup of my configuration (antoher good thing)</li>
 <li>Contribute to the open-source community</li>
 </ul>
 
-As I continue to make improvements to my smart home, I will be updating my configuration regularly. Be sure to ⭐ my page and stay tuned for the latest updates.
+As I continue to make improvements to my smart home, I will be updating my configuration. Be sure to ⭐ my page and stay tuned for the latest updates.
 
 Hopefully, as I have learned from others and "borrowed" sectons of their code, others can benefit from my configuration.
 
