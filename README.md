@@ -343,7 +343,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 | Good source for Lovelace CCS variables, particularly colors | https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md |
 
 ### General
-! **Description** | **Link** |
+| **Description** | **Link** |
 | :--- | :--- |
 | A great tool for generating funky text file headers | https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration |
 | Make cool shields | https://shields.io/ |
