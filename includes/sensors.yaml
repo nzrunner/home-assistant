@@ -315,7 +315,7 @@
 # the custom component will need to be deleted
 - platform: radarr
   api_key: !secret radarr_api
-  host: 192.168.4.14
+  host: !secret plex_host
   port: !secret radarr_port
   days: 60
   ssl: false
@@ -325,7 +325,7 @@
     - upcoming
     - status
     - diskspace
-    - commands
+    #- commands
 
 #################################################################################
 # Auto Backup - On/Off
