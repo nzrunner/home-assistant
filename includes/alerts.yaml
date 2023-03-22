@@ -10,6 +10,7 @@
 #################################################################################
 # Alert
 # https://www.home-assistant.io/integrations/alert
+# DISABLED: No easy way to acknowledge an alert
 #################################################################################
 kitchen_door:
   name: Kitchen Door is open

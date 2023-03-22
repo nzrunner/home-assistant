@@ -16,5 +16,6 @@
 # Bluetooth Integration
 # This tracker discovers new devices on boot and tracks Bluetooth devices
 # https://www.home-assistant.io/integrations/bluetooth_tracker/
+# DISABLED: Was tracking too many of the neighbours devices
 #################################################################################
 - platform: bluetooth_tracker
