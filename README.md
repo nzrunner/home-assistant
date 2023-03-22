@@ -316,7 +316,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-! **Name** | **Handle** | **Link** |
+| **Name** | **Handle** | **Link** |
 | :--- | :--- | :--- |
 | Mark Matheson | @nzrunner | https://twitter.com/nzrunner |
 | Project Link | | https://github.com/nzrunner/home-assistant |
