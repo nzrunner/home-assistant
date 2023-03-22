@@ -101,7 +101,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 | **Preferred Theme** | **Alternate Theme**
 | :---: | :---:
-| ![Home Assistant](images/home-assistant-preferred.png) | ![Home Assistant](images/home-assistant-alternate.png) |
+| ![Home Assistant](images/home-assistant-preferred.png?raw=true) | ![Home Assistant](images/home-assistant-alternate.png) |
 | ![Alerts](images/home-assistant-alerts-preferred.png) | ![Alerts](images/home-assistant-alerts-alternate.png)
 | ![System](images/home-assistant-system-preferred.png) | ![System](images/home-assistant-system-alternate.png)
 | ![Network](images/home-assistant-network-preferred.png) | ![Network](images/home-assistant-network-alternate.png)
