@@ -34,6 +34,7 @@ secrets.yaml
 known_devices.yaml
 *.jpg
 *.png
+*.ttf
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
