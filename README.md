@@ -350,6 +350,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 | Make cool shields | https://shields.io/
 | SVG Logos for popular brands to use with shields | https://simpleicons.org/
 | The base for this README | https://github.com/othneildrew/Best-README-Template
+| Choose an open source license | https://choosealicense.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
