@@ -272,7 +272,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
   - [x] Improve the content in the About The Project section
   - [x] Update the Roadmap section
   - [x] Add a Devices section (with links)
-    - [x]] IoT devices
+    - [x] IoT devices
     - [x] Other devices
   - [x] Update Built-With section, describing the hardware and OS configuration
 - [x] Logo
@@ -283,7 +283,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 - [x] Redo screenshots with preferred theme colour
 - [x] Write a Git Guide
 - [x] Adopt a git commit message convention
-- [ ] Publish the lovelace-ui.yaml
+- [x] Publish the lovelace-ui.yaml
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
