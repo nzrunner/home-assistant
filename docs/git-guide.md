@@ -101,7 +101,8 @@ And `category` can be anything of your choice. If you use a type not found in th
 
 
 
-### Resources
+<!-- RESOURCES -->
+## Resources
 This is currently just a dumping ground for git recources that I have found.
 
 <ul>
