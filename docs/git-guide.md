@@ -99,6 +99,8 @@ Where `flags` is an optional comma-separated list of one or more of the followin
 
 And `category` can be anything of your choice. If you use a type not found in the list (but it still follows the same format of the message), it'll be grouped under `other`.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- RESOURCES -->
