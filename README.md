@@ -95,24 +95,24 @@ Hopefully, as I have learned from others and "borrowed" sectons of their code, o
 
 Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowledgements section.
 
-### Primary Dashboard
-[![Product Name Screen Shot][product-screenshot]](images/home-assistant.png)
-### Alerts Dashboard
-![Home Assistant Alerts](images/home-assistant-alerts.png)
-### System Dashboard
-![Home Assistant System](images/home-assistant-system.png)
-### Network Dashboard
-![Home Assistant Network](images/home-assistant-network.png)
-### Security Dashboard
-![Home Assistant Security](images/home-assistant-security.png)
-### Entertainment Dashboard
-![Home Assistant Entertainment](images/home-assistant-entertainment.png)
-### Debugging Dashboard
-![Home Assistant Debugging](images/home-assistant-debugging.png)
-### Docker Server Dashboard
-![Home Assistant Docker Server](images/home-assistant-docker-1.png)
-### Docker Containers Dashboard
-![Home Assistant Docker Containers](images/home-assistant-docker-2.png)
+### 1. Primary Dashboard
+![Product Name Screen Shot](images/home-assistant-preferred.png)
+### 2. Alerts Dashboard
+![Home Assistant Alerts](images/home-assistant-alerts-preferred.png)
+### 2. System Dashboard
+![Home Assistant System](images/home-assistant-system-preferred.png)
+### 4. Network Dashboard
+![Home Assistant Network](images/home-assistant-network-preferred.png)
+### 5. Security Dashboard
+![Home Assistant Security](images/home-assistant-security-preferred.png)
+### 6. Entertainment Dashboard
+![Home Assistant Entertainment](images/home-assistant-entertainment-preferred.png)
+### 7. Debugging Dashboard
+![Home Assistant Debugging](images/home-assistant-debugging-preferred.png)
+### 8. Docker Server Dashboard
+![Home Assistant Docker Server](images/home-assistant-docker-1-preferred.png)
+### 9. Docker Containers Dashboard
+![Home Assistant Docker Containers](images/home-assistant-docker-2-preferred.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -276,7 +276,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
   - [x] Design a project specific image (Canva)
 - [ ] Add Roadmap items as Feature Requests in the Issues list
 - [x] Add a Change Log
-- [ ] Redo screenshots with preferred theme colour
+- [x] Redo screenshots with preferred theme colour
 - [x] Write a Git Guide
 - [x] Adopt a git commit message convention
 - [ ] Publish the lovelace-ui.yaml
