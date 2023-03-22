@@ -321,11 +321,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
-<ul>
-<li>Mark Matheson - [@nzrunner](https://twitter.com/nzrunner)</li>
-<li>Project Link: https://github.com/nzrunner/home-assistant</li>
-</ul>
+! **Name** | **Handle** | **Link** |
+| :--- | :--- | :--- |
+| Mark Matheson | @nzrunner | https://twitter.com/nzrunner |
+| Project Link | | https://github.com/nzrunner/home-assistant |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -335,20 +334,20 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Acknowledgments
 
 ### Home Assistant
-<ul>
-<li>IOS Theme - The theme I use (https://github.com/basnijholt/lovelace-ios-themes/)</li>
-<li>A really well documented Home Assistant configuration (https://github.com/basnijholt/home-assistant-config)</li>
-<li>Swakes - Home Assistant gave me some design inspiration (https://github.com/pqpxo/SWAKES_hassio)</li>
-<li>Metbril's Home Assistant Configuration - Review Github workflow actions (https://github.com/metbril/home-assistant-config)</li>
-<li>Good source for Lovelace CCS variables, particularly colors (https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md)</li>
-</ul>
+! **Description** | **Link** |
+| :--- | :--- |
+! IOS Theme - The theme I use | https://github.com/basnijholt/lovelace-ios-themes/ |
+! A really well documented Home Assistant configuration } https://github.com/basnijholt/home-assistant-config |
+! Swakes - Home Assistant gave me some design inspiration | https://github.com/pqpxo/SWAKES_hassio !
+! Metbril's Home Assistant Configuration - Review Github workflow actions | https://github.com/metbril/home-assistant-config |
+! Good source for Lovelace CCS variables, particularly colors | https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md |
 
 ### General
-<ul>
-<li>A great tool for generating funky text file headers (https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration)</li>
-<li>Make cool shields (https://shields.io/)</li>
-<li>SVG Logos for popular brands to use with shields (https://simpleicons.org/)</li>
-</ul>
+! **Description** | **Link** |
+| :--- | :--- |
+| A great tool for generating funky text file headers | https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration |
+| Make cool shields | https://shields.io/ |
+| SVG Logos for popular brands to use with shields | https://simpleicons.org/ |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
