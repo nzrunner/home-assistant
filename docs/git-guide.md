@@ -107,7 +107,7 @@ This is currently just a dumping ground for git recources that I have found.
 <li>https://herewecode.io/blog/a-beginners-guide-to-git-how-to-write-a-good-commit-message/</li>
 <li>https://herewecode.io/blog/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/</li>
 <li>https://keepachangelog.com/en/1.1.0/</li>
-<li>https://www.conventionalcommits.org/en/about/</li>
+<li>https://www.conventionalcommits.org/en/v1.0.0/</li>
 <li>https://udacity.github.io/git-styleguide/</li>
 </ul>
 
