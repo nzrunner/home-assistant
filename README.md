@@ -120,44 +120,40 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 ### Built With
 
-[![Home Assistant][Hass.io]][Hass-url]
-*
-[![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com)
-*
-[![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
+[![Home Assistant][Hass.io]][Hass-url] [![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Integrations
 | **Integration** | **Repository** |
 | :--- | :--- |
-| Apple iCloud |   |
-| Apple TV |   |
-| Brother Printer |   |
-| Sony Bravia TV |   |
-| HD HomeRun DMS |   |
-| My IP |   |
-| Google Cast |   |
-| Home Assistant Supervisor |   |
-| HomeKit |   |
-| Local IP |   |
-| Mobile App |   |
-| Philips Hue |   |
-| Pi-Hole |   |
-| Plex Media Server |   |
-| Radarr |   |
-| SABnzbd |   |
-| Season |   |
-| Sonarr |   |
-| Sonos |   |
-| SpeedTest |   |
-| Sun |   |
-| Synology DSM |   |
-| Tautulli |   |
-| TP-Link Kasa Smart |   |
-| Unifi Network |   |
-| Uptime |   |
-| CONBEE II (Zigbee Home Automation) |   |
+| Apple iCloud | https://www.home-assistant.io/integrations/icloud |
+| Apple TV | https://www.home-assistant.io/integrations/apple_tv |
+| Brother Printer | https://www.home-assistant.io/integrations/brother |
+| Sony Bravia TV | https://www.home-assistant.io/integrations/dlna_dmr |
+| HD HomeRun DMS | https://www.home-assistant.io/integrations/dlna_dms |
+| My IP | https://www.home-assistant.io/integrations/dnsip |
+| Google Cast | https://www.home-assistant.io/integrations/cast |
+| Home Assistant Supervisor | https://www.home-assistant.io/integrations/hassio |
+| HomeKit | https://www.home-assistant.io/integrations/homekit |
+| Local IP | https://www.home-assistant.io/integrations/local_ip |
+| Mobile App | https://www.home-assistant.io/integrations/mobile_app |
+| Philips Hue | https://www.home-assistant.io/integrations/hue |
+| Pi-Hole | https://www.home-assistant.io/integrations/pi_hole |
+| Plex Media Server | https://www.home-assistant.io/integrations/pi_hole |
+| Radarr | https://www.home-assistant.io/integrations/radarr |
+| SABnzbd | https://www.home-assistant.io/integrations/sabnzbd |
+| Season | https://www.home-assistant.io/integrations/season |
+| Sonarr | https://www.home-assistant.io/integrations/sonarr |
+| Sonos | https://www.home-assistant.io/integrations/sonos |
+| SpeedTest | https://www.home-assistant.io/integrations/speedtestdotnet |
+| Sun | https://www.home-assistant.io/integrations/sun |
+| Synology DSM | https://www.home-assistant.io/integrations/synology_dsm |
+| Tautulli | https://www.home-assistant.io/integrations/tautulli |
+| TP-Link Kasa Smart | https://www.home-assistant.io/integrations/tplink |
+| Unifi Network | https://www.home-assistant.io/integrations/unifi |
+| Uptime | https://www.home-assistant.io/integrations/uptime |
+| CONBEE II (Zigbee Home Automation) | https://www.home-assistant.io/integrations/zha |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,28 +181,29 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Medisafe | https://github.com/c99koder/ha-medisafe |
 
 #### Frontend
-| **Custom Component** | **Repository** |
-| :--- | :--- |
-| Multiple-Entity-Row |  |
-| Bar Card |  |
-| Button-Card |  |
-| Decluttering Card |  |
-| ZHA Network Card |  |
-| Text Divider Row |  |
-| Mini Media Player |  |
-| Auto-Entities |  |
-| Card-Mod |  |
-| Fold-Entity-Row |  |
-| Slider-Entity-Row |  |
-| Template-Entity-Row |  |
-| IOS Themes - Dark Mode and Light Mode |  |
-| Custom Brand Icons |  |
-| Digital Clock |  |
-| BigNumber-Card |  |
-| Battery State Card |  |
-| Hass Hue Icons |  |
-| BOM Radar Card |  |
-| Platinum Weather Card |  |
+| **Custom Component** | **Repository** | **Notes** |
+| :--- | :--- | :--- |
+| Multiple Entity Row | https://github.com/benct/lovelace-multiple-entity-row |
+| Bar Card | https://github.com/custom-cards/bar-card |
+| Button Card | https://github.com/custom-cards/button-card | Major Use |
+| Decluttering Card | https://github.com/custom-cards/decluttering-card | No used |
+| ZHA Network Card | https://github.com/dmulcahey/zha-network-card |
+| Mini Media Player | https://github.com/kalkih/mini-media-player |
+| Auto Entities | https://github.com/thomasloven/lovelace-auto-entities |
+| Card Mod | https://github.com/thomasloven/lovelace-card-mod |
+| Fold Entity Row | https://github.com/thomasloven/lovelace-fold-entity-row |
+| Slider Entity Row | https://github.com/thomasloven/lovelace-slider-entity-row |
+| IOS Themes - Dark Mode and Light Mode | https://github.com/basnijholt/lovelace-ios-themes | My primary theme |
+| Custom Brand Icons | https://github.com/elax46/custom-brand-icons |
+| Digital Clock | https://github.com/wassy92x/lovelace-digital-clock |
+| Custom Animated Weather Card | https://github.com/DavidFW1960/bom-weather-card | Swapped to Platinum Weather Card |
+| Battery State Card | https://github.com/maxwroc/battery-state-card |
+| Mini Graph Card | https://github.com/kalkih/mini-graph-card |
+| Upcoming Media Card | https://github.com/custom-cards/upcoming-media-card |
+| Layout Card | https://github.com/thomasloven/lovelace-layout-card |
+| Hass Hue Icons | https://github.com/arallsopp/hass-hue-icons |
+| Metrology - Metro and Fluent Themese | https://github.com/Madelena/Metrology-for-Hass | My alternate theme |
+| Platinum Weather Card | https://github.com/Makin-Things/platinum-weather-card |
 
 #### Automation
 | **Automation** | **Repository** |
@@ -230,32 +227,35 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Ubiquiti Unifi AP Lite | https://ui.com/wi-fi |
 | Ubiquiti Unifi Switches | https://ui.com/switching |
 | Ubiquiti Unifi Cloud Key GEN 1 | https://ui.com/consoles |
-| Brother L8250CDN Printer |  |
-| Synology DS1812+ NAS |  |
-| Synology DS1618+ NAS |  |
+| Brother L8250CDN Printer | No longer available |
+| Synology DS1812+ NAS | No longer available |
+| Synology DS1618+ NAS | No longer available |
 | Sonos One Speakers | https://www.sonos.com/en-au/shop/one-sl |
 | Google Home Mini Speakers | https://store.google.com/product/google_nest_mini?hl=en-AU |
 | Apple iPhone | https://www.apple.com/au/iphone/ |
 | Apple iPad | https://www.apple.com/au/ipad/ |
 
 #### IOT
-| **Equipment** | **Number** | **Website** |
-| :--- | :---: | :--- |
-| Aqara Motion Sensors | 8 |  |
-| Aqara Door Sensors | 8 |  |
-| Aqara Temperature Sensors | 4 |  |
-| Aqara Mini Switch | 1 |  |
-| Aqara Blind Controller | 1 |  |
-| Philips Hue Smart Bulbs | 14 |  |
-| Philips Hue Motion Sensors | 2 |  |
-| Philips Hue Dimmer Switch | 1 |  |
-| IKEA Tradfri Motion Sensors | 2 |  |
-| IKEA Tradfri Buttons | 2 |  |
-| IKEA Tradfri Smart Bulbs | 2 |  |
-| Arlec Smart Plugs | 8 |  |
-| TP-Link HS110 Smart Plug | 1 |  |
-| TP-Link KP303 Smart Powerboard | 1 |  |
-| Security Cameras | 2 |  |
+| **Equipment** | **Number** | **Website** | **Notes** |
+| :--- | :---: | :--- | :--- |
+| Aqara Motion Sensors | 8 | https://www.aqara.com/en/human_motion_sensor.html |
+| Aqara Door Sensors | 8 | https://www.aqara.com/en/door_and_window_sensor.html |
+| Aqara Temperature Sensors | 4 | https://www.aqara.com/en/temperature_humidity_sensor.html |
+| Aqara Mini Switch | 1 | https://www.aqara.com/en/smart_wireless_mini_switch.html |
+| Aqara Blind Controller | 1 | https://www.aqara.com/en/product/roller-shade-driver-e1 |
+| Philips Hue Bridge | 1 | https://www.philips-hue.com/en-au/p/hue-bridge/8719514342569 |
+| Philips Hue Smart Bulbs | 13 | https://www.philips-hue.com/en-au/products/smart-light-bulbs |
+| Philips Hue Light Strips | 1 | https://www.philips-hue.com/en-au/products/smart-light-strips |
+| Philips Hue Motion Sensors | 2 | https://www.philips-hue.com/en-au/p/hue-motion-sensor/8719514342149 |
+| Philips Hue Dimmer Switch | 1 | https://www.philips-hue.com/en-au/p/hue-dimmer-switch--latest-model-/8719514274631 |
+| IKEA Tradfri Motion Sensors | 2 | https://www.ikea.com/au/en/p/tradfri-wireless-motion-sensor-smart-white-90370469/ |
+| IKEA Tradfri Buttons | 2 | https://www.ikea.com/au/en/p/tradfri-shortcut-button-white-smart-80356384/ |
+| IKEA Tradfri Smart Bulbs | 2 | https://www.ikea.com/au/en/p/tradfri-led-bulb-e14-470-lumen-smart-wireless-dimmable-white-spectrum-globe-20489730/ |
+| IKIEA Tradfri Signal repeater | 1 | https://www.ikea.com/au/en/p/tradfri-signal-repeater-30400412/ |
+| Arlec Smart Plugs | 8 | https://www.bunnings.com.au/arlec-grid-connect-smart-plug-in-socket-with-energy-meter-4-pack_p0273368 |
+| TP-Link HS110 Smart Plug | 1 | https://www.tp-link.com/au/home-networking/smart-plug/hs110/ |
+| TP-Link KP303 Smart Powerboard | 1 | https://www.tp-link.com/au/home-networking/smart-plug/kp303/ | Garbage |
+| Security Cameras | 2 | N/A |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -266,13 +266,13 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 - [ ] Review project files for items that should be in the secrets.yaml file
 - [x] Disable Bluetooth Tracker
-- [ ] Update the README
-  - [ ] Complete Integrations list (with links)
-  - [ ] Complete Custom Components section (with links)
+- [x] Update the README
+  - [x] Complete Integrations list (with links)
+  - [x] Complete Custom Components section (with links)
   - [x] Improve the content in the About The Project section
   - [x] Update the Roadmap section
-  - [ ] Add a Devices section (with links)
-    - [ ] IoT devices
+  - [x] Add a Devices section (with links)
+    - [x]] IoT devices
     - [x] Other devices
   - [x] Update Built-With section, describing the hardware and OS configuration
 - [x] Logo
