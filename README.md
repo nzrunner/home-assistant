@@ -165,24 +165,24 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 #### Integrations
 | **Custom Component** | **Repository** |
 | :--- | :--- |
-| HACS | (https://github.com/hacs/integration) |
-| Unifi Gateway |   |
-| Auto Backup |   |
-| Local Tuya |   |
-| Font Awesome |   |
-| Browser Mod |   |
-| Monitor Docker |   |
-| Simple Icons |   |
-| Garbage Collection |   |
-| Radarr Upcoming Media |   |
-| Sonarr Upcoming Media |   |
-| Bereau of Meteorology |   |
-| Plex Recently Added |   |
-| Average Sensor |   |
-| Garmin Conenct |   |
-| ICS Calendar (iCalendar) |   |
-| Uptime Kuma |   |
-| Medisafe |   |
+| HACS | https://github.com/hacs/integration |
+| Unifi Gateway | https://github.com/custom-components/sensor.unifigateway |
+| Auto Backup | https://github.com/jcwillox/hass-auto-backup |
+| Local Tuya | https://github.com/rospogrigio/localtuya |
+| Font Awesome | https://github.com/thomasloven/hass-fontawesome |
+| Browser Mod | https://github.com/thomasloven/hass-browser_mod |
+| Monitor Docker | https://github.com/ualex73/monitor_docker |
+| Simple Icons | https://github.com/vigonotion/hass-simpleicons |
+| Garbage Collection | https://github.com/bruxy70/Garbage-Collection |
+| Radarr Upcoming Media | https://github.com/custom-components/sensor.radarr_upcoming_media |
+| Sonarr Upcoming Media | https://github.com/custom-components/sensor.sonarr_upcoming_media |
+| Bereau of Meteorology | https://github.com/bremor/bureau_of_meteorology |
+| Plex Recently Added | https://github.com/custom-components/sensor.plex_recently_added |
+| Average Sensor | https://github.com/Limych/ha-average |
+| Garmin Conenct | https://github.com/cyberjunky/home-assistant-garmin_connect |
+| ICS Calendar (iCalendar) | https://github.com/franc6/ics_calendar |
+| Uptime Kuma | https://github.com/meichthys/uptime_kuma |
+| Medisafe | https://github.com/c99koder/ha-medisafe |
 
 #### Frontend
 | **Custom Component** | **Repository** |
@@ -211,13 +211,14 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 #### Automation
 | **Automation** | **Repository** |
 | :--- | :--- |
-| Config Check |  |
+| Config Check | https://github.com/apop880/config-check |
 
 #### Addons
 | **Addon** | **Repository** |
 | :--- | :--- |
-| VS Code |  |
-| Terminal and SSH |  |
+| AppDaemon | https://github.com/hassio-addons/addon-appdaemon |
+| VS Code | https://github.com/hassio-addons/addon-vscode |
+| Terminal and SSH | https://github.com/home-assistant/hassio-addons/tree/master/ssh |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -238,23 +239,23 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Apple iPad | https://www.apple.com/au/ipad/ |
 
 #### IOT
-| **Equipment** | **Website** |
-| :--- | :--- |
-| Aqara Motion Sensors |   |
-| Aqara Door Sensors |   |
-| Aqara Temperature Sensors |   |
-| Aqara Mini Switch |   |
-| Aqara Blind Controller |   |
-| Philips Hue Smart Bulbs |   |
-| Philips Hue Motion Sensors |   |
-| Philips Hue Dimmer Switch |   |
-| IKEA Tradfri Motion Sensors |   |
-| IKEA Tradfri Buttons |   |
-| IKEA Tradfri Smart Bulbs |   |
-| Arlec Smart Plugs |   |
-| TP-Link HS110 Smart Plug |   |
-| TP-Link KP303 Smart Powerboard |   |
-| Security Cameras (x 2) |   |
+| **Equipment** | **Number** | **Website** |
+| :--- | :---: | :--- |
+| Aqara Motion Sensors | 8 |  |
+| Aqara Door Sensors | 8 |  |
+| Aqara Temperature Sensors | 4 |  |
+| Aqara Mini Switch | 1 |  |
+| Aqara Blind Controller | 1 |  |
+| Philips Hue Smart Bulbs | 14 |  |
+| Philips Hue Motion Sensors | 2 |  |
+| Philips Hue Dimmer Switch | 1 |  |
+| IKEA Tradfri Motion Sensors | 2 |  |
+| IKEA Tradfri Buttons | 2 |  |
+| IKEA Tradfri Smart Bulbs | 2 |  |
+| Arlec Smart Plugs | 8 |  |
+| TP-Link HS110 Smart Plug | 1 |  |
+| TP-Link KP303 Smart Powerboard | 1 |  |
+| Security Cameras | 2 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
