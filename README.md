@@ -186,7 +186,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Multiple Entity Row | https://github.com/benct/lovelace-multiple-entity-row |
 | Bar Card | https://github.com/custom-cards/bar-card |
 | Button Card | https://github.com/custom-cards/button-card | Major Use |
-| Decluttering Card | https://github.com/custom-cards/decluttering-card | No used |
+| Decluttering Card | https://github.com/custom-cards/decluttering-card | Not currently used |
 | ZHA Network Card | https://github.com/dmulcahey/zha-network-card |
 | Mini Media Player | https://github.com/kalkih/mini-media-player |
 | Auto Entities | https://github.com/thomasloven/lovelace-auto-entities |
