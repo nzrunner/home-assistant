@@ -19,10 +19,14 @@ deps
 
 # Specific keeps
 !.gitkeep
-!*.yaml
 !.gitignore
+!.HA_VERSION
+!*.yaml
 !*.md
+!LICENSE.txt
 !includes
+!docs
+!blueprints
 
 # Specific file ignores
 ip_bans.yaml
