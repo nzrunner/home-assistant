@@ -46,7 +46,6 @@
     <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
     <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug">Report Bug</a>
     ·
     <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement">Request Feature</a>
