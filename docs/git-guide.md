@@ -51,6 +51,8 @@
     <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement">Request Feature</a>
     ·
     <a href="/docs/git-guide.md">Git Guide</a>
+    ·
+    <a href="/CHANGELOG.md">ChangeLog</a>
   </p>
 </div>
 
