@@ -59,7 +59,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a><li>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#dashboards">Dashboards</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#integrations">Integrations</a></li>
@@ -98,15 +98,15 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 | **Preferred Theme** | **Alternate Theme**
 | :---: | :---:
-| ![Home Assistant](images/home-assistant-preferred.png?raw=true) | ![Home Assistant](images/home-assistant-alternate.png) |
-| ![Alerts](images/home-assistant-alerts-preferred.png) | ![Alerts](images/home-assistant-alerts-alternate.png)
-| ![System](images/home-assistant-system-preferred.png) | ![System](images/home-assistant-system-alternate.png)
-| ![Network](images/home-assistant-network-preferred.png) | ![Network](images/home-assistant-network-alternate.png)
-| ![Security](images/home-assistant-security-preferred.png) | ![Security](images/home-assistant-security-alternate.png)
-| ![Entertainment](images/home-assistant-entertainment-preferred.png) | ![Entertainment](images/home-assistant-entertainment-alternate.png)
-| ![Debugging](images/home-assistant-debugging-preferred.png) | ![Debugging](images/home-assistant-debugging-alternate.png)
-| ![Docker Server](images/home-assistant-docker-1-preferred.png) | ![Docker Server](images/home-assistant-docker-1-alternate.png)
-| ![Docker Containers](images/home-assistant-docker-2-preferred.png) | ![Docker Containers](images/home-assistant-docker-2-alternate.png)
+| ![Home Assistant](images/home-assistant-preferred.png?raw=true) | ![Home Assistant](images/home-assistant-alternate.png?raw=true) |
+| ![Alerts](images/home-assistant-alerts-preferred.png?raw=true) | ![Alerts](images/home-assistant-alerts-alternate.png?raw=true)
+| ![System](images/home-assistant-system-preferred.png?raw=true) | ![System](images/home-assistant-system-alternate.png?raw=true)
+| ![Network](images/home-assistant-network-preferred.png?raw=true) | ![Network](images/home-assistant-network-alternate.png?raw=true)
+| ![Security](images/home-assistant-security-preferred.png?raw=true) | ![Security](images/home-assistant-security-alternate.png?raw=true)
+| ![Entertainment](images/home-assistant-entertainment-preferred.png?raw=true) | ![Entertainment](images/home-assistant-entertainment-alternate.png?raw=true)
+| ![Debugging](images/home-assistant-debugging-preferred.png?raw=true) | ![Debugging](images/home-assistant-debugging-alternate.png?raw=true)
+| ![Docker Server](images/home-assistant-docker-1-preferred.png?raw=true) | ![Docker Server](images/home-assistant-docker-1-alternate.png?raw=true)
+| ![Docker Containers](images/home-assistant-docker-2-preferred.png?raw=true) | ![Docker Containers](images/home-assistant-docker-2-alternate.png?raw=true)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
