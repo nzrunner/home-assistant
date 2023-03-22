@@ -99,7 +99,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 ![Product Name Screen Shot](images/home-assistant-preferred.png)
 ### 2. Alerts Dashboard
 ![Home Assistant Alerts](images/home-assistant-alerts-preferred.png)
-### 2. System Dashboard
+### 3. System Dashboard
 ![Home Assistant System](images/home-assistant-system-preferred.png)
 ### 4. Network Dashboard
 ![Home Assistant Network](images/home-assistant-network-preferred.png)
