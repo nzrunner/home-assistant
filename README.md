@@ -102,11 +102,11 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | ![Home Assistant](images/home-assistant-preferred.png) | ![Home Assistant](images/home-assistant-alternate.png) |
 | ![Alerts](images/home-assistant-alerts-preferred.png) | ![Alerts](images/home-assistant-alerts-alternate.png)
 | ![System](images/home-assistant-system-preferred.png) | ![System](images/home-assistant-system-alternate.png)
-! ![Network](images/home-assistant-network-preferred.png) | ![Network](images/home-assistant-network-alternate.png)
-! ![Security](images/home-assistant-security-preferred.png) | ![Security](images/home-assistant-security-alternate.png)
-! ![Entertainment](images/home-assistant-entertainment-preferred.png) | ![Entertainment](images/home-assistant-entertainment-alternate.png)
-! ![Debugging](images/home-assistant-debugging-preferred.png) | ![Debugging](images/home-assistant-debugging-alternate.png)
-! ![Docker Server](images/home-assistant-docker-1-preferred.png) | ![Docker Server](images/home-assistant-docker-1-alternate.png)
+| ![Network](images/home-assistant-network-preferred.png) | ![Network](images/home-assistant-network-alternate.png)
+| ![Security](images/home-assistant-security-preferred.png) | ![Security](images/home-assistant-security-alternate.png)
+| ![Entertainment](images/home-assistant-entertainment-preferred.png) | ![Entertainment](images/home-assistant-entertainment-alternate.png)
+| ![Debugging](images/home-assistant-debugging-preferred.png) | ![Debugging](images/home-assistant-debugging-alternate.png)
+| ![Docker Server](images/home-assistant-docker-1-preferred.png) | ![Docker Server](images/home-assistant-docker-1-alternate.png)
 | ![Docker Containers](images/home-assistant-docker-2-preferred.png) | ![Docker Containers](images/home-assistant-docker-2-alternate.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
