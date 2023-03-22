@@ -13,13 +13,13 @@
 #################################################################################
 
 - name: Docker
-  url: tcp://192.168.4.48:2375
+  url: !secret mat_rpt_002_docker_url
   scan_interval: 45
 
 - name: Docker01
-  url: tcp://192.168.4.72:2375
+  url: !secret mat_doc_001_docker_url
   scan_interval: 45
 
 - name: MAT-DOC-002
-  url: tcp://192.168.4.73:2375
+  url: !secret mat_doc_002_docker_url
   scan_interval: 45
