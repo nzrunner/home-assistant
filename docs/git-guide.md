@@ -65,7 +65,6 @@
 From within the Home Assistant folder, run the following: -
 
 ```bash
-rm CHANGELOG.md
 changelog generate
 ```
 
