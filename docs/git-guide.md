@@ -11,11 +11,10 @@
 
 
 <!-- PROJECT LOGO -->
-<h3>Matho's Home Assistant Configuration</h3>
-<h4>Documenting my Home Assistant configuration</h4>
+# Matho's Home Assistant Configuration
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
-    <img src="../images/mark-matheson-digital-business-consultant.png" alt="Logo">
+    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
 
 <!-- PROJECT SHIELDS -->
@@ -46,7 +45,6 @@
   <p>
     <br />
     <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug">Report Bug</a>
     ·
