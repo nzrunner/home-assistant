@@ -264,7 +264,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Review project files for items that should be in the secrets.yaml file
+- [x] Review project files for items that should be in the secrets.yaml file
 - [x] Disable Bluetooth Tracker
 - [x] Update the README
   - [x] Complete Integrations list (with links)
@@ -278,7 +278,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 - [x] Logo
   - [x] Use a file stored in the project
   - [x] Design a project specific image (Canva)
-- [ ] Add Roadmap items as Feature Requests in the Issues list
+- [x] Add Roadmap items as Feature Requests in the Issues list
 - [x] Add a Change Log
 - [x] Redo screenshots with preferred theme colour
 - [x] Write a Git Guide
