@@ -49,7 +49,7 @@
     ·
     <a href="/docs/git-guide.md">Git Guide</a>
     ·
-    <a href="/CHANGELOG.md">GhangeLog</a>
+    <a href="/CHANGELOG.md">ChangeLog</a>
   </p>
 </div>
 
@@ -59,15 +59,12 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-        <li><a href="#integrations">Integrations</a></li>
-        <li><a href="#custom-components">Custom Components</a></li>
-        <li><a href="#devices">Devices</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a><li>
+    <li><a href="#dashboards">Dashboards</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#integrations">Integrations</a></li>
+    <li><a href="#custom-components">Custom Components</a></li>
+    <li><a href="#devices">Devices</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -97,7 +94,7 @@ Hopefully, as I have learned from others and "borrowed" sectons of their code, o
 
 Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowledgements section.
 
-### Dashboards
+## Dashboards
 
 | **Preferred Theme** | **Alternate Theme**
 | :---: | :---:
@@ -115,13 +112,14 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 
 
-### Built With
+## Built With
 
 [![Home Assistant][Hass.io]][Hass-url] [![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Integrations
+## Integrations
+
 | **Integration** | **Repository** |
 | :--- | :--- |
 | Apple iCloud | https://www.home-assistant.io/integrations/icloud |
@@ -154,8 +152,9 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Custom Components
-#### Integrations
+## Custom Components
+### Integrations
+
 | **Custom Component** | **Repository** |
 | :--- | :--- |
 | HACS | https://github.com/hacs/integration |
@@ -177,7 +176,8 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Uptime Kuma | https://github.com/meichthys/uptime_kuma |
 | Medisafe | https://github.com/c99koder/ha-medisafe |
 
-#### Frontend
+### Frontend
+
 | **Custom Component** | **Repository** | **Notes** |
 | :--- | :--- | :--- |
 | Multiple Entity Row | https://github.com/benct/lovelace-multiple-entity-row |
@@ -202,12 +202,14 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Metrology - Metro and Fluent Themese | https://github.com/Madelena/Metrology-for-Hass | My alternate theme |
 | Platinum Weather Card | https://github.com/Makin-Things/platinum-weather-card |
 
-#### Automation
+### Automation
+
 | **Automation** | **Repository** |
 | :--- | :--- |
 | Config Check | https://github.com/apop880/config-check |
 
-#### Addons
+### Addons
+
 | **Addon** | **Repository** |
 | :--- | :--- |
 | AppDaemon | https://github.com/hassio-addons/addon-appdaemon |
@@ -216,8 +218,9 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Devices
-#### Network
+## Devices
+### Network
+
 | **Equipment** | **Website** |
 | :--- | :--- |
 | Ubiquiti Unifi USG 3 Router | https://ui.com/consoles |
@@ -232,7 +235,8 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Apple iPhone | https://www.apple.com/au/iphone/ |
 | Apple iPad | https://www.apple.com/au/ipad/ |
 
-#### IOT
+### IOT
+
 | **Equipment** | **Number** | **Website** | **Notes** |
 | :--- | :---: | :--- | :--- |
 | Aqara Motion Sensors | 8 | https://www.aqara.com/en/human_motion_sensor.html |
