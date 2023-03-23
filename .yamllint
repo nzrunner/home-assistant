@@ -4,6 +4,7 @@ ignore: |
   blueprints/*/homeassistant/*.yaml
   custom_components/
   ip_bans.yaml
+  lovelace-ui.yaml
   secrets.yaml
   themes/
   .github/
