@@ -100,6 +100,23 @@ Where `flags` is an optional comma-separated list of one or more of the followin
 
 And `category` can be anything of your choice. If you use a type not found in the list (but it still follows the same format of the message), it'll be grouped under `other`.
 
+
+
+### Project Git Guide
+
+The types I am standardising on for this project are as follows: -
+
+* `docs`
+  * All changes to the README, GIT-GUIDE and CHANGELOG documents
+* `fix`
+  * Any issue tagged as 'bug' along with any code changes that fix a bug
+* `feat`
+  * Any issue tagged as 'feature request' along with any code changes that add a new feature
+* `chore`
+  * Any changes like adding images or untracked files
+* `other`
+  * Any other changes not covered by the above
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
