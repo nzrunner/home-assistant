@@ -52,7 +52,7 @@ template: !include includes/template.yaml
 # Others
 alarm_control_panel: !include includes/alarm.yaml
 ## DISABLED: No easy way to acknowledge an alert
-#alert: !include includes/alerts.yaml
+# alert: !include includes/alerts.yaml
 calendar: !include includes/calendar.yaml
 climate: !include includes/climate.yaml
 group: !include includes/groups.yaml
