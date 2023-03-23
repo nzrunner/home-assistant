@@ -153,6 +153,10 @@
     cameras_on_total:
       value_template: "{{ expand('group.security_cameras') | list | count }}"
 
+    # Count Buttons
+    buttons_on_total:
+      value_template: "{{ expand('group.buttons') | list | count }}"
+
     # Count Motion Sensors
     # Returns two numbers. First is on, second is total
     # If you want to extract the total number of motions you would use a template like this:

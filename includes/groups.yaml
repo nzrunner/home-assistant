@@ -23,6 +23,17 @@ security_cameras:
     - camera.mat_nas_002_courtyard_2
 
 #################################################################################
+# Buttons
+#################################################################################
+buttons:
+  name: Buttons
+  icon: mdi:button-pointer
+  entities:
+    - sensor.desktop_button_battery_2
+    - sensor.lumi_lumi_remote_b1acn01_battery
+    - sensor.laundry_button_battery
+
+#################################################################################
 # People
 #################################################################################
 residents:

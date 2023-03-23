@@ -13,7 +13,7 @@
 #################################################################################
 
 - name: Docker
-  url: !secret mat_rpt_002_docker_url
+  url: !secret mat_rpi_002_docker_url
   scan_interval: 45
 
 - name: Docker01
