@@ -1,19 +1,20 @@
 ---
-name: Home Assistant CI
-
+name: "Home Assistant CI"
 on:
   push:
   pull_request:
-  #schedule:
-  #  - cron: 0 2 * * *
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: 0 2 * * *
 
 jobs:
-  # YAML Lint
   yamllint:
-    name: 🧹 YAML Lint
+    name: YAML linter
     runs-on: ubuntu-latest
     steps:
-      - name: ⤵️ Check out configuration from GitHub
-        uses: actions/checkout@v2
-      - name: 🚀 Run yamllint
-        uses: frenck/action-yamllint@v1.4
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run Frenk's yamllint
+        uses: frenck/action-yamllint@v1.4.0
