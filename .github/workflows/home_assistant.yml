@@ -16,19 +16,32 @@ jobs:
     outputs:
       current_version: ${{ steps.currentver.outputs.current_version }}
     steps:
-      - name: Get config from GitHub
+      - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
-      - name: Get Installed Version from .HA_VERSION
+      - name: 🚀 Get Installed Version from .HA_VERSION
         id: currentver
         run: |
           HA_VERSION=$(<.HA_VERSION)
           echo $HA_VERSION
           echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT
+  
   yamllint:
     name: YAML linter
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
-      - name: Run Frenk's yamllint
+      - name: 🚀 Run yamllint
         uses: frenck/action-yamllint@v1.4.0
+
+  home-assistant:
+    name: Home Assistant Core Configuration Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out configuration from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run Home Assistant Configuration Check
+        uses: frenck/action-home-assistant@v1
+        with:
+          secrets: secrets-fake.yaml
+          version: stable
