@@ -1,7 +1,7 @@
 ---
 ignore: |
   automations.yaml
-  blueprints/*/homeassistant/*.yaml
+  blueprints/
   custom_components/
   ip_bans.yaml
   lovelace-ui.yaml
