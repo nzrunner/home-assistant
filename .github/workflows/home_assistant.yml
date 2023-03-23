@@ -23,9 +23,9 @@ jobs:
         run: |
           HA_VERSION=$(<.HA_VERSION)
           echo $HA_VERSION
-          echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT  yamllint:
-    
-  name: YAML linter
+          echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT
+  yamllint:
+    name: YAML linter
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
