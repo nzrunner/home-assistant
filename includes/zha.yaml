@@ -12,4 +12,4 @@
 zigpy_config:
   ota:
     otau_directory: /config/zigpy_ota
-    ikea_provider: true # Auto update Trådfri devices
+    ikea_provider: true  # Auto update Trådfri devices

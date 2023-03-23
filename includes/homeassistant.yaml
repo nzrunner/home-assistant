@@ -37,7 +37,7 @@ packages: !include_dir_named packages
 ## List of external URLs that can be fetched
 ## https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_urls
 allowlist_external_dirs:
-  - / # Home Assistant root
+  - /  # Home Assistant root
   - /config  # Home Assistant config
   - /tmp  # Home Assistant snapshots
 media_dirs:

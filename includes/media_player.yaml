@@ -37,9 +37,9 @@
         entity_id: media_player.sony_bravia_tv
   attributes:
     state: remote.sony_bravia_tv
-    #state: remote.living_room_apple_tv
-    #is_volume_muted: switch.living_room_mute
-    #volume_level: media_player.receiver|volume_level
+    # state: remote.living_room_apple_tv
+    # is_volume_muted: switch.living_room_mute
+    # volume_level: media_player.receiver|volume_level
     source: media_player.sony_bravia_tv|source
     source_list: media_player.sony_bravia_tv|source_list
   device_class: tv
