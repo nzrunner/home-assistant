@@ -31,9 +31,9 @@
     marsfield_uv_summary:
       friendly_name: Marsfield UV Summary
       value_template: >
-        UV Today: Sun Protection 
-        {{ as_timestamp(states('sensor.marsfield_uv_start_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }} 
-        to {{ as_timestamp(states('sensor.marsfield_uv_end_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }}, 
+        UV Today: Sun Protection
+        {{ as_timestamp(states('sensor.marsfield_uv_start_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }}
+        to {{ as_timestamp(states('sensor.marsfield_uv_end_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }},
         UV Index predicted to reach {{ states('sensor.marsfield_uv_max_index_0') }} [{{ states('sensor.marsfield_uv_category_0') }}]
       icon_template: mdi:weather-sunny-alert
     marsfield_fire_danger_summary:
@@ -177,7 +177,7 @@
     temperatures_on_total:
       value_template: "{{ expand('sensor.temperature_sensors') | list | count }}"
 
-      # Count Door Sensors
+    # Count Door Sensors
     # Returns two numbers. First is on, second is total
     # If you want to extract the total number of temperatures you would use a template like this:
     # {{ states('sensor.temperatures_on_total').split()[1] }}
@@ -187,67 +187,67 @@
     doors_on_total:
       value_template: "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}/{{ expand('binary_sensor.door_sensors_all') | list | count }}"
 
-    #----- Count Automations
+    # Count Automations
     count_automations:
       friendly_name: Automations
       value_template: "{{ states.automation | list | length }}"
 
-    #----- Count Scripts
+    # Count Scripts
     count_scripts:
       friendly_name: Scripts
       value_template: "{{ states.script| list | length }}"
 
-    #----- Count Device Trackers
+    # Count Device Trackers
     count_device_trackers:
       friendly_name: Device Trackers
       value_template: "{{ states.device_tracker | list | length }}"
 
-    #----- Count Binary Sensors
+    # Count Binary Sensors
     count_binary_sensors:
       friendly_name: Binary Sensors
       value_template: "{{ states.binary_sensor| list | length }}"
 
-    #----- Count Sensors
+    # Count Sensors
     count_sensors:
       friendly_name: Sensors
       value_template: "{{ states.sensor | list | length }}"
 
-    #----- Count Switches
+    # Count Switches
     count_switches:
       friendly_name: Switches
       value_template: "{{ states.switch | list | length }}"
 
-    #----- Count Zones
+    # Count Zones
     count_zones:
       friendly_name: Zones
       value_template: "{{ states.zone | list | length }}"
 
-    #----- Count Groups
+    # Count Groups
     count_groups:
       friendly_name: Groups
       value_template: "{{ states.group | list | length }}"
 
-    #----- Input Booleans
+    # Input Booleans
     count_input_booleans:
       friendly_name: Input Booleans
       value_template: "{{ states.input_boolean | list | length }}"
 
-    #----- Input Numbers
+    # Input Numbers
     count_input_numbers:
       friendly_name: Input Numbers
       value_template: "{{ states.input_number | list | length }}"
 
-    #----- Input Texts
+    # Input Texts
     count_input_texts:
       friendly_name: Input Texts
       value_template: "{{ states.input_text | list | length }}"
 
-    #----- Input Selects
+    # Input Selects
     count_input_selects:
       friendly_name: Input Selects
       value_template: "{{ states.input_select | list | length }}"
 
-    #----- Input Date Times
+    # Input Date Times
     count_input_datetimes:
       friendly_name: Input Date/Times
       value_template: "{{ states.input_datetime | list | length }}"
