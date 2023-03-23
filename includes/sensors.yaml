@@ -165,7 +165,8 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     motions_on_total:
-      value_template: "{{ expand('binary_sensor.motion_sensors_all') | selectattr('state','eq','on') | list | count }}/{{ expand('binary_sensor.motion_sensors_all') | list | count }}"
+      value_template: "{{ expand('binary_sensor.motion_sensors_all') | selectattr('state','eq','on') | list | count }}
+        /{{ expand('binary_sensor.motion_sensors_all') | list | count }}"
 
     # Count Temperature Sensors
     # Returns two numbers. First is on, second is total
@@ -185,7 +186,8 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     doors_on_total:
-      value_template: "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}/{{ expand('binary_sensor.door_sensors_all') | list | count }}"
+      value_template: "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}
+        /{{ expand('binary_sensor.door_sensors_all') | list | count }}"
 
     # Count Automations
     count_automations:
