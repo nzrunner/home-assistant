@@ -30,7 +30,7 @@ currency: AUD
 ## This file is in the includes folder so the following inclusion does not require includes/ in the path
 customize: !include customize.yaml
 ## Packages
-##https://www.home-assistant.io/docs/configuration/packages/
+## https://www.home-assistant.io/docs/configuration/packages/
 ## This file is in the includes folder so the following inclusion does not require includes/ in the path
 packages: !include_dir_named packages
 ## External Directories
@@ -38,7 +38,7 @@ packages: !include_dir_named packages
 ## https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_urls
 allowlist_external_dirs:
   - / # Home Assistant root
-  - /config # Home Assistant config
-  - /tmp # Home Assistant snapshots
+  - /config  # Home Assistant config
+  - /tmp  # Home Assistant snapshots
 media_dirs:
   local: /config/media
