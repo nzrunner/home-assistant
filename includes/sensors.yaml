@@ -256,18 +256,18 @@
 # Plex Recently Added - Movies
 #################################################################################
 - platform: plex_recently_added
-  name: Recently Added Movies # will create sensor.recently_added_movies
+  name: Recently Added Movies  # will create sensor.recently_added_movies
   token: !secret plex_token
   host: !secret plex_host
   port: !secret plex_port
   section_types:
     - movie
 
-#################################################################################=
+#################################################################################
 # Plex Recently Added - TV Shows
-#################################################################################=
+#################################################################################
 - platform: plex_recently_added
-  name: Recently Added TV # will create sensor.recently_added_tv
+  name: Recently Added TV  # will create sensor.recently_added_tv
   token: !secret plex_token
   host: !secret plex_host
   port: !secret plex_port
@@ -297,7 +297,7 @@
   days: 60
   ssl: false
   max: 3
-  #theaters: true
+  # theaters: true
 
 #################################################################################
 # Lidarr Upcoming
@@ -329,7 +329,7 @@
     - upcoming
     - status
     - diskspace
-    #- commands
+    # - commands
 
 #################################################################################
 # Auto Backup - On/Off

@@ -134,14 +134,14 @@ all_door_notifications:
     - automation.carport_door_notify
     - automation.fridge_door_notify
     - automation.front_gate_notify
-#heaters:
+# heaters:
 #  name: Heaters
 #  icon: mdi:radiator
 #  entities:
 #    - switch.plug_3_on_off
 #    - switch.plug_2_on_off
 
-#motion_sensors:
+# motion_sensors:
 #  name: Motion Sensors
 #  icon: mdi:motion-sensor
 #  entities:
@@ -153,7 +153,7 @@ all_door_notifications:
 #    - binary_sensor.bedroom_motion_ias_zone
 #    - binary_sensor.toilet_motion_ias_zone
 
-#lights:
+# lights:
 #  name: Lights
 #  icon: mdi:lamp
 #  entities:
@@ -172,7 +172,7 @@ all_door_notifications:
 #    - light.hue_lightstrip_plus_1
 #    - light.hue_go_1
 
-#temperature_sensors:
+# temperature_sensors:
 #  name: Temperature Sensors
 #  icon: mdi:thermometer
 #  entities:
@@ -183,7 +183,7 @@ all_door_notifications:
 #    - sensor.bathroom_temperature
 #    - sensor.courtyard_temperature
 
-#door_sensors:
+# door_sensors:
 #  name: Door Sensors
 #  icon: mdi:door-closed
 #  entities:
@@ -195,7 +195,7 @@ all_door_notifications:
 #    - binary_sensor.side_sliding_door_open_close
 #    - binary_sensor.front_sliding_door_open_closed
 
-#lights-inside:
+# lights-inside:
 #  name: Inside lights
 #  icon: mdi:lamp
 #  entities:
@@ -208,7 +208,7 @@ all_door_notifications:
 #    - light.hue_lightstrip_plus_1
 #    - light.hue_go_1
 
-#lights-outside:
+# lights-outside:
 #  name: Outside lights
 #  icon: mdi:lamp
 #  entities:
@@ -216,7 +216,7 @@ all_door_notifications:
 #    - light.courtyard_2
 #    - light.front_door_2
 
-#lights-upstairs:
+# lights-upstairs:
 #  name: Upstairs lights
 #  icon: mdi:lamp
 #  entities:
@@ -226,7 +226,7 @@ all_door_notifications:
 #    - light.toilet
 #    - light.hue_lightstrip_plus_1
 
-#lights-downstairs:
+# lights-downstairs:
 #  name: Downstairs lights
 #  icon: mdi:lamp
 #  entities:
@@ -234,7 +234,7 @@ all_door_notifications:
 #    - light.living_room
 #    - light.hue_go_1
 
-#all-ghm:
+# all-ghm:
 #  name: All GHMs
 #  icon: mdi:speaker
 #  entities:
@@ -242,8 +242,8 @@ all_door_notifications:
 #    - media_player.living_room_speaker
 #    - media_player.master_bedroom_speaker
 
-#DISABLED - Using auto-entities card instead
-#battery:
+# DISABLED - Using auto-entities card instead
+# battery:
 #  name: Battery
 #  icon: mdi:battery
 #  entities:
