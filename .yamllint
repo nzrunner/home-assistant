@@ -1,4 +1,3 @@
----
 ignore: |
   automations.yaml
   blueprints/
