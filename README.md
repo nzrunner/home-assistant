@@ -296,9 +296,14 @@ See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a f
 <!-- CONTRIBUTING -->
 ## Contributing
 
+Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [https://github.com/nzrunner/home-assistant](https://github.com/nzrunner/home-assistant) :sparkles:.
+
+Read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
+
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
