@@ -32,6 +32,7 @@
 [![MIT License][license-shield]][license-url]
 <br/>
 ![Project Complete](https://img.shields.io/badge/Complete%3F-Yes-green)
+[![Home Assistant CI][homeassistantci-shield]][homeassistantci]
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
@@ -365,3 +366,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [Raspberry-Pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
 [Hass-url]: https://www.home-assistant.io/
+[homeassistantci-shield]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml/badge.svg
+[homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
