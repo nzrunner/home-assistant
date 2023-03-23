@@ -113,7 +113,7 @@ The types I am standardising on for this project are as follows: -
 * `feat`
   * Any issue tagged as 'feature request' along with any code changes that add a new feature
 * `chore`
-  * Any changes like adding images or untracked files
+  * Any changes like system updates, adding images or untracked files
 * `other`
   * Any other changes not covered by the above
 
