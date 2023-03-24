@@ -65,10 +65,9 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [Matho's Home Assistant Configuration](#mathos-home-assistant-configuration)
-  - [Resources](#resources)
-    - [General](#general)
-    - [GitHub](#github)
+- [Resources](#resources)
+  - [General](#general)
+  - [GitHub](#github)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
