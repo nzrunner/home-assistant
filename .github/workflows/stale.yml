@@ -19,7 +19,7 @@ jobs:
     - uses: actions/stale@v8
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 
+        stale-issue-message:
           This issue has been identified as stale because it has gone 60 days with no activity.
 
           The issue will be closed in 5 days. If this is incorrect, simply comment on the issue, or remove the stale label.

@@ -23,7 +23,7 @@ jobs:
           HA_VERSION=$(<.HA_VERSION)
           echo $HA_VERSION
           echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT
-  
+
   yamllint:
     name: 🧹 Run YAML Lint
     needs: [ha_version]
@@ -46,7 +46,7 @@ jobs:
         continue-on-error: true
         with:
           args: "remark --no-stdout --color --frail --use preset-lint-recommended ."
-  
+
   prettier:
     name: 🧹 Run Prettier
     needs: [remarklint]
@@ -64,7 +64,7 @@ jobs:
           # dry: True
           # Do NOT run against YAML files. Code changes are nasty
           prettier_options: --write **/*.md
-  
+
   home-assistant:
     name: ✅ Home Assistant Core ${{ matrix.version }} Check
     needs: [prettier]
@@ -82,7 +82,7 @@ jobs:
           touch ./home-assistant.log
           touch ./fake_id_rsa
           touch ./fake_cert.pem
-      
+
       - name: 📁 Create empty custom components folder
         run: |
           mkdir -p ./custom_components
@@ -96,27 +96,27 @@ jobs:
         run: |
           git clone https://github.com/JackJPowell/sensor.lidarr_upcoming_media
           mv -v sensor.lidarr_upcoming_media/custom_components/* ./custom_components
-      
+
       - name: 📥 Clone custom component - Monitor Docker
         run: |
           git clone https://github.com/ualex73/monitor_docker
           mv -v monitor_docker/custom_components/* ./custom_components
-      
+
       - name: 📥 Clone custom component - Plex Recently Added
         run: |
           git clone https://github.com/custom-components/sensor.plex_recently_added
           mv -v sensor.plex_recently_added/custom_components/* ./custom_components
-      
+
       - name: 📥 Clone custom component - Radarr Upcoming Media
         run: |
           git clone https://github.com/custom-components/sensor.radarr_upcoming_media
           mv -v sensor.radarr_upcoming_media/custom_components/* ./custom_components
-      
+
       - name: 📥 Clone custom component - Sonarr Upcoming Media
         run: |
           git clone https://github.com/custom-components/sensor.sonarr_upcoming_media
           mv -v sensor.sonarr_upcoming_media/custom_components/* ./custom_components
-      
+
       - name: 📥 Clone custom component - UniFi gateway
         run: |
           git clone https://github.com/custom-components/sensor.unifigateway

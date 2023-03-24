@@ -113,7 +113,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 ## Built With
 
-[![Home Assistant][Hass.io]][Hass-url] [![Raspberry Pi][Raspberry-Pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
+[![Home Assistant][hass.io]][hass-url] [![Raspberry Pi][raspberry-pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -359,8 +359,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
 [last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=for-the-badge
-[Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
-[Raspberry-Pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
+[hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
+[raspberry-pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
 [homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=for-the-badge
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
 
@@ -373,6 +373,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
-[Hass-url]: https://www.home-assistant.io/
+[hass-url]: https://www.home-assistant.io/
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
 [home-assistant]: https://home-assistant.io

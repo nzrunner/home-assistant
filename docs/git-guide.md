@@ -223,8 +223,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
 [last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg
 [product-screenshot]: images/home-assistant.png
-[Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
-[Hass-url]: https://www.home-assistant.io/
+[hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
+[hass-url]: https://www.home-assistant.io/
 
 <!--
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

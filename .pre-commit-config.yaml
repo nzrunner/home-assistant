@@ -5,7 +5,7 @@
 exclude: ^(custom_components|www/community)/
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.4.0
     hooks:
       - id: check-json
       - id: check-case-conflict
@@ -26,3 +26,4 @@ repos:
     rev: v2.5.1
     hooks:
       - id: prettier
+        types: [markdown]
