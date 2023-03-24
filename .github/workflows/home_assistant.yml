@@ -35,13 +35,66 @@ jobs:
         uses: frenck/action-yamllint@v1.4.0
 
   home-assistant:
-    name: Home Assistant Core Configuration Check
+    name: Home Assistant Core ${{ matrix.version }} Configuration Check
+    needs: [yamllint, ha_version]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["${{needs.ha_version.outputs.current_version}}", "stable"]
     steps:
-      - name: ⤵️ Check out configuration from GitHub
+      - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
-      - name: 🚀 Run Home Assistant Configuration Check
-        uses: frenck/action-home-assistant@v1
+
+      - name: 📄 Create fake empty files
+        run: |
+          touch ./home-assistant_v2.db
+          touch ./home-assistant.log
+          touch ./fake_id_rsa
+          touch ./fake_cert.pem
+      
+      - name: 📁 Create empty custom components folder
+        run: |
+          mkdir -p ./custom_components
+
+      - name: 📥 Clone custom component - Average
+        run: |
+          git clone https://github.com/Limych/ha-average
+          mv -v ha-average/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - Lidarr Upcoming Media
+        run: |
+          git clone https://github.com/JackJPowell/sensor.lidarr_upcoming_media
+          mv -v sensor.lidarr_upcoming_media/custom_components/* ./custom_components
+      
+      - name: 📥 Clone custom component - Monitor Docker
+        run: |
+          git clone https://github.com/ualex73/monitor_docker
+          mv -v monitor_docker/custom_components/* ./custom_components
+      
+      - name: 📥 Clone custom component - Plex Recently Added
+        run: |
+          git clone https://github.com/custom-components/sensor.plex_recently_added
+          mv -v sensor.plex_recently_added/custom_components/* ./custom_components
+      
+      - name: 📥 Clone custom component - Radarr Upcoming Media
+        run: |
+          git clone https://github.com/custom-components/sensor.radarr_upcoming_media
+          mv -v sensor.radarr_upcoming_media/custom_components/* ./custom_components
+      
+      - name: 📥 Clone custom component - Sonarr Upcoming Media
+        run: |
+          git clone https://github.com/custom-components/sensor.sonarr_upcoming_media
+          mv -v sensor.sonarr_upcoming_media/custom_components/* ./custom_components
+      
+      - name: 📥 Clone custom component - UniFi gateway
+        run: |
+          git clone https://github.com/custom-components/sensor.unifigateway
+          mv -v sensor.unifigateway/custom_components/* ./custom_components
+
+      - name: 🏃 Check configuration
+        uses: frenck/action-home-assistant@v1.4
         with:
-          secrets: secrets-fake.yaml
-          version: stable
+          path: "."
+          secrets: ./secrets-fake.yaml
+          version: "${{ matrix.version }}"
+          # version: stable
