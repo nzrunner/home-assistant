@@ -16,7 +16,7 @@
 
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
-    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
+    <img src="../images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
 
 <!-- PROJECT SHIELDS -->
@@ -60,8 +60,19 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Usage](#usage)
+- [Project Git Guide](#project-git-guide)
+- [Change Log](#change-log)
+- [Resources](#resources)
+- [Acknowledgments](#acknowledgments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- GIT GUIDE -->
 
@@ -203,6 +214,8 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE>txt) for more inf
 [commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
 [last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=for-the-badge
+[homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=for-the-badge
+[ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
 
 <!-- URL's -->
 
@@ -213,3 +226,5 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE>txt) for more inf
 [features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
+[homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
+[home-assistant]: https://home-assistant.io
