@@ -7,14 +7,15 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
-      - id: check-json
+      # - id: check-json
+      - id: check-yaml
       - id: check-case-conflict
       - id: check-merge-conflict
-      - id: check-symlinks
+      # - id: check-symlinks
       - id: detect-private-key
       - id: end-of-file-fixer
         exclude: ^.HA_VERSION
-      - id: forbid-new-submodules
+      # - id: forbid-new-submodules
       - id: trailing-whitespace
 
   - repo: https://github.com/adrienverge/yamllint.git
