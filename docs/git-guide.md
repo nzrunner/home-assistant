@@ -60,7 +60,7 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<!-- START doctoc-->
+<!-- START doctoc -->
 <!-- END doctoc -->
 
 <!-- GIT GUIDE -->
