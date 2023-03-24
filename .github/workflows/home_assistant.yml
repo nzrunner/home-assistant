@@ -47,6 +47,7 @@ jobs:
   
   prettier:
     name: 🧹 Run Prettier
+    needs: [remarklint]
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
