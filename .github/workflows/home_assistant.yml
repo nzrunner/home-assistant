@@ -67,7 +67,7 @@ jobs:
 
   home-assistant:
     name: ✅ Home Assistant Core ${{ matrix.version }} Check
-    needs: [prettier]
+    needs: [prettier, yamllint]
     runs-on: ubuntu-latest
     strategy:
       matrix:
