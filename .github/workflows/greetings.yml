@@ -14,4 +14,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Gidday @${{ github.actor }}, thank you for submitting your first issue!"
-        pr-message: "Gidday @${{ github.actor }}, thank you submitting for your first pull request!"
+        pr-message: "Gidday @${{ github.actor }}, thank you for submitting your first pull request!"
