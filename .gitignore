@@ -21,7 +21,7 @@ deps
 !.gitkeep
 !.gitignore
 !.stubs
-!.github/**
+!.github
 !.HA_VERSION
 !*.yaml
 !*.md
