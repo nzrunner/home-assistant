@@ -9,7 +9,7 @@ body:
 - type: markdown
   attributes:
     value: >
-      **Thank you for wanting to report a bug in our Home Assist configuration!**
+      **Thank you for wanting to report a bug in our Home Assistant configuration!**
 
 
       ⚠
@@ -57,8 +57,8 @@ body:
 - type: input
   attributes:
     label: Configuration File Name
-    description: >
-      Write the short name of the yml below, *use your best guess if unsure*.
+    description: >-
+      Write the short name of the yml file below, *use your best guess if unsure*.
     placeholder: configuration, sensors, http, homeassistant, etc.
   validations:
     required: true
