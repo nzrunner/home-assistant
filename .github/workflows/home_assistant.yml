@@ -61,7 +61,7 @@ jobs:
           # Dry run mode for testing
           dry: True
           # Do NOT run against YAMl files. Code changes are nasty
-          prettier_options: --write **/*.{md}
+          prettier_options: --write **/*.md
   
   home-assistant:
     name: ✅ Home Assistant Core ${{ matrix.version }} Check
