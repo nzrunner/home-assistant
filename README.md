@@ -67,10 +67,10 @@
     <li><a href="#custom-components">Custom Components</a></li>
     <li><a href="#devices">Devices</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -287,6 +287,18 @@ See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a f
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+| **Description** | **Link**
+| :--- | :---
+| IOS Theme - The theme I use | <https://github.com/basnijholt/lovelace-ios-themes/>
+| A really well documented Home Assistant configuration | <https://github.com/basnijholt/home-assistant-config>
+| Swakes - Home Assistant gave me some design inspiration | <https://github.com/pqpxo/SWAKES_hassio>
+| Metbril's Home Assistant Configuration | <https://github.com/metbril/home-assistant-config>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -322,18 +334,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 | :--- | :--- | :---
 | Mark Matheson | @nzrunner | <https://twitter.com/nzrunner>
 | Project Link | | <https://github.com/nzrunner/home-assistant>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-| **Description** | **Link**
-| :--- | :---
-| IOS Theme - The theme I use | <https://github.com/basnijholt/lovelace-ios-themes/>
-| A really well documented Home Assistant configuration | <https://github.com/basnijholt/home-assistant-config>
-| Swakes - Home Assistant gave me some design inspiration | <https://github.com/pqpxo/SWAKES_hassio>
-| Metbril's Home Assistant Configuration | <https://github.com/metbril/home-assistant-config>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
