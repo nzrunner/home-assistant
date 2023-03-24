@@ -1,21 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<details>
-<summary>Table of Contents</summary>
-
-- [Matho's Home Assistant Configuration](#mathos-home-assistant-configuration)
-  - [Usage Guide](#usage-guide)
-  - [Project Git Guide](#project-git-guide)
-  - [Change Log](#change-log)
-  - [Resources](#resources)
-  - [Acknowledgments](#acknowledgments)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
-
-</details>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
 <a name="readme-top"></a>
@@ -78,8 +60,23 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<details>
+<summary>Table of Contents</summary>
+
+- [Matho's Home Assistant Configuration](#mathos-home-assistant-configuration)
+  - [Usage Guide](#usage-guide)
+  - [Project Git Guide](#project-git-guide)
+  - [Change Log](#change-log)
+  - [Resources](#resources)
+  - [Acknowledgments](#acknowledgments)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
+
+</details>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- GIT GUIDE -->
 
