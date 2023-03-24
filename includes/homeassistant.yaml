@@ -38,7 +38,6 @@ packages: !include_dir_named packages
 ## https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_urls
 allowlist_external_dirs:
   - /  # Home Assistant root
-  - /config  # Home Assistant config
   - /tmp  # Home Assistant snapshots
 media_dirs:
-  local: /config/media
+  local: /media
