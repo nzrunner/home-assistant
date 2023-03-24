@@ -12,11 +12,11 @@
 
 <!-- PROJECT LOGO -->
 
-# Matho's Git Guide
+# Matho's Home Assistant Configuration
 
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
-    <img src="../images/mark-matheson-digital-business-consultant.png" alt="Logo">
+    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
 
 <!-- PROJECT SHIELDS -->
@@ -28,21 +28,19 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+[![HA Version][ha-version-shield]][home-assistant]
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
-<br/>
-![Project Complete](https://img.shields.io/badge/Complete%3F-No-red)
+
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
-
-<!--
-[![LinkedIn][linkedin-shield]][linkedin-url]
--->
+[![Home Assistant CI][homeassistantci-shield]][homeassistantci]
 
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
   <p>
@@ -55,6 +53,8 @@
     ·
     <a href="/docs/git-guide.md">Git Guide</a>
     ·
+    <a href="/docs/resources.md">Resources</a>
+    ·
     <a href="/CHANGELOG.md">ChangeLog</a>
   </p>
 </div>
@@ -64,14 +64,6 @@
 <!-- END doctoc -->
 
 <!-- GIT GUIDE -->
-
-## Change Log
-
-From within the Home Assistant folder, run the following: -
-
-```bash
-changelog generate
-```
 
 ## Usage
 
@@ -117,6 +109,14 @@ The types I am standardising on for this project are as follows: -
   - Any changes like system updates, adding images or untracked files
 - `other`
   - Any other changes not covered by the above
+
+## Change Log
+
+From within the Home Assistant folder, run the following: -
+
+```bash
+changelog generate
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,37 +192,24 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE>txt) for more inf
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- Shields -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=for-the-badge
-[contributors-url]: https://github.com/nzrunner/home-assistant/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=for-the-badge
-[forks-url]: https://github.com/nzrunner/home-assistant/network/members
 [stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=for-the-badge
-[stars-url]: https://github.com/nzrunner/home-assistant/stargazers
 [bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
-[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug
 [features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
-[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
-[license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg
-[commits]: https://github.com/nzrunner/home-assistant/commits/master
-[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=for-the-badge
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
+[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=for-the-badge
 
-<!--
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
--->
+<!-- URL's -->
+
+[contributors-url]: https://github.com/nzrunner/home-assistant/graphs/contributors
+[forks-url]: https://github.com/nzrunner/home-assistant/network/members
+[stars-url]: https://github.com/nzrunner/home-assistant/stargazers
+[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug
+[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
+[license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
+[commits]: https://github.com/nzrunner/home-assistant/commits/master
