@@ -50,6 +50,8 @@
     ·
     <a href="/docs/git-guide.md">Git Guide</a>
     ·
+    <a href="/docs/resources.md">Resources</a>
+    ·
     <a href="/CHANGELOG.md">ChangeLog</a>
   </p>
 </div>
