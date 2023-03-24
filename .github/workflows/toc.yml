@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'README.md'
-      - 'docs/GIT-GUIDE.md'
+      - "README.md"
+      - "docs/*.md"
 
 jobs:
   generateTOC:
