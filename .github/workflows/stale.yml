@@ -33,9 +33,9 @@ jobs:
           This PR was closed because it has been stalled for 65 days with no activity.
         days-before-stale: 60
         days-before-close: 5
-        stale-issue-label: 'no-issue-activity'
-        stale-pr-label: 'no-pr-activity'
+        stale-issue-label: '❌ No Issue Activity'
+        stale-pr-label: '❌ No PR Activity'
+        exempt-issue-labels: '☑ Keep Me'
+        exempt-pr-labels: '☑ Keep Me'
         exempt-issue-assignees: 'nzrunner'
         exempt-pr-assignees: 'nzrunner'
-        exempt-issue-labels: 'keep-me'
-        exempt-pr-labels: 'keep-me'
