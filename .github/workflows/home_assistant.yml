@@ -59,7 +59,7 @@ jobs:
       - name: 📥 Clone custom component - Average
         run: |
           git clone https://github.com/Limych/ha-average
-          mv -v ha_average/custom_components/* ./custom_components
+          mv -v ha-average/custom_components/* ./custom_components
 
       - name: 📥 Clone custom component - Plex Recently Added
         run: |
