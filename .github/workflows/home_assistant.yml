@@ -59,7 +59,7 @@ jobs:
       - name: 📥 Clone custom component - Plex Recently Added
         run: |
           git clone https://github.com/custom-components/sensor.plex_recently_added
-          mv -v plex_recently_added/custom_components/* ./custom_components
+          mv -v sensor.plex_recently_added/custom_components/* ./custom_components
       
       - name: 🏃 Check configuration
         uses: frenck/action-home-assistant@v1.4
