@@ -13,7 +13,7 @@
 
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
-    <img src="images/mark-matheson-digital-business-consultant.png" alt="Logo">
+    <img src="../images/mark-matheson-digital-business-consultant.png" alt="Logo">
   </a>
 
 <!-- PROJECT SHIELDS -->
@@ -73,7 +73,7 @@
 
 | **Description** | **Link**
 | :--- | :---
-| GitHUb Issue Forms | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>
+| GitHub Issue Forms | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>
 | Example GitHub Issue Forms | <https://github.com/ansible/issue-forms-demo-for-ansible>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
