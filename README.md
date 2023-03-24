@@ -162,6 +162,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 | Garbage Collection | <https://github.com/bruxy70/Garbage-Collection>
 | Radarr Upcoming Media | <https://github.com/custom-components/sensor.radarr_upcoming_media>
 | Sonarr Upcoming Media | <https://github.com/custom-components/sensor.sonarr_upcoming_media>
+| Lidarr Upcoming Media | <https://github.com/JackJPowell/sensor.lidarr_upcoming_media>
 | Bereau of Meteorology | <https://github.com/bremor/bureau_of_meteorology>
 | Plex Recently Added | <https://github.com/custom-components/sensor.plex_recently_added>
 | Average Sensor | <https://github.com/Limych/ha-average>
