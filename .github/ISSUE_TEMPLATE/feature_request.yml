@@ -15,18 +15,9 @@ body:
 
       💡
       Before you go ahead with your request, please first consider if it
-      would be useful for majority of the ansible-core users. As a
-      general rule of thumb, any feature that is only of interest to a
-      small sub group should be [implemented in a third-party Ansible
-      Collection][contribute to collections] or maybe even just your
-      project alone. Be mindful of the fact that the essential
-      ansible-core features have a broad impact.
-
-      If unsure, consider filing a [new proposal] instead outlining your
-      use-cases, the research and implementation considerations. Then,
-      start a discussion on one of the public [IRC meetings] we have just
-      for this.
-
+      would be useful in my repository. As a
+      general rule of thumb, any feature that is only of interest other users
+      probably won't get pproved alone.
 
       <details>
         <summary>
@@ -44,27 +35,7 @@ body:
       Verify first that your idea is not [already requested on
       GitHub][issue search].
 
-      Also test if the devel branch does not already implement this.
-
-
-      **Tip:** If you are seeking community support, please consider
-      [starting a mailing list thread or chatting in IRC][ML||IRC].
-
-
-
-      [contribute to collections]:
-      https://docs.ansible.com/ansible-core/devel/community/contributing_maintained_collections.html?utm_medium=github&utm_source=issue_form--feature_request.yml
-
-      [IRC meetings]:
-        https://docs.ansible.com/ansible-core/devel/community/communication.html?utm_medium=github&utm_source=issue_form--feature_request.yml#irc-meetings
-
       [issue search]: ../search?q=is%3Aissue&type=issues
-
-      [ML||IRC]:
-      https://docs.ansible.com/ansible-core/devel/community/communication.html?utm_medium=github&utm_source=issue_form--feature_request.yml#mailing-list-information
-
-      [new proposal]: ../../proposals/issues/new
-
 
 - type: textarea
   attributes:
@@ -87,17 +58,10 @@ body:
       * Have you tried to work around the problem using other tools?
 
       * Could there be a different approach to solving this issue?
-
-
-      *Know **exactly** what you want?* Consider filing a [new proposal]
-      instead outlining your research and implementation considerations.
-
-
-      [new proposal]: ../../proposals/issues/new
     placeholder: >-
-      I am trying to do X with ansible-core from the devel branch on GitHub and
+      I am trying to do X with your code on GitHub.
       I think that implementing a feature Y would be very helpful for me and
-      every other user of ansible-core because of Z.
+      every other user ofyour code because of Z.
   validations:
     required: true
 
@@ -128,21 +92,10 @@ body:
 
 - type: input
   attributes:
-    label: Component Name
-    description: >
-      Write the short name of the module, plugin, task or feature below,
-      *use your best guess if unsure*.
-
-
-      Be aware that a lot of content that used to reside in this repository
-      previously, is now hosted under [individual collection
-      projects][collections org].
-      If this is the case, please make sure to file an issue under the
-      appropriate project there instead.
-
-
-      [collections org]: ../../ansible-collections
-    placeholder: dnf, apt, yum, pip, user etc.
+    label: Configuration File Name
+    description: >-
+      Write the short name of the yml file below, *use your best guess if unsure*.
+    placeholder: configuration, sensors, http, homeassistant, etc.
   validations:
     required: true
 
@@ -150,17 +103,12 @@ body:
   attributes:
     label: Additional Information
     description: |
-      Describe how the feature would be used, why it is needed and what it would solve.
+      Describe how this improves the documentation, e.g. before/after situation or screenshots.
 
       **HINT:** You can paste https://gist.github.com links for larger files.
-    value: |
-      <!--- Paste example playbooks or commands between quotes below -->
-      ```yaml (paste below)
-
-      ```
     placeholder: >-
-      I asked on https://stackoverflow.com/.... and the community
-      advised me to do X, Y and Z.
+      When the improvement is applied, it makes it more straightforward
+      to understand X.
   validations:
     required: true
 
@@ -172,23 +120,20 @@ body:
 
 
       *Please, complete **all** sections as described, this form
-      is [processed automatically by a robot][ansibot help].*
+      is processed automatically by a robot.*
 
 
       Thank you for your collaboration!
 
-
-      [ansibot help]:
-      /ansible/ansibullbot/blob/master/ISSUE_HELP.md#for-issue-submitters
 
 
 - type: checkboxes
   attributes:
     label: Code of Conduct
     description: |
-      Read the [Ansible Code of Conduct][CoC] first.
+      Read our [Code of Conduct][CoC] first.
 
-      [CoC]: https://docs.ansible.com/ansible/latest/community/code_of_conduct.html?utm_medium=github&utm_source=issue_form--feature_request.yml
+      [CoC]: ../blob/master/CODE_OF_CONDUCT.md
     options:
-    - label: I agree to follow the Ansible Code of Conduct
+    - label: I agree to follow the your Code of Conduct
       required: true
