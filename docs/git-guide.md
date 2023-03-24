@@ -65,7 +65,7 @@
 
 <!-- GIT GUIDE -->
 
-## Usage
+## Usage Guide
 
 To get the most benefit out of the ChangeLog module, the commit messages have to be in this format:
 
