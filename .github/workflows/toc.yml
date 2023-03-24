@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'README.md'
+      - 'docs/GIT-GUIDE.md'
 
 jobs:
   generateTOC:
