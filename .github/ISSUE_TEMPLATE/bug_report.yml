@@ -170,7 +170,7 @@ body:
     description: |
       Read the our [Code of Conduct][CoC] first.
 
-      [CoC]: "./CODE_OF_CONDUCT.md"
+      [CoC]: "../CODE_OF_CONDUCT.md"
     options:
     - label: I agree to follow the Code of Conduct
       required: true
