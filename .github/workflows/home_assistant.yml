@@ -57,10 +57,9 @@ jobs:
       - name: 🚀 Prettify code
         uses: creyD/prettier_action@v4.3
         with:
-          # This part is also where you can pass other options, for example:
-          # Dry run mode for testing
-          dry: True
-          # Do NOT run against YAMl files. Code changes are nasty
+          # DISABLED: Dry run mode for testing
+          # dry: True
+          # Do NOT run against YAML files. Code changes are nasty
           prettier_options: --write **/*.md
   
   home-assistant:
