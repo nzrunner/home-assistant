@@ -26,6 +26,7 @@ jobs:
   
   yamllint:
     name: 🧹 Run YAML Lint
+    needs: [ha_version]
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -35,6 +36,7 @@ jobs:
 
   remarklint:
     name: 🧹 Run Remark Lint
+    needs: [ha_version]
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -65,7 +67,7 @@ jobs:
   
   home-assistant:
     name: ✅ Home Assistant Core ${{ matrix.version }} Check
-    needs: [prettier, remarklint, yamllint, ha_version]
+    needs: [prettier]
     runs-on: ubuntu-latest
     strategy:
       matrix:
