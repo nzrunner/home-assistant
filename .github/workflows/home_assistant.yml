@@ -47,6 +47,15 @@ jobs:
         with:
           args: "remark --no-stdout --color --frail --use preset-lint-recommended ."
 
+  remark-lint:
+    name: 🧹 Run Remark Lint (2)
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run Remark lint (2)
+        uses: rickstaa/action-remark-lint@v1
+
   prettier:
     name: 🧹 Run Prettier
     needs: [remarklint]
