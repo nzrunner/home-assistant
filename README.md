@@ -24,18 +24,20 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![HA Version][ha-version-shield]][home-assistant]
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
-<br/>
-[![Home Assistant CI][homeassistantci-shield]][homeassistantci]
+
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
+[![Home Assistant CI][homeassistantci-shield]][homeassistantci]
 
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
   <p>
