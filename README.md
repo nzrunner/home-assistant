@@ -31,6 +31,7 @@
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
 <br/>
+[![HA Version][ha-version-shield]][home-assistant]
 [![Home Assistant CI][homeassistantci-shield]][homeassistantci]
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
@@ -346,24 +347,29 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- Shields -->
 [contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=for-the-badge
-[contributors-url]: https://github.com/nzrunner/home-assistant/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=for-the-badge
-[forks-url]: https://github.com/nzrunner/home-assistant/network/members
 [stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=for-the-badge
-[stars-url]: https://github.com/nzrunner/home-assistant/stargazers
 [bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
-[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug
 [features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
-[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
-[license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg
-[commits]: https://github.com/nzrunner/home-assistant/commits/master
-[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
+[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=for-the-badge
 [Hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [Raspberry-Pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
+[homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=for-the-badge
+[ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
+
+<!-- URL's -->
+[contributors-url]: https://github.com/nzrunner/home-assistant/graphs/contributors
+[forks-url]: https://github.com/nzrunner/home-assistant/network/members
+[stars-url]: https://github.com/nzrunner/home-assistant/stargazers
+[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug
+[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
+[license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
+[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=for-the-badge
+[commits]: https://github.com/nzrunner/home-assistant/commits/master
 [Hass-url]: https://www.home-assistant.io/
-[homeassistantci-shield]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml/badge.svg
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
+[home-assistant]: https://home-assistant.io
