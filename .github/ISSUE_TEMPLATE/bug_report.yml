@@ -1,4 +1,3 @@
----
 name: 🐛 Bug report
 description: Create a report to help us improve
 title: "[BUG]: "
@@ -264,4 +263,3 @@ body:
     options:
     - label: I agree to follow the Ansible Code of Conduct
       required: true
-...
