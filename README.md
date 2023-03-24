@@ -60,22 +60,8 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#dashboards">Dashboards</a></li>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#integrations">Integrations</a></li>
-    <li><a href="#custom-components">Custom Components</a></li>
-    <li><a href="#devices">Devices</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 <!-- ABOUT THE PROJECT -->
 
