@@ -20,6 +20,7 @@ deps
 # Specific keeps
 !.gitkeep
 !.gitignore
+!.stubs
 !.HA_VERSION
 !*.yaml
 !*.md
