@@ -24,16 +24,6 @@ jobs:
           echo $HA_VERSION
           echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT
 
-  yamllint:
-    name: 🧹 Run YAML Lint
-    needs: [ha_version]
-    runs-on: ubuntu-latest
-    steps:
-      - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3
-      - name: 🚀 Run yamllint
-        uses: frenck/action-yamllint@v1.4.0
-
   remarklint:
     name: 🧹 Run Remark Lint
     needs: [ha_version]
@@ -46,6 +36,16 @@ jobs:
         continue-on-error: true
         with:
           args: "remark --no-stdout --color --frail --use preset-lint-recommended ."
+
+  yamllint:
+    name: 🧹 Run YAML Lint
+    needs: [ha_version]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run yamllint
+        uses: frenck/action-yamllint@v1.4.0
 
   prettier:
     name: 🧹 Run Prettier
