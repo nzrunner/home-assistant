@@ -22,6 +22,8 @@ deps
 !.gitignore
 !.stubs
 !.github
+!.github/ISSUE_TEMPLATE
+!.github/workflows
 !.HA_VERSION
 !*.yaml
 !*.md
