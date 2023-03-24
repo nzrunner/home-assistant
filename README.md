@@ -60,8 +60,31 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<details>
+<summary>Table of Contents</summary>
+
+- [About The Project](#about-the-project)
+- [Dashboards](#dashboards)
+- [Built With](#built-with)
+- [Integrations](#integrations)
+- [Custom Components](#custom-components)
+  - [Integrations](#integrations-1)
+  - [Frontend](#frontend)
+  - [Automation](#automation)
+  - [Addons](#addons)
+- [Devices](#devices)
+  - [Network](#network)
+  - [IOT](#iot)
+- [Roadmap](#roadmap)
+- [Acknowledgments](#acknowledgments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+</details>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- ABOUT THE PROJECT -->
 
