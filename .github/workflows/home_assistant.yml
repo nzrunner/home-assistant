@@ -58,8 +58,10 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           # This part is also where you can pass other options, for example:
+          # Dry run mode for testing
           dry: True
-          prettier_options: --write **/*.{yaml,yml,md}
+          # Do NOT run against YAMl files. Code changes are nasty
+          prettier_options: --write **/*.{md}
   
   home-assistant:
     name: ✅ Home Assistant Core ${{ matrix.version }} Check
