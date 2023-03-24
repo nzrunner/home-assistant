@@ -75,6 +75,7 @@
 | :--- | :---
 | GitHub Issue Forms | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>
 | Example GitHub Issue Forms | <https://github.com/ansible/issue-forms-demo-for-ansible>
+| Good source for Lovelace CCS variables, particularly colors | <https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
