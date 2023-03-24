@@ -68,8 +68,7 @@ body:
     label: Home Assistant Version
     description: >-
       Include the current version of Home Assistant that you are running.
-    placeholder: |
-      $ 2023.3.6
+    placeholder: 2023.3.6
   validations:
     required: true
 
