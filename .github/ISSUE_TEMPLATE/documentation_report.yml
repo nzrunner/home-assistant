@@ -1,7 +1,7 @@
 name: 📝 Documentation Report
 description: Report a problem with our documentation
 title: "[DOCUMENTATION]: "
-labels: ["documentation", "triage"]
+labels: ["📚 Documentation", "🩹 Triage"]
 assignees:
   - nzrunner
 
