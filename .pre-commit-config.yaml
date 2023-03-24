@@ -19,10 +19,11 @@ repos:
       - id: check-yaml
         args: ['--unsafe']
 
-  - repo: https://github.com/thlorenz/doctoc
-    rev: v2.2.0
-    hooks:
-      - id: doctoc
+  # REMOVED: Can't include a Title or be Foldable
+  # - repo: https://github.com/thlorenz/doctoc
+  #   rev: v2.2.0
+  #   hooks:
+  #     - id: doctoc
 
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.26.3
