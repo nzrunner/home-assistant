@@ -66,6 +66,11 @@ jobs:
           git clone https://github.com/JackJPowell/sensor.lidarr_upcoming_media
           mv -v sensor.lidarr_upcoming_media/custom_components/* ./custom_components
       
+      - name: 📥 Clone custom component - Monitor Docker
+        run: |
+          git clone https://github.com/ualex73/monitor_docker
+          mv -v monitor_docker/custom_components/* ./custom_components
+      
       - name: 📥 Clone custom component - Plex Recently Added
         run: |
           git clone https://github.com/custom-components/sensor.plex_recently_added
