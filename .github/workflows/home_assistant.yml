@@ -61,6 +61,11 @@ jobs:
           git clone https://github.com/Limych/ha-average
           mv -v ha-average/custom_components/* ./custom_components
 
+      - name: 📥 Clone custom component - Lidarr Upcoming Media
+        run: |
+          git clone https://github.com/JackJPowell/sensor.lidarr_upcoming_media
+          mv -v sensor.lidarr_upcoming_media/custom_components/* ./custom_components
+      
       - name: 📥 Clone custom component - Plex Recently Added
         run: |
           git clone https://github.com/custom-components/sensor.plex_recently_added
