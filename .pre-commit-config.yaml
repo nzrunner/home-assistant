@@ -29,3 +29,8 @@ repos:
     hooks:
       - id: prettier
         types: [markdown]
+
+  - repo: https://github.com/thlorenz/doctoc
+    rev: v2.2.0
+    hooks:
+      - id: doctoc
