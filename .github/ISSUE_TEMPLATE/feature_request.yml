@@ -35,7 +35,9 @@ body:
       Verify first that your idea is not [already requested on
       GitHub][issue search].
 
+
       [issue search]: ../search?q=is%3Aissue&type=issues
+
 
 - type: textarea
   attributes:
