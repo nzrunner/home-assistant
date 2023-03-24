@@ -11,7 +11,7 @@ on:
 
 jobs:
   ha_version:
-    name: Get Installed Version for Testing
+    name: ✔ Get Installed Version
     runs-on: ubuntu-latest
     outputs:
       current_version: ${{ steps.currentver.outputs.current_version }}
@@ -26,7 +26,7 @@ jobs:
           echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT
   
   yamllint:
-    name: YAML linter
+    name: 🧹 Run YAML Lint
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -34,9 +34,21 @@ jobs:
       - name: 🚀 Run yamllint
         uses: frenck/action-yamllint@v1.4.0
 
+  remarklint:
+    name: 🧹 Run Remark Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run Remark lint
+        uses: "docker://pipelinecomponents/remark-lint:latest"
+        continue-on-error: true
+        with:
+          args: "remark --no-stdout --color --frail --use preset-lint-recommended ."
+  
   home-assistant:
-    name: Home Assistant Core ${{ matrix.version }} Configuration Check
-    needs: [yamllint, ha_version]
+    name: ✅ Home Assistant Core ${{ matrix.version }} Check
+    needs: [remarklint, yamllint, ha_version]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -97,4 +109,3 @@ jobs:
           path: "."
           secrets: ./secrets-fake.yaml
           version: "${{ matrix.version }}"
-          # version: stable
