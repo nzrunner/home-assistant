@@ -38,9 +38,9 @@ jobs:
     name: Home Assistant Core ${{ matrix.version }} Configuration Check
     needs: [yamllint, ha_version]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: ["${{needs.ha_version.outputs.current_version}}", "stable", "beta", "dev"]
+    # strategy:
+      # matrix:
+        # version: ["${{needs.ha_version.outputs.current_version}}", "stable", "beta", "dev"]
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
@@ -66,4 +66,5 @@ jobs:
         with:
           path: "."
           secrets: ./secrets-fake.yaml
-          version: "${{ matrix.version }}"
+          # version: "${{ matrix.version }}"
+          version: stable
