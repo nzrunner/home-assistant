@@ -12,7 +12,7 @@
 
 <!-- PROJECT LOGO -->
 
-# Matho's Home Assistant Configuration
+# Matho's Git Guide
 
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
@@ -59,11 +59,13 @@
   </p>
 </div>
 
+<!-- TABLE OF CONTENTS -->
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 <!-- GIT GUIDE -->
 
-## Git Guide
-
-### Change Log
+## Change Log
 
 From within the Home Assistant folder, run the following: -
 
@@ -71,7 +73,7 @@ From within the Home Assistant folder, run the following: -
 changelog generate
 ```
 
-### Usage
+## Usage
 
 To get the most benefit out of the ChangeLog module, the commit messages have to be in this format:
 
@@ -101,7 +103,7 @@ Where `flags` is an optional comma-separated list of one or more of the followin
 
 And `category` can be anything of your choice. If you use a type not found in the list (but it still follows the same format of the message), it'll be grouped under `other`.
 
-### Project Git Guide
+## Project Git Guide
 
 The types I am standardising on for this project are as follows: -
 
@@ -134,6 +136,19 @@ This is currently just a dumping ground for git recources that I have found.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+| **Description**                                         | **Link**                                              |
+| :------------------------------------------------------ | :---------------------------------------------------- |
+| IOS Theme - The theme I use                             | <https://github.com/basnijholt/lovelace-ios-themes/>  |
+| A really well documented Home Assistant configuration   | <https://github.com/basnijholt/home-assistant-config> |
+| Swakes - Home Assistant gave me some design inspiration | <https://github.com/pqpxo/SWAKES_hassio>              |
+| Metbril's Home Assistant Configuration                  | <https://github.com/metbril/home-assistant-config>    |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 
 ## Contributing
@@ -160,7 +175,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [LICENSE.txt](./LICENSE>txt) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,36 +183,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-| ! **Name**    | **Handle** | **Link**                                   |
-| :------------ | :--------- | :----------------------------------------- |
-| Mark Matheson | @nzrunner  | https://twitter.com/nzrunner               |
-| Project Link  |            | https://github.com/nzrunner/home-assistant |
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-### Home Assistant
-
-| **Description**                                                         | **Link**                                                                       |
-| :---------------------------------------------------------------------- | :----------------------------------------------------------------------------- |
-| IOS Theme - The theme I use                                             | https://github.com/basnijholt/lovelace-ios-themes/                             |
-| A really well documented Home Assistant configuration                   | https://github.com/basnijholt/home-assistant-config                            |
-| Swakes - Home Assistant gave me some design inspiration                 | https://github.com/pqpxo/SWAKES_hassio                                         |
-| Metbril's Home Assistant Configuration - Review Github workflow actions | https://github.com/metbril/home-assistant-config                               |
-| Good source for Lovelace CCS variables, particularly colors             | https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md |
-
-### General
-
-| **Description**                                     | **Link**                                                                       |
-| :-------------------------------------------------- | :----------------------------------------------------------------------------- |
-| A great tool for generating funky text file headers | https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration |
-| Make cool shields                                   | https://shields.io/                                                            |
-| SVG Logos for popular brands to use with shields    | https://simpleicons.org/                                                       |
-| The base for this README                            | https://github.com/othneildrew/Best-README-Template                            |
-| Choose an open source license                       | https://choosealicense.com/                                                    |
+| **Name**      | **Handle** | **Link**                                     |
+| :------------ | :--------- | :------------------------------------------- |
+| Mark Matheson | @nzrunner  | <https://twitter.com/nzrunner>               |
+| Project Link  |            | <https://github.com/nzrunner/home-assistant> |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -216,15 +205,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
 [license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/nzrunner
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
 [last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg
-[product-screenshot]: images/home-assistant.png
-[hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
-[hass-url]: https://www.home-assistant.io/
 
 <!--
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
