@@ -80,10 +80,8 @@ body:
       Please don't wrap it with tripple backticks — your
       whole input will be turned into a code snippet automatically.
     render: console
-    value: |
-      
-    placeholder: |
-      Code snippet
+    value: Place code here
+    placeholder: Place code snippet
   validations:
     required: true
 
@@ -146,8 +144,7 @@ body:
       Paste verbatim command output and don't wrap it with tripple backticks — your
       whole input will be turned into a code snippet automatically.
     render: console
-    placeholder: >-
-      Paste code and output here
+    placeholder: Paste code and output here
   validations:
     required: true
 
@@ -170,7 +167,7 @@ body:
     description: |
       Read the our [Code of Conduct][CoC] first.
 
-      [CoC]: ./CODE_OF_CONDUCT.md
+      [CoC]: "./CODE_OF_CONDUCT.md"
     options:
     - label: I agree to follow the Code of Conduct
       required: true
