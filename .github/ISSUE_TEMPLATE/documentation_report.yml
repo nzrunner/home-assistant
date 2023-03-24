@@ -2,7 +2,7 @@ name: 📝 Documentation Report
 description: Report a problem with our documentation
 title: "[DOCS]: "
 labels: ["documentation", "triage"]
-assignes:
+assignees:
   - nzrunner
 
 body:
