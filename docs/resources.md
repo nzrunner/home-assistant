@@ -1,5 +1,7 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -9,6 +11,7 @@
 -->
 
 <!-- PROJECT LOGO -->
+
 # Matho's Home Assistant Configuration
 
 <div>
@@ -57,31 +60,33 @@
 </div>
 
 <!-- RESOURCES -->
+
 ## Resources
 
 ### General
 
-| **Description** | **Link**
-| :--- | :---
-| A great tool for generating funky text file headers | <https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration>
-| Make cool shields | <https://shields.io/>
-| SVG Logos for popular brands to use with shields | <https://simpleicons.org/>
-| The base for this README | <https://github.com/othneildrew/Best-README-Template>
-| Choose an open source license | <https://choosealicense.com/>
+| **Description**                                     | **Link**                                                                         |
+| :-------------------------------------------------- | :------------------------------------------------------------------------------- |
+| A great tool for generating funky text file headers | <https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration> |
+| Make cool shields                                   | <https://shields.io/>                                                            |
+| SVG Logos for popular brands to use with shields    | <https://simpleicons.org/>                                                       |
+| The base for this README                            | <https://github.com/othneildrew/Best-README-Template>                            |
+| Choose an open source license                       | <https://choosealicense.com/>                                                    |
 
 ### GitHub
 
-| **Description** | **Link**
-| :--- | :---
-| GitHub Issue Forms | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>
-| Example GitHub Issue Forms | <https://github.com/ansible/issue-forms-demo-for-ansible>
-| Good source for Lovelace CCS variables, particularly colors | <https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md>
+| **Description**                                             | **Link**                                                                                                                     |
+| :---------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| GitHub Issue Forms                                          | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms> |
+| Example GitHub Issue Forms                                  | <https://github.com/ansible/issue-forms-demo-for-ansible>                                                                    |
+| Good source for Lovelace CCS variables, particularly colors | <https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md>                                             |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!-- Shields -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=for-the-badge
 [forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=for-the-badge
 [stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=for-the-badge
@@ -95,6 +100,7 @@
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
 
 <!-- URL's -->
+
 [contributors-url]: https://github.com/nzrunner/home-assistant/graphs/contributors
 [forks-url]: https://github.com/nzrunner/home-assistant/network/members
 [stars-url]: https://github.com/nzrunner/home-assistant/stargazers
