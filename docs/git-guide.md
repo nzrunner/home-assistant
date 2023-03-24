@@ -65,15 +65,14 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [Matho's Home Assistant Configuration](#mathos-home-assistant-configuration)
-  - [Usage Guide](#usage-guide)
-  - [Project Git Guide](#project-git-guide)
-  - [Change Log](#change-log)
-  - [Resources](#resources)
-  - [Acknowledgments](#acknowledgments)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
+- [Usage Guide](#usage-guide)
+- [Project Git Guide](#project-git-guide)
+- [Change Log](#change-log)
+- [Resources](#resources)
+- [Acknowledgments](#acknowledgments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
