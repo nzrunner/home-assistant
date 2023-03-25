@@ -79,6 +79,8 @@
   - [IOT](#iot)
 - [Roadmap](#roadmap)
 - [Acknowledgments](#acknowledgments)
+  - [Themes](#themes)
+  - [Inspiration](#inspiration)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
