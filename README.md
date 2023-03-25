@@ -136,7 +136,7 @@ A huge 🙏 thank you to the open-source community!
 
 ## Built With
 
-[![Home Assistant][hass.io]][home-assistantl] [![Raspberry Pi][raspberry-pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
+[![Home Assistant][hass.io]][home-assistant] [![Raspberry Pi][raspberry-pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
