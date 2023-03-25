@@ -154,12 +154,21 @@ This is currently just a dumping ground for git recources that I have found.
 
 ## Acknowledgments
 
-| **Description**                                         | **Link**                                              |
-| :------------------------------------------------------ | :---------------------------------------------------- |
-| IOS Theme - The theme I use                             | <https://github.com/basnijholt/lovelace-ios-themes/>  |
-| A really well documented Home Assistant configuration   | <https://github.com/basnijholt/home-assistant-config> |
-| Swakes - Home Assistant gave me some design inspiration | <https://github.com/pqpxo/SWAKES_hassio>              |
-| Metbril's Home Assistant Configuration                  | <https://github.com/metbril/home-assistant-config>    |
+### Themes
+
+| **Description**                         | **Link**                                             |
+| :-------------------------------------- | :--------------------------------------------------- |
+| My primary theme - iOS Themes           | <https://github.com/basnijholt/lovelace-ios-themes/> |
+| My alternate theme - Metrology (Fluent) | <https://github.com/Madelena/Metrology-for-Hass>     |
+
+### Inspiration
+
+| **Description**                               | **Link**                                              |
+| :-------------------------------------------- | :---------------------------------------------------- |
+| My inspiration - @frenck's configuration      | <https://github.com/frenck/home-assistant-config>     |
+| More inspiration - @Metbril's configuration   | <https://github.com/metbril/home-assistant-config>    |
+| Well documented - @basnijholt's configuration | <https://github.com/basnijholt/home-assistant-config> |
+| Also well documented - @pqpxo configuration   | <https://github.com/pqpxo/SWAKES_hassio>              |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
