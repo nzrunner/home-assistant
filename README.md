@@ -36,7 +36,7 @@
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
 
-![Project Maintenance][maintenance-shield]
+[![Project Maintenance][maintenance-shield]](https://github.com/nzrunner/home-assistant/pulse)
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
 [![Home Assistant CI][homeassistantci-shield]][homeassistantci]
