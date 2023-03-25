@@ -14,9 +14,9 @@
 
 <!-- PROJECT LOGO -->
 
-# Matho's Home Assistant Configuration
-
 [![Logo](/images/mark-matheson-digital-business-consultant.png)](../../)
+
+# Matho's Home Assistant Configuration
 
 <!-- PROJECT SHIELDS -->
 <!--
