@@ -63,9 +63,8 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [Resources](#resources)
-  - [General](#general)
-  - [GitHub](#github)
+- [General](#general)
+- [GitHub](#github)
 - [Acknowledgments](#acknowledgments)
   - [Themes](#themes)
   - [Inspiration](#inspiration)
