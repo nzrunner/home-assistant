@@ -1,1 +1,2 @@
-group: !include ../entities/group.yaml
+# group: !include ../entities/group.yaml
+group: !include_dir_merge_named ../entities/group

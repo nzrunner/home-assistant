@@ -11,6 +11,11 @@
 # Generic Thermostat
 # https://www.home-assistant.io/integrations/generic_thermostat/
 #################################################################################
+# This is my OLD climate.yaml
+# I have now adopted @frenck's configuration minimisation model
+# The climate controllers are split into files by entity type
+# This is retained for posterity and just in case disaster strikes
+#################################################################################
 
 - platform: generic_thermostat
   unique_id: bedroom_heater_controller

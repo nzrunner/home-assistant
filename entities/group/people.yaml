@@ -1,0 +1,30 @@
+#################################################################################
+# Groups allow the user to combine multiple entities into one
+# https://www.home-assistant.io/integrations/group
+#################################################################################
+
+#################################################################################
+# People
+#################################################################################
+residents:
+  name: Residents
+  icon: mdi:account-group
+  entities:
+    - person.mark_matheson
+
+guests:
+  name: Guests
+  icon: mdi:account-group
+  entities:
+    - person.diane_matheson
+    - person.adam_connor
+    - person.andrew_quinn
+    - person.beatle
+    - person.lady_beatle
+
+occupants:
+  name: Occupants
+  icon: mdi:account-group
+  entities:
+    - group.residents
+    - group.guests

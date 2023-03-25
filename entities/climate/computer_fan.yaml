@@ -1,0 +1,22 @@
+#################################################################################
+# Generic Thermostat
+# https://www.home-assistant.io/integrations/generic_thermostat/
+#################################################################################
+
+- platform: generic_thermostat
+  unique_id: computer_fan_controller
+  name: Computer Fan Controller
+  heater: switch.plug_5_on_off
+  target_sensor: sensor.average_rpi_temperature
+  min_temp: 25
+  max_temp: 90
+  target_temp: 50
+  ac_mode: true
+  cold_tolerance: 5
+  hot_tolerance: 5
+  precision: 0.1
+  min_cycle_duration:
+    seconds: 30
+  initial_hvac_mode: "cool"
+  away_temp: 5
+  home_temp: 50

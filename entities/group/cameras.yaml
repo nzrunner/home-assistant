@@ -1,0 +1,14 @@
+#################################################################################
+# Groups allow the user to combine multiple entities into one
+# https://www.home-assistant.io/integrations/group
+#################################################################################
+
+#################################################################################
+# Cameras
+#################################################################################
+security_cameras:
+  name: Security Cameras
+  icon: mdi:cctv
+  entities:
+    - camera.mat_nas_002_living_room
+    - camera.mat_nas_002_courtyard_2
