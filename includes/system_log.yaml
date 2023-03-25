@@ -12,4 +12,5 @@
 # https://www.home-assistant.io/integrations/counter/
 #################################################################################
 
-fire_event: true
+system_log:
+  fire_event: true

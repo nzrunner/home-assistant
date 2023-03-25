@@ -8,61 +8,68 @@
 #                        |___/
 #
 #################################################################################
+# NOTE: I am working towards a minimalised configuration
+# Ultimately, I want to have a once line file that calls all the
+# other YAML includes
+#################################################################################
+homeassistant:
+  # Load packages
+  packages: !include_dir_named includes
 
 #################################################################################
 # Default Configuration
 # Configure a default setup of Home Assistant
 # https://www.home-assistant.io/integrations/default_config/
 #################################################################################
-default_config:
+# default_config: !include includes/default_config.yaml
 
 #################################################################################
 # Front End
 # This offers the official frontend to control Home Assistant
 # https://www.home-assistant.io/integrations/frontend/
 #################################################################################
-frontend:
-  themes: !include_dir_merge_named themes
-  extra_module_url:
-    - /local/community/lovelace-card-mod/card-mod.js
+# frontend: !include includes/frontend.yaml
+# Included in includes/frontend.yaml - Can be removed once proven to work
+#   themes: !include_dir_merge_named themes
+#   extra_module_url:
+#     - /local/community/lovelace-card-mod/card-mod.js
 
 #################################################################################
 # Integrations
 #################################################################################
 # Core Configuration
-homeassistant: !include includes/homeassistant.yaml
-http: !include includes/http.yaml
+# homeassistant: !include includes/homeassistant.yaml
+# http: !include includes/http.yaml
 
 # Logging and History
-# DISABLED - Was tracking too many of the neighbours devices
 # device_tracker: !include includes/device_tracker.yaml
-logger: !include includes/logger.yaml
-recorder: !include includes/recorder.yaml
-system_log: !include includes/system_log.yaml
+# logger: !include includes/logger.yaml
+# recorder: !include includes/recorder.yaml
+# system_log: !include includes/system_log.yaml
 
 # Managed by UI
-automation: !include automations.yaml
-script: !include scripts.yaml
+# automation: !include automations.yaml
+# script: !include scripts.yaml
+# scene: !include scenes.yaml
 
 # Sensors
-binary_sensor: !include includes/binary_sensors.yaml
-sensor: !include includes/sensors.yaml
-template: !include includes/template.yaml
+# binary_sensor: !include includes/binary_sensor.yaml
+# sensor: !include includes/sensor.yaml
+# template: !include includes/template.yaml
 
 # Others
-alarm_control_panel: !include includes/alarm.yaml
-## DISABLED: No easy way to acknowledge an alert
-# alert: !include includes/alerts.yaml
-calendar: !include includes/calendar.yaml
-climate: !include includes/climate.yaml
-group: !include includes/groups.yaml
-media_player: !include includes/media_player.yaml
-monitor_docker: !include includes/monitor_docker.yaml
-notify: !include includes/notify.yaml
-panel_custom: !include includes/panel-custom.yaml
-tts: !include includes/tts.yaml
-zha: !include includes/zha.yaml
+# alarm_control_panel: !include includes/alarm_control_panel.yaml
+# alert: !include includes/alert.yaml
+# calendar: !include includes/calendar.yaml
+# climate: !include includes/climate.yaml
+# group: !include includes/group.yaml
+# media_player: !include includes/media_player.yaml
+# monitor_docker: !include includes/monitor_docker.yaml
+# notify: !include includes/notify.yaml
+# panel_custom: !include includes/panel_custom.yaml
+# tts: !include includes/tts.yaml
+# zha: !include includes/zha.yaml
 
 # Assist - Voice Control
-conversation: !include includes/conversation.yaml
-intent_script: !include includes/intent_script.yaml
+# conversation: !include includes/conversation.yaml
+# intent_script: !include includes/intent_script.yaml

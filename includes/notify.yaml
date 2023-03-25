@@ -12,8 +12,9 @@
 #################################################################################
 # Send notification to Mark's mobile devices
 #################################################################################
-- name: mark_ios_devices
-  platform: group
-  services:
-    - service: mobile_app_marks_iphone
-    - service: mobile_app_marks_ipad_2
+notify:
+  - name: mark_ios_devices
+    platform: group
+    services:
+      - service: mobile_app_marks_iphone
+      - service: mobile_app_marks_ipad_2

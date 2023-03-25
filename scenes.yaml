@@ -1,0 +1,29 @@
+#################################################################################
+#
+#
+#  ___  ___ ___ _ __   ___  ___
+# / __|/ __/ _ \ '_ \ / _ \/ __|
+# \__ \ (_|  __/ | | |  __/\__ \
+# |___/\___\___|_| |_|\___||___/
+#
+#
+#################################################################################
+# This file is used by the scene editor in the Home Assistant frontend.
+#
+# I personally do not use it, mainly because I like doing this in YAML.
+# However, from time to time, it is helpful to click a bit and see
+# what the frontend makes of it.
+#
+# This file must exist for the frontend Scenes editor to work.
+#################################################################################
+- id: 495139d1-9bde-4ae9-bf93-021beeabc8aa
+  name: Office - Test manual scene
+  entities:
+    light.office:
+      brightness: 171
+      rgb_color:
+        - 67
+        - 62
+        - 255
+      state: 'on'
+  icon: mdi:umbrella

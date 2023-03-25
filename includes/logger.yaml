@@ -13,18 +13,19 @@
 # critical #fatal #error #warning #warn #info #debug #notset
 #################################################################################
 
-default: error
-# logs:
-# homeassistant.components.http.ban: debug
-# homeassistant.components.stream.worker: debug
-# custom_components.sensor.authenticated: debug
-# custom_components.monitor_docker: debug
-# custom_components.bureau_of_meteorology: debug
-# aiounifi: debug
-# homeassistant.components.unifi: debug
-# homeassistant.components.device_tracker.unifi: debug
-# homeassistant.components.switch.unifi: debug
-# pyatv: debug
-# homeassistant.components.apple_tv: debug
-# homeassistant.components.zha: debug
-# zigpy: debug
+logger:
+  default: error
+  # logs:
+  # homeassistant.components.http.ban: debug
+  # homeassistant.components.stream.worker: debug
+  # custom_components.sensor.authenticated: debug
+  # custom_components.monitor_docker: debug
+  # custom_components.bureau_of_meteorology: debug
+  # aiounifi: debug
+  # homeassistant.components.unifi: debug
+  # homeassistant.components.device_tracker.unifi: debug
+  # homeassistant.components.switch.unifi: debug
+  # pyatv: debug
+  # homeassistant.components.apple_tv: debug
+  # homeassistant.components.zha: debug
+  # zigpy: debug

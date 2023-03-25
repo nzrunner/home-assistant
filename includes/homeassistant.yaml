@@ -12,32 +12,42 @@
 # https://www.home-assistant.io/integrations/homeassistant/
 #################################################################################
 
-## Name of the location where Home Assistant is running
-name: Home
-## Location required to calculate the time the sun rises and sets
-latitude: !secret home_latitude
-longitude: !secret home_longitude
-## Impacts weather/sunrise data (altitude above sea level in meters)
-elevation: 82
-## Timezone from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-country: AU
-time_zone: Australia/Sydney
-## Measurement system - metric for Metric, imperial for Imperial
-unit_system: metric
-currency: AUD
-## Customization
-## https://www.home-assistant.io/docs/configuration/customizing-devices/#manual-customization
-## This file is in the includes folder so the following inclusion does not require includes/ in the path
-customize: !include customize.yaml
-## Packages
-## https://www.home-assistant.io/docs/configuration/packages/
-## This file is in the includes folder so the following inclusion does not require includes/ in the path
-packages: !include_dir_named packages
-## External Directories
-## List of external URLs that can be fetched
-## https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_urls
-allowlist_external_dirs:
-  - /  # Home Assistant root
-  - /tmp  # Home Assistant snapshots
-media_dirs:
-  local: /media
+homeassistant:
+  # Zone values are now controlled from within the UI
+  ## Name of the location where Home Assistant is running
+  # name: Home
+
+  ## Location required to calculate the time the sun rises and sets
+  # latitude: !secret home_latitude
+  # longitude: !secret home_longitude
+
+  ## Impacts weather/sunrise data (altitude above sea level in meters)
+  # elevation: 82
+
+  ## Timezone from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  # country: AU
+  # time_zone: Australia/Sydney
+
+  ## Measurement system - metric for Metric, imperial for Imperial
+  # unit_system: metric
+  # currency: AUD
+
+  ## Packages
+  ## https://www.home-assistant.io/docs/configuration/packages/
+  ## This file is in the includes folder so the following inclusion does not require includes/ in the path
+  # Loading twice in my minimal configuration
+  # packages: !include_dir_named packages
+
+  ## Customization
+  ## https://www.home-assistant.io/docs/configuration/customizing-devices/#manual-customization
+  ## This file is in the includes folder so the following inclusion does not require includes/ in the path
+  customize: !include ../entities/customize.yaml
+
+  ## External Directories
+  ## List of external URLs that can be fetched
+  ## https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_urls
+  allowlist_external_dirs:
+    - /  # Home Assistant root
+    - /tmp  # Home Assistant snapshots
+  media_dirs:
+    local: /media
