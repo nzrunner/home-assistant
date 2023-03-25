@@ -180,7 +180,7 @@ This is currently just a dumping ground for git recources that I have found.
 
 Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [https://github.com/nzrunner/home-assistant](https://github.com/nzrunner/home-assistant) :sparkles:.
 
-Read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
+Read our [Code of Conduct](./.github/CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
