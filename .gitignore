@@ -32,6 +32,7 @@ deps
 !docs
 !blueprints
 !automations
+!entities
 !scenes
 !scripts
 !old_packages
