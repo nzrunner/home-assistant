@@ -69,6 +69,8 @@
   - [General](#general)
   - [GitHub](#github)
 - [Acknowledgments](#acknowledgments)
+  - [Themes](#themes)
+  - [Inspiration](#inspiration)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
