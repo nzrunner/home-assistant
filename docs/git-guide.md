@@ -14,9 +14,9 @@
 
 <!-- PROJECT LOGO -->
 
-# Matho's Git Guide
-
 [![Logo](/images/mark-matheson-digital-business-consultant.png)](../../)
+
+# Matho's Git Guide
 
 <!-- PROJECT SHIELDS -->
 <!--
