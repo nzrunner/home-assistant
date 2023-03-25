@@ -11,6 +11,11 @@
 # Binary Sensor
 # https://www.home-assistant.io/integrations/binary_sensor
 #################################################################################
+# This is my OLD binary_sensor.yaml
+# I have now adopted @frenck's configuration minimisation model
+# The binary sensors are split into files by entity type
+# This is retained for posterity and just in case disaster strikes
+#################################################################################
 
 #################################################################################
 # Times of the Day
