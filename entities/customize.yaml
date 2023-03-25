@@ -105,61 +105,49 @@ sensor.docker_version:
   instance_name: Docker
 
 sensor.uptimekuma_lidarr:
-  # friendly_name: Lidarr
   domain: entertainment
   icon: mdi:music
 
 sensor.uptimekuma_readarr:
-  # friendly_name: Readarr
   domain: entertainment
   icon: mdi:bookshelf
 
 sensor.uptimekuma_sabnzbd:
-  # friendly_name: SABnzbd
   domain: entertainment
   icon: mdi:cloud-download
 
 sensor.uptimekuma_overseerr:
-  # friendly_name: Overseerr
   domain: entertainment
   icon: mdi:movie-search
 
 sensor.uptimekuma_prowlarr:
-  # friendly_name: Prowlarr
   domain: entertainment
   icon: mdi:server-security
 
 sensor.uptimekuma_bazarr:
-  # friendly_name: Bazarr
   domain: entertainment
   icon: mdi:subtitles
 
 sensor.uptimekuma_plex:
-  # friendly_name: Bazarr
   domain: entertainment
   icon: mdi:plex
 
 sensor.uptimekuma_tautulli:
-  # friendly_name: Tatulli
   domain: entertainment
   icon: mdi:multimedia
 
 sensor.uptimekuma_calibreweb:
-  # friendly_name: Calibre
   domain: entertainment
   icon: mdi:bookshelf
 
 sensor.uptimekuma_radarr:
-  # friendly_name: Radarr
   domain: entertainment
   icon: mdi:movie
 
 sensor.uptimekuma_sonarr:
-  # friendly_name: Sonarr
   domain: entertainment
   icon: mdi:television-box
 
 sensor.uptimekuma_lunasea:
-  # friendly_name: Lunasea
   domain: entertainment
   icon: mdi:multimedia
