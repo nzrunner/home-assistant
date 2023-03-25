@@ -1,0 +1,654 @@
+#################################################################################
+#
+#
+#  ___  ___ _ __  ___  ___  _ __
+# / __|/ _ \ '_ \/ __|/ _ \| '__/
+# \__ \  __/ | | \__ \ (_) | |
+# |___/\___|_| |_|___/\___/|_|
+#
+#
+#################################################################################
+
+#################################################################################
+# Date/Time
+#################################################################################
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "date_time"
+    - "date_time_utc"
+    - "date_time_iso"
+    - "time_date"
+    - "time_utc"
+    - "beat"
+
+#################################################################################
+# Weather - BOM
+#################################################################################
+- platform: template
+  sensors:
+    marsfield_uv_summary:
+      friendly_name: Marsfield UV Summary
+      value_template: >
+        UV Today: Sun Protection
+        {{ as_timestamp(states('sensor.marsfield_uv_start_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }}
+        to {{ as_timestamp(states('sensor.marsfield_uv_end_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }},
+        UV Index predicted to reach {{ states('sensor.marsfield_uv_max_index_0') }} [{{ states('sensor.marsfield_uv_category_0') }}]
+      icon_template: mdi:weather-sunny-alert
+    marsfield_fire_danger_summary:
+      friendly_name: Marsfield Fire Danger Summary
+      value_template: "Fire Danger Today: {{ states('sensor.marsfield_fire_danger_0') }}"
+      icon_template: mdi:fire-alert
+
+#################################################################################
+# Quarantine
+#################################################################################
+- platform: history_stats
+  name: Quarantine times home Mark
+  entity_id: person.mark_matheson
+  state: "home"
+  type: ratio
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Quarantine times away Mark
+  entity_id: person.mark_matheson
+  state: "home"
+  type: count
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Quarantine hours home Mark
+  entity_id: person.mark_matheson
+  state: "home"
+  type: time
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Quarantine Zig-Zag Mark
+  entity_id: person.mark_matheson
+  state: "Zig Zag"
+  type: ratio
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Quarantine Woolies Mark
+  entity_id: person.mark_matheson
+  state: "Woolies"
+  type: ratio
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Quarantine SOP Hockey Centre Mark
+  entity_id: person.mark_matheson
+  state: "SOP Hockey Centre"
+  type: ratio
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: template
+  sensors:
+    quarantine_other_mark:
+      friendly_name: Other locations
+      value_template: >
+        {{ 100 - (states("sensor.quarantine_times_home_mark")|round(2)
+        + states("sensor.quarantine_zig_zag_mark")|round(2)
+        + states("sensor.quarantine_woolies_mark")|round(2)
+        + states("sensor.quarantine_sop_hockey_centre_mark")|round(2))
+        }}
+      icon_template: mdi:chili-hot
+
+- platform: template
+  sensors:
+    quarantine_hours_away_per_day_mark:
+      friendly_name: Hours home per day (Mark)
+      value_template: >
+        {% set home_value = states("sensor.quarantine_hours_home_mark")|round(2) %}
+        {% set away_value = (168 - home_value) %}
+        {% if home_value != None %}
+        {{ (away_value / states("input_number.quarantine_days")|int) | round(2) }}
+        {% endif %}
+
+- platform: template
+  sensors:
+    quarantine_hours_away_mark:
+      friendly_name: Hours outside (Mark)
+      value_template: >-
+        {{ 168 - states("sensor.quarantine_hours_home_mark")|round(2) }}
+
+#################################################################################
+# Component Counts
+#################################################################################
+- platform: template
+  sensors:
+    # Count Lights
+    # Returns two numbers. First is on, second is total
+    # If you want to extract the total number of lights you would use a template like this:
+    # {{ states('sensor.lights_on_total').split()[1] }}
+    # Change the 1 to 0 to get the number of lights that are on.
+    # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
+    # 05/01/2022 - Value Template changed to use a group
+    lights_on_total:
+      value_template: "{{ expand('light.lights_all') | selectattr('state','eq','on') | list | count }}/{{ expand('light.lights_all') | list | count }}"
+
+    # Count Cameras
+    # Returns two numbers. First is on, second is total
+    # If you want to extract the total number of cameras you would use a template like this:
+    # {{ states('sensor.cameras_on_total').split()[1] }}
+    # Change the 1 to 0 to get the number of cameras that are on.
+    # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
+    # 05/01/2022 - Value Template changed to use a group
+    cameras_on_total:
+      value_template: "{{ expand('group.security_cameras') | list | count }}"
+
+    # Count Buttons
+    buttons_on_total:
+      value_template: "{{ expand('group.buttons') | list | count }}"
+
+    # Count Motion Sensors
+    # Returns two numbers. First is on, second is total
+    # If you want to extract the total number of motions you would use a template like this:
+    # {{ states('sensor.motions_on_total').split()[1] }}
+    # Change the 1 to 0 to get the number of motions that are on.
+    # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
+    # 05/01/2022 - Value Template changed to use a group
+    motions_on_total:
+      value_template: "{{ expand('binary_sensor.motion_sensors_all') | selectattr('state','eq','on') | list | count }}
+        /{{ expand('binary_sensor.motion_sensors_all') | list | count }}"
+
+    # Count Temperature Sensors
+    # Returns two numbers. First is on, second is total
+    # If you want to extract the total number of temperatures you would use a template like this:
+    # {{ states('sensor.temperatures_on_total').split()[1] }}
+    # Change the 1 to 0 to get the number of temperatures that are on.
+    # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
+    # 05/01/2022 - Value Template changed to use a group
+    temperatures_on_total:
+      value_template: "{{ expand('sensor.temperature_sensors') | list | count }}"
+
+    # Count Door Sensors
+    # Returns two numbers. First is on, second is total
+    # If you want to extract the total number of temperatures you would use a template like this:
+    # {{ states('sensor.temperatures_on_total').split()[1] }}
+    # Change the 1 to 0 to get the number of temperatures that are on.
+    # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
+    # 05/01/2022 - Value Template changed to use a group
+    doors_on_total:
+      value_template: "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}
+        /{{ expand('binary_sensor.door_sensors_all') | list | count }}"
+
+    # Count Automations
+    count_automations:
+      friendly_name: Automations
+      value_template: "{{ states.automation | list | length }}"
+
+    # Count Scripts
+    count_scripts:
+      friendly_name: Scripts
+      value_template: "{{ states.script| list | length }}"
+
+    # Count Device Trackers
+    count_device_trackers:
+      friendly_name: Device Trackers
+      value_template: "{{ states.device_tracker | list | length }}"
+
+    # Count Binary Sensors
+    count_binary_sensors:
+      friendly_name: Binary Sensors
+      value_template: "{{ states.binary_sensor| list | length }}"
+
+    # Count Sensors
+    count_sensors:
+      friendly_name: Sensors
+      value_template: "{{ states.sensor | list | length }}"
+
+    # Count Switches
+    count_switches:
+      friendly_name: Switches
+      value_template: "{{ states.switch | list | length }}"
+
+    # Count Zones
+    count_zones:
+      friendly_name: Zones
+      value_template: "{{ states.zone | list | length }}"
+
+    # Count Groups
+    count_groups:
+      friendly_name: Groups
+      value_template: "{{ states.group | list | length }}"
+
+    # Input Booleans
+    count_input_booleans:
+      friendly_name: Input Booleans
+      value_template: "{{ states.input_boolean | list | length }}"
+
+    # Input Numbers
+    count_input_numbers:
+      friendly_name: Input Numbers
+      value_template: "{{ states.input_number | list | length }}"
+
+    # Input Texts
+    count_input_texts:
+      friendly_name: Input Texts
+      value_template: "{{ states.input_text | list | length }}"
+
+    # Input Selects
+    count_input_selects:
+      friendly_name: Input Selects
+      value_template: "{{ states.input_select | list | length }}"
+
+    # Input Date Times
+    count_input_datetimes:
+      friendly_name: Input Date/Times
+      value_template: "{{ states.input_datetime | list | length }}"
+
+#################################################################################
+# Plex Recently Added - Movies
+#################################################################################
+- platform: plex_recently_added
+  name: Recently Added Movies  # will create sensor.recently_added_movies
+  token: !secret plex_token
+  host: !secret plex_host
+  port: !secret plex_port
+  section_types:
+    - movie
+
+#################################################################################
+# Plex Recently Added - TV Shows
+#################################################################################
+- platform: plex_recently_added
+  name: Recently Added TV  # will create sensor.recently_added_tv
+  token: !secret plex_token
+  host: !secret plex_host
+  port: !secret plex_port
+  section_types:
+    - show
+
+#################################################################################
+# Sonarr Upcoming
+#################################################################################
+- platform: sonarr_upcoming_media
+  api_key: !secret sonarr_api
+  host: !secret plex_host
+  port: !secret sonarr_port
+  urlbase: /
+  days: 60
+  ssl: false
+  max: 3
+
+#################################################################################
+# Radarr Upcoming
+#################################################################################
+- platform: radarr_upcoming_media
+  api_key: !secret radarr_api
+  host: !secret plex_host
+  port: !secret radarr_port
+  urlbase: /
+  days: 60
+  ssl: false
+  max: 3
+  # theaters: true
+
+#################################################################################
+# Lidarr Upcoming
+#################################################################################
+- platform: lidarr_upcoming_media
+  api_key: !secret lidarr_api
+  host: !secret lidarr_host
+  port: !secret lidarr_port
+  urlbase: /
+  days: 60
+  ssl: false
+  max: 3
+
+#################################################################################
+# Radarr Statistics
+#################################################################################
+# This uses a customised custom component.
+# If the core Radarr integration is ever fixed,
+# the custom component will need to be deleted
+- platform: radarr
+  api_key: !secret radarr_api
+  host: !secret plex_host
+  port: !secret radarr_port
+  days: 60
+  ssl: false
+  unit: GB
+  monitored_conditions:
+    - movies
+    - upcoming
+    - status
+    - diskspace
+    # - commands
+
+#################################################################################
+# Auto Backup - On/Off
+#################################################################################
+- platform: template
+  sensors:
+    auto_backup_template:
+      friendly_name: "Auto Backup Template"
+      value_template: >
+        {% if is_state('sensor.auto_backup', '0') %}
+          off
+        {% elif is_state('sensor.auto_backup', '1') %}
+          on
+        {% endif %}
+
+#################################################################################
+# Server Uptime - Relative
+#################################################################################
+# https://community.home-assistant.io/t/uptime-in-days-hours-and-minutes/180916/52
+- platform: template
+  sensors:
+    # HASS Uptime
+    custom_ha_uptime:
+      friendly_name: HASS Uptime
+      value_template: >
+        {%- set up = now().timestamp()-as_timestamp(states('sensor.hass_uptime')) %}
+
+        {%- macro phrase(name,divisor,mod=None) %}
+          {%- set value = ((up//divisor) % (mod if mod else divisor))|int %}
+          {%- set end = 's' if value > 1 else '' %}
+          {{- '{} {}{}'.format(value,name,end) if value|int > 0 else ''}}
+        {%- endmacro %}
+
+        {%- set values = [phrase('week',60*60*24*7),
+                          phrase('day',60*60*24,7),
+                          phrase('hour',60*60,24),
+                          phrase('min',60)]
+                          |select('!=','')|list %}
+        {{values[:-1]|join(', ') ~ ' and ' ~ values[-1] if values|length > 1 else
+          values|first}}
+
+    # MAT-NAS-001 Uptime
+    custom_mat_nas_001_uptime:
+      friendly_name: MAT-NAS-001 Uptime
+      value_template: >
+        {%- set up = now().timestamp()-as_timestamp(states('sensor.mat_nas_001_last_boot')) %}
+
+        {%- macro phrase(name,divisor,mod=None) %}
+          {%- set value = ((up//divisor) % (mod if mod else divisor))|int %}
+          {%- set end = 's' if value > 1 else '' %}
+          {{- '{} {}{}'.format(value,name,end) if value|int > 0 else ''}}
+        {%- endmacro %}
+
+        {%- set values = [phrase('week',60*60*24*7),
+                          phrase('day',60*60*24,7),
+                          phrase('hour',60*60,24),
+                          phrase('min',60)]
+                          |select('!=','')|list %}
+        {{values[:-1]|join(', ') ~ ' and ' ~ values[-1] if values|length > 1 else
+          values|first}}
+
+    # MAT-NAS-002 Uptime
+    custom_mat_nas_002_uptime:
+      friendly_name: MAT-NAS-002 Uptime
+      value_template: >
+        {%- set up = now().timestamp()-as_timestamp(states('sensor.mat_nas_002_last_boot')) %}
+
+        {%- macro phrase(name,divisor,mod=None) %}
+          {%- set value = ((up//divisor) % (mod if mod else divisor))|int %}
+          {%- set end = 's' if value > 1 else '' %}
+          {{- '{} {}{}'.format(value,name,end) if value|int > 0 else ''}}
+        {%- endmacro %}
+
+        {%- set values = [phrase('week',60*60*24*7),
+                          phrase('day',60*60*24,7),
+                          phrase('hour',60*60,24),
+                          phrase('min',60)]
+                          |select('!=','')|list %}
+        {{values[:-1]|join(', ') ~ ' and ' ~ values[-1] if values|length > 1 else
+          values|first}}
+
+#################################################################################
+# UniFi Gateway
+#################################################################################
+- platform: unifigateway
+  host: !secret unifi-host
+  port: !secret unifi-port
+  username: !secret unifi-username
+  password: !secret unifi-password
+  monitored_conditions:
+    - www
+    - lan
+    - vpn
+    - wan
+    - wlan
+    - alerts
+    - firmware
+
+- platform: template
+  sensors:
+    unifi_gateway_wan_cpu:
+      friendly_name: "CPU percentage"
+      value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['cpu'] }}"
+      unit_of_measurement: "%"
+    unifi_gateway_wan_mem:
+      friendly_name: "Memory percentage"
+      value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['mem'] }}"
+      unit_of_measurement: "%"
+    # DISABLED: USG3 doesn't track temperature
+    # unifi_gateway_wan_cpu_temp:
+    #  friendly_name: "CPU temperature"
+    #  value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['temps']['CPU']|replace('C', '') }}"
+    #  unit_of_measurement: "°C"
+    unifi_gateway_wan_ip:
+      friendly_name: "WAN IP"
+      value_template: "{{ states.sensor.unifi_gateway_wan.attributes.wan_ip }}"
+
+#################################################################################
+# System Monitor
+#################################################################################
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /config
+    - type: memory_use_percent
+    - type: processor_use
+    - type: last_boot
+    - type: memory_use
+    - type: memory_free
+
+#################################################################################
+# Synology Sensors
+#################################################################################
+- platform: template
+  sensors:
+    # MAT-NAS-002 System Check
+    mat_nas_002_system_check:
+      value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'systemCheck') }}"
+
+    # MAT-NAS-002 Network Check
+    mat_nas_002_network_check:
+      value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'network') }}"
+
+    # MAT-NAS-002 Malware Check
+    mat_nas_002_malware_check:
+      value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'malware') }}"
+
+    # MAT-NAS-002 UserInfo Check
+    mat_nas_002_userinfo_check:
+      value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'userInfo') }}"
+
+    # MAT-NAS-002 Apps Available
+    mat_nas_002_apps_available:
+      value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'update') }}"
+
+    # MAT-NAS-001 System Check
+    piha_system_check:
+      value_template: "{{ state_attr('binary_sensor.piha_security_status', 'systemCheck') }}"
+
+    # MAT-NAS-001 Network Check
+    piha_network_check:
+      value_template: "{{ state_attr('binary_sensor.piha_security_status', 'network') }}"
+
+    # MAT-NAS-001 Malware Check
+    piha_malware_check:
+      value_template: "{{ state_attr('binary_sensor.piha_security_status', 'malware') }}"
+
+    # MAT-NAS-001 UserInfo Check
+    piha_userinfo_check:
+      value_template: "{{ state_attr('binary_sensor.piha_security_status', 'userInfo') }}"
+
+    # MAT-NAS-001 Apps Available
+    piha_apps_available:
+      value_template: "{{ state_attr('binary_sensor.piha_security_status', 'update') }}"
+
+#################################################################################
+# USG Sensors
+#################################################################################
+- platform: template
+  sensors:
+    # Download Speed
+    usg_download_speed:
+      value_template: "{{ state_attr('sensor.unifi_gateway_www', 'xput_down') }}"
+      unit_of_measurement: Mb
+
+    # Upload Speed
+    usg_upload_speed:
+      value_template: "{{ state_attr('sensor.unifi_gateway_www', 'xput_up') }}"
+      unit_of_measurement: Mb
+
+    # Latency
+    usg_latency:
+      value_template: "{{ state_attr('sensor.unifi_gateway_www', 'latency') }}"
+      unit_of_measurement: Mb
+
+    # Download Speed
+    usg_ping_speed:
+      value_template: "{{ state_attr('sensor.unifi_gateway_www', 'speedtest_ping') }}"
+      unit_of_measurement: Mb
+
+#################################################################################
+# Speedtest
+#################################################################################
+- platform: average
+  name: "Speedtest Download Average"
+  entities:
+    - sensor.speedtest_download
+  start: "{{ 0 }}"
+  end: "{{ now() }}"
+
+- platform: average
+  name: "Speedtest Upload Average"
+  entities:
+    - sensor.speedtest_upload
+  start: "{{ 0 }}"
+  end: "{{ now() }}"
+
+- platform: template
+  sensors:
+    speedtest_last_run:
+      friendly_name: "Last Run"
+      value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%H:%M %Z') }}"
+      unique_id: speedtestlastrun
+
+#################################################################################
+# Host RPi CPU Temperature
+#################################################################################
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  # If errors occur, make sure configuration file is encoded as UTF-8
+  unit_of_measurement: "°C"
+  value_template: "{{ value | multiply(0.001) | round(1) }}"
+
+#################################################################################
+# Average Temperature Sensors
+#################################################################################
+# Office Average Temperature
+- platform: average
+  name: "Office Temperature Average"
+  entities:
+    - sensor.office_motion_temperature
+  duration:
+    days: 1
+
+# Computer Cabinet Average Temperature
+- platform: average
+  name: "Computer Cabinet Temperature Average"
+  entities:
+    - sensor.computer_weather_temperature
+  duration:
+    days: 1
+
+# Living Room Average Temperature
+- platform: average
+  name: "Living Room Temperature Average"
+  entities:
+    - sensor.living_room_motion_temperature
+  duration:
+    days: 1
+
+# Bathroom Average Temperature
+- platform: average
+  name: "Bathroom Temperature Average"
+  entities:
+    - sensor.bathroom_temperature
+  duration:
+    days: 1
+
+# Bedroom Average Temperature
+- platform: average
+  name: "Bedroom Temperature Average"
+  entities:
+    - sensor.bedroom_temperature
+  duration:
+    days: 1
+
+# Courtyard Average Temperature
+- platform: average
+  name: "Courtyard Temperature Average"
+  entities:
+    - sensor.courtyard_temperature
+  duration:
+    days: 1
+
+#################################################################################
+# Average RPi CPU Temperature
+#################################################################################
+- platform: average
+  name: "Average RPi Temperature"
+  unique_id: average_rpi_temperature
+  entities:
+    - sensor.cpu_temperature
+#    - sensor.mat_rpi_003_cputemp
+#    - sensor.mat_rpi_004_cputemp
+#    - sensor.mat_rpi_005_cputemp
+
+#################################################################################
+# Get the latest Docker version available from Github
+#################################################################################
+- platform: command_line
+  name: Docker Latest Version
+  command: 'curl -sL https://api.github.com/repos/moby/moby/releases/latest | jq -r ".tag_name | sub(\"v\"; \"\")"'
+  scan_interval: 86400
+
+#################################################################################
+# Sunrise/Sunset
+#################################################################################
+- platform: template
+  sensors:
+    nextsunrise:
+      friendly_name: "Next Sunrise"
+      value_template: >
+        {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+      icon_template: mdi:weather-sunset-up
+    nextsunset:
+      friendly_name: "Next Sunset"
+      value_template: >
+        {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+      icon_template: mdi:weather-sunset-down
