@@ -83,6 +83,9 @@
   - [Themes](#themes)
   - [Inspiration](#inspiration)
 - [Contributing](#contributing)
+  - [Our Contributors](#our-contributors)
+- [Sponsorship](#sponsorship)
+  - [Our Sponsors](#our-sponsors)
 - [License](#license)
 - [Contact](#contact)
 
