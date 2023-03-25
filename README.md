@@ -389,10 +389,10 @@ If you like what I've done, please consider sponsoring me. Like everyone, I have
 
 ### Our Sponsors
 
-<!-- readme: sponsors -start -->
+<!-- readme: nzrunner,sponsors -start -->
 <table>
 </table>
-<!-- readme: sponsors -end -->
+<!-- readme: nzrunner,sponsors -end -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
