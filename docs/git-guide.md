@@ -10,14 +10,13 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
+---
+
 <!-- PROJECT LOGO -->
 
 # Matho's Git Guide
 
-<div>
-  <a href="https://github.com/nzrunner/home-assistant">
-    <img src="../images/mark-matheson-digital-business-consultant.png" alt="Logo">
-  </a>
+[![Logo](/images/mark-matheson-digital-business-consultant.png)](../../)
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -41,22 +40,22 @@
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
 [![Home Assistant CI][homeassistantci-shield]][homeassistantci]
-<br />
 
-<!-- PROJECT SHORT DESCRIPTION AND MENU -->
+---
 
-[**Explore the docs »**](https://github.com/nzrunner/home-assistant)<br />
-[Git Guide](/docs/git-guide.md)
-·
-[Resources](/docs/resources.md)
-·
-[Report Bug](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%90%9B+Bug%2C%F0%9F%A9%B9+Triage&template=bug_report.yml&title=%5BBUG%5D%3A+)
-·
-[Request Feature](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%91%8D+Enhancement%2C%F0%9F%A9%B9+Triage&template=feature_request.yml&title=%5BFEATURE+REQUEST%5D%3A+)
-·
-[ChangeLog](/CHANGELOG.md)
+## <!-- PROJECT SHORT DESCRIPTION AND MENU -->
 
-</div>
+[🏡 Home](https://github.com/nzrunner/home-assistant)
+·
+[📚 Git Guide](/docs/git-guide.md)
+·
+[💻 Resources](/docs/resources.md)
+·
+[🐛 Report Bug](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%90%9B+Bug%2C%F0%9F%A9%B9+Triage&template=bug_report.yml&title=%5BBUG%5D%3A+)
+·
+[👍 Request Feature](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%91%8D+Enhancement%2C%F0%9F%A9%B9+Triage&template=feature_request.yml&title=%5BFEATURE+REQUEST%5D%3A+)
+·
+[🗒 ChangeLog](/CHANGELOG.md)
 
 <!-- TABLE OF CONTENTS -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
