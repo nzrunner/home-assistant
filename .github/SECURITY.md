@@ -1,4 +1,5 @@
 # Security Policy
+
 Thanks for helping make GitHub safe for everyone.
 
 We take the security of our software products and services seriously.
