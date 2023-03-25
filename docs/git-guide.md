@@ -238,7 +238,7 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE>txt) for more inf
 [stars-url]: https://github.com/nzrunner/home-assistant/stargazers
 [bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%90%9B+Bug%22
 [features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%91%8D+Enhancement%22
-[license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
+[license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.md
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
 [home-assistant]: https://home-assistant.io
