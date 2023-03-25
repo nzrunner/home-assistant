@@ -362,6 +362,22 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+### Our Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SPONSORSHIP -->
+
+If you like what I've done, please consider sponsoring me. Like everyone, I have costs associated with maintaining this repository. Any little bit will help.
+
+<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="60" width="217"></a>
+
+<!-- readme: sponsors -start -->
+<!-- readme: sponsors -end -->
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
