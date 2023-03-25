@@ -41,22 +41,21 @@
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
 [![Home Assistant CI][homeassistantci-shield]][homeassistantci]
+<br />
 
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
-  <p>
-    <br />
-    <a href="https://github.com/nzrunner/home-assistant"><strong>Explore the docs »</strong></a>
-    <br />
-    <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug">Report Bug</a>
-    ·
-    <a href="https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement">Request Feature</a>
-    ·
-    <a href="/docs/git-guide.md">Git Guide</a>
-    ·
-    <a href="/docs/resources.md">Resources</a>
-    ·
-    <a href="/CHANGELOG.md">ChangeLog</a>
-  </p>
+
+[**Explore the docs »**](https://github.com/nzrunner/home-assistant)<br />
+[Git Guide](/docs/git-guide.md)
+·
+[Resources](/docs/resources.md)
+·
+[Report Bug](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%90%9B+Bug%2C%F0%9F%A9%B9+Triage&template=bug_report.yml&title=%5BBUG%5D%3A+)
+·
+[Request Feature](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%91%8D+Enhancement%2C%F0%9F%A9%B9+Triage&template=feature_request.yml&title=%5BFEATURE+REQUEST%5D%3A+)
+·
+[ChangeLog](/CHANGELOG.md)
+
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -186,8 +185,8 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE>txt) for more inf
 [contributors-url]: https://github.com/nzrunner/home-assistant/graphs/contributors
 [forks-url]: https://github.com/nzrunner/home-assistant/network/members
 [stars-url]: https://github.com/nzrunner/home-assistant/stargazers
-[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Abug
-[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement
+[bugs-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%90%9B+Bug%22
+[features-url]: https://github.com/nzrunner/home-assistant/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%91%8D+Enhancement%22
 [license-url]: https://github.com/nzrunner/home-assistant/blob/master/LICENSE.txt
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
