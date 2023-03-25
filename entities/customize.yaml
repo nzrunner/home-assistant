@@ -12,12 +12,6 @@
 # https://www.home-assistant.io/docs/configuration/customizing-devices/
 #################################################################################
 
-# Now controlled within the UI
-# zone.home:
-#   name: Home
-#   icon: mdi:home
-#   radius: 30
-
 package.node_anchors:
   common: &common
     package: "sysmonitor"
