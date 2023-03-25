@@ -111,7 +111,7 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier. In addition, I learnt about Git pre-commit hooks, and have a few of these running on my RPi, meaning the code I upload is much cleaner.
 
-I have adopted a similar approach to @frenck and @metbril and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even midly interested, it is definitely worth investing the time and effort. Links to their configurations are available in the [Acknowledgements](#acknowledgments) section below.
+I have adopted a similar approach to @frenck and @metbril and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even mildly interested, it is definitely worth investing the time and effort. Links to their configurations are available in the [Acknowledgements](#acknowledgments) section below.
 
 As a result of these major changes in my Git repository, my Home Assistant configuration is cleaner and much easier to understand.
 
