@@ -46,15 +46,15 @@
 <!-- PROJECT SHORT DESCRIPTION AND MENU -->
 
 [🏡 Home](https://github.com/nzrunner/home-assistant)
-·
+|
 [📚 Git Guide](/docs/git-guide.md)
-·
+|
 [💻 Resources](/docs/resources.md)
-·
+|
 [🐛 Report Bug](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%90%9B+Bug%2C%F0%9F%A9%B9+Triage&template=bug_report.yml&title=%5BBUG%5D%3A+)
-·
+|
 [👍 Request Feature](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%91%8D+Enhancement%2C%F0%9F%A9%B9+Triage&template=feature_request.yml&title=%5BFEATURE+REQUEST%5D%3A+)
-·
+|
 [🗒 ChangeLog](/CHANGELOG.md)
 
 <!-- TABLE OF CONTENTS -->
@@ -86,6 +86,8 @@
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+---
 
 <!-- ABOUT THE PROJECT -->
 
