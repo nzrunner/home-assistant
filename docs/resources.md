@@ -43,7 +43,7 @@
 
 ---
 
-## <!-- PROJECT SHORT DESCRIPTION AND MENU -->
+<!-- PROJECT SHORT DESCRIPTION AND MENU -->
 
 [🏡 Home](https://github.com/nzrunner/home-assistant)
 ·
