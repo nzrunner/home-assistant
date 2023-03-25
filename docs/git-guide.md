@@ -70,6 +70,8 @@
 - [Change Log](#change-log)
 - [Resources](#resources)
 - [Acknowledgments](#acknowledgments)
+  - [Themes](#themes)
+  - [Inspiration](#inspiration)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
