@@ -80,9 +80,7 @@
 
 <!-- RESOURCES -->
 
-## Resources
-
-### General
+## General
 
 | **Description**                                     | **Link**                                                                         |
 | :-------------------------------------------------- | :------------------------------------------------------------------------------- |
@@ -92,7 +90,7 @@
 | The base for this README                            | <https://github.com/othneildrew/Best-README-Template>                            |
 | Choose an open source license                       | <https://choosealicense.com/>                                                    |
 
-### GitHub
+## GitHub
 
 | **Description**                                             | **Link**                                                                                                                     |
 | :---------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
