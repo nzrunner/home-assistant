@@ -32,9 +32,13 @@ deps
 !docs
 !blueprints
 !automations
+!automations/**
 !entities
+!entities/**
 !scenes
+!scenes/**
 !scripts
+!scripts/**
 !old_packages
 
 # Specific file ignores
@@ -59,4 +63,3 @@ themes
 www
 
 # Temporary ignores
-.old_config

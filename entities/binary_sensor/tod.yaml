@@ -1,0 +1,12 @@
+#################################################################################
+# Times of the Day
+#################################################################################
+- platform: tod
+  name: Night
+  after: sunset
+  before: sunrise
+
+- platform: tod
+  name: Day
+  after: sunrise
+  before: sunset

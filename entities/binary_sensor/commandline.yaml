@@ -1,0 +1,10 @@
+#################################################################################
+# Zigbee Controller online
+#################################################################################
+- platform: command_line
+  name: Zigbee Controller
+  command: "test -e /dev/ttyACM0 && echo 'Exists' || echo 'Missing'"
+  payload_on: "Exists"
+  payload_off: "Missing"
+  scan_interval: 60
+  device_class: connectivity

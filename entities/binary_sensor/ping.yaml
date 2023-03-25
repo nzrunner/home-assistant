@@ -1,0 +1,56 @@
+#################################################################################
+# Ping
+#################################################################################
+- platform: ping
+  host: !secret usg_router
+  name: USG Router
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret upstairs_switch
+  name: Upstairs Switch
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret upstairs_ap
+  name: Upstairs Access Point
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret cloud_key
+  name: Cloud Key
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret downstairs_switch
+  name: Downstairs Switch
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret downstairs_ap
+  name: Downstairs Access Point
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret rpi_switch
+  name: RPi Switch
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret courtyard_camera
+  name: Courtyard Camera
+  count: 3
+  scan_interval: 30
+
+- platform: ping
+  host: !secret living_room_camera
+  name: Living Room Camera
+  count: 3
+  scan_interval: 30
