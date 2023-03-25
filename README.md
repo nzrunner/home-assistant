@@ -92,19 +92,30 @@
 
 ## About The Project
 
-Home Assistant (<https://homeassistant.io>) is an awesome open-source home automation product that I have deployed to run my house.
+[Home Assistant](https://homeassistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
 I created this project to: -
 
 - Document my configuration (always a good thing)
 - Have a backup of my configuration (another good thing)
 - Contribute to the open-source community
+- Learn GitHub
 
 As I continue to make improvements to my smart home, I will be updating my configuration. Be sure to ⭐ my page and stay tuned for the latest updates.
 
 Hopefully, as I have learned from others and "borrowed" sectons of their code, others can benefit from my configuration.
 
-Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the acknowledgements section.
+Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the [acknowledgements](#acknowledgments) section.
+
+### Update: 2023-04-25
+
+Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier. In addition, I learnt about Git pre-commit hooks, and have a few of these running on my RPi, meaning the code I upload is much cleaner.
+
+I have adopted a similar approach to @frenck and @metbril and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even midly interested, it is definitely worth investing the time and effort. Links to their configurations are available in the [Acknowledgements](#acknowledgments) section below.
+
+As a result of these major changes in my Git repository, my Home Assistant configuration is cleaner and much easier to understand.
+
+A huge 🙏 thank you to the open-source community!
 
 ## Dashboards
 
