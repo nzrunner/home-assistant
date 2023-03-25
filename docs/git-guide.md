@@ -12,7 +12,7 @@
 
 <!-- PROJECT LOGO -->
 
-# Matho's Home Assistant Configuration
+# Matho's Git Guide
 
 <div>
   <a href="https://github.com/nzrunner/home-assistant">
