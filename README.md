@@ -65,7 +65,8 @@
 <summary>Table of Contents</summary>
 
 - [About The Project](#about-the-project)
-  - [Update: 2023-04-25](#update-2023-04-25)
+  - [Updates](#updates)
+    - [Update: 2023-04-25](#update-2023-04-25)
 - [Dashboards](#dashboards)
 - [Built With](#built-with)
 - [Integrations](#integrations)
