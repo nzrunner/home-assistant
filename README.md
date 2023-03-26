@@ -28,15 +28,15 @@
 -->
 
 [![HA Version][ha-version-shield]][home-assistant]
-<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28" width="174"></a>
-
+[![GitHub Sponsor Me][github-sponsor-me-shield]][github-sponsors-url]
+<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28" width="174"></a><br />
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
-
+[![GitHub Sponsors][github-sponsors-shield]][github-sponsors-url]<br />
 [![Project Maintenance][maintenance-shield]](https://github.com/nzrunner/home-assistant/pulse)
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
@@ -452,6 +452,8 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [raspberry-pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
 [homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=flat-square
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
+[github-sponsors-shield]: https://img.shields.io/github/sponsors/nzrunner?label=Sponsors&style=flat-square
+[github-sponsor-me-shield]: https://img.shields.io/badge/sponsor-lightgrey?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white
 
 <!-- URL's -->
 
@@ -464,3 +466,4 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
 [home-assistant]: https://home-assistant.io
+[github-sponsors-url]: https://github.com/sponsors/nzrunner
