@@ -1,0 +1,26 @@
+language: "en"
+intents:
+  YearOfVoice:
+    data:
+      - sentences:
+          - "how is the year of voice going"
+
+  HangTheLaundry:
+    data:
+      - sentences:
+          - "[hang][ing] [the] laundry [out]"
+
+  LaundryInside:
+    data:
+      - sentences:
+          - "[bring][ing] [the] laundry in"
+
+  BinsOut:
+    data:
+      - sentences:
+          - "[put] [the] bins out"
+
+  BinsIn:
+    data:
+      - sentences:
+          - "[bring] [the] bins in"
