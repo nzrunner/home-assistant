@@ -98,7 +98,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## Overview
 
 [Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
