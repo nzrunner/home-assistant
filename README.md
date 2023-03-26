@@ -439,18 +439,18 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!-- Shields -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=for-the-badge
-[forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=for-the-badge
-[stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=for-the-badge
-[bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
-[features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
-[license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
-[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
-[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=flat-square
+[bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=flat-square&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
+[features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=flat-square&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
+[license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=flat-square
+[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=flat-square
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=flat-square
+[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=flat-square
 [hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [raspberry-pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
-[homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=for-the-badge
+[homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=flat-square
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
 
 <!-- URL's -->
