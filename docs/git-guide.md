@@ -28,15 +28,15 @@
 -->
 
 [![HA Version][ha-version-shield]][home-assistant]
-<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28" width="174"></a>
-
+[![GitHub Sponsor Me][github-sponsor-me-shield]][github-sponsors-url]
+<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28" width="174"></a><br />
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
 [![MIT License][license-shield]][license-url]
-
+[![GitHub Sponsors][github-sponsors-shield]][github-sponsors-url]<br />
 [![Project Maintenance][maintenance-shield]](https://github.com/nzrunner/home-assistant/pulse)
 [![GitHub Activity][commits-shield]][commits]
 [![GitHub Last Commit][last-commit-shield]][commits]
@@ -222,7 +222,8 @@ Don't forget to give the project a star! Thanks again!
 
 If you like what I've done, please consider sponsoring me. Like everyone, I have costs associated with maintaining this repository. Any little bit will help.
 
-<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="60" width="217"></a>
+[![GitHub Sponsor Me][github-sponsor-me-shield]][github-sponsors-url]
+<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28" width="174"></a>
 
 ### Our Sponsors
 
@@ -264,17 +265,19 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!-- Shields -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=for-the-badge
-[forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=for-the-badge
-[stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=for-the-badge
-[bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
-[features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=for-the-badge&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
-[license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=for-the-badge
-[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
-[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=for-the-badge
-[homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/nzrunner/home-assistant.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/nzrunner/home-assistant.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/nzrunner/home-assistant.svg?style=flat-square
+[bugs-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=flat-square&label=Bugs&query=is%3Aopen%20is%3Aissue%20label%3Abug
+[features-shield]: https://img.shields.io/github/issues-search/nzrunner/home-assistant?style=flat-square&label=Feature%20Requests&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement
+[license-shield]: https://img.shields.io/github/license/nzrunner/home-assistant.svg?style=flat-square
+[commits-shield]: https://img.shields.io/github/commit-activity/y/nzrunner/home-assistant.svg?style=flat-square
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=flat-square
+[last-commit-shield]: https://img.shields.io/github/last-commit/nzrunner/home-assistant.svg?style=flat-square
+[homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=flat-square
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
+[github-sponsors-shield]: https://img.shields.io/github/sponsors/nzrunner?label=Sponsors&style=flat-square
+[github-sponsor-me-shield]: https://img.shields.io/badge/sponsor-lightgrey?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white
 
 <!-- URL's -->
 
@@ -287,3 +290,4 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [commits]: https://github.com/nzrunner/home-assistant/commits/master
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
 [home-assistant]: https://home-assistant.io
+[github-sponsors-url]: https://github.com/sponsors/nzrunner
