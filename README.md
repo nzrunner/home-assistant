@@ -116,7 +116,10 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 
 ### Updates
 
-#### Update: 2023-04-25
+<details>
+<summary>Update: 2023-04-25</summary>
+
+### Update: 2023-04-25
 
 Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier. In addition, I learnt about Git pre-commit hooks, and have a few of these running on my RPi, meaning the code I upload is much cleaner.
 
@@ -125,6 +128,8 @@ I have adopted a similar approach to @frenck and @metbril and have enhanced how 
 As a result of these major changes in my Git repository, my Home Assistant configuration is cleaner and much easier to understand.
 
 A huge 🙏 thank you to the open-source community!
+
+</details>
 
 ## Built With
 
