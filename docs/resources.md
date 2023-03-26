@@ -94,6 +94,15 @@
 | The base for this README                            | <https://github.com/othneildrew/Best-README-Template>                            |
 | Choose an open source license                       | <https://choosealicense.com/>                                                    |
 
+## Home Assistant
+
+| **Description**                | **Link**                                                       |
+| :----------------------------- | :------------------------------------------------------------- |
+| Home Assistant                 | <https://home-assistant.io>                                    |
+| Conversation                   | <https://www.home-assistant.io/integrations/conversation>      |
+| Assist on Apple Devices        | <https://www.home-assistant.io/docs/assist/apple>              |
+| Google Assistant intetegration | <https://www.home-assistant.io/integrations/google_assistant/> |
+
 ## GitHub
 
 | **Description**                                             | **Link**                                                                                                                     |
