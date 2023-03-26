@@ -66,9 +66,10 @@
 
 - [About The Project](#about-the-project)
   - [Updates](#updates)
-    - [Update: 2023-04-25](#update-2023-04-25)
+  - [Update: 2023-04-25](#update-2023-04-25)
 - [Built With](#built-with)
 - [Dashboards](#dashboards)
+  - [Screenshots](#screenshots)
   - [Lovelace UI](#lovelace-ui)
 - [Integrations](#integrations)
 - [Custom Components](#custom-components)
