@@ -15,3 +15,8 @@
 homeassistant:
   # Load packages
   packages: !include_dir_named includes
+
+  ## Customization
+  ## https://www.home-assistant.io/docs/configuration/customizing-devices/#manual-customization
+  # For some reason, this won;t load from homeassistant.yaml. Needs to be inconfiguration.yaml
+  customize: !include entities/customize.yaml

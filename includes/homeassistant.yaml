@@ -15,7 +15,8 @@
 homeassistant:
   ## Customization
   ## https://www.home-assistant.io/docs/configuration/customizing-devices/#manual-customization
-  customize: !include ../entities/customize.yaml
+  # For some reason this doesn;t load. Needs to be in configuration.yaml
+  # customize: !include ../entities/customize.yaml
 
   ## External Directories
   ## List of external URLs that can be fetched
