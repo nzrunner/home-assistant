@@ -4,6 +4,7 @@ ignore: |
   custom_components/
   ip_bans.yaml
   lovelace-ui.yaml
+  scripts.yaml
   secrets.yaml
   themes/
   .github/

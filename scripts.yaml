@@ -1,30 +1,20 @@
-#################################################################################
-#
-#                _       _
-#  ___  ___ _ __(_)_ __ | |_ ___
-# / __|/ __| '__| | '_ \| __/ __|
-# \__ \ (__| |  | | |_) | |_\__ \
-# |___/\___|_|  |_| .__/ \__|___/
-#                 |_|
-#
-#################################################################################
 broadcast_message:
   alias: Broadcast message
   sequence:
-    - service: tts.google_translate_say
-      data:
-        entity_id: "{{ entity_id }}"
-        message: "{{ message }}"
-    - service: media_player.volume_set
-      data:
-        entity_id: "{{ entity_id }}"
-        volume_level: "{{ volume }}"
+  - service: tts.google_translate_say
+    data:
+      entity_id: '{{ entity_id }}'
+      message: '{{ message }}'
+  - service: media_player.volume_set
+    data:
+      entity_id: '{{ entity_id }}'
+      volume_level: '{{ volume }}'
   mode: single
   icon: hass:speaker
 update_speedtestnet:
   alias: Update SpeedtestNet info
   sequence:
-    - service: speedtestdotnet.speedtest
+  - service: speedtestdotnet.speedtest
   mode: single
   icon: mdi:update
 check_config:
@@ -35,290 +25,287 @@ check_config:
 alarm_away:
   alias: Alarm - Away
   sequence:
-    - service: automation.trigger
-      data:
-        skip_condition: true
-      target:
-        entity_id: automation.check_all_doors
-    - service: light.turn_off
-      data: {}
-      target:
-        entity_id: light.lights_all
-    - type: turn_off
-      device_id: 2e53d475d3d4aff442d2df10d6f77b24
-      entity_id: switch.monitors
-      domain: switch
-    - service: remote.turn_off
-      data: {}
-      target:
-        entity_id: remote.sony_bravia_tv
-    - if:
-        - condition: state
-          entity_id: input_boolean.use_heaters
-          state: "on"
-      then:
-        - service: switch.turn_off
-          data: {}
-          target:
-            entity_id:
-              - climate.bedroom_heater_controller
-              - climate.living_room_heater_controller
-    - if:
-        - condition: state
-          entity_id: input_boolean.use_fans
-          state: "on"
-      then:
-        - service: switch.turn_off
-          data: {}
-          target:
-            entity_id:
-              - switch.plug_2_on_off
-              - switch.plug_3_on_off
-    - service: automation.turn_on
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.check_all_doors
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.lights_all
+  - type: turn_off
+    device_id: 2e53d475d3d4aff442d2df10d6f77b24
+    entity_id: switch.monitors
+    domain: switch
+  - service: remote.turn_off
+    data: {}
+    target:
+      entity_id: remote.sony_bravia_tv
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_heaters
+      state: 'on'
+    then:
+    - service: switch.turn_off
       data: {}
       target:
         entity_id:
-          - automation.alarm_cameras_detected_motion
-          - automation.alarm_notify_living_room
-    - service: homeassistant.turn_off
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_fans
+      state: 'on'
+    then:
+    - service: switch.turn_off
       data: {}
       target:
         entity_id:
-          - switch.mat_nas_002_home_mode
-          - switch.mat_nas_001_surveillance_station_home_mode
-    - data: {}
-      service: alarm_control_panel.alarm_arm_away
-      target:
-        entity_id: alarm_control_panel.home_alarm
-    - service: input_boolean.turn_on
-      data: {}
-      target:
-        entity_id: input_boolean.welcome_home
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id:
+      - automation.alarm_cameras_detected_motion
+      - automation.alarm_notify_living_room
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.mat_nas_002_home_mode
+      - switch.mat_nas_001_surveillance_station_home_mode
+  - data: {}
+    service: alarm_control_panel.alarm_arm_away
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.welcome_home
   mode: single
   icon: mdi:lock-outline
 alarm_night:
   alias: Alarm - Night
   sequence:
-    - service: input_boolean.turn_on
-      data: {}
-      target:
-        entity_id: input_boolean.gone_to_bed
-    - service: automation.trigger
-      data:
-        skip_condition: true
-      target:
-        entity_id: automation.check_all_doors
-    - service: homeassistant.turn_on
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.gone_to_bed
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.check_all_doors
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id:
+      - group.all_door_notifications
+      - group.motion_notify_downstairs
+      - group.motion_notify_outside
+      - automation.office_notify
+    enabled: false
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.lights_all
+  - type: turn_off
+    device_id: 2e53d475d3d4aff442d2df10d6f77b24
+    entity_id: switch.monitors
+    domain: switch
+  - service: remote.turn_off
+    data: {}
+    target:
+      entity_id: remote.sony_bravia_tv
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_heaters
+      state: 'on'
+    then:
+    - service: switch.turn_off
       data: {}
       target:
         entity_id:
-          - group.all_door_notifications
-          - group.motion_notify_downstairs
-          - group.motion_notify_outside
-          - automation.office_notify
-      enabled: false
-    - service: light.turn_off
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_fans
+      state: 'on'
+    then:
+    - service: switch.turn_off
       data: {}
       target:
-        entity_id: light.lights_all
-    - type: turn_off
-      device_id: 2e53d475d3d4aff442d2df10d6f77b24
-      entity_id: switch.monitors
-      domain: switch
-    - service: remote.turn_off
-      data: {}
-      target:
-        entity_id: remote.sony_bravia_tv
-    - if:
-        - condition: state
-          entity_id: input_boolean.use_heaters
-          state: "on"
-      then:
-        - service: switch.turn_off
-          data: {}
-          target:
-            entity_id:
-              - climate.bedroom_heater_controller
-              - climate.living_room_heater_controller
-    - if:
-        - condition: state
-          entity_id: input_boolean.use_fans
-          state: "on"
-      then:
-        - service: switch.turn_off
-          data: {}
-          target:
-            entity_id:
-              - switch.plug_2_on_off
-              - switch.plug_3_on_off
-    - service: alarm_control_panel.alarm_arm_night
-      data: {}
-      target:
-        entity_id: alarm_control_panel.home_alarm
-    - service: notify.mark_ios_devices
+        entity_id:
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - service: alarm_control_panel.alarm_arm_night
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: The alarm was armed in Night mode at {{ states('sensor.date_and_time')
+        }}
       data:
-        title: ALARM
-        message:
-          The alarm was armed in Night mode at {{ states('sensor.date_and_time')
-          }}
-        data:
-          push:
-            interruption-level: time-sensitive
-          group: Alarm
-      enabled: false
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+    enabled: false
   mode: single
   icon: mdi:lock-open-alert-outline
 alarm_downstairs:
   alias: Alarm - Downstairs
   sequence:
-    - service: automation.trigger
-      data: {}
-      target:
-        entity_id: automation.check_all_doors
-    - service: homeassistant.turn_on
-      data: {}
-      target:
-        entity_id:
-          - group.door_notify_downstairs
-          - group.motion_notify_downstairs
-          - group.door_notify_outside
-          - group.motion_notify_outside
-      enabled: false
-    - service: automation.turn_on
-      data: {}
-      target:
-        entity_id:
-          - automation.alarm_cameras_detected_motion
-          - automation.alarm_notify_living_room
-    - service: homeassistant.turn_off
-      data: {}
-      target:
-        entity_id:
-          - switch.mat_nas_002_home_mode
-          - switch.mat_nas_001_surveillance_station_home_mode
-    - service: alarm_control_panel.alarm_arm_home
-      data: {}
-      target:
-        entity_id: alarm_control_panel.home_alarm
-    - service: notify.mark_ios_devices
+  - service: automation.trigger
+    data: {}
+    target:
+      entity_id: automation.check_all_doors
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id:
+      - group.door_notify_downstairs
+      - group.motion_notify_downstairs
+      - group.door_notify_outside
+      - group.motion_notify_outside
+    enabled: false
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id:
+      - automation.alarm_cameras_detected_motion
+      - automation.alarm_notify_living_room
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.mat_nas_002_home_mode
+      - switch.mat_nas_001_surveillance_station_home_mode
+  - service: alarm_control_panel.alarm_arm_home
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: The alarm was armed in Downstairs mode at {{ states('sensor.date_and_time')
+        }}
       data:
-        title: ALARM
-        message:
-          The alarm was armed in Downstairs mode at {{ states('sensor.date_and_time')
-          }}
-        data:
-          push:
-            interruption-level: time-sensitive
-          group: Alarm
-      enabled: false
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+    enabled: false
   mode: single
   icon: mdi:lock-open-check-outline
 alarm_outside:
   alias: Alarm - Outside
   sequence:
-    - service: homeassistant.turn_on
-      data: {}
-      target:
-        entity_id:
-          - group.door_notify_outside
-          - group.motion_notify_outside
-      enabled: false
-    - service: alarm_control_panel.alarm_arm_vacation
-      data: {}
-      target:
-        entity_id: alarm_control_panel.home_alarm
-    - service: notify.mark_ios_devices
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id:
+      - group.door_notify_outside
+      - group.motion_notify_outside
+    enabled: false
+  - service: alarm_control_panel.alarm_arm_vacation
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: The alarm was armed in Outside mode at {{ states('sensor.date_and_time')
+        }}
       data:
-        title: ALARM
-        message:
-          The alarm was armed in Outside mode at {{ states('sensor.date_and_time')
-          }}
-        data:
-          push:
-            interruption-level: time-sensitive
-          group: Alarm
-      enabled: false
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+    enabled: false
   mode: single
   icon: mdi:lock-open-check-outline
 alarm_disarm:
   alias: Alarm - Disarm
   sequence:
-    - service: homeassistant.turn_off
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id:
+      - group.all_door_notifications
+      - group.all_motion_notifications
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.mat_nas_002_home_mode
+      - switch.mat_nas_001_surveillance_station_home_mode
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_heaters
+      state: 'on'
+    then:
+    - service: switch.turn_on
       data: {}
       target:
         entity_id:
-          - group.all_door_notifications
-          - group.all_motion_notifications
-    - service: homeassistant.turn_on
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_fans
+      state: 'on'
+    then:
+    - service: switch.turn_on
       data: {}
       target:
         entity_id:
-          - switch.mat_nas_002_home_mode
-          - switch.mat_nas_001_surveillance_station_home_mode
-    - if:
-        - condition: state
-          entity_id: input_boolean.use_heaters
-          state: "on"
-      then:
-        - service: switch.turn_on
-          data: {}
-          target:
-            entity_id:
-              - climate.bedroom_heater_controller
-              - climate.living_room_heater_controller
-    - if:
-        - condition: state
-          entity_id: input_boolean.use_fans
-          state: "on"
-      then:
-        - service: switch.turn_on
-          data: {}
-          target:
-            entity_id:
-              - switch.plug_2_on_off
-              - switch.plug_3_on_off
-    - service: alarm_control_panel.alarm_disarm
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      code: '3971'
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: The alarm was disarmed at {{ states('sensor.date_and_time') }}
       data:
-        code: "3971"
-      target:
-        entity_id: alarm_control_panel.home_alarm
-    - service: notify.mark_ios_devices
-      data:
-        title: ALARM
-        message: The alarm was disarmed at {{ states('sensor.date_and_time') }}
-        data:
-          push:
-            interruption-level: time-sensitive
-          group: Alarm
-      enabled: false
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+    enabled: false
   mode: single
   icon: mdi:lock-outline
 intruder_alert:
   alias: Intruder Alert
   sequence:
-    - service: script.broadcast_message
-      data:
-        entity_id: media_player.media_player_all
-        message: INTRUDER ALERT! INTRUDER ALERT! INTRUDER ALERT!
-        volume: "{{ states('input_number.intruder_volume') }}"
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: INTRUDER ALERT! INTRUDER ALERT! INTRUDER ALERT!
+      volume: '{{ states(''input_number.intruder_volume'') }}'
   mode: single
   icon: mdi:alarm-light
 tv_mode:
   alias: TV Mode
   sequence:
-    - if:
-        - condition: state
-          entity_id: input_boolean.tv_mode
-          state: "on"
-      then:
-        - service: automation.trigger
-          data: {}
-          target:
-            entity_id: automation.tv_mode_off
-      else:
-        - service: automation.trigger
-          data: {}
-          target:
-            entity_id: automation.hue_dimmer_on_click
+  - if:
+    - condition: state
+      entity_id: input_boolean.tv_mode
+      state: 'on'
+    then:
+    - service: automation.trigger
+      data: {}
+      target:
+        entity_id: automation.tv_mode_off
+    else:
+    - service: automation.trigger
+      data: {}
+      target:
+        entity_id: automation.hue_dimmer_on_click
   mode: single
   icon: mdi:television
