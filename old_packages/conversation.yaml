@@ -9,15 +9,19 @@
 #
 #################################################################################
 
-intents:
-  HangTheLaundry:
-    - "[hang][ing] [the] laundry [out]"
+conversation:
+  intents:
+    YearOfVoice:
+      - "how is the year of voice going"
 
-  LaundryInside:
-    - "[bring][ing] [the] laundry in"
+    HangTheLaundry:
+      - "[hang][ing] [the] laundry [out]"
 
-  BinsOut:
-    - "[put] [the] bins out"
+    LaundryInside:
+      - "[bring][ing] [the] laundry in"
 
-  BinsIn:
-    - "[bring] [the] bins in"
+    BinsOut:
+      - "[put] [the] bins out"
+
+    BinsIn:
+      - "[bring] [the] bins in"

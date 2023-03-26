@@ -19,5 +19,5 @@ homeassistant:
 
   ## Customization
   ## https://www.home-assistant.io/docs/configuration/customizing-devices/#manual-customization
-  # For some reason, this won;t load from homeassistant.yaml. Needs to be inconfiguration.yaml
+  # For some reason, this won't load from homeassistant.yaml. Needs to be in configuration.yaml
   customize: !include entities/customize.yaml
