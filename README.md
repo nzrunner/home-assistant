@@ -311,9 +311,11 @@ I will endeavour to update this occassionally.
 
 <!-- ROADMAP -->
 
+## Roadmap
+
 <details>
 
-<summary>Roadmap</summary>
+<summary>Roadmap completed</summary>
 
 - [x] Review project files for items that should be in the secrets.yaml file
 - [x] Disable Bluetooth Tracker
