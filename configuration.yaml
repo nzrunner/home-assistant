@@ -12,6 +12,7 @@
 # Ultimately, I want to have a once line file that calls all the
 # other YAML includes
 #################################################################################
+
 homeassistant:
   # Load packages
   packages: !include_dir_named includes
