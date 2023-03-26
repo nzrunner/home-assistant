@@ -80,7 +80,6 @@
 - [Devices](#devices)
   - [Network](#network)
   - [IOT](#iot)
-- [Roadmap](#roadmap)
 - [Acknowledgments](#acknowledgments)
   - [Themes](#themes)
   - [Inspiration](#inspiration)
