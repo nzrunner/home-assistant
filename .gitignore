@@ -44,6 +44,8 @@ deps
 !blueprints
 !automations
 !automations/**
+!custom_sentences
+!custom_sentences/**
 !entities
 !entities/**
 !scenes
