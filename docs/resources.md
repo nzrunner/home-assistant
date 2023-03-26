@@ -66,6 +66,7 @@
 <summary>Table of Contents</summary>
 
 - [General](#general)
+- [Home Assistant](#home-assistant)
 - [GitHub](#github)
 - [Acknowledgments](#acknowledgments)
   - [Themes](#themes)
