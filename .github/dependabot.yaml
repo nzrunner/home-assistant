@@ -6,8 +6,4 @@ updates:
       interval: daily
       time: "06:00"
       # Added by Mark 26/03/2023
-      assignees:
-        - "nzrunner"
-      labels:
-        - "🩹 Triage"
       timezone: "Australia/Sydney"
