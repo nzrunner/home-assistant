@@ -125,6 +125,12 @@ As a result of these major changes in my Git repository, my Home Assistant confi
 
 A huge 🙏 thank you to the open-source community!
 
+## Built With
+
+[![Home Assistant][hass.io]][home-assistant] [![Raspberry Pi][raspberry-pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Dashboards
 
 |                             **Preferred Theme**                              |                             **Alternate Theme**                              |
@@ -139,11 +145,13 @@ A huge 🙏 thank you to the open-source community!
 |   ![Docker Server](images/home-assistant-docker-1-preferred.png?raw=true)    |   ![Docker Server](images/home-assistant-docker-1-alternate.png?raw=true)    |
 | ![Docker Containers](images/home-assistant-docker-2-preferred.png?raw=true)  | ![Docker Containers](images/home-assistant-docker-2-alternate.png?raw=true)  |
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Lovelace UI
 
-## Built With
+I have opted to maintain my Dashboards using the Home Assistant UI (.storage mode). As such, I don't have a ui-lovalace.yml file accessible in my config folder.
 
-[![Home Assistant][hass.io]][home-assistant] [![Raspberry Pi][raspberry-pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
+In the interests of completeness, I have copied the YAML code from the Raw Dashboard editor into a YAML file. It can be found [here](/.stubs/lovelace-ui.yaml). _Last update: 24/03/2023_.
+
+I will endeavour to update this occassionally.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
