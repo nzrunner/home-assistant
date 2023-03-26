@@ -397,7 +397,8 @@ Don't forget to give the project a star! Thanks again!
 
 If you like what I've done, please consider sponsoring me. Like everyone, I have costs associated with maintaining this repository. Any little bit will help.
 
-<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="60" width="217"></a>
+[![GitHub Sponsor Me][github-sponsor-me-shield]][github-sponsors-url]
+<a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28" width="174"></a>
 
 ### Our Sponsors
 
