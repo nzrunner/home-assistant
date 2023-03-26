@@ -119,9 +119,9 @@ Sadly, I didn't keep a good record of the initial Home Assistant configurations 
 ### Updates
 
 <details>
-<summary>Update: 2023-04-26</summary>
+<summary>Update: 2023-03-26</summary>
 
-### Update: 2023-04-26
+### Update: 2023-03-26
 
 I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.
 
@@ -133,14 +133,14 @@ For my conversation integration, the two files I needed to create were [includes
 
 Although I have several Google Home devices, I am not comfortable with the Google servers being "fed" all the data relating to my devices, so won't be adding the Google Home integration at this point. Besides, it's a lot of work for little benefit.
 
-So, guess it's back to talking to myself again when I want my smart home to do something. <ponders>
+So, guess it's back to talking to myself again when I want my smart home to do something. \<ponders>
 
 </details>
 
 <details>
-<summary>Update: 2023-04-25</summary>
+<summary>Update: 2023-03-25</summary>
 
-### Update: 2023-04-25
+### Update: 2023-03-25
 
 Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier. In addition, I learnt about Git pre-commit hooks, and have a few of these running on my RPi, meaning the code I upload is much cleaner.
 
@@ -178,7 +178,7 @@ A huge 🙏 thank you to the open-source community!
 
 I have opted to maintain my Dashboards using the Home Assistant UI (.storage mode). As such, I don't have a ui-lovalace.yml file accessible in my config folder.
 
-In the interests of completeness, I have copied the YAML code from the Raw Dashboard editor into a YAML file. It can be found [here](/.stubs/lovelace-ui.yaml). _Last update: 24/03/2023_.
+In the interests of completeness, I have copied the YAML code from the Raw Dashboard editor into a YAML file. It can be found [here](/.stubs/lovelace-ui.yaml). _Last update: 2023/03/24_.
 
 I will endeavour to update this occassionally.
 
