@@ -35,6 +35,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Bugs][bugs-shield]][bugs-url]
 [![Feature Requests][features-shield]][features-url]
+[![Pull Requests][pull-request-shield]][pull-request-url]
 [![MIT License][license-shield]][license-url]
 [![GitHub Sponsors][github-sponsors-shield]][github-sponsors-url]<br />
 [![Project Maintenance][maintenance-shield]](https://github.com/nzrunner/home-assistant/pulse)
@@ -225,6 +226,7 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
 [github-sponsors-shield]: https://img.shields.io/github/sponsors/nzrunner?label=Sponsors&style=flat-square
 [github-sponsor-me-shield]: https://img.shields.io/badge/sponsor-lightgrey?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white
+[pull-request-shield]: https://img.shields.io/github/issues-pr-raw/nzrunner/home-assistant?label=Pull%20Requests&style=flat-square
 
 <!-- URL's -->
 
@@ -238,3 +240,4 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [homeassistantci]: https://github.com/nzrunner/home-assistant/actions/workflows/home_assistant.yml
 [home-assistant]: https://home-assistant.io
 [github-sponsors-url]: https://github.com/sponsors/nzrunner
+[pull-request-url]: https://github.com/nzrunner/home-assistant/pulls
