@@ -64,7 +64,7 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [About The Project](#about-the-project)
+- [Overview](#overview)
   - [Updates](#updates)
   - [Update: 2023-04-25](#update-2023-04-25)
 - [Built With](#built-with)
