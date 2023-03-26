@@ -139,6 +139,8 @@ A huge 🙏 thank you to the open-source community!
 
 ## Dashboards
 
+### Screenshots
+
 |                             **Preferred Theme**                              |                             **Alternate Theme**                              |
 | :--------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
 |       ![Home Assistant](images/home-assistant-preferred.png?raw=true)        |       ![Home Assistant](images/home-assistant-alternate.png?raw=true)        |
