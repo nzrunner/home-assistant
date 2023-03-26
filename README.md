@@ -311,7 +311,9 @@ I will endeavour to update this occassionally.
 
 <!-- ROADMAP -->
 
-## Roadmap
+<details>
+
+<summary>Roadmap</summary>
 
 - [x] Review project files for items that should be in the secrets.yaml file
 - [x] Disable Bluetooth Tracker
@@ -334,6 +336,8 @@ I will endeavour to update this occassionally.
 - [x] Adopt a git commit message convention
 - [x] Publish the lovelace-ui.yaml
 - [x] Publish fake secrets.yaml for completeness
+
+</details>
 
 See the [open issues](https://github.com/nzrunner/home-assistant/issues) for a full list of proposed features (and known issues).
 
