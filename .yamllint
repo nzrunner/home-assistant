@@ -6,6 +6,7 @@ ignore: |
   lovelace-ui.yaml
   scripts.yaml
   secrets.yaml
+  docs/assets/css/style.scss
   themes/
   .github/
 rules:

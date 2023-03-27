@@ -41,6 +41,7 @@ deps
 !LICENSE.txt
 !includes
 !docs
+!docs/**
 !blueprints
 !automations
 !automations/**
