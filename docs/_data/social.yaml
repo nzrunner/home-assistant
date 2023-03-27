@@ -1,0 +1,6 @@
+- title: Twitter
+  url: https://twitter.com/nzrunner
+  icon: fab fa-twitter
+- title: GitHub
+  url: https://github.com/nzrunner/home-assistant
+  icon: fab fa-github
