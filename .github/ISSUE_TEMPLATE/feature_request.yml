@@ -1,0 +1,141 @@
+name: ✨ Feature Request
+description: Suggest an idea for this project
+title: "[FEATURE REQUEST]: "
+labels: ["👍 Enhancement", "🩹 Triage"]
+assignees:
+  - nzrunner
+
+body:
+- type: markdown
+  attributes:
+    value: >
+      **Thank you for wanting to suggest a feature for ansible-core!**
+
+
+
+      💡
+      Before you go ahead with your request, please first consider if it
+      would be useful in my repository. As a
+      general rule of thumb, any feature that is only of interest other users
+      probably won't get pproved alone.
+
+      <details>
+        <summary>
+          ❗ Every change breaks someone's workflow.
+        </summary>
+
+
+        [![❗ Every change breaks someone's workflow.
+        ](https://imgs.xkcd.com/comics/workflow.png)
+        ](https://xkcd.com/1172/)
+      </details>
+
+
+      ⚠
+      Verify first that your idea is not [already requested on
+      GitHub][issue search].
+
+
+      [issue search]: ../search?q=is%3Aissue&type=issues
+
+
+- type: textarea
+  attributes:
+    label: Summary
+    description: >
+      Describe the new feature/improvement you would like briefly below.
+
+
+      What's the problem this feature will solve?
+
+      What are you trying to do, that you are unable to achieve
+      with ansible-core as it currently stands?
+
+
+      * Provide examples of real-world use cases that this would enable
+      and how it solves the problem you described.
+
+      * How do you solve this now?
+
+      * Have you tried to work around the problem using other tools?
+
+      * Could there be a different approach to solving this issue?
+    placeholder: >-
+      I am trying to do X with your code on GitHub.
+      I think that implementing a feature Y would be very helpful for me and
+      every other user ofyour code because of Z.
+  validations:
+    required: true
+
+- type: dropdown
+  attributes:
+    label: Issue Type
+    description: >
+      Please select the single available option in the drop-down.
+
+      <details>
+        <summary>
+          <em>Why?</em>
+        </summary>
+
+        We would do it by ourselves but unfortunatelly, the curent
+        edition of GitHub Issue Forms Alpha does not support this yet 🤷
+
+
+        _We will make it easier in the future, once GitHub
+        supports dropdown defaults. Promise!_
+
+      </details>
+    # FIXME: Once GitHub allows defining the default choice, update this
+    options:
+    - Feature Idea
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Configuration File Name
+    description: >-
+      Write the short name of the yml file below, *use your best guess if unsure*.
+    placeholder: configuration, sensors, http, homeassistant, etc.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Additional Information
+    description: |
+      Describe how this improves the documentation, e.g. before/after situation or screenshots.
+
+      **HINT:** You can paste https://gist.github.com links for larger files.
+    placeholder: >-
+      When the improvement is applied, it makes it more straightforward
+      to understand X.
+  validations:
+    required: true
+
+
+- type: markdown
+  attributes:
+    value: >
+      *One last thing...*
+
+
+      *Please, complete **all** sections as described, this form
+      is processed automatically by a robot.*
+
+
+      Thank you for your collaboration!
+
+
+
+- type: checkboxes
+  attributes:
+    label: Code of Conduct
+    description: |
+      Read our [Code of Conduct][CoC] first.
+
+      [CoC]: ../blob/master/CODE_OF_CONDUCT.md
+    options:
+    - label: I agree to follow the your Code of Conduct
+      required: true

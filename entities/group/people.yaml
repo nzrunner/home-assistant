@@ -1,0 +1,36 @@
+#################################################################################
+#
+#                           _
+#    _ __   ___  ___  _ __ | | ___
+#   | '_ \ / _ \/ _ \| '_ \| |/ _ \
+#   | |_) |  __/ (_) | |_) | |  __/
+#   | .__/ \___|\___/| .__/|_|\___|
+#   |_|              |_|
+#
+#################################################################################
+# Groups allow the user to combine multiple entities into one
+# https://www.home-assistant.io/integrations/group
+#################################################################################
+
+residents:
+  name: Residents
+  icon: mdi:account-group
+  entities:
+    - person.mark_matheson
+
+guests:
+  name: Guests
+  icon: mdi:account-group
+  entities:
+    - person.diane_matheson
+    - person.adam_connor
+    - person.andrew_quinn
+    - person.beatle
+    - person.lady_beatle
+
+occupants:
+  name: Occupants
+  icon: mdi:account-group
+  entities:
+    - group.residents
+    - group.guests

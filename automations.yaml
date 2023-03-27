@@ -1,0 +1,2680 @@
+- id: '1612565706408'
+  alias: Office - MOTION
+  description: Turn on the office lights and monitors when motion is detected
+  trigger:
+  - type: motion
+    platform: device
+    device_id: e1e2966998a59721e9baf330ffbed4f1
+    entity_id: binary_sensor.office_motion
+    domain: binary_sensor
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.office_occupied
+      state: 'off'
+    then:
+    - if:
+      - condition: numeric_state
+        entity_id: zone.home
+        above: 0
+        below: 2
+      then:
+      - service: script.broadcast_message
+        data:
+          entity_id: media_player.office_speaker
+          message: Hello {% set people = state_attr('zone.home', 'persons') %} {%
+            set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+            = peoplestr.split(' ') %} {{ list1[0] }}! {% if states['input_boolean.mission_control'].state
+            == "off" %} Welcome to Mission Control {% endif %}
+          volume: 0.4
+      else:
+      - service: script.broadcast_message
+        data:
+          entity_id: media_player.office_speaker
+          message: Hello. {% if states['input_boolean.mission_control'].state == "off"
+            %} Welcome to Mission Control {% endif %}
+          volume: 0.4
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.office_occupied
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.monitors
+  - if:
+    - condition: sun
+      before: sunrise
+      after: sunset
+      after_offset: -01:00:00
+    then:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.office_bright
+      metadata: {}
+    enabled: false
+  - if:
+    - type: is_illuminance
+      condition: device
+      device_id: e1e2966998a59721e9baf330ffbed4f1
+      entity_id: sensor.office_motion_light_level
+      domain: sensor
+      below: 8
+    then:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.office_bright
+      metadata: {}
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.mission_control
+  mode: single
+- id: '1612567868933'
+  alias: Office - EMPTY
+  description: Turn off monitors and lights if no motion is detected for 5 minutes
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: e1e2966998a59721e9baf330ffbed4f1
+    entity_id: binary_sensor.office_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition:
+  - condition: state
+    entity_id: input_boolean.office_occupied
+    state: 'on'
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.office_occupied
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.monitors
+  - type: turn_off
+    device_id: 55263a0410c211eb93077d4d7438f169
+    entity_id: light.office
+    domain: light
+  mode: single
+- id: '123'
+  alias: System - Config Check
+  description: Home Assistant Config Check
+  trigger: []
+  condition: []
+  action:
+  - service: script.check_config
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - alias: Restart on condition
+    choose:
+    - alias: validate and restart
+      conditions:
+      - condition: state
+        entity_id: sensor.config_result
+        state: invalid
+      sequence:
+      - service: notify.mark_ios_devices
+        data:
+          title: Home Assistant
+          message: Config Check invalid
+          data:
+            push:
+              interruption-level: active
+            group: Alarm
+    default: []
+  mode: single
+- id: '9876543210'
+  alias: Backup - Midday
+  description: Incremental backup run every 12 hours and kept for 2 days
+  trigger:
+  - platform: time_pattern
+    hours: /12
+  condition:
+  - condition: time
+    after: 00:01:00
+    before: '23:59:00'
+  action:
+  - service: auto_backup.backup_full
+    data:
+      name: 'Midday Backup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
+      keep_days: 3
+- id: '9876543211'
+  alias: Backup - Midnight
+  description: Perform a full HASS backup once a day at 02:30, every day except Monday.
+    They are retained for 7 days
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition:
+  - condition: time
+    weekday:
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  action:
+  - service: auto_backup.backup_full
+    data:
+      name: 'Midnight Backup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
+      keep_days: 6
+- id: '9876543212'
+  alias: Backup - Weekly
+  description: Perform a full HASS backup every week, on a Monday at 02:30. It is
+    retained for 28 days
+  trigger:
+  - platform: time
+    at: 02:30:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+  action:
+  - service: auto_backup.backup_full
+    data:
+      name: 'Weekly Backup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
+      keep_days: 29
+- id: '987654324'
+  alias: System Notification - HASS Update
+  description: A Home Assistant update is available!
+  trigger:
+  - platform: state
+    entity_id:
+    - update.home_assistant_core_update
+    - update.home_assistant_supervisor_update
+    attribute: latest_version
+  action:
+  - service: notify.mobile_app_marks_iphone
+    data:
+      title: Home Assistant - Update Available
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} version {{
+        state_attr(trigger.entity_id, ''latest_version'') }} has been released!'
+      data:
+        push:
+          interruption-level: active
+        group: Updates
+  initial_state: true
+- id: '1640993226588'
+  alias: System Notification - MAT-NAS-002 Persistent Notification
+  description: There are app updates available for MAT-NAS-002
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.mat_nas_002_security_status
+    to: unsafe
+  condition:
+  - type: is_unsafe
+    condition: device
+    device_id: bb7810ae10c211eb8f99effc3c654169
+    entity_id: binary_sensor.mat_nas_002_security_status
+    domain: binary_sensor
+  action:
+  - service: notify.mobile_app_marks_iphone
+    data:
+      message: Apps on MAT-NAS-002 are {{state_attr('binary_sensor.mat_nas_002_security_status',
+        'update') }}
+      data:
+        push:
+          interruption-level: active
+        group: Updates
+  mode: single
+  initial_state: true
+- id: '1640995213747'
+  alias: System Notification - MAT-NAS-001 Persistent Notification
+  description: There are app updates available for MAT-NAS-001
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.piha_security_status
+    attribute: update
+    to: unsafe
+  condition:
+  - type: is_unsafe
+    condition: device
+    device_id: 9d682bdb10c211ebab572f86cf9cb997
+    entity_id: binary_sensor.piha_security_status
+    domain: binary_sensor
+    enabled: true
+  action:
+  - service: notify.mobile_app_marks_iphone
+    data:
+      message: Apps on MAT-NAS-001 are {{ state_attr('binary_sensor.piha_security_status','update')
+        }}
+      data:
+        push:
+          interruption-level: active
+        group: Updates
+  mode: single
+  initial_state: true
+- id: '1641024889431'
+  alias: System - Bedtime
+  description: Activate lights and broadcast a message nearing bedtime
+  trigger:
+  - platform: time
+    at: '22:15:00'
+  condition:
+  - condition: state
+    entity_id: group.occupants
+    state: home
+  - condition: state
+    entity_id: input_boolean.gone_to_bed
+    state: 'off'
+  action:
+  - scene: scene.stairs_relax
+  - scene: scene.master_bedroom_dimmed
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_moonlight
+    metadata: {}
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.living_room_speaker
+      message: Bedtime! Get your butt up to bed.
+      volume: '{{ states(''input_number.volume_default'') }}'
+  mode: single
+- id: '910112211'
+  alias: Office MOTION - Notify
+  description: Notification when motion is detected in the Office
+  trigger:
+  - type: motion
+    platform: device
+    device_id: e1e2966998a59721e9baf330ffbed4f1
+    entity_id: binary_sensor.office_motion
+    domain: binary_sensor
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1641636320894'
+  alias: Stairs MOTION - Notify
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 4b9b6aa1031bf88101700ce43ff894d6
+    entity_id: binary_sensor.upstairs_motion_on_off
+    domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: 1d7d59d94c75d97244521d56052b20ad
+    entity_id: binary_sensor.downstairs_motion_iaszone
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1641638539739'
+  alias: Upstairs - EMPTY
+  description: Turn off the stair light when the Upstairs motion detector goes to
+    an off state (3 minutes after last motion)
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 4b9b6aa1031bf88101700ce43ff894d6
+    entity_id: binary_sensor.upstairs_motion_on_off
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 55292fde10c211eba548dd2311283eaa
+    entity_id: light.stairs
+    domain: light
+  mode: single
+- id: '1641696482993'
+  alias: Alarm - Leave Home
+  description: When all occupants leave home, set Synology Surveillance Station into
+    Away mode, turn off TV and lights
+  trigger:
+  - platform: state
+    entity_id:
+    - group.occupants
+    from: home
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+    to: not_home
+  condition: []
+  action:
+  - service: automation.trigger
+    data:
+      skip_condition: true
+    target:
+      entity_id: automation.check_all_doors
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.lights_all
+  - type: turn_off
+    device_id: 2e53d475d3d4aff442d2df10d6f77b24
+    entity_id: switch.monitors
+    domain: switch
+  - service: remote.turn_off
+    data: {}
+    target:
+      entity_id: remote.sony_bravia_tv
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_heaters
+      state: 'on'
+    then:
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id:
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_fans
+      state: 'on'
+    then:
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id:
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.mat_nas_002_home_mode
+      - switch.mat_nas_001_surveillance_station_home_mode
+  - service: alarm_control_panel.alarm_arm_away
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id:
+      - automation.alarm_cameras_detected_motion
+      - automation.alarm_notify_living_room
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: The alarm was armed in Away mode by presence detection at {{ states('sensor.date_and_time')
+        }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+    enabled: false
+  mode: single
+- id: '1641696997236'
+  alias: Alarm - Return Home
+  description: When an occupant returns home
+  trigger:
+  - platform: state
+    entity_id:
+    - group.occupants
+    to: home
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+    from: not_home
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_heaters
+      state: 'on'
+    then:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id:
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_fans
+      state: 'on'
+    then:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id:
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.mat_nas_002_home_mode
+      - switch.mat_nas_001_surveillance_station_home_mode
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.welcome_home
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      code: '3971'
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: The alarm was disarmed by presence detection at {{ states('sensor.date_and_time')
+        }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+    enabled: false
+  mode: single
+- id: '1641706879888'
+  alias: System Notification - Laundry Finished
+  description: Notification that laundry has finished
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.washing_machine_status
+    to: 'Off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+    from: Running
+  condition: []
+  action:
+  - service: notify.mobile_app_marks_iphone
+    data:
+      message: The laundry has finished and the {{ states('sensor.washing_machine_info')
+        }}. Hang it on the line!
+      title: Laundry
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Laundry
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: The laundry has finished and the {{ states('sensor.washing_machine_info')
+        }}. Hang it on the line!
+      volume: '{{ states(''input_number.volume_default'') }}'
+  mode: single
+- id: '1642733157313'
+  alias: Kitchen DOOR - Notify
+  description: Send notification if Kitchen door is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: b37af0fb0e6264276fb476df525d4579
+    entity_id: binary_sensor.kitchen_door_open_closed
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} door has been
+        opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643240394812'
+  alias: Carport - MOTION
+  description: Turn on the light in the Carport if motion detected after dark
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 552e5c6b8bf427f6d06d068c91cfab2a
+    entity_id: binary_sensor.carport_motion_on_off
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -01:00:00
+  action:
+  - scene: scene.carport_bright
+  mode: single
+- id: '1643411908559'
+  alias: Living Room MOTION - Notify
+  description: Notification when motion is detected in the Living Room
+  trigger:
+  - type: motion
+    platform: device
+    device_id: a674e14a85bab4e885d481a556aee691
+    entity_id: binary_sensor.living_room_motion
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643690990974'
+  alias: System - Good Night
+  description: Run when I go to bed
+  trigger: []
+  condition: []
+  action:
+  - if:
+    - condition: numeric_state
+      entity_id: zone.home
+      above: 0
+      below: 2
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good night {% set people = state_attr('zone.home', 'persons') %}
+          {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M')
+          }}. The weather in Marsfield tomorrow is expected to be {% if 0 >= now().hour
+          <= 6 %}{{ states('sensor.marsfield_extended_text_0') }}{% else %}{{ states('sensor.marsfield_extended_text_1')
+          }}{% endif %}.Sunrise tomorrow morning is {{ states('sensor.nextsunrise')
+          }}. Sleep well!
+        volume: '{{ states(''input_number.volume_bedtime'') }}'
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good night. It's {{ now().strftime('%H:%M') }}. The weather in Marsfield
+          tomorrow is expected to be {% if 0 >= now().hour <= 6 %}{{ states('sensor.marsfield_extended_text_0')
+          }}{% else %}{{ states('sensor.marsfield_extended_text_1') }}{% endif %}.
+          Sunrise tomorrow morning is {{ states('sensor.nextsunrise') }}. Sleep well!
+        volume: '{{ states(''input_number.volume_default'') }}'
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.tv_mode
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.gone_to_bed
+  - service: script.alarm_night
+    data: {}
+  mode: single
+- id: '1643694520827'
+  alias: System - Good Morning
+  description: Good morning routine
+  trigger: []
+  condition: []
+  action:
+  - if:
+    - condition: numeric_state
+      entity_id: zone.home
+      above: 0
+      below: 2
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good morning {% set people = state_attr('zone.home', 'persons') %}
+          {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M')
+          }}.
+        volume: '{{ states(''input_number.volume_default'') }}'
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good morning. It's {{ now().strftime('%H:%M') }}.
+        volume: '{{ states(''input_number.volume_default'') }}'
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.gone_to_bed
+      - input_boolean.good_morning
+      - input_boolean.mission_control
+  - service: script.alarm_disarm
+    data: {}
+  mode: single
+- id: '1643931984578'
+  alias: Carport MOTION - Notify
+  description: Notification if motion detected in the Carport
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 552e5c6b8bf427f6d06d068c91cfab2a
+    entity_id: binary_sensor.carport_motion_on_off
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643945587705'
+  alias: Front GATE - Notify
+  description: Send notification if Front gate is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 48009f8ce07ba0a2c677683c7b8113c4
+    entity_id: binary_sensor.front_gate_open_close
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} has been opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643946467716'
+  alias: Computer Cabinet DOOR - Notify
+  description: Send notification if Computer Cabinet door is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 71ce8d4859084575b814c89ce9980a09
+    entity_id: binary_sensor.computer_cabinet_door_open_closed
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} door has been
+        opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643946873175'
+  alias: Fridge DOOR - Notify
+  description: Send notification if Fridge door opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: f18beed3778382faaf0ec073cd02d4c1
+    entity_id: binary_sensor.fridge_door_open_closed
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} door has been
+        opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643948179138'
+  alias: Front Sliding DOOR - Notify
+  description: Send notification if Front Sliding door is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 1a5adcdf74437226214d88c29bd35da9
+    entity_id: binary_sensor.front_sliding_door_open_closed
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} door has been
+        opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643948240477'
+  alias: Side Sliding DOOR - Notify
+  description: Send notification if Side Sliding door is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: e9fea23e4c8b6b2d372a5c7b14b6b192
+    entity_id: binary_sensor.side_sliding_door_open_close
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} door has been
+        opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1643948312601'
+  alias: Front DOOR - Notify
+  description: Send notification if Front door is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 3af38f2da09a901abd4f1dd2105f7a7c
+    entity_id: binary_sensor.front_door_open_closed
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} door has been
+        opened!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '987654123'
+  alias: Alarm - Check All Doors
+  description: Chekc that all doors are closed. Run when leaving home and going to
+    bed
+  trigger: []
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ states | selectattr(''entity_id'', ''in'', state_attr(''binary_sensor.door_sensors_all'',''entity_id''))
+          | selectattr(''state'',''in'',[''on'',''open'']) | list | length == 1 }}'
+      sequence:
+      - service: notify.notify
+        data_template:
+          title: ALARM
+          message: '{% set open_doors = states | selectattr(''entity_id'', ''in'',
+            state_attr(''binary_sensor.door_sensors_all'',''entity_id'')) | selectattr(''state'',''in'',[''on'',''open''])
+            | map(attribute=''name'') | list %} The {{ open_doors[0] }} door is open.
+
+            '
+          data:
+            subtitle: Doors Open!
+            push:
+              interruption-level: time-sensitive
+            group: Alarm
+    - conditions:
+      - condition: template
+        value_template: '{{ states | selectattr(''entity_id'', ''in'', state_attr(''binary_sensor.door_sensors_all'',''entity_id''))
+          | selectattr(''state'',''in'',[''on'',''open'']) | list | length > 1}}'
+      sequence:
+      - service: notify.notify
+        data_template:
+          title: ALARM
+          message: '{% set open_doors = states | selectattr(''entity_id'', ''in'',
+            state_attr(''binary_sensor.door_sensors_all'',''entity_id'')) | selectattr(''state'',''in'',[''on'',''open''])
+            | map(attribute=''name'') | list %} The {{ open_doors[:-1] | join('',
+            '') }}{{'','' if open_doors | length > 2 else ''''}} and {{ open_doors[-1]}}
+            doors are open.
+
+            '
+          data:
+            subtitle: Doors Open!
+            push:
+              interruption-level: time-senstive
+            group: Alarm
+    default: []
+- id: '1644025461137'
+  alias: Bedroom MOTION - Notify
+  description: Send notification if motion detected in the Bedroom
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 4902d5785909000e1e5d0f58a8087cc1
+    entity_id: binary_sensor.bedroom_motion_ias_zone
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1644026286925'
+  alias: Bedroom - MOTION
+  description: Action when motion detected in the bedroom
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 4902d5785909000e1e5d0f58a8087cc1
+    entity_id: binary_sensor.bedroom_motion_ias_zone
+    domain: binary_sensor
+  condition:
+  - condition: state
+    entity_id: input_boolean.gone_to_bed
+    state: 'off'
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -01:00:00
+    enabled: false
+  - type: is_illuminance
+    condition: device
+    device_id: 4902d5785909000e1e5d0f58a8087cc1
+    entity_id: sensor.bedroom_motion_illuminance
+    domain: sensor
+    below: 125
+  action:
+  - scene: scene.master_bedroom_bright
+    enabled: false
+  - service: light.turn_on
+    data:
+      brightness_pct: 100
+    target:
+      area_id: 0510cb6310c211eb9a508b079e9925be
+  mode: single
+- id: '1644027198139'
+  alias: Toilet MOTION - Notify
+  description: Send a notification if motion detected in the Toilet
+  trigger:
+  - type: motion
+    platform: device
+    device_id: e568296ada5965b277294d65fe9acc97
+    entity_id: binary_sensor.toilet_motion_ias_zone
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1644036481085'
+  alias: Kitchen MOTION - Notify
+  description: Send a notification if motion detected in the Kitchen
+  trigger:
+  - type: motion
+    platform: device
+    device_id: dd2d3b47331ac2a55603b79c393fcb85
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: ALERT
+      message: Motion detected in the {{ area_name(trigger.entity_id) }}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alert
+  mode: single
+- id: '1644036578578'
+  alias: Kitchen - MOTION
+  description: Action when motion detected in the Kitchen
+  trigger:
+  - type: motion
+    platform: device
+    device_id: dd2d3b47331ac2a55603b79c393fcb85
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -02:00:00
+    enabled: false
+  - type: is_illuminance
+    condition: device
+    device_id: dd2d3b47331ac2a55603b79c393fcb85
+    entity_id: sensor.kitchen_motion_illuminance
+    domain: sensor
+    below: 125
+  action:
+  - scene: scene.kitchen_bright
+  mode: queued
+  max: 10
+- id: '1644036643327'
+  alias: Kitchen - EMPTY
+  description: Action when the Kitchen is no longer occupied
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: dd2d3b47331ac2a55603b79c393fcb85
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 5528165710c211eba4d0b5150819a202
+    entity_id: light.kitchen
+    domain: light
+  mode: single
+- id: '1644038123997'
+  alias: Living Room - MOTION
+  description: Action when motion detected in the Living Room
+  trigger:
+  - type: motion
+    platform: device
+    device_id: a674e14a85bab4e885d481a556aee691
+    entity_id: binary_sensor.living_room_motion
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -01:00:00
+    enabled: false
+  - condition: state
+    entity_id: input_boolean.tv_mode
+    state: 'off'
+  - type: is_illuminance
+    condition: device
+    device_id: a674e14a85bab4e885d481a556aee691
+    entity_id: sensor.living_room_motion_light_level
+    domain: sensor
+    below: 8
+  action:
+  - scene: scene.living_room_energize
+    enabled: true
+  mode: single
+- id: '1644038216774'
+  alias: Living Room - EMPTY
+  description: Action when the Living Room is no longer occupied
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: a674e14a85bab4e885d481a556aee691
+    entity_id: binary_sensor.living_room_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 45
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 4635722047440681c30999d03de8e698
+    entity_id: remote.living_room
+    domain: remote
+  mode: single
+- id: '1644039967092'
+  alias: Stairs - MOTION
+  description: Action when motion detected on the stairs
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 4b9b6aa1031bf88101700ce43ff894d6
+    entity_id: binary_sensor.upstairs_motion_on_off
+    domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: 1d7d59d94c75d97244521d56052b20ad
+    entity_id: binary_sensor.downstairs_motion_iaszone
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -01:00:00
+    enabled: false
+  - type: is_illuminance
+    condition: device
+    device_id: 1d7d59d94c75d97244521d56052b20ad
+    entity_id: sensor.downstairs_motion_illuminance
+    domain: sensor
+    below: 125
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.gone_to_bed
+      state: 'on'
+    then:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.stairs_dimmed
+      metadata: {}
+    else:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.stairs_energize
+      metadata: {}
+  mode: single
+- id: '1644051032707'
+  alias: Bedroom - EMPTY
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 4902d5785909000e1e5d0f58a8087cc1
+    entity_id: binary_sensor.bedroom_motion_ias_zone
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id: 0510cb6310c211eb9a508b079e9925be
+  - type: turn_off
+    device_id: 5525a09210c211eb86e29315da6926e5
+    entity_id: light.bedroom
+    domain: light
+    enabled: false
+  - type: turn_off
+    device_id: f15eee532435ea616e47f3068e8385f6
+    entity_id: light.bedside_left
+    domain: light
+    enabled: false
+  - type: turn_off
+    device_id: c3f1e77e59272e72ee30310601772de1
+    entity_id: light.bedside_right
+    domain: light
+    enabled: false
+  mode: single
+- id: '1644052703483'
+  alias: Carport - EMPTY
+  description: Action when Carport is no longer occupied
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 552e5c6b8bf427f6d06d068c91cfab2a
+    entity_id: binary_sensor.carport_motion_on_off
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 552c3ef710c211eb871deb8bffd84c1d
+    entity_id: light.carport
+    domain: light
+  mode: single
+- id: '1644124332188'
+  alias: Toilet - MOTION
+  description: Action if motion is detected in the Toilet
+  trigger:
+  - type: motion
+    platform: device
+    device_id: e568296ada5965b277294d65fe9acc97
+    entity_id: binary_sensor.toilet_motion_ias_zone
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -01:00:00
+    enabled: false
+  - type: is_illuminance
+    condition: device
+    device_id: e568296ada5965b277294d65fe9acc97
+    entity_id: sensor.toilet_motion_illuminance
+    domain: sensor
+    below: 125
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.gone_to_bed
+      state: 'on'
+    then:
+    - type: turn_on
+      device_id: d30776ae7f3025d98a846a8b5bde96ef
+      entity_id: light.hue_ambiance_lamp_1
+      domain: light
+      brightness_pct: 30
+    else:
+    - type: turn_on
+      device_id: d30776ae7f3025d98a846a8b5bde96ef
+      entity_id: light.hue_ambiance_lamp_1
+      domain: light
+      brightness_pct: 100
+  mode: single
+- id: '1644124483346'
+  alias: Toilet - EMPTY
+  description: Action if no motion detected in the Toilet
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: e568296ada5965b277294d65fe9acc97
+    entity_id: binary_sensor.toilet_motion_ias_zone
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: d30776ae7f3025d98a846a8b5bde96ef
+    entity_id: light.hue_ambiance_lamp_1
+    domain: light
+  mode: single
+- id: '1646471713255'
+  alias: Computer Cabinet Lights - ON
+  description: Turn on the computer cabinet lights at sunset
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition:
+  - condition: state
+    entity_id: person.mark_matheson
+    state: home
+  action:
+  - service: hue.activate_scene
+    data:
+      transition: 5
+    target:
+      entity_id: scene.computer_cabinet_motown
+  mode: single
+- id: '1652832922305'
+  alias: Alarm - Intruder Alert
+  description: Broadcast a message when an intruder is detected
+  trigger: []
+  condition: []
+  action:
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: Intruder Alert! Intruder Alert! Intruder Alert!
+      volume: '{{ states(''input_number.intruder_volume'') }}'
+  mode: single
+- id: '1656290905830'
+  alias: Alarm - Trigger (Night)
+  description: Detect when the alarm is triggered with a door opening or motion detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_motion
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Office!
+    enabled: false
+  - platform: state
+    entity_id: binary_sensor.living_room_motion
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Living Room!
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Kitchen!
+  - platform: state
+    entity_id: binary_sensor.carport_motion_on_off
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Carport!
+  - platform: state
+    entity_id: binary_sensor.computer_cabinet_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Computer Cabinet door was opened!
+    enabled: false
+  - platform: state
+    entity_id: binary_sensor.front_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Front door was opened!
+  - platform: state
+    entity_id: binary_sensor.kitchen_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Kitchen door was opened!
+  - platform: state
+    entity_id: binary_sensor.side_sliding_door_open_close
+    to: 'on'
+    variables:
+      trigger_message: The Side Sliding door was opened!
+  - platform: state
+    entity_id: binary_sensor.front_sliding_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Front Sliding door was opened!
+  - platform: state
+    entity_id: binary_sensor.fridge_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Fridge door was opened!
+  - platform: state
+    entity_id:
+    - binary_sensor.front_gate_open_close
+    to: 'on'
+    variables:
+      trigger_message: The Front gate was opened!
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_night
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      message: '{{ trigger_message }}'
+      title: ALARM
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+  - if:
+    - type: is_motion
+      condition: device
+      device_id: 552e5c6b8bf427f6d06d068c91cfab2a
+      entity_id: binary_sensor.carport_motion_on_off
+      domain: binary_sensor
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.media_player_all
+        message: '{{ trigger_message }}'
+        volume: '{{ states(''input_number.intruder_bedtime'') }}'
+      enabled: false
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.media_player_all
+        message: '{{ trigger_message }}'
+        volume: '{{ states(''input_number.intruder_volume'') }}'
+  mode: single
+- id: '1656291260826'
+  alias: Alarm - Trigger (Away)
+  description: Detect when the alarm is triggered with a door opening or motion detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_motion
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Office!
+  - platform: state
+    entity_id: binary_sensor.living_room_motion
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Living Room!
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Kitchen!
+  - platform: state
+    entity_id: binary_sensor.carport_motion_on_off
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Carport!
+  - platform: state
+    entity_id: binary_sensor.bedroom_motion_ias_zone
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Bedroom!
+  - platform: state
+    entity_id: binary_sensor.upstairs_motion_on_off
+    to: 'on'
+    variables:
+      trigger_message: Movement detected on the Stairs!
+  - platform: state
+    entity_id: binary_sensor.toilet_motion_ias_zone
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Toilet!
+  - platform: state
+    entity_id: binary_sensor.computer_cabinet_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Computer Cabinet door was opened!
+  - platform: state
+    entity_id: binary_sensor.fridge_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Fridge door was opened!
+  - platform: state
+    entity_id: binary_sensor.front_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Front door was opened!
+  - platform: state
+    entity_id: binary_sensor.kitchen_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Kitchen door was opened!
+  - platform: state
+    entity_id: binary_sensor.side_sliding_door_open_close
+    to: 'on'
+    variables:
+      trigger_message: The Side Sliding door was opened!
+  - platform: state
+    entity_id: binary_sensor.front_sliding_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Front Sliding door was opened!
+  - platform: state
+    entity_id: binary_sensor.front_gate_open_close
+    to: 'on'
+    variables:
+      trigger_message: The Front gate was opened!
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_away
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      message: '{{ trigger_message }}'
+      title: ALARM
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{{ trigger_message }}'
+      volume: '{{ states(''input_number.intruder_volume'') }}'
+  mode: single
+- id: '1656291353092'
+  alias: Alarm - Trigger (Downstairs)
+  description: Detect when the alarm is triggered with a door opening or motion detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.living_room_motion
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Living Room!
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    to: 'on'
+    variables:
+      trigger_message: Movement detected in the Kitchen!
+  - platform: state
+    entity_id: binary_sensor.fridge_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Fridge door was opened!
+  - platform: state
+    entity_id: binary_sensor.front_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Front door was opened!
+  - platform: state
+    entity_id: binary_sensor.kitchen_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Kitchen door was opened!
+  - platform: state
+    entity_id: binary_sensor.side_sliding_door_open_close
+    to: 'on'
+    variables:
+      trigger_message: The Side Sliding door was opened!
+  - platform: state
+    entity_id: binary_sensor.front_sliding_door_open_closed
+    to: 'on'
+    variables:
+      trigger_message: The Front Sliding door was opened!
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_home
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      message: '{{ trigger_message }}'
+      title: ALARM
+      data:
+        push:
+          interruption-level: critical
+        group: Alarm
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{{ trigger_message }}'
+      volume: '{{ states(''input_number.intruder_volume'') }}'
+  mode: single
+- id: '1656291656778'
+  alias: Alarm - Trigger (Outside)
+  description: Detect when the alarm is triggered with a door opening or motion detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.carport_motion_on_off
+    to: 'on'
+    variables:
+      trigger_message: Motion detected in the Carport!
+  - platform: state
+    entity_id: binary_sensor.front_gate_open_close
+    to: 'on'
+    variables:
+      trigger_message: The Front gate was opened!
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_vacation
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
+  - service: notify.mark_ios_devices
+    data:
+      message: '{{ trigger_message }}'
+      title: ALARM
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{{ trigger_message }}'
+      volume: '{{ states(''input_number.intruder_volume'') }}'
+  - service: script.intruder_alert
+    data: {}
+    enabled: false
+  mode: single
+- id: '1656319297567'
+  alias: Backup - Failure Notification
+  trigger:
+  - platform: event
+    event_type: auto_backup.backup_failed
+  action:
+  - service: persistent_notification.create
+    data:
+      title: Backup Failed
+      message: 'Name: {{ trigger.event.data.name }}
+
+        Error: {{ trigger.event.data.error }}'
+- id: '1656319761157'
+  alias: Backup - Success Notification
+  trigger:
+  - platform: event
+    event_type: auto_backup.backup_successful
+  action:
+  - service: persistent_notification.create
+    data:
+      title: Backup Succeeded
+      message: 'Name: {{ trigger.event.data.name }}
+
+        Details: {{ trigger.event.data.slug }}'
+- id: '1656320271921'
+  alias: Backup - Purged Notification
+  trigger:
+  - platform: event
+    event_type: auto_backup.purged_backups
+  action:
+  - service: persistent_notification.create
+    data:
+      title: Backups Purged
+      message: 'Backups: {{ trigger.event.data.backups }}'
+- id: '1656372972517'
+  alias: System - Error Counting Automation
+  description: ''
+  trigger:
+  - platform: event
+    event_type: system_log_event
+    event_data:
+      level: ERROR
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.error_counter
+- id: '1656392838193'
+  alias: System - Do Nothing
+  description: 'REQUIRED: For Cash box and other non-existent devices'
+  trigger: []
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  mode: single
+- id: '1656546975101'
+  alias: System Notification - Update Persistent Notification
+  description: Send notifications for new updates and install or skip on action
+  use_blueprint:
+    path: mdegat01/update_notifications.yaml
+    input:
+      reminder_hours: '12'
+      update_entities:
+      - update.home_assistant_core_update
+      - update.home_assistant_supervisor_update
+      - update.mat_rt_001
+      - update.mat_sw_001
+      - update.mat_sw_002
+      - update.mat_sw_003
+      - update.mat_ap_001
+      - update.mat_ap_002
+      - update.mat_nas_001_dsm_update
+      - update.mat_nas_002_dsm_update
+      - update.pi_hole_core_update_available
+      - update.pi_hole_ftl_update_available
+      - update.pi_hole_web_update_available
+      - update.appdaemon_update
+      - update.studio_code_server_update
+      - update.terminal_ssh_update
+      mobile_app_device: 1480787f10c411ebbe23d58340432c5c
+      send_to_ha: true
+      run_config_check: true
+      only_after: 07:30:00
+      only_before: '21:30:00'
+      mobile_app_device_2: 788af8b168b674ebd5ac1dd62081f1d8
+      changelog_urls: {}
+      status_bar_icon: mdi:package-up
+- id: '1656674908197'
+  alias: System - HASS Restart
+  description: When Home Assistant restarts
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.lights_all
+    enabled: false
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_fans
+      state: 'on'
+    then:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id:
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - if:
+    - condition: state
+      entity_id: input_boolean.use_heaters
+      state: 'on'
+    then:
+    - service: climate.set_preset_mode
+      data:
+        preset_mode: home
+      target:
+        entity_id:
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: script.check_config
+    data: {}
+  - service: notify.mark_ios_devices
+    data:
+      message: Home Assistant has restarted!
+      title: System
+      data:
+        group: System
+        push:
+          interruption-level: time-sensitive
+  - service: persistent_notification.create
+    data:
+      message: Home Assistant (Core) restarted
+      title: System Notification
+  mode: single
+- id: '1656887737576'
+  alias: Alarm - Notify - Courtyard
+  description: Send a message if motion detected motion in the Courtyard
+  trigger:
+  - platform: state
+    entity_id:
+    - camera.mat_nas_002_courtyard_2
+    to: recording
+  condition: []
+  action:
+  - service: camera.snapshot
+    data:
+      filename: /config/www/courtyard.jpg
+    target:
+      entity_id: camera.mat_nas_002_courtyard_2
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: Motion detected in the Courtyard!
+      data:
+        image: /local/courtyard.jpg
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+  mode: single
+- id: '1656888890938'
+  alias: Alarm - Notify - Living Room
+  description: Send a message if any motion detected in Living Room
+  trigger:
+  - platform: state
+    entity_id:
+    - camera.mat_nas_002_living_room
+    to: recording
+  condition: []
+  action:
+  - service: camera.snapshot
+    data:
+      filename: /config/www/living_room.jpg
+    target:
+      entity_id: camera.mat_nas_002_living_room
+  - service: notify.mark_ios_devices
+    data:
+      title: ALARM
+      message: Motion detected in the Living Room!
+      data:
+        image: /local/living_room.jpg
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+  mode: single
+- id: '1657070132161'
+  alias: System - HASS Stopped
+  description: What happens when Home Assistant is stopped
+  trigger:
+  - platform: homeassistant
+    event: shutdown
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      message: Home Assistant is restarting!
+      title: System
+      data:
+        group: System
+        push:
+          interruption-level: time-sensitive
+  mode: single
+- id: '1673492160329'
+  alias: Mini Switch - Good Night
+  description: Run Good Night routine when the switch is clicked
+  trigger:
+  - device_id: 6cd779dbc8d0b3ea0085e50301bd2176
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - if:
+    - condition: numeric_state
+      entity_id: zone.home
+      above: 0
+      below: 2
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good night {% set people = state_attr('zone.home', 'persons') %}
+          {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+          = peoplestr.split(' ') %} {{ list1[0] }}
+        volume: 0.3
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good night
+        volume: 0.3
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.good_morning
+      - input_boolean.tv_mode
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.gone_to_bed
+  - service: script.alarm_night
+    data: {}
+  mode: single
+- id: '1673492658022'
+  alias: Mini Switch - Good Morning
+  description: Run Good Morning routine when the switch is double-clicked
+  trigger:
+  - device_id: 6cd779dbc8d0b3ea0085e50301bd2176
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+  condition: []
+  action:
+  - if:
+    - condition: numeric_state
+      entity_id: zone.home
+      above: 0
+      below: 2
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good morning {% set people = state_attr('zone.home', 'persons') %}
+          {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+          = peoplestr.split(' ') %} {{ list1[0] }}
+        volume: 0.3
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.master_bedroom_speaker
+        message: Good morning
+        volume: 0.3
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.gone_to_bed
+  - service: script.alarm_disarm
+    data: {}
+  mode: single
+- id: '1673604685901'
+  alias: System - Good Morning (Living Room)
+  description: Broadcast a good morning message on the Living Room speakers
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.living_room_motion
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.good_morning
+    state: 'off'
+  action:
+  - if:
+    - condition: numeric_state
+      entity_id: zone.home
+      above: 0
+      below: 2
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.living_room_speaker
+        message: Good morning {% set people = state_attr('zone.home', 'persons') %}
+          {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+          = peoplestr.split(' ') %} {{ list1[0] }}! It's {{ now().strftime('%H:%M,
+          %A %d %B %Y') }}. The weather in Marsfield is forecast to be {{ states['sensor.marsfield_extended_text_0'].state
+          }}. {{ states['sensor.marsfield_uv_summary'].state }}. {{ states['sensor.marsfield_fire_danger_summary'].state
+          }}. Sunset today is at {{ states['sensor.nextsunset'].state }}. {% if states('sensor.garbage_waste')
+          == 'tomorrow' %} Remember, the rubbish and {% if states['sensor.garbage_greens'].state
+          == "tomorrow" %} greens {% else %}  recycling {% endif %} bins need to go
+          out tonight.{% endif %} Have a great day!
+        volume: '{{ states(''input_number.volume_default'') }}'
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.living_room_speaker
+        message: Good morning! It's {{ now().strftime('%H:%M, %A %d %B %Y') }}. The
+          weather in Marsfield is forecast to be {{ states['sensor.marsfield_extended_text_0'].state
+          }}. {{ states['sensor.marsfield_uv_summary'].state }}. {{ states['sensor.marsfield_fire_danger_summary'].state
+          }}. Sunset today is at {{ states['sensor.nextsunset'].state }}. {% if states('sensor.garbage_waste')
+          == 'tomorrow' %} Remember, the rubbish and {% if states['sensor.garbage_greens'].state
+          == "tomorrow" %} greens {% else %}  recycling {% endif %} bins need to go
+          out tonight. {% endif %} Have a great day!
+        volume: '{{ states(''input_number.volume_default'') }}'
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.good_morning
+  mode: single
+- id: '1673608588366'
+  alias: TV Mode - On
+  description: Long press of the Dimmer On button
+  trigger:
+  - device_id: 855bb5e531ca268fd222212e87d8177e
+    domain: hue
+    platform: device
+    type: repeat
+    subtype: 1
+    unique_id: d6fdb9ab-eac0-434e-84b0-acd4f8ea8d2a
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.tv_mode
+  - service: hue.activate_scene
+    data:
+      transition: 5
+    target:
+      entity_id:
+      - scene.living_room_motown
+      - scene.clock_golden_pond
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_motown
+    metadata: {}
+    enabled: false
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.living_room_speaker
+      message: TV Mode activated
+      volume: '{{ states(''input_number.volume_default'') }}'
+    enabled: false
+  mode: single
+- id: '1673609355346'
+  alias: TV Mode - Off
+  description: Long press of the Dimmer Off button
+  trigger:
+  - device_id: 855bb5e531ca268fd222212e87d8177e
+    domain: hue
+    platform: device
+    type: repeat
+    subtype: 4
+    unique_id: e5dc2677-fca5-4963-adef-f6810aefc013
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.tv_mode
+  - service: hue.activate_scene
+    data:
+      transition: 5
+    target:
+      entity_id: scene.living_room_energize
+  - type: turn_off
+    device_id: f059123f26bf3a500b67026bb509fb57
+    entity_id: light.clock
+    domain: light
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_energize
+    metadata: {}
+    enabled: false
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.living_room_speaker
+      message: TV Mode deactivated
+      volume: '{{ states(''input_number.volume_default'') }}'
+    enabled: false
+  mode: single
+- id: '1673610647714'
+  alias: Stairs - On
+  description: Brightness button is held down on Dimmer
+  trigger:
+  - device_id: 855bb5e531ca268fd222212e87d8177e
+    domain: hue
+    platform: device
+    type: repeat
+    subtype: 2
+    unique_id: e13a0937-052e-4b64-bc59-01a795449f6d
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stairs_energize
+    metadata: {}
+  - service: media_player.media_pause
+    data: {}
+    target:
+      entity_id: media_player.plex_plex_for_apple_tv_apple_tv
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.living_room_speaker
+      message: Media player paused
+      volume: 0.4
+  mode: single
+- id: '1673610804937'
+  alias: Stairs - Off
+  description: Dim button long pressed on Dimmer
+  trigger:
+  - device_id: 855bb5e531ca268fd222212e87d8177e
+    domain: hue
+    platform: device
+    type: repeat
+    subtype: 3
+    unique_id: 0c6f5939-a645-4cc9-8385-21a4f5eaad77
+  condition: []
+  action:
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.living_room_speaker
+      message: Media player resuming
+      volume: 0.4
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.stairs_2
+  - service: media_player.media_play
+    data: {}
+    target:
+      entity_id: media_player.plex_plex_for_apple_tv_apple_tv
+  mode: single
+- id: '1673752990391'
+  alias: TV Mode - Automated
+  description: Automated TV Mode when something starts playing in Plex on the Apple
+    TV after sunset
+  trigger:
+  - platform: device
+    device_id: 731e28c5e96afde86154757ac1d40083
+    domain: media_player
+    entity_id: media_player.plex_for_apple_tv
+    type: playing
+  - platform: device
+    device_id: 731e28c5e96afde86154757ac1d40083
+    domain: media_player
+    entity_id: media_player.plex_for_apple_tv
+    type: paused
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 20
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  - condition: state
+    entity_id: input_boolean.use_tv_mode
+    state: 'on'
+  action:
+  - if:
+    - condition: device
+      device_id: 731e28c5e96afde86154757ac1d40083
+      domain: media_player
+      entity_id: media_player.plex_for_apple_tv
+      type: is_paused
+    then:
+    - service: input_boolean.turn_off
+      data: {}
+      target:
+        entity_id: input_boolean.tv_mode
+    - service: hue.activate_scene
+      data:
+        transition: 5
+      target:
+        entity_id: scene.living_room_energize
+    - type: turn_off
+      device_id: f059123f26bf3a500b67026bb509fb57
+      entity_id: light.clock
+      domain: light
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.living_room_speaker
+        message: TV Mode deactivated
+        volume: '{{ states(''input_number.volume_default'') }}'
+      enabled: false
+    else:
+    - service: input_boolean.turn_on
+      data: {}
+      target:
+        entity_id: input_boolean.tv_mode
+    - service: hue.activate_scene
+      data:
+        transition: 5
+      target:
+        entity_id:
+        - scene.living_room_motown
+        - scene.clock_golden_pond
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.living_room_speaker
+        message: TV Mode activated
+        volume: '{{ states(''input_number.volume_default'') }}'
+      enabled: false
+  mode: single
+- id: '1673773313356'
+  alias: TV Mode - Sunset
+  description: Sunset routine for TV Mode
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition:
+  - condition: device
+    device_id: 731e28c5e96afde86154757ac1d40083
+    domain: media_player
+    entity_id: media_player.plex_for_apple_tv
+    type: is_playing
+  - condition: state
+    entity_id: input_boolean.use_tv_mode
+    state: 'on'
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.tv_mode
+  - service: hue.activate_scene
+    data:
+      transition: 5
+    target:
+      entity_id: scene.living_room_motown
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.living_room_speaker
+      message: TV Mode activated
+      volume: '{{ states(''input_number.volume_default'') }}'
+  mode: single
+- id: '1673821720335'
+  alias: Mini Switch - Toggle
+  description: Toggle Good Night/Morning based on state of Gone to Bed boolean
+  trigger:
+  - device_id: 6cd779dbc8d0b3ea0085e50301bd2176
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.gone_to_bed
+      state: 'on'
+    then:
+    - service: automation.trigger
+      data: {}
+      target:
+        entity_id: automation.good_morning
+    else:
+    - service: automation.trigger
+      data: {}
+      target:
+        entity_id: automation.good_night
+  mode: single
+- id: '1673829847569'
+  alias: System Notification - HACS Updates - Persistent Notification
+  description: System Notification - HACS Persistent Notification when there is a
+    component update available
+  trigger:
+  - above: '0'
+    entity_id: sensor.hacs
+    platform: numeric_state
+  condition:
+  - condition: template
+    value_template: '{{ not is_state(''sensor.hacs'', ''unknown'') }}'
+  action:
+  - data:
+      message: "{% for repo in state_attr('sensor.hacs', 'repositories') %}\n  {{
+        repo.display_name }}\n  Current Version:  {{ repo.installed_version }}\n  New
+        Version: {{ repo.available_version }}\n  Repository: {{ repo.name }}\n  {{
+        \"\\r\\n\" }}\n{% endfor %}\nTotal Updates: {{ states('sensor.hacs') }}\n"
+      title: HACS Update available!
+    service: persistent_notification.create
+  mode: single
+- id: '1673833578702'
+  alias: Backup - Purge Expired
+  description: Purge expired backups. Only run on demand as they should be auto-purged
+    when a backup runs
+  trigger: []
+  condition: []
+  action:
+  - service: auto_backup.purge
+    data: {}
+  mode: single
+- id: '1673847782759'
+  alias: Doorbell - Front Door
+  description: When the Front Door Doorbell button is pressed
+  trigger:
+  - device_id: b2990f635b5d962e05abee686174eed4
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.45
+    target:
+      entity_id:
+      - media_player.master_bedroom_speaker
+      - media_player.living_room_speaker
+      - media_player.office_speaker
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.front_doorbell
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.media_player_all
+    data:
+      media_content_id: media-source://media_source/local/Westminster-chimes-doorbell.mp3
+      media_content_type: ''
+    metadata: {}
+  - service: notify.mark_ios_devices
+    data:
+      message: Someone is at the Front Door
+      title: Doorbell
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Doorbell
+  - delay:
+      seconds: 30
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.front_doorbell
+  mode: parallel
+- id: '1673848646816'
+  alias: Doorbell - Kitchen Door
+  description: When the Kitchen Door Doorbell button is pressed
+  trigger:
+  - device_id: 7a79dd690f234c01cfb565ba06423a2f
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.45
+    target:
+      entity_id:
+      - media_player.master_bedroom_speaker
+      - media_player.living_room_speaker
+      - media_player.office_speaker
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.kitchen_doorbell
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.media_player_all
+    data:
+      media_content_id: media-source://media_source/local/Ding-dong-sound-effect.mp3
+      media_content_type: ''
+    metadata: {}
+  - service: notify.mark_ios_devices
+    data:
+      message: Someone is at the Kitchen Door
+      title: Doorbell
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Alarm
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.kitchen_doorbell
+  mode: parallel
+  max: 10
+- id: '1673866162514'
+  alias: Front GATE
+  description: Turn on courtyard light if Front Gate is opened
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 48009f8ce07ba0a2c677683c7b8113c4
+    entity_id: binary_sensor.front_gate_open_close
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  action:
+  - service: hue.activate_scene
+    data:
+      brightness: 255
+    target:
+      entity_id: scene.courtyard_bright
+  mode: single
+- id: '1673866593059'
+  alias: Courtyard - Light Off
+  description: Turn off Courtyard light after 2 minutes
+  trigger:
+  - platform: state
+    entity_id:
+    - light.courtyard
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.courtyard
+  mode: single
+- id: '1674619053854'
+  alias: System - Laundry Status
+  description: A toggle button to indicate whether Laundry is on the line
+  trigger:
+  - device_id: 3e10d404d016de323f03a1811eb3ab67
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    data: {}
+    target:
+      entity_id: input_boolean.laundry_hung
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{% if states(''input_boolean.laundry_hung'') == ''on'' %} Laundry
+        has been hung {% else %} Laundry has been brought inside {% endif %}'
+      volume: '{{ states(''input_number.volume_default'') }}'
+  - service: notify.mark_ios_devices
+    data:
+      message: '{% if states(''input_boolean.laundry_hung'') == ''on'' %} Laundry
+        has been hung {% else %} Laundry has been brought inside {% endif %}'
+      title: Laundry
+      data:
+        group: System
+        push:
+          interruption-level: time-sensitive
+    enabled: true
+  mode: single
+- id: '1674619899913'
+  alias: System Notification - Laundry Warning
+  description: A warning that there is laundry on the line that needs to come in
+  trigger:
+  - platform: time
+    at: '16:30:00'
+  - platform: time_pattern
+    minutes: /15
+    enabled: false
+  condition:
+  - condition: state
+    entity_id: input_boolean.laundry_hung
+    state: 'on'
+  action:
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: Oi, doofus, bring in your laundry!
+      volume: '{{ states(''input_number.volume_default'') }}'
+  - service: notify.mark_ios_devices
+    data:
+      message: Oi, doofus, bring in your laundry!
+      title: Laundry
+      data:
+        group: System
+        push:
+          interruption-level: time-sensitive
+    enabled: true
+  mode: single
+- id: '1676516203370'
+  alias: System Notification - Rubbish Bins - Out
+  description: Broadcast a reminder message to put out the rubbish bins
+  trigger:
+  - platform: time
+    at: '17:00:00'
+  condition:
+  - condition: time
+    weekday:
+    - thu
+  - condition: state
+    entity_id: person.mark_matheson
+    state: home
+  action:
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{% if states[''sensor.garbage_greens''].state == "tomorrow" %} {%
+        set type = "Green" %} {% endif %} Hey doofus, put the rubbish and{% if type
+        == "Green" %} garden {% else %} recycling {% endif %}bins out!'
+      volume: '{{ states(''input_number.volume_default'') }}'
+  - service: notify.mobile_app_marks_iphone
+    data:
+      title: Rubbish
+      message: '{% if states[''sensor.garbage_greens''].state == "tomorrow" %} {%
+        set type = "Green" %} {% endif %} Hey doofus, put the rubbish and{% if type
+        == "Green" %} garden {% else %} recycling {% endif %}bins out!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Rubbish
+  mode: single
+- id: '1676584193002'
+  alias: System Notification - Rubbish Bins - In
+  description: Broadcast a reminder message to bring in the rubbish bins
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  condition:
+  - condition: time
+    weekday:
+    - fri
+  - condition: state
+    entity_id: person.mark_matheson
+    state: home
+    enabled: false
+  - condition: state
+    entity_id: input_boolean.rubbish_bins
+    state: 'on'
+  action:
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{% if states[''sensor.garbage_greens''].state == "today" %} {% set
+        type = "Green" %} {% endif %} Hey doofus, bring the rubbish and{% if type
+        == "Green" %} garden {% else %} recycling {% endif %}bins in!'
+      volume: '{{ states(''input_number.volume_default'') }}'
+  - service: notify.mobile_app_marks_iphone
+    data:
+      title: Rubbish
+      message: '{% if states[''sensor.garbage_greens''].state == "today" %} {% set
+        type = "Green" %} {% endif %} Hey doofus, bring the rubbish and{% if type
+        == "Green" %} garden {% else %} recycling {% endif %}bins in!'
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Rubbish
+  mode: single
+- id: '1676603626188'
+  alias: System - Rubbish Status
+  description: A toggle button to indicate whether the rubbish bins are out
+  trigger:
+  - device_id: 2236b20b470b598f1934d86ddf095ed7
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.rubbish_bins
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: '{% if states(''input_boolean.rubbish_bins'') == ''on'' %} Rubbish
+        bins are out {% else %} Rubbish bins are in {% endif %}'
+      volume: '{{ states(''input_number.volume_default'') }}'
+  - service: notify.mark_ios_devices
+    data:
+      message: '{% if states(''input_boolean.rubbish_bins'') == ''on'' %} Rubbish
+        bins are out {% else %} Rubbish bins are in {% endif %}'
+      title: Rubbish
+      data:
+        group: Rubbish
+        push:
+          interruption-level: time-sensitive
+  mode: single
+- id: '1678369695153'
+  alias: Mini Switch - Long Press
+  description: Long press on the bedroom mini switch
+  trigger:
+  - device_id: 6cd779dbc8d0b3ea0085e50301bd2176
+    domain: zha
+    platform: device
+    type: remote_button_long_release
+    subtype: remote_button_long_release
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id:
+      - 0510cb6310c211eb9a508b079e9925be
+      - carport
+      - computer_cabinet
+      - courtyard_2
+      - courtyard_side
+      - desk
+      - downstairs
+      - front_door
+      - front_entry
+      - 0510b87a10c211eba795d1d20eab3950
+      - 0510a56110c211eb8cb82f454df44b20
+      - 49bf0e5610c211ebb11bc31c9863b587
+      - outside
+      - stairs
+      - toilet
+      - upstairs
+  mode: single
+- id: '1678680150162'
+  alias: System Notification - Document Printed
+  description: Notification when a document is completed printed
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.hl_l8250cdn_status
+    to: ready
+  condition: []
+  action:
+  - service: notify.mobile_app_marks_iphone
+    data:
+      message: Your document has finished printing on the Brother printer.
+      title: Printing
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Office
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: Your document has finished printing on the Brother printer.
+      volume: '{{ states(''input_number.volume_default'') }}'
+  mode: single
+- id: '1678753836526'
+  alias: System Notification - Bad Weather Warning
+  description: Issue a bad weather warning when the weather is expected to be rainiy
+    or lightning
+  trigger:
+  - platform: state
+    entity_id:
+    - weather.marsfield_hourly
+    to: rainy
+  - platform: state
+    entity_id:
+    - weather.marsfield_hourly
+    to: lightning
+  - platform: state
+    entity_id:
+    - weather.marsfield_hourly
+    to: lightning-rainy
+  - platform: state
+    entity_id:
+    - weather.marsfield_hourly
+    to: hail
+  - platform: state
+    entity_id:
+    - weather.marsfield_hourly
+    to: pouring
+  condition:
+  - condition: state
+    entity_id: input_boolean.gone_to_bed
+    state: 'off'
+  - condition: state
+    entity_id: group.occupants
+    state: home
+  action:
+  - service: notify.mobile_app_marks_iphone
+    data:
+      title: Bad Weather Warning
+      message: The weather is expected to be {{ states['weather.marsfield_hourly'].state
+        }} in the next hour! {% if (states['input_boolean.laundry_hung'].state) ==
+        'on' %} Check your laundry!{% endif %}
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Weather
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: The weather is expected to be {{ states['weather.marsfield_hourly'].state
+        }} in the next hour! {% if (states['input_boolean.laundry_hung'].state) ==
+        'on' %} Check your laundry!{% endif %}
+      volume: '{{ states(''input_number.volume_default'') }}'
+  mode: single
+- id: '1678778884106'
+  alias: System - Welcome Home
+  description: Welcome home message
+  trigger:
+  - type: motion
+    platform: device
+    device_id: a674e14a85bab4e885d481a556aee691
+    entity_id: binary_sensor.living_room_motion
+    domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: dd2d3b47331ac2a55603b79c393fcb85
+    entity_id: binary_sensor.kitchen_motion_ias_zone
+    domain: binary_sensor
+  condition:
+  - condition: state
+    entity_id: input_boolean.welcome_home
+    state: 'on'
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - if:
+    - condition: numeric_state
+      entity_id: zone.home
+      above: 0
+      below: 2
+    then:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.living_room_speaker
+        message: Welcome home {% set people = state_attr('zone.home', 'persons') %}
+          {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
+          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M')
+          }}. The weather in Marsfield is {{ states('sensor.marsfield_extended_text_0')
+          }}. {{ states['sensor.marsfield_uv_summary'].state }}. {{ states['sensor.marsfield_fire_danger_summary'].state
+          }}. Have a great day!
+        volume: '{{ states(''input_number.volume_default'') }}'
+    else:
+    - service: script.broadcast_message
+      data:
+        entity_id: media_player.living_room_speaker
+        message: Welcome home.  It's {{ now().strftime('%H:%M') }}. The weather in
+          Marsfield is {{ states('sensor.marsfield_extended_text_0') }}. {{ states['sensor.marsfield_uv_summary'].state
+          }}. {{ states['sensor.marsfield_fire_danger_summary'].state }}. Have a great
+          day!
+        volume: '{{ states(''input_number.volume_default'') }}'
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.welcome_home
+  mode: single
+- id: '1678839098764'
+  alias: System Notification - Plex User
+  description: Notify me when any external Plex user starts playing content
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.nzrunner_state
+    to: playing
+    variables:
+      content: sensor.nzrunner_full_title
+  - platform: state
+    entity_id:
+    - sensor.agentofkaos_state
+    to: playing
+    variables:
+      content: sensor.agentofkaos_full_title
+  - platform: state
+    entity_id:
+    - sensor.crakyl_state
+    to: playing
+    variables:
+      content: sensor.crakyl_full_title
+  - platform: state
+    entity_id:
+    - sensor.d_e_matheson_state
+    to: playing
+    variables:
+      content: sensor.d_e_matheson_full_title
+  - platform: state
+    entity_id:
+    - sensor.jaqu4_state
+    to: playing
+    variables:
+      content: sensor.jaqu4_full_title
+  - platform: state
+    entity_id:
+    - sensor.virgilreality_state
+    to: playing
+    variables:
+      content: sensor.virgilreality_full_title
+  condition: []
+  action:
+  - service: notify.mark_ios_devices
+    data:
+      title: Plex
+      message: '{{ state_attr(trigger.entity_id, ''friendly_name'') }} has started
+        playing {{ states(content) }} {{ content }}
+
+        '
+      data:
+        push:
+          interruption-level: time-sensitive
+        group: Plex
+  mode: single
+- id: '1679552322202'
+  alias: Mini Switch - Double-Clicked
+  description: When the bedroom mini switch is double clicked, toggle the Alarm between
+    Night and Disarmed
+  trigger:
+  - device_id: 6cd779dbc8d0b3ea0085e50301bd2176
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: disarmed
+    then:
+    - service: script.alarm_night
+      data: {}
+    else:
+    - service: script.alarm_disarm
+      data: {}
+  mode: single

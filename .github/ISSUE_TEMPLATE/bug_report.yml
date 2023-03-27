@@ -1,0 +1,176 @@
+name: 🐛 Bug Report
+description: Create a report to help us improve
+title: "[BUG]: "
+labels: ["🐛 Bug", "🩹 Triage"]
+assignees:
+  - nzrunner
+
+body:
+- type: markdown
+  attributes:
+    value: >
+      **Thank you for wanting to report a bug in our Home Assistant configuration!**
+
+
+      ⚠
+      Verify first that your issue is not [already reported on
+      GitHub][issue search] and keep in mind that we may have to keep
+      the current behavior because every change breaks someone's
+      workflow. We try to be mindful about this.
+
+
+      [issue search]: ../search?q=is%3Aissue&type=issues
+
+
+- type: textarea
+  attributes:
+    label: Summary
+    description: Explain the problem briefly below.
+    placeholder: >-
+      When I try to do X with your code I don't get the same output as your screenshots.
+      Here are all the details I know about this problem...
+  validations:
+    required: true
+
+- type: dropdown
+  attributes:
+    label: Issue Type
+    description: >
+      Please select the single available option in the drop-down.
+
+      <details>
+        <summary>
+          <em>Why?</em>
+        </summary>
+
+        We would do it by ourselves but unfortunately, the curent
+        edition of GitHub Issue Forms Alpha does not support this yet 🤷
+
+
+        _We will make it easier in the future, once GitHub
+        supports dropdown defaults. Promise!_
+
+      </details>
+    # FIXME: Once GitHub allows defining the default choice, update this
+    options:
+    - Bug Report
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Configuration File Name
+    description: >-
+      Write the short name of the yml file below, *use your best guess if unsure*.
+    placeholder: configuration, sensors, http, homeassistant, etc.
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Home Assistant Version
+    description: >-
+      Include the current version of Home Assistant that you are running.
+    placeholder: 2023.3.6
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Configuration code
+    description: >-
+      Paste verbatim the code snippet you are having issues with.
+      Please don't wrap it with tripple backticks — your
+      whole input will be turned into a code snippet automatically.
+    render: console
+    value: Place code here
+    placeholder: Place code snippet
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: OS / Environment
+    description: >-
+      Provide all relevant information below, e.g. target OS versions,
+      network device firmware, etc.
+    placeholder: RHEL 8, CentOS Stream etc.
+  validations:
+    required: true
+
+
+- type: textarea
+  attributes:
+    label: Steps to Reproduce
+    description: |
+      Describe exactly how to reproduce the problem, using a minimal test-case.
+
+      **HINT:** You can paste https://gist.github.com links for larger files.
+    value: |
+      <!--- Paste the steps you tooks include the code used -->
+      ```yaml (paste below)
+
+      ```
+    placeholder: |
+      1. Implement the following code snippet:
+
+         ```yaml
+         ---
+         # ping.yml
+         - hosts: all
+           gather_facts: false
+           tasks:
+           - ping:
+         ...
+         ```
+      2. Unexpected behaviour
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Expected Results
+    description: >-
+      Describe what you expected to happen when running the steps above.
+    placeholder: >-
+      I expected X to happen because I assumed Y and was shocked
+      that it did not.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Actual Results
+    description: |
+      Describe what actually happened.
+
+      Paste verbatim command output and don't wrap it with tripple backticks — your
+      whole input will be turned into a code snippet automatically.
+    render: console
+    placeholder: Paste code and output here
+  validations:
+    required: true
+
+
+- type: markdown
+  attributes:
+    value: >
+      *One last thing...*
+
+
+      *Please, complete **all** sections as described, this form
+      is processed automatically by a robot.*
+
+
+      Thank you for your collaboration!
+
+- type: checkboxes
+  attributes:
+    label: Code of Conduct
+    description: |
+      Read the our [Code of Conduct][CoC] first.
+
+      [CoC]: ../blob/master/CODE_OF_CONDUCT.md
+    options:
+    - label: I agree to follow the Code of Conduct
+      required: true

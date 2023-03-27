@@ -1,0 +1,130 @@
+name: "Home Assistant CI"
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: 0 2 * * *
+
+jobs:
+  ha_version:
+    name: ✔ Get Installed Version
+    runs-on: ubuntu-latest
+    outputs:
+      current_version: ${{ steps.currentver.outputs.current_version }}
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Get Installed Version from .HA_VERSION
+        id: currentver
+        run: |
+          HA_VERSION=$(<.HA_VERSION)
+          echo $HA_VERSION
+          echo "current_version=$HA_VERSION" >> $GITHUB_OUTPUT
+
+  remarklint:
+    name: 🧹 Run Remark Lint
+    needs: [ha_version]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run Remark lint
+        uses: "docker://pipelinecomponents/remark-lint:latest"
+        continue-on-error: true
+        with:
+          args: "remark --no-stdout --color --frail --use preset-lint-recommended ."
+
+  yamllint:
+    name: 🧹 Run YAML Lint
+    needs: [ha_version]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run yamllint
+        uses: frenck/action-yamllint@v1.4.0
+
+  prettier:
+    name: 🧹 Run Prettier
+    needs: [remarklint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
+      - name: 🚀 Prettify code
+        uses: creyD/prettier_action@v4.3
+        with:
+          # DISABLED: Dry run mode for testing
+          # dry: True
+          # Do NOT run against YAML files. Code changes are nasty
+          prettier_options: --write **/*.md
+
+  home-assistant:
+    name: ✅ Home Assistant Core ${{ matrix.version }} Check
+    needs: [prettier, yamllint]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["${{needs.ha_version.outputs.current_version}}", "stable"]
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+
+      - name: 📄 Create fake empty files
+        run: |
+          touch ./home-assistant_v2.db
+          touch ./home-assistant.log
+          touch ./fake_id_rsa
+          touch ./fake_cert.pem
+
+      - name: 📁 Create empty custom components folder
+        run: |
+          mkdir -p ./custom_components
+
+      - name: 📥 Clone custom component - Average
+        run: |
+          git clone https://github.com/Limych/ha-average
+          mv -v ha-average/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - Lidarr Upcoming Media
+        run: |
+          git clone https://github.com/JackJPowell/sensor.lidarr_upcoming_media
+          mv -v sensor.lidarr_upcoming_media/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - Monitor Docker
+        run: |
+          git clone https://github.com/ualex73/monitor_docker
+          mv -v monitor_docker/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - Plex Recently Added
+        run: |
+          git clone https://github.com/custom-components/sensor.plex_recently_added
+          mv -v sensor.plex_recently_added/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - Radarr Upcoming Media
+        run: |
+          git clone https://github.com/custom-components/sensor.radarr_upcoming_media
+          mv -v sensor.radarr_upcoming_media/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - Sonarr Upcoming Media
+        run: |
+          git clone https://github.com/custom-components/sensor.sonarr_upcoming_media
+          mv -v sensor.sonarr_upcoming_media/custom_components/* ./custom_components
+
+      - name: 📥 Clone custom component - UniFi gateway
+        run: |
+          git clone https://github.com/custom-components/sensor.unifigateway
+          mv -v sensor.unifigateway/custom_components/* ./custom_components
+
+      - name: 🏃 Check configuration
+        uses: frenck/action-home-assistant@v1.4
+        with:
+          path: "."
+          secrets: ./.stubs/secrets-fake.yaml
+          version: "${{ matrix.version }}"

@@ -1,0 +1,81 @@
+#################################################################################
+#
+#                    _     _                                    _     _
+# __      ____ _ ___| |__ (_)_ __   __ _   _ __ ___   __ _  ___| |__ (_)_ __   ___
+# \ \ /\ / / _` / __| '_ \| | '_ \ / _` | | '_ ` _ \ / _` |/ __| '_ \| | '_ \ / _ \
+#  \ V  V / (_| \__ \ | | | | | | | (_| | | | | | | | (_| | (__| | | | | | | |  __/
+#   \_/\_/ \__,_|___/_| |_|_|_| |_|\__, | |_| |_| |_|\__,_|\___|_| |_|_|_| |_|\___|
+#                                  |___/
+#
+#################################################################################
+# https://www.emanuelepapa.dev/make-your-washing-machine-smarter-with-home-assistant/
+#################################################################################
+
+homeassistant:
+  customize_glob:
+    "*washing_machine*":
+      icon: mdi:washing-machine
+
+input_text:
+  washing_machine_enriched_status:
+    name: "Washing Machine Enriched Status"
+    initial: "Off"
+
+sensor:
+  - platform: template
+    sensors:
+      washing_machine_status:
+        friendly_name: "Washing Machine Status"
+        value_template: >
+          {% if states.sensor.washing_machine_power.state | float > 10.0 %}
+            {{ "Running" }}
+          {% elif states.sensor.washing_machine_power.state | float > 1.0 %}
+            {{ "On" }}
+          {% else %}
+            {{ "Off" }}
+          {% endif %}
+      washing_machine_info:
+        friendly_name: "Washing Machine Info"
+        value_template: >
+          {%- macro as_formatted_elapsed_time(now, other_date_time) %}
+          {% set duration = as_timestamp(now) - as_timestamp(other_date_time) %}
+          {% set seconds = (duration % 60) | int %}
+          {% set minutes = ((duration / 60) | int) % 60 %}
+          {% set hours = (duration / 3600) | int %}
+          {{ [hours, "hours", minutes, "minutes", seconds, "seconds"] | join(' ') }}
+          {%- endmacro %}
+          {% if states.input_text.washing_machine_enriched_status.state == "Running" %}
+            Washing machine running for: {{ as_formatted_elapsed_time(now(), states.input_text.washing_machine_enriched_status.last_changed)}}
+          {% elif states.input_text.washing_machine_enriched_status.state == "On_After_Running" %}
+            Clothes left in the washing machine for: {{ as_formatted_elapsed_time(now(), states.input_text.washing_machine_enriched_status.last_changed)}}
+          {% elif states.input_text.washing_machine_enriched_status.state == "On_After_Off" %}
+            {{ "Washing machine ready to start" }}
+          {% else %}
+            {{ "Washing machine is off" }}
+          {% endif %}
+
+automation:
+  - id: "1556314846684"
+    alias: Washing Machine - Refresh Info
+    initial_state: true
+    trigger:
+      platform: state
+      entity_id: sensor.washing_machine_status
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 10
+    action:
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.washing_machine_enriched_status
+          value: >
+            {% if trigger.to_state.state == "Running" %}
+              {{ "Running" }}
+            {% elif trigger.to_state.state == "On" and trigger.from_state.state == "Running" %}
+              {{ "On_After_Running" }}
+            {% elif trigger.to_state.state == "On" and trigger.from_state.state == "Off" %}
+              {{ "On_After_Off" }}
+            {% else %}
+              {{ "Off" }}
+            {% endif %}

@@ -1,0 +1,71 @@
+#################################################################################
+#
+#                   __ _                       _   _
+#   ___ ___  _ __  / _(_) __ _ _   _ _ __ __ _| |_(_) ___  _ __
+#  / __/ _ \| '_ \| |_| |/ _` | | | | '__/ _` | __| |/ _ \| '_ \
+# | (_| (_) | | | |  _| | (_| | |_| | | | (_| | |_| | (_) | | | |
+#  \___\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_|
+#                        |___/
+#
+#################################################################################
+# This is my OLD configuration.yaml
+# I have now adopted @frenck's configuration minimisation model
+# This is retained for posterity and just in case disaster strikes
+#################################################################################
+
+#################################################################################
+# Default Configuration
+# Configure a default setup of Home Assistant
+# https://www.home-assistant.io/integrations/default_config/
+#################################################################################
+default_config:
+
+#################################################################################
+# Front End
+# This offers the official frontend to control Home Assistant
+# https://www.home-assistant.io/integrations/frontend/
+#################################################################################
+frontend:
+  themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /local/community/lovelace-card-mod/card-mod.js
+
+#################################################################################
+# Integrations
+#################################################################################
+# Core Configuration
+homeassistant: !include includes/homeassistant.yaml
+http: !include includes/http.yaml
+
+# Logging and History
+device_tracker: !include includes/device_tracker.yaml
+logger: !include includes/logger.yaml
+recorder: !include includes/recorder.yaml
+system_log: !include includes/system_log.yaml
+
+# Managed by UI
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# Sensors
+binary_sensor: !include includes/binary_sensor.yaml
+sensor: !include includes/sensor.yaml
+template: !include includes/template.yaml
+
+# Others
+alarm_control_panel: !include includes/alarm_control_panel.yaml
+alert: !include includes/alert.yaml
+calendar: !include includes/calendar.yaml
+climate: !include includes/climate.yaml
+group: !include includes/group.yaml
+media_player: !include includes/media_player.yaml
+monitor_docker: !include includes/monitor_docker.yaml
+notify: !include includes/notify.yaml
+panel_custom: !include includes/panel_custom.yaml
+tts: !include includes/tts.yaml
+zha: !include includes/zha.yaml
+
+# Assist - Voice Control
+conversation: !include includes/conversation.yaml
+intent_script: !include includes/intent_script.yaml

@@ -1,0 +1,22 @@
+#################################################################################
+#
+#                _       _
+#  ___  ___ _ __(_)_ __ | |_
+# / __|/ __| '__| | '_ \| __|
+# \__ \ (__| |  | | |_) | |_
+# |___/\___|_|  |_| .__/ \__|
+#                 |_|
+#
+#################################################################################
+# The script integration allows users to specify a sequence of actions to be
+# executed by Home Assistant when turned on.
+# This loads up my custom scripts.
+# https://www.home-assistant.io/integrations/script/
+#################################################################################
+
+# Scripts I create in the UI
+script: !include ../scripts.yaml
+
+# My own handmade automations
+script manual: !include_dir_named ../scripts
+# scene manual: !include_dir_merge_list automations/

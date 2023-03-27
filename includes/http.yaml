@@ -1,0 +1,30 @@
+#################################################################################
+#
+#  _     _   _
+# | |__ | |_| |_ _ __
+# | '_ \| __| __| '_ \
+# | | | | |_| |_| |_) |
+# |_| |_|\__|\__| .__/
+#               |_|
+#
+#################################################################################
+# The http integration serves all files and data required for the Home Assistant frontend
+# https://www.home-assistant.io/integrations/http/
+#################################################################################
+
+http:
+  ## Restricting it to only listen to 127.0.0.1 will forbid direct accesses.
+  ## Also, Home Assistant should be told to trust headers coming from the reverse proxy only.
+  ## Otherwise, incoming requests will always come from 127.0.0.1 and not the real IP address.
+  ## So make sure to add the reverse proxy server ip in trusted_proxies
+  trusted_proxies:
+    - !secret reverse_proxy  # Reverse Proxy
+    - !secret iotstack_lan  # IOTStack LAN
+    - !secret iotstack_internal_lan  # IOTStack Internal Lan
+
+  ## Required for reverse proxy
+  use_x_forwarded_for: true
+
+  ## Included for better security
+  # ip_ban_enabled: true
+  # login_attempts_threshold: 10
