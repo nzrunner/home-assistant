@@ -21,7 +21,7 @@
 title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
-  Change the description to test this crap
+  Change the description to test this junk
 baseurl: ""  # the subpath of your site, e.g. /blog
 url: "https://nzrunner.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nzrunner
