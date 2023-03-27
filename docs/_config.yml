@@ -28,7 +28,7 @@ twitter_username: nzrunner
 github_username: nzrunner
 
 # Build settings
-# theme: minima
+theme: minima
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
   - jekyll-feed
