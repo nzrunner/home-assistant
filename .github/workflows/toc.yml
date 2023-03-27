@@ -6,6 +6,8 @@ on:
     paths:
       - "docs/*.md"
       - "README.md"
+    branches:
+      - maater
 
 jobs:
   generateTOC:
