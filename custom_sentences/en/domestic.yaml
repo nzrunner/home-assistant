@@ -24,3 +24,13 @@ intents:
     data:
       - sentences:
           - "[bring] [the] bins in"
+
+  GoodMorning:
+    data:
+      - sentences:
+          - "good morning"
+
+  GoodNight:
+    data:
+      - sentences:
+          - "good night"

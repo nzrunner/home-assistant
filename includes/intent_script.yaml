@@ -35,14 +35,30 @@ intent_script:
     action:
       service: automation.trigger
       target:
-        entity_id: "automation.system_rubbish_status"
+        entity_id: automation.system_rubbish_status
     speech:
       text: "The rubbish bins are out"
 
   BinsIn:
     action:
-      service: "automation.trigger"
+      service: automation.trigger
       target:
-        entity_id: "automation.system_rubbish_status"
+        entity_id: automation.system_rubbish_status
     speech:
       text: "The rubbish bins are in"
+
+  GoodMorning:
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.good_morning
+    speech:
+      text: "Good Morning!"
+
+  GoodNight:
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.good_night
+    speech:
+      text: "Good Night!"
