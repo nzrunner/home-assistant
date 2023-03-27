@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Matho's Home Assistant Blog
+title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -30,7 +30,7 @@ twitter_username: nzrunner
 github_username: nzrunner
 
 # Build settings
-theme: minima
+theme: tactile
 plugins:
   - jekyll-feed
 
