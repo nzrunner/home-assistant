@@ -20,4 +20,4 @@ Recently, I decided to publish my [Home Assistant](https://home-assistant.io) co
 
 So, this blog, generated using GitHub Pages, making this another feature of GitHub that I've used. One of the next blogs will be about the process to get it published. And I have to say, it was incredibly frustrating.
 
-In addition, I wil also be posting about the updates I make to my [Home Assistant configuration](https://github.com/nzrunner/home-assistant). Why not ⭐ my repo and follow along.
+In addition, I wil also be posting about the updates I make to my [Home Assistant configuration](https://github.com/nzrunner/home-assistant).
