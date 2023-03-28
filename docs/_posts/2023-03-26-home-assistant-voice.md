@@ -13,9 +13,7 @@ I spent some time trying to get Home Assistant Voice working. I found it to be a
 
 <!--more-->
 
-_Note: I finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices (<https://www.home-assistant.io/docs/assist/apple>), and "Hey Siri, Assist" is now working nicely but still no joy getting voice working from within the mobile app._
-
-I am pleased to say, I have it working within the app, albeit only in a browser on my laptop and not in the app on my mobile devices. I suspect this is related to my http intergration, despite the fact both my internal and external URL's are using https. I'm not going to spend too much time diagnosing that at the moment, as with Siri integration working, it is actually useful already.
+I am pleased to say, I have it working within the app, albeit only in a browser on my laptop and not in the app on my mobile devices.[^1] I suspect this is related to my http intergration, despite the fact both my internal and external URL's are using https. I'm not going to spend too much time diagnosing that at the moment, as with Siri integration working, it is actually useful already.
 
 For my conversation integration, the two files I needed to create were `includes/intent_script.yaml` and `custom_sentences/en/domestic.yaml`. The later file can be named anything, but must be in the custom_sentences/{language} folder. You can have multiple of these files, broken down into logical groups.
 
@@ -145,3 +143,7 @@ intents:
 Although I have several Google Home devices, I am not comfortable with the Google servers being "fed" all the data relating to my devices, so won't be adding the Google Home integration at this point. Besides, it's a lot of work for little benefit. Check out the integration - <https://www.home-assistant.io/integrations/google_assistant/>
 
 I guess it's back to talking to myself again when I want my smart home to do something. \<ponders>
+
+#### Notes
+
+[^1]: I finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices (<https://www.home-assistant.io/docs/assist/apple>), and "Hey Siri, Assist" is now working nicely but still no joy getting voice working from within the mobile app.
