@@ -27,8 +27,9 @@ permalink: /resources/
 
 ## GitHub
 
-| **Description**                                             | **Link**                                                                                                                     |
-| :---------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| GitHub Issue Forms                                          | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms> |
-| Example GitHub Issue Forms                                  | <https://github.com/ansible/issue-forms-demo-for-ansible>                                                                    |
-| Good source for Lovelace CCS variables, particularly colors | <https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md>                                             |
+| **Description**                                             | **Link**                                                                                                                                             |
+| :---------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GitHub Issue Forms                                          | <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>                         |
+| Example GitHub Issue Forms                                  | <https://github.com/ansible/issue-forms-demo-for-ansible>                                                                                            |
+| Good source for Lovelace CCS variables, particularly colors | <https://github.com/chipriley/lovelace-css-values/blob/master/known_css_refs.md>                                                                     |
+| GitHub Markdown Syntax                                      | <https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax> |
