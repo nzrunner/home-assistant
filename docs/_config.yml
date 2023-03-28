@@ -43,7 +43,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/mark-matheson-digital-business-consultant.png
+      image: "{{ site.url }}/{{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png"
 tagline: Home Assistant and GitHub blog
 twitter:
   username: nzrunner
