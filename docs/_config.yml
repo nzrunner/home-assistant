@@ -27,6 +27,16 @@ url: "https://nzrunner.github.io"  # the base hostname & protocol for your site,
 twitter_username: nzrunner
 github_username: nzrunner
 
+authors:
+  mark:
+    name: Mark Matheson
+    display_name: Matho
+    gravatar: 8db5ca9bd8374ed0efbab82888bc1e5c
+    email: support@marathonsoftware.com.au
+    web: https://marathonsoftware.com.au
+    twitter: https://twitter.com/nzrunner
+    description: "Consumer and now contributor of the open-source community."
+
 # Specific to Hamilton theme
 location: "Sydney, Australia"
 skin: midnight
