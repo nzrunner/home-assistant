@@ -7,13 +7,13 @@ categories: home-assistant github
 tags: [github, home-assistant]
 ---
 
-![Logo]({{ site.url }}/assets/images/mark-matheson-digital-business-consultant.png)
+![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
 
 [Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
 <!--more-->
 
-![Home Assistant-Dashboard]({{ site.url }}/assets/images/home-assistant-alternate.png)
+![Home Assistant-Dashboard]({{ site.baseurl }}/assets/images/home-assistant-alternate.png)
 
 I created a [GitHub repository](https://github.com/nzrunner/home-assistant) to: -
 
