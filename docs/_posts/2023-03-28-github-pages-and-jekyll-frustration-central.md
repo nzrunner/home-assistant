@@ -5,6 +5,7 @@ title: "GitHub Pages and Jekyll - Frustration Central!"
 date: 2023-03-28 18:33:00 +1100
 categories: github
 tags: [github, pages, jekyll]
+author: Mark Matheson
 ---
 
 As part of my GitHub learning, I have tried to use as many of the available features as possible. I identified two features that I wasn't using: -

@@ -5,6 +5,7 @@ title: "Home Assistant Voice"
 date: 2023-03-26 22:16:00 +1100
 categories: home-assistant
 tags: [home-assistant, voice, conversation]
+author: Mark Matheson
 ---
 
 I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.

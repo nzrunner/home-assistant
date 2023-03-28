@@ -5,6 +5,7 @@ excerpt_separator: <!--more-->
 date: 2023-03-25 22:00:00 +1100
 categories: home-assistant github
 tags: [github, home-assistant, actions, workflows, ci]
+author: Mark Matheson
 ---
 
 Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier.

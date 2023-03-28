@@ -5,6 +5,7 @@ excerpt_separator: <!--more-->
 date: 2023-03-18 13:37:00 +1100
 categories: home-assistant github
 tags: [github, home-assistant]
+author: Mark Matheson
 ---
 
 [Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.

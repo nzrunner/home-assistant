@@ -5,6 +5,7 @@ excerpt_separator: <!--more-->
 date: 2023-03-18 11:55:00 +1100
 categories: github
 tags: [github, welcome, first-post]
+author: Mark Matheson
 ---
 
 Gidday! My name is Mark Matheson. I'm a Digital Business Consultant based in Sydney, Australia.
