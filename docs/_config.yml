@@ -63,7 +63,7 @@ social:
 remote_theme: ngzhio/jekyll-theme-hamilton
 plugins:
   # Don;t want RSS feed
-  # - jekyll-feed
+  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
