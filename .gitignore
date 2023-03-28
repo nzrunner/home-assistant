@@ -39,6 +39,8 @@ deps
 !*.yaml
 !*.md
 !LICENSE.txt
+!assets
+!assets/**
 !includes
 !docs
 !docs/**
@@ -59,7 +61,7 @@ deps
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
-*.jpg
+# *.jpg
 # *.png
 *.ttf
 
