@@ -1,10 +1,17 @@
 ---
+title: GitHub Actions and Workflows (AKA CI)
 layout: post
-title: "GitHub Actions and Workflows (AKA CI)"
-excerpt_separator: <!--more-->
-date: 2023-03-25 22:00:00 +1100
-categories: home-assistant github
-tags: [github, home-assistant, actions, workflows, ci]
+excerpt_separator: "<!--more-->"
+date: "2023-03-25 22:00:00 +1100"
+categories:
+  - home-assistant
+  - github
+tags:
+  - github
+  - home-assistant
+  - actions
+  - workflows
+  - ci
 author: Mark Matheson
 ---
 

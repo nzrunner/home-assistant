@@ -1,10 +1,14 @@
 ---
+title: GitHub Pages and Jekyll - Frustration Central!
 layout: post
-excerpt_separator: <!--more-->
-title: "GitHub Pages and Jekyll - Frustration Central!"
-date: 2023-03-28 18:33:00 +1100
-categories: github
-tags: [github, pages, jekyll]
+excerpt_separator: "<!--more-->"
+date: "2023-03-28 18:33:00 +1100"
+categories:
+  - github
+tags:
+  - github
+  - pages
+  - jekyll
 author: Mark Matheson
 ---
 

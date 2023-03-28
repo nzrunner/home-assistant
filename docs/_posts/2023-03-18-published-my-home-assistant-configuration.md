@@ -1,10 +1,14 @@
 ---
+title: Published my Home Assistant configuration
 layout: post
-title: "Published my Home Assistant configuration"
-excerpt_separator: <!--more-->
-date: 2023-03-18 13:37:00 +1100
-categories: home-assistant github
-tags: [github, home-assistant]
+excerpt_separator: "<!--more-->"
+date: "2023-03-18 13:37:00 +1100"
+categories:
+  - home-assistant
+  - github
+tags:
+  - github
+  - home-assistant
 author: Mark Matheson
 ---
 
