@@ -4,7 +4,7 @@ title: "Home Assistant Voice"
 excerpt_separator: <!--more-->
 date: 2023-03-26 22:16:00 +1100
 categories: home-assistant
-tags: [home-assistant voice conversation]
+tags: [home-assistant, voice, conversation]
 ---
 
 ![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
