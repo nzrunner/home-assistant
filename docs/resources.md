@@ -8,13 +8,13 @@ permalink: /resources/
 
 ## General
 
-| **Description**                                     | **Link**                                                                         |
-| :-------------------------------------------------- | :------------------------------------------------------------------------------- |
-| A great tool for generating funky text file headers | <https://patorjk.com/software/taag/#p=display&c=bash&f=Standard&t=configuration> |
-| Make cool shields                                   | <https://shields.io/>                                                            |
-| SVG Logos for popular brands to use with shields    | <https://simpleicons.org>                                                        |
-| The base for this README                            | <https://github.com/othneildrew/Best-README-Template>                            |
-| Choose an open source license                       | <https://choosealicense.com/>                                                    |
+| **Description**                                     | **Link**                                              |
+| :-------------------------------------------------- | :---------------------------------------------------- |
+| A great tool for generating funky text file headers | <https://patorjk.com/software/taag>                   |
+| Make cool shields                                   | <https://shields.io/>                                 |
+| SVG Logos for popular brands to use with shields    | <https://simpleicons.org>                             |
+| The base for this README                            | <https://github.com/othneildrew/Best-README-Template> |
+| Choose an open source license                       | <https://choosealicense.com>                          |
 
 ## Home Assistant
 
