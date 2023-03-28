@@ -21,7 +21,7 @@
 title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
-  A Home Assistant and GitHub blog. My ramblings about my experience with these products.
+  A Home Assistant and GitHub blog about my experiences with these products.
 # baseurl: ""  # the subpath of your site, e.g. /blog
 url: "https://nzrunner.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nzrunner
@@ -38,9 +38,20 @@ subscribe: false
 paginate: 5
 
 # Jekyll SEO tag
+logo: /assets/images/mark-matheson-digital-business-consultant.png
+tagline: Home Assistant and GitHub blog
 twitter:
   username: nzrunner
   card: summary
+facebook:
+  app_id: 275904333606308
+social:
+  name: Mark Matheson
+  links:
+    - https://www.twitter.com/nzrunner
+    - https://www.facebook.com/nzrunner
+    - https://www.linkedin.com/in/nzrunner
+    - https://github.com/nzrunner
 
 # Build settings
 # theme: minima
