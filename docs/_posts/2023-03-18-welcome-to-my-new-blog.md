@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "Welcome to my new Blog!"
-date: 2023-03-22 11:55:00 +1100
+excerpt_separator: <!--more-->
+date: 2023-03-18 11:55:00 +1100
 categories: github
 tags: [github, welcome, first-post]
 ---
 
+![Logo](/assets/images/mark-matheson-digital-business-consultant.png)
+
 Gidday! My name is Mark Matheson. I'm a Digital Business Consultant based in Sydney, Australia.
+
+<!--more-->
 
 Recently, I decided to publish my [Home Assistant](https://home-assistant.io) configuration on [GitHub](https://github.com). This led me down the GitHub rabbit hole, learning the features of GitHub and [Git](https://git-scm.com/). To say it has been a steep learning curve would be an understatement. Having come out the other side with a wealth of experience, both good and bad, I thought I'd blog about it.
 
