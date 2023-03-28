@@ -35,7 +35,7 @@ author: "Mark Matheson"
 disqus: github-blog
 avatar: /assets/images/mark-circle-200x200.png
 subscribe: false
-paginate: 10
+paginate: 5
 
 # Jekyll SEO tag
 twitter:
@@ -46,7 +46,8 @@ twitter:
 # theme: minima
 remote_theme: ngzhio/jekyll-theme-hamilton
 plugins:
-  - jekyll-feed
+  # Don;t want RSS feed
+  # - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
