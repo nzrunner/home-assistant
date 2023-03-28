@@ -7,7 +7,7 @@ categories: home-assistant github
 tags: [github, home-assistant]
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
+![Logo](/assets/images/mark-matheson-digital-business-consultant.png)
 
 [Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
