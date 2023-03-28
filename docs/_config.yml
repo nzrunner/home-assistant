@@ -34,7 +34,7 @@ date_format: "%-d %b %Y"
 author: "Mark Matheson"
 disqus: github-blog
 avatar: /assets/images/mark-circle-200x200.png
-subscribe: false
+subscribe: true
 paginate: 5
 
 # Jekyll SEO tag
