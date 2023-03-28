@@ -11,3 +11,6 @@ Hi, I'm Mark Matheson, a Digital Business Consultant based in Sydney Australia w
 I currently run my own IT consultancy helping clients manage their digital business processes.
 
 Part of my IT passion is driven by my smart home which is run by [Home Assistant](https://home-assistant.io). In recent years, I have become a consumer of open-source software. My coding skills are average, so I thought this might be a way of contributing to the open-source community. Having recently published my [Home Assistant configuration](https://nzrunner.github.com/nzrunner/home-assistant) on GitHub, I am now blogging about my Home Assistant and GitHub experiences.
+
+Don't forget to ⭐ my [repo](https://github.com/nzrunner/home-assistant) and if you're
+feeling generous, [Buy Me A Coffee](https://www.buymeacoffee.com/nzrunner)

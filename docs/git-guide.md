@@ -4,8 +4,6 @@ title: "Git Guide"
 permalink: /git-guide/
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 ## Usage Guide
 
 To get the most benefit out of the ChangeLog module, the commit messages have to be in this format:

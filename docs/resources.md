@@ -4,8 +4,6 @@ title: "Useful Web Resources"
 permalink: /resources/
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 ## General
 
 | **Description**                                     | **Link**                                               |

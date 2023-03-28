@@ -4,8 +4,6 @@ title: "Acknowledgements"
 permalink: /acknowledgements/
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 ## Themes
 
 | **Description**                         | **Link**                                             |
