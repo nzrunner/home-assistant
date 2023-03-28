@@ -1,11 +1,9 @@
 name: "Home Assistant CI"
 on:
   push:
-    branches:
-      - master
   pull_request:
     branches:
-      - master
+      - main
   workflow_dispatch:
   schedule:
     - cron: 0 2 * * *
