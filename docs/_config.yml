@@ -39,7 +39,11 @@ paginate: 5
 
 # Jekyll SEO tag
 logo: /assets/images/mark-matheson-digital-business-consultant.png
-image: /assets/images/mark-matheson-digital-business-consultant.png
+image:
+  path: /assets/images/mark-matheson-digital-business-consultant.png
+  height: 500
+  width: 1500
+  alt: Logo
 tagline: Home Assistant and GitHub blog
 twitter:
   username: nzrunner
