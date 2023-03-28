@@ -39,8 +39,8 @@ deps
 !*.yaml
 !*.md
 !LICENSE.txt
-!assets
-!assets/**
+!images
+!images/**
 !includes
 !docs
 !docs/**
