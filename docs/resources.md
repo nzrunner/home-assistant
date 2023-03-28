@@ -18,12 +18,12 @@ permalink: /resources/
 
 ## Home Assistant
 
-| **Description**                | **Link**                                                       |
-| :----------------------------- | :------------------------------------------------------------- |
-| Home Assistant                 | <https://home-assistant.io>                                    |
-| Conversation                   | <https://www.home-assistant.io/integrations/conversation>      |
-| Assist on Apple Devices        | <https://www.home-assistant.io/docs/assist/apple>              |
-| Google Assistant intetegration | <https://www.home-assistant.io/integrations/google_assistant/> |
+| **Description**              | **Link**                                                       |
+| :--------------------------- | :------------------------------------------------------------- |
+| Home Assistant               | <https://home-assistant.io>                                    |
+| Conversation                 | <https://www.home-assistant.io/integrations/conversation>      |
+| Assist on Apple Devices      | <https://www.home-assistant.io/docs/assist/apple>              |
+| Google Assistant integration | <https://www.home-assistant.io/integrations/google_assistant/> |
 
 ## GitHub
 
