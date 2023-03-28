@@ -1,0 +1,7 @@
+.wrapper {
+  max-width: calc(1600px - (2rem));
+}
+
+.site-body {
+  grid-template-columns: calc(1600px * 0.24) 1fr;
+}
