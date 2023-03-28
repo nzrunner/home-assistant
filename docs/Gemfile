@@ -37,3 +37,6 @@ gem 'jekyll-sitemap'
 
 # Jekyll SEO
 gem 'jekyll-seo-tag'
+
+# Jekyll Admin
+gem 'jekyll-admin', group: :jekyll_plugins

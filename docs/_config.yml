@@ -62,11 +62,11 @@ social:
 # theme: minima
 remote_theme: ngzhio/jekyll-theme-hamilton
 plugins:
-  # Don;t want RSS feed
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-admin
   - jekyll-remote-theme  # add this line to the plugins list if you already have one
 
 # Exclude from processing.
