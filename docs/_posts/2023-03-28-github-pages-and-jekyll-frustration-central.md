@@ -7,8 +7,6 @@ categories: github
 tags: [github, pages, jekyll]
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 As part of my GitHub learning, I have tried to use as many of the available features as possible. I identified two features that I wasn't using: -
 
 1. GitHub Pages (AKA Websites)
@@ -28,7 +26,7 @@ In a couple of overly simplified steps: -
 2. Create a website in that repo/branch
 3. Tell GitHub to deploy the website to GitHub Pages
 
-I wanted my website to inherit the folder name of my repo, so needed to use the branch option, rather than creating a new report.
+I wanted my website to inherit the folder name of my repo, so needed to use the branch option, rather than creating a new repo.
 
 My first mistake was choosing to publish a website using [custom GitHub Actions workflow 🔗](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow). Despite it being possible, and after numerous commits to force a build and deploy, I never got any positive outcomes. No website visible and frustration raging through my veins.
 
@@ -54,12 +52,12 @@ As part of the process, I decided I didn't like the default theme, so I would us
 
 Now I had a website that was completely empty, nothing on the front page, and when I tried to access any sub-page, I got the expected header and footer with a 404 error. It was at this stage I decided that going to bed was a better option than reverting to alcohol. After all, I had already pulled out clumps of hair, something I can ill afford to lose.
 
-I woke up the next day (this morning as it happens), determined to figure out what I had done wrong.
+I woke up the next day determined to figure out what I had done wrong.
 
-With the calrity of a new day, it didn't take me long to realise that the sample markdown files provided by the default theme didn't work with the custom theme. A by-product of cvhanging themes mid-install. Renaming a few files produced a basic website that used the custom theme, and looked like what I was expecting from Jekyll. Success!
+With the clarity of a new day, it didn't take me long to realise that the sample markdown files provided by the default theme didn't work with the custom theme. A by-product of changing themes mid-install. Renaming a few files produced a basic website that used the custom theme, and looked like what I was expecting from Jekyll. Success!
 
-Now I could start reading into the plugins and finer points of customising the theme and start to build a website that looked like something I wanted to produce. Ironically, I abandoned the custom theme I had originally planned on using and settled on the Hamilton, the one I am using now. If you want a few places to check out custom Jekyll themes, have a look [here 🔗](https://jekyllrb.com/docs/themes/).
+Now I could start reading into the plugins and finer points of customising the theme and start to build a website that looked like something I wanted to produce. Ironically, I abandoned the custom theme I had originally planned on using and settled on Hamilton. If you want a few places to check out custom Jekyll themes, have a look [here 🔗](https://jekyllrb.com/docs/themes/).
 
 So after hours of frustration and angst, I have a working website. Adding a new blog post is as easy as creating a markdown file in the \_posts folder with an [appropriate name 🔗](https://jekyllrb.com/docs/posts/) and pushing the change to GitHub.
 
-If you;ve got to the end of this post, hopegully you can avoid much of the angst and frustration I encountered and be able to quickly publish a Jekyll website for your GitHub repsitory. Let me know if the comments below.
+If you've got to the end of this post, hopefully you can avoid much of the angst and frustration I encountered and be able to quickly publish a Jekyll website for your GitHub repsitory. Let me know if the comments below.

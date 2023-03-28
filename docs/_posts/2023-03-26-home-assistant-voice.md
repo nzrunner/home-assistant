@@ -7,8 +7,6 @@ categories: home-assistant
 tags: [home-assistant, voice, conversation]
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.
 
 <!--more-->

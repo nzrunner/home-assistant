@@ -7,8 +7,6 @@ categories: home-assistant github
 tags: [github, home-assistant, actions, workflows, ci]
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier.
 
 ![GitHub CI]({{ site.baseurl }}/assets/images/github-ci.png)

@@ -7,8 +7,6 @@ categories: github
 tags: [github, welcome, first-post]
 ---
 
-![Logo]({{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png)
-
 Gidday! My name is Mark Matheson. I'm a Digital Business Consultant based in Sydney, Australia.
 
 <!--more-->
