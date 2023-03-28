@@ -4,14 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+![Logo](/assets/images/mark-matheson-digital-business-consultant.png)
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Hi, I'm Mark Matheson, a Digital Business Consultant based in Sydney Australia with over 30 years experience working with various digital products including ERP, CRM, CMS, and numerous development platforms.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I currently run my own IT consultancy helping clients manage their digital business processes.
 
-[jekyll-organization]: https://github.com/jekyll
+Part of my IT passion is driven by my smart home which is run by [Home Assistant](https://home-assistant.io). Having recently published my [Home Assistant configuration](https://nzrunner.github.com/nzrunner/home-assistant) on GitHub, I am now blogging about my Home assistant and GitHub experiences.
