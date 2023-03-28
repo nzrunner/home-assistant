@@ -38,7 +38,7 @@ deps
 !.HA_VERSION
 !*.yaml
 !*.md
-!LICENSE.txt
+!LICENSE.md
 !includes
 !docs
 !blueprints
