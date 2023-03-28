@@ -62,9 +62,6 @@
 <summary>Table of Contents</summary>
 
 - [Overview](#overview)
-  - [Updates](#updates)
-  - [Update: 2023-03-26](#update-2023-03-26)
-  - [Update: 2023-03-25](#update-2023-03-25)
 - [Built With](#built-with)
 - [Dashboards](#dashboards)
   - [Screenshots](#screenshots)
