@@ -36,23 +36,24 @@ deps
 !.github/ISSUE_TEMPLATE
 !.github/workflows
 !.HA_VERSION
+!LICENSE.md
 !*.yaml
 !*.md
-!LICENSE.md
-!includes
-!docs
-!blueprints
 !automations
 !automations/**
+!blueprints
 !custom_sentences
 !custom_sentences/**
+!docs
+!docs/**
 !entities
 !entities/**
+!includes
+!old_packages
 !scenes
 !scenes/**
 !scripts
 !scripts/**
-!old_packages
 
 # Specific file ignores
 ip_bans.yaml
