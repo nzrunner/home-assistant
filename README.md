@@ -49,52 +49,11 @@
 
 [🏡 Home](https://github.com/nzrunner/home-assistant)
 |
-[📚 Git Guide](/docs/git-guide.md)
-|
-[💻 Resources](/docs/resources.md)
-|
 [🐛 Report Bug](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%90%9B+Bug%2C%F0%9F%A9%B9+Triage&template=bug_report.yml&title=%5BBUG%5D%3A+)
 |
 [👍 Request Feature](https://github.com/nzrunner/home-assistant/issues/new?assignees=nzrunner&labels=%F0%9F%91%8D+Enhancement%2C%F0%9F%A9%B9+Triage&template=feature_request.yml&title=%5BFEATURE+REQUEST%5D%3A+)
 |
 [🗒 ChangeLog](/CHANGELOG.md)
-
-<!-- TABLE OF CONTENTS -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<details>
-<summary>Table of Contents</summary>
-
-- [Overview](#overview)
-  - [Updates](#updates)
-  - [Update: 2023-03-26](#update-2023-03-26)
-  - [Update: 2023-03-25](#update-2023-03-25)
-- [Built With](#built-with)
-- [Dashboards](#dashboards)
-  - [Screenshots](#screenshots)
-  - [Lovelace UI](#lovelace-ui)
-- [Integrations](#integrations)
-- [Custom Components](#custom-components)
-  - [Integrations](#integrations-1)
-  - [Frontend](#frontend)
-  - [Automation](#automation)
-  - [Addons](#addons)
-- [Devices](#devices)
-  - [Network](#network)
-  - [IOT](#iot)
-- [Roadmap](#roadmap)
-- [Acknowledgments](#acknowledgments)
-  - [Themes](#themes)
-  - [Inspiration](#inspiration)
-- [Contributing](#contributing)
-  - [Our Contributors](#our-contributors)
-- [Sponsorship](#sponsorship)
-  - [Our Sponsors](#our-sponsors)
-- [License](#license)
-- [Contact](#contact)
-
-</details>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ---
 
@@ -116,42 +75,6 @@ As I continue to make improvements to my smart home, I will be updating my confi
 Hopefully, as I have learned from others and "borrowed" sectons of their code, others can benefit from my configuration.
 
 Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the [Acknowledgements](#acknowledgments) section.
-
-### Updates
-
-<details>
-<summary>Update: 2023-03-26</summary>
-
-### Update: 2023-03-26
-
-I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.
-
-I am pleased to say, I have it working within the app, albeit only in a browser on my laptop and not in the app on my mobile devices. I suspect this is related to my http intergration, despite the fact both my internal and external URL's are using https.
-
-_Note: Finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices, and "Hey Siri, Assist" is working nicely but still no joy getting voice working from within the mobile app._
-
-For my conversation integration, the two files I needed to create were [includes/intent_script.yaml][/includes/intent_script.yaml] and [custom_sentences/en/domestic.yaml][custom_sentences/en/domestic.yaml]. The later file can be named anything, but must be in the custom_sentences/{language} folder.
-
-Although I have several Google Home devices, I am not comfortable with the Google servers being "fed" all the data relating to my devices, so won't be adding the Google Home integration at this point. Besides, it's a lot of work for little benefit.
-
-So, guess it's back to talking to myself again when I want my smart home to do something. \<ponders>
-
-</details>
-
-<details>
-<summary>Update: 2023-03-25</summary>
-
-### Update: 2023-03-25
-
-Exploring other people's Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier. In addition, I learnt about Git pre-commit hooks, and have a few of these running on my RPi, meaning the code I upload is much cleaner.
-
-I have adopted a similar approach to @frenck and @metbril and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even mildly interested, it is definitely worth investing the time and effort. Links to their configurations are available in the [Acknowledgements](#acknowledgments) section below.
-
-As a result of these major changes in my Git repository, my Home Assistant configuration is cleaner and much easier to understand.
-
-A huge 🙏 thank you to the open-source community!
-
-</details>
 
 ## Built With
 
