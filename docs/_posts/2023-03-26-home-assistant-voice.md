@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Home Assistant Voice"
 excerpt_separator: <!--more-->
+title: "Home Assistant Voice"
 date: 2023-03-26 22:16:00 +1100
 categories: home-assistant
 tags: [home-assistant, voice, conversation]
