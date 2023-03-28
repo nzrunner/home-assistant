@@ -21,7 +21,7 @@
 title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
-  A Home Assistant and GitHub blog about my experiences with these products.
+  Blogging about my Home Assistant and GitHub experiences.
 baseurl: "/home-assistant"  # the subpath of your site, e.g. /blog
 url: "https://nzrunner.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nzrunner
@@ -43,8 +43,8 @@ defaults:
   - scope:
       path: ""
     values:
-      image: "{{ site.url }}/{{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png"
-tagline: Home Assistant and GitHub blog
+      image: "/assets/images/mark-matheson-digital-business-consultant.png"
+tagline: Blogging about my Home Assistant and GitHub experiences.
 twitter:
   username: nzrunner
   card: summary_large_image
