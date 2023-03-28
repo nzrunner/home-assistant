@@ -13,7 +13,7 @@ tags: [github, home-assistant]
 
 <!--more-->
 
-![Home Assist-Dashboard](/assets/images/home-assistant-alternate.png)
+![Home Assistant-Dashboard](/assets/images/home-assistant-alternate.png)
 
 I created a [GitHub repository](https://github.com/nzrunner/home-assistant) to: -
 
