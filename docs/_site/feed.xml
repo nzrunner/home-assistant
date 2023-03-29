@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/home-assistant/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/home-assistant/" rel="alternate" type="text/html" /><updated>2023-03-29T11:28:20+11:00</updated><id>http://localhost:4000/home-assistant/feed.xml</id><title type="html">Matho’s Home Assistant Blog</title><subtitle>Blogging about my Home Assistant and GitHub experiences.</subtitle><author><name>Mark Matheson</name></author><entry><title type="html">GitHub Pages and Jekyll - Frustration Central!</title><link href="http://localhost:4000/home-assistant/github/2023/03/28/github-pages-and-jekyll-frustration-central.html" rel="alternate" type="text/html" title="GitHub Pages and Jekyll - Frustration Central!" /><published>2023-03-28T18:33:00+11:00</published><updated>2023-03-28T18:33:00+11:00</updated><id>http://localhost:4000/home-assistant/github/2023/03/28/github-pages-and-jekyll-frustration-central</id><content type="html" xml:base="http://localhost:4000/home-assistant/github/2023/03/28/github-pages-and-jekyll-frustration-central.html">&lt;p&gt;As part of my GitHub learning, I have tried to use as many of the available features as possible. I identified two features that I wasn’t using: -&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;GitHub Pages (AKA Websites)&lt;/li&gt;
+  &lt;li&gt;Wiki&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;So I figured, “what the heck, it can’t be that hard, let’s deploy a website”. Conceptually, a really simple idea, but in practice an experience fraught with angst and anger.&lt;/p&gt;
+
+&lt;p&gt;Now let’s be honest, I may have bought some of the angst on myself by trying to implement several modifcations to the basic model before actually deploying the basic model and testing it. And, to be fair, now I have it all running (this blog is the outcome), it’s a really simple platform to maintain and update.&lt;/p&gt;
+
+&lt;p&gt;So, what’s involved?&lt;/p&gt;
+
+&lt;p&gt;In a couple of overly simplified steps: -&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a repo or use a branch in an existing repo&lt;/li&gt;
+  &lt;li&gt;Create a website in that repo/branch&lt;/li&gt;
+  &lt;li&gt;Tell GitHub to deploy the website to GitHub Pages&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I wanted my website to inherit the folder name of my repo, so needed to use the branch option, rather than creating a new repo.&lt;/p&gt;
+
+&lt;p&gt;My first mistake was choosing to publish a website using &lt;a href=&quot;https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow&quot;&gt;custom GitHub Actions workflow 🔗&lt;/a&gt;. Despite it being possible, and after numerous commits to force a build and deploy, I never got any positive outcomes. No website visible and frustration raging through my veins.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/home-assistant/assets/images/frustration.png&quot; alt=&quot;Frustration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So I decided to try a different tact, and use the option to &lt;a href=&quot;https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow&quot;&gt;publish from a branch 🔗&lt;/a&gt; of my existing repo.&lt;/p&gt;
+
+&lt;p&gt;It was at this stage that I realised that although I could publish a very basic, static website using this method, it didn’t give me what Jekyll offered. Having heard all about &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll 🔗&lt;/a&gt; and how it was designed to work with &lt;a href=&quot;https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll&quot;&gt;GitHub Pages 🔗&lt;/a&gt;, I was keen to use it.&lt;/p&gt;
+
+&lt;p&gt;So down the next rabbit hole I went!&lt;/p&gt;
+
+&lt;p&gt;It was at this point that I came to the realisation that in order to use Jekyll, I was going to need to install a few things on my local machine in order to deploy it. I had hoped that it would be a web-based solution, but I realised that it required local configuration and then used Git to push it to GitHub. It was at this stage that it could be built and deployed to GitHub Pages.&lt;/p&gt;
+
+&lt;p&gt;So the first thing I did was follow the &lt;a href=&quot;https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site&quot;&gt;prerequisites 🔗&lt;/a&gt; outlined in the documentation. This got me up and running with Ruby and the necessary gems.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, GitHub’s documentation appeared to provide a good guide to &lt;a href=&quot;https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site&quot;&gt;creating a site 🔗&lt;/a&gt;, so I started to follow it. I already had my repo and had a folder ready to use, so off I went.&lt;/p&gt;
+
+&lt;p&gt;It was at this point, I shot myself in the foot!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/home-assistant/assets/images/shooting-in-foot.jpg&quot; alt=&quot;Shooting in the foot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As part of the process, I decided I didn’t like the default theme, so I would use a custom theme. Again, GitGub provides really good &lt;a href=&quot;https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll&quot;&gt;documentation 🔗&lt;/a&gt; for doing this. In retrospect, it would’ve been much smarter to use the default theme, get a website successfully published, and then change the theme. Meaning, if I broke something, I could use Git to revert back a few steps. Hindsight is a wonderful thing ☹&lt;/p&gt;
+
+&lt;p&gt;Now I had a website that was completely empty, nothing on the front page, and when I tried to access any sub-page, I got the expected header and footer with a 404 error. It was at this stage I decided that going to bed was a better option than reverting to alcohol. After all, I had already pulled out clumps of hair, something I can ill afford to lose.&lt;/p&gt;
+
+&lt;p&gt;I woke up the next day determined to figure out what I had done wrong.&lt;/p&gt;
+
+&lt;p&gt;With the clarity of a new day, it didn’t take me long to realise that the sample markdown files provided by the default theme didn’t work with the custom theme. A by-product of changing themes mid-install. Renaming a few files produced a basic website that used the custom theme, and looked like what I was expecting from Jekyll. Success!&lt;/p&gt;
+
+&lt;p&gt;Now I could start reading into the plugins and finer points of customising the theme and start to build a website that looked like something I wanted to produce. Ironically, I abandoned the custom theme I had originally planned on using and settled on Hamilton. If you want a few places to check out custom Jekyll themes, have a look &lt;a href=&quot;https://jekyllrb.com/docs/themes/&quot;&gt;here 🔗&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So after hours of frustration and angst, I have a working website. Adding a new blog post is as easy as creating a markdown file in the _posts folder with an &lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;appropriate name 🔗&lt;/a&gt; and pushing the change to GitHub.&lt;/p&gt;
+
+&lt;p&gt;If you’ve got to the end of this post, hopefully you can avoid much of the angst and frustration I encountered and be able to quickly publish a Jekyll website for your GitHub repsitory. Let me know if the comments below.&lt;/p&gt;</content><author><name>mark</name></author><category term="github" /><category term="github" /><category term="pages" /><category term="jekyll" /><summary type="html">As part of my GitHub learning, I have tried to use as many of the available features as possible. I identified two features that I wasn’t using: - GitHub Pages (AKA Websites) Wiki</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" /><media:content medium="image" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Home Assistant Voice</title><link href="http://localhost:4000/home-assistant/home-assistant/2023/03/26/home-assistant-voice.html" rel="alternate" type="text/html" title="Home Assistant Voice" /><published>2023-03-26T22:16:00+11:00</published><updated>2023-03-26T22:16:00+11:00</updated><id>http://localhost:4000/home-assistant/home-assistant/2023/03/26/home-assistant-voice</id><content type="html" xml:base="http://localhost:4000/home-assistant/home-assistant/2023/03/26/home-assistant-voice.html">&lt;p&gt;I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;I am pleased to say, I have it working within the app, albeit only in a browser on my laptop and not in the app on my mobile devices.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; I suspect this is related to my http intergration, despite the fact both my internal and external URL’s are using https. I’m not going to spend too much time diagnosing that at the moment, as with Siri integration working, it is actually useful already.&lt;/p&gt;
+
+&lt;p&gt;For my conversation integration, the two files I needed to create were &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;includes/intent_script.yaml&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;custom_sentences/en/domestic.yaml&lt;/code&gt;. The later file can be named anything, but must be in the custom_sentences/{language} folder. You can have multiple of these files, broken down into logical groups.&lt;/p&gt;
+
+&lt;p&gt;The code I currently have in each of them is as follows: -&lt;/p&gt;
+
+&lt;h3 id=&quot;includesintent_scriptyaml&quot;&gt;includes/intent_script.yaml&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#################################################################################
+#
+#  _       _             _                     _       _
+# (_)_ __ | |_ ___ _ __ | |_     ___  ___ _ __(_)_ __ | |_
+# | | '_ \| __/ _ \ '_ \| __|   / __|/ __| '__| | '_ \| __|
+# | | | | | ||  __/ | | | |_    \__ \ (__| |  | | |_) | |_
+# |_|_| |_|\__\___|_| |_|\__|___|___/\___|_|  |_| .__/ \__|
+#                          |_____|              |_|
+#
+#################################################################################
+
+# For the Assist/Conversation intergration
+intent_script:
+  YearOfVoice:
+    speech:
+      text: &quot;Great! We're at over 40 languages and counting.&quot;
+
+  HangTheLaundry:
+    speech:
+      text: &quot;The laundry has been hung&quot;
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.laundry_status
+
+  LaundryInside:
+    speech:
+      text: &quot;The laundry has been brought inside&quot;
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.laundry_status
+
+  BinsOut:
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.system_rubbish_status
+    speech:
+      text: &quot;The rubbish bins are out&quot;
+
+  BinsIn:
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.system_rubbish_status
+    speech:
+      text: &quot;The rubbish bins are in&quot;
+
+  GoodMorning:
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.good_morning
+    speech:
+      text: &quot;Good Morning!&quot;
+
+  GoodNight:
+    action:
+      service: automation.trigger
+      target:
+        entity_id: automation.good_night
+    speech:
+      text: &quot;Good Night!&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;custom_sentencesendomesticyaml&quot;&gt;custom_sentences/en/domestic.yaml&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#################################################################################
+#
+#        _                           _   _
+#     __| | ___  _ __ ___   ___  ___| |_(_) ___
+#    / _` |/ _ \| '_ ` _ \ / _ \/ __| __| |/ __|
+#   | (_| | (_) | | | | | |  __/\__ \ |_| | (__
+#    \__,_|\___/|_| |_| |_|\___||___/\__|_|\___|
+#
+#
+#################################################################################
+
+language: &quot;en&quot;
+intents:
+  YearOfVoice:
+    data:
+      - sentences:
+          - &quot;how is the year of voice going&quot;
+
+  HangTheLaundry:
+    data:
+      - sentences:
+          - &quot;[hang][ing] [the] laundry [out]&quot;
+
+  LaundryInside:
+    data:
+      - sentences:
+          - &quot;[bring][ing] [the] laundry in&quot;
+
+  BinsOut:
+    data:
+      - sentences:
+          - &quot;[put] [the] bins out&quot;
+
+  BinsIn:
+    data:
+      - sentences:
+          - &quot;[bring] [the] bins in&quot;
+
+  GoodMorning:
+    data:
+      - sentences:
+          - &quot;good morning&quot;
+
+  GoodNight:
+    data:
+      - sentences:
+          - &quot;good night&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Although I have several Google Home devices, I am not comfortable with the Google servers being “fed” all the data relating to my devices, so won’t be adding the Google Home integration at this point. Besides, it’s a lot of work for little benefit. Check out the integration - &lt;a href=&quot;https://www.home-assistant.io/integrations/google_assistant/&quot;&gt;https://www.home-assistant.io/integrations/google_assistant/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I guess it’s back to talking to myself again when I want my smart home to do something. &amp;lt;ponders&amp;gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;notes&quot;&gt;Notes&lt;/h4&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;I finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices (&lt;a href=&quot;https://www.home-assistant.io/docs/assist/apple&quot;&gt;https://www.home-assistant.io/docs/assist/apple&lt;/a&gt;), and “Hey Siri, Assist” is now working nicely but still no joy getting voice working from within the mobile app. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>mark</name></author><category term="home-assistant" /><category term="home-assistant" /><category term="voice" /><category term="conversation" /><summary type="html">I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" /><media:content medium="image" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">GitHub Actions and Workflows (AKA CI)</title><link href="http://localhost:4000/home-assistant/home-assistant/github/2023/03/25/github-actions-and-workflows-aka-ci.html" rel="alternate" type="text/html" title="GitHub Actions and Workflows (AKA CI)" /><published>2023-03-25T22:00:00+11:00</published><updated>2023-03-25T22:00:00+11:00</updated><id>http://localhost:4000/home-assistant/home-assistant/github/2023/03/25/github-actions-and-workflows-aka-ci</id><content type="html" xml:base="http://localhost:4000/home-assistant/home-assistant/github/2023/03/25/github-actions-and-workflows-aka-ci.html">&lt;p&gt;Exploring other people’s Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/home-assistant/assets/images/github-ci.png&quot; alt=&quot;GitHub CI&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;In addition, I learnt about Git pre-commit hooks, and have a few of these running on my RPi, meaning the code I upload is much cleaner.&lt;/p&gt;
+
+&lt;p&gt;I have adopted a similar approach to &lt;a href=&quot;https://github.com/frenck&quot;&gt;@frenck&lt;/a&gt; and &lt;a href=&quot;https://github.com/metbrill&quot;&gt;@metbril&lt;/a&gt; and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even mildly interested, it is definitely worth investing the time and effort. Links to their configurations provided below: -&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;@Frenck - &lt;a href=&quot;https://github.com/frenck/home-assistant-config&quot;&gt;https://github.com/frenck/home-assistant-config&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;@Metbril - &lt;a href=&quot;https://github.com/metbril/home-assistant-config&quot;&gt;https://github.com/metbril/home-assistant-config&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As a result of these major changes in my Git repository, my Home Assistant configuration is cleaner and much easier to understand.&lt;/p&gt;
+
+&lt;p&gt;A huge 🙏 thank you to the open-source community!&lt;/p&gt;</content><author><name>mark</name></author><category term="home-assistant" /><category term="github" /><category term="github" /><category term="home-assistant" /><category term="actions" /><category term="workflows" /><category term="ci" /><summary type="html">Exploring other people’s Git repositories led me to investing time in learning about GitHub actions. All I can say is wow! My programming skills are OK at best, but learning from others in the open-source community has resulted in me now having some awesome CI workflows running on my Git repository, making life so much easier.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" /><media:content medium="image" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Published my Home Assistant configuration</title><link href="http://localhost:4000/home-assistant/home-assistant/github/2023/03/18/published-my-home-assistant-configuration.html" rel="alternate" type="text/html" title="Published my Home Assistant configuration" /><published>2023-03-18T13:37:00+11:00</published><updated>2023-03-18T13:37:00+11:00</updated><id>http://localhost:4000/home-assistant/home-assistant/github/2023/03/18/published-my-home-assistant-configuration</id><content type="html" xml:base="http://localhost:4000/home-assistant/home-assistant/github/2023/03/18/published-my-home-assistant-configuration.html">&lt;p&gt;&lt;a href=&quot;https://home-assistant.io&quot;&gt;Home Assistant&lt;/a&gt; is an awesome open-source home automation product that I have deployed to run my house.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;/home-assistant/assets/images/home-assistant-alternate.png&quot; alt=&quot;Home Assistant-Dashboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I created a &lt;a href=&quot;https://github.com/nzrunner/home-assistant&quot;&gt;GitHub repository&lt;/a&gt; to: -&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Document my configuration (always a good thing)&lt;/li&gt;
+  &lt;li&gt;Have a backup of my configuration (another good thing)&lt;/li&gt;
+  &lt;li&gt;Contribute to the open-source community&lt;/li&gt;
+  &lt;li&gt;Learn GitHub&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As I continue to make improvements to my smart home, I will be updating my configuration. Be sure to ⭐ my page and stay tuned for the latest updates.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, as I have learned from others and “borrowed” sectons of their code, others can benefit from my configuration.&lt;/p&gt;
+
+&lt;p&gt;Sadly, I didn’t keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the Acknowledgements section in my repository.&lt;/p&gt;
+
+&lt;p&gt;This blog will endeavour to document the updates I make to my configuration along with my experiences using GitHub as my knowledge repository.&lt;/p&gt;
+
+&lt;p&gt;Let me know your thoughts below.&lt;/p&gt;</content><author><name>mark</name></author><category term="home-assistant" /><category term="github" /><category term="github" /><category term="home-assistant" /><summary type="html">Home Assistant is an awesome open-source home automation product that I have deployed to run my house.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" /><media:content medium="image" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Welcome to my new Blog!</title><link href="http://localhost:4000/home-assistant/github/2023/03/18/welcome-to-my-new-blog.html" rel="alternate" type="text/html" title="Welcome to my new Blog!" /><published>2023-03-18T11:55:00+11:00</published><updated>2023-03-18T11:55:00+11:00</updated><id>http://localhost:4000/home-assistant/github/2023/03/18/welcome-to-my-new-blog</id><content type="html" xml:base="http://localhost:4000/home-assistant/github/2023/03/18/welcome-to-my-new-blog.html">&lt;p&gt;Gidday! My name is Mark Matheson. I’m a Digital Business Consultant based in Sydney, Australia.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Recently, I decided to publish my &lt;a href=&quot;https://home-assistant.io&quot;&gt;Home Assistant&lt;/a&gt; configuration on &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;. This led me down the GitHub rabbit hole, learning the features of GitHub and &lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt;. To say it has been a steep learning curve would be an understatement. Having come out the other side with a wealth of experience, both good and bad, I thought I’d blog about it.&lt;/p&gt;
+
+&lt;p&gt;So, this blog, generated using GitHub Pages, making this another feature of GitHub that I’ve used. One of the next blogs will be about the process to get it published. And I have to say, it was incredibly frustrating.&lt;/p&gt;
+
+&lt;p&gt;In addition, I wil also be posting about the updates I make to my &lt;a href=&quot;https://github.com/nzrunner/home-assistant&quot;&gt;Home Assistant configuration&lt;/a&gt;.&lt;/p&gt;</content><author><name>mark</name></author><category term="github" /><category term="github" /><category term="welcome" /><category term="first-post" /><summary type="html">Gidday! My name is Mark Matheson. I’m a Digital Business Consultant based in Sydney, Australia.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" /><media:content medium="image" url="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

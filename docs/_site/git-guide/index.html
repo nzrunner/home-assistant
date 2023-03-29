@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Git Guide | Matho’s Home Assistant Blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Git Guide" />
+<meta name="author" content="Mark Matheson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Blogging about my Home Assistant and GitHub experiences." />
+<meta property="og:description" content="Blogging about my Home Assistant and GitHub experiences." />
+<link rel="canonical" href="http://localhost:4000/home-assistant/git-guide/" />
+<meta property="og:url" content="http://localhost:4000/home-assistant/git-guide/" />
+<meta property="og:site_name" content="Matho’s Home Assistant Blog" />
+<meta property="og:image" content="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" />
+<meta property="twitter:title" content="Git Guide" />
+<meta name="twitter:site" content="@nzrunner" />
+<meta name="twitter:creator" content="@Mark Matheson" />
+<meta property="fb:app_id" content="275904333606308" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Mark Matheson"},"description":"Blogging about my Home Assistant and GitHub experiences.","headline":"Git Guide","image":"http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/home-assistant/assets/images/mark-matheson-digital-business-consultant.png"},"name":"Mark Matheson"},"url":"http://localhost:4000/home-assistant/git-guide/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/home-assistant/feed.xml" title="Matho's Home Assistant Blog" />
+
+
+
+
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans|Roboto|Roboto%20Slab|Inconsolata|Dancing%20Script|Noto%20Sans%20SC|Noto%20Sans%20TC|Noto%20Serif%20SC|Noto%20Serif%20TC|Ma%20Shan%20Zheng">
+
+<link rel="stylesheet" href="/home-assistant/assets/css/main.css">
+<link rel="stylesheet" href="/home-assistant/assets/css/skin.css">
+
+<!-- Begin selecting skin -->
+
+<!-- End selecting skin -->
+
+<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="//home-assistant/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//home-assistant/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//home-assistant/favicon-16x16.png">
+<link rel="manifest" href="//home-assistant/site.webmanifest">
+<link rel="mask-icon" href="//home-assistant/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+  </head>
+
+  <body>
+    <div class="site-container">
+      <header class="site-header">
+        <div class="wrapper">
+  <script>
+    function clickSidebarButton() {
+      const elem = document.getElementById("site-sidebar")
+      if (elem.style.display == "none" || elem.style.display == "") {
+        elem.style.display = "block";
+      } else {
+        elem.style.display = "none";
+      }
+    }
+  </script>
+  <a class="site-sidebar-button" onclick="clickSidebarButton()"><i class="far fa-user"></i>
+  </a>
+
+  <a class="site-title" rel="author" href="/home-assistant/">Matho&#39;s Home Assistant Blog</a>
+
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger" title="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+          </svg>
+        </span>
+      </label>
+
+      <ul class="trigger">
+              <li><a class="" href="/home-assistant/">Blog</a></li>
+
+              <li class="dropdown" href="#">
+                <a href="javascript:void(0)" class="dropbtn">Resources</a>
+                <div class="dropdown-content">
+                    <a class="" href="/home-assistant/acknowledgements/">Acknowledgements</a>
+                    <a class="current-page" href="/home-assistant/git-guide/">Git Guide</a>
+                    <a class="" href="/home-assistant/resources/">Useful Web Resources</a>
+                </div>
+              </li>
+
+              <li><a class="" href="/home-assistant/categories/">Categories</a></li>
+
+              <li><a class="" href="/home-assistant/tags/">Tags</a></li>
+
+              <li><a class="" href="/home-assistant/about/">About</a></li>
+            </ul>
+    </nav>
+
+</div>
+
+      </header>
+
+      <div class="site-body wrapper">
+        <aside class="site-sidebar" id="site-sidebar">
+
+            <div class="sidebar-section"><img src="/home-assistant/assets/images/mark-circle-200x200.png" class="author-avatar u-photo align-center" alt="Mark Matheson">
+  <br />
+  <center>
+    <span style="font-size: 24px;">Mark Matheson</span><br />
+    <span>
+      Consumer and now contributor of the open-source community.
+    </span>
+  </center>
+</div>
+
+<div class="sidebar-section">
+  <ul class="contact-list">
+    <li>
+      <i class="sidebar-icon fas fa-location-arrow"></i>
+      <a class="contact-info u-location" href="https://www.google.com/maps/search/Sydney, Australia">Sydney, Australia</a>
+    </li>
+    <li>
+      <i class="sidebar-icon fas fa-envelope"></i>
+      <a class="contact-info u-email" href="mailto:support@marathonsoftware.com.au">support@marathonsoftware.com.au</a>
+    </li>
+  </ul>
+</div>
+
+<div class="sidebar-section feed-subscribe">
+  <a href="/home-assistant/feed.xml">
+    <i class="sidebar-icon fas fa-rss"></i><span>Subscribe</span>
+  </a>
+</div>
+
+<div class="sidebar-section">
+  <ul class="social-icons">
+    <li>
+      <a class="social-icon" href="https://twitter.com/nzrunner"><i class="fab fa-twitter fa-2x"
+          title="Twitter"></i></a>
+    </li><li>
+      <a class="social-icon" href="https://github.com/nzrunner/home-assistant"><i class="fab fa-github fa-2x"
+          title="GitHub"></i></a>
+    </li><li>
+      <a class="social-icon" href="https://marathonsoftware.com.au"><i class="fab fa-joomla fa-2x"
+          title="Marathon Software"></i></a>
+    </li>
+  </ul>
+</div>
+
+        </aside>
+        <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
+          <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Git Guide</h1>
+  </header>
+
+  <p><img src="/home-assistant/assets/images/mark-matheson-digital-business-consultant.png" /></p>
+
+
+  <div class="post-content">
+    <h2 id="usage-guide">Usage Guide</h2>
+
+<p>To get the most benefit out of the ChangeLog module, the commit messages have to be in this format:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type(category): description [flags]
+</code></pre></div></div>
+
+<p>Where <code class="language-plaintext highlighter-rouge">type</code> is one of the following:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">breaking</code></li>
+  <li><code class="language-plaintext highlighter-rouge">build</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ci</code></li>
+  <li><code class="language-plaintext highlighter-rouge">chore</code></li>
+  <li><code class="language-plaintext highlighter-rouge">docs</code></li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code></li>
+  <li><code class="language-plaintext highlighter-rouge">other</code></li>
+  <li><code class="language-plaintext highlighter-rouge">perf</code></li>
+  <li><code class="language-plaintext highlighter-rouge">refactor</code></li>
+  <li><code class="language-plaintext highlighter-rouge">revert</code></li>
+  <li><code class="language-plaintext highlighter-rouge">style</code></li>
+  <li><code class="language-plaintext highlighter-rouge">test</code></li>
+</ul>
+
+<p>Where <code class="language-plaintext highlighter-rouge">flags</code> is an optional comma-separated list of one or more of the following (must be surrounded in square brackets):</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">breaking</code>: alters <code class="language-plaintext highlighter-rouge">type</code> to be a breaking change</li>
+</ul>
+
+<p>And <code class="language-plaintext highlighter-rouge">category</code> can be anything of your choice. If you use a type not found in the list (but it still follows the same format of the message), it’ll be grouped under <code class="language-plaintext highlighter-rouge">other</code>.</p>
+
+<h2 id="project-git-guide">Project Git Guide</h2>
+
+<p>The types I am standardising on for this project are as follows: -</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docs</code>
+    <ul>
+      <li>All changes to the README, GIT-GUIDE and CHANGELOG documents</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code>
+    <ul>
+      <li>Any issue tagged as ‘bug’ along with any code changes that fix a bug</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">feat</code>
+    <ul>
+      <li>Any issue tagged as ‘feature request’ along with any code changes that add a new feature</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">chore</code>
+    <ul>
+      <li>Any changes like system updates, adding images or untracked files</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">other</code>
+    <ul>
+      <li>Any other changes not covered by the above</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="change-log">Change Log</h2>
+
+<p>From within the Home Assistant folder, run the following: -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>changelog generate
+</code></pre></div></div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- RESOURCES -->
+
+<h2 id="resources">Resources</h2>
+
+<p>This is currently just a dumping ground for git recources that I have found.</p>
+
+<ul>
+  <li><a href="https://herewecode.io/blog/a-beginners-guide-to-git-how-to-write-a-good-commit-message">https://herewecode.io/blog/a-beginners-guide-to-git-how-to-write-a-good-commit-message</a></li>
+  <li><a href="https://herewecode.io/blog/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/">https://herewecode.io/blog/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/</a></li>
+  <li><a href="https://keepachangelog.com/en/1.1.0/">https://keepachangelog.com/en/1.1.0/</a></li>
+  <li><a href="https://www.conventionalcommits.org/en/v1.0.0/">https://www.conventionalcommits.org/en/v1.0.0/</a></li>
+  <li><a href="https://udacity.github.io/git-styleguide/">https://udacity.github.io/git-styleguide/</a></li>
+</ul>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+  </div>
+
+  <p>Don't forget to ⭐ my <a href="https://github.com/nzrunner/home-assistant" target="_blank">repo</a> and if you're
+    feeling generous, <a href="https://www.buymeacoffee.com/nzrunner" target="" _blank">Buy Me A Coffee</a>
+</p>
+
+
+</article>
+
+          <footer class="site-footer">
+            <div class="footer-col-wrapper">
+
+  <div class="footer-col">
+    <div class="copyright">
+
+
+
+
+      <p>Copyright © 2023 Mark Matheson; All rights reserved.</p>
+
+    </div>
+    <p>
+      Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/ngzhio/jekyll-theme-hamilton">Hamilton</a>
+    </p>
+  </div>
+
+  <div class="footer-col">
+    <p>Blogging about my Home Assistant and GitHub experiences.</p>
+  </div>
+</div>
+
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>
