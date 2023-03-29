@@ -1,0 +1,31 @@
+#################################################################################
+#
+#  _
+# | | ___   __ _  __ _  ___ _ __
+# | |/ _ \ / _` |/ _` |/ _ \ '__|
+# | | (_) | (_| | (_| |  __/ |
+# |_|\___/ \__, |\__, |\___|_|
+#          |___/ |___/
+#
+#################################################################################
+# https://www.home-assistant.io/components/logger/
+# Possible log severity levels, listed in order from most severe to least severe, are:
+# critical #fatal #error #warning #warn #info #debug #notset
+#################################################################################
+
+logger:
+  default: error
+  # logs:
+  # homeassistant.components.http.ban: debug
+  # homeassistant.components.stream.worker: debug
+  # custom_components.sensor.authenticated: debug
+  # custom_components.monitor_docker: debug
+  # custom_components.bureau_of_meteorology: debug
+  # aiounifi: debug
+  # homeassistant.components.unifi: debug
+  # homeassistant.components.device_tracker.unifi: debug
+  # homeassistant.components.switch.unifi: debug
+  # pyatv: debug
+  # homeassistant.components.apple_tv: debug
+  # homeassistant.components.zha: debug
+  # zigpy: debug
