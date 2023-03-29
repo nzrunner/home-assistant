@@ -27,7 +27,7 @@ __pycache__
 .storage
 .google.token
 deps
-docs
+docs/_site
 
 # Specific keeps
 !.gitkeep
