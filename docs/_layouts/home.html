@@ -27,7 +27,7 @@ layout: default
           {{ post.date | date: date_format }}
         </time>
         {% assign author = site.authors[post.author] %}
-        <span> • {{ author.name }}</span>
+        <span> • {{ author.name }} </span>
         {%- if jekyll.environment == "production" and site.disqus -%}
         • <a href="{{ post.url | relative_url }}#disqus_thread">
           <span class="disqus-comment-count" data-disqus-url="{{ post.url | absolute_url }}"></span>
