@@ -9,7 +9,7 @@ tags:
   - home-assistant
   - voice
   - conversation
-author: Mark Matheson
+author: mark
 ---
 
 I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.

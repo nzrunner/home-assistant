@@ -9,7 +9,7 @@ tags:
   - github
   - pages
   - jekyll
-author: Mark Matheson
+author: mark
 ---
 
 As part of my GitHub learning, I have tried to use as many of the available features as possible. I identified two features that I wasn't using: -

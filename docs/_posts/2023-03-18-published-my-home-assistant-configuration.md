@@ -9,7 +9,7 @@ categories:
 tags:
   - github
   - home-assistant
-author: Mark Matheson
+author: mark
 ---
 
 [Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.

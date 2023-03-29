@@ -9,7 +9,7 @@ tags:
   - github
   - welcome
   - first-post
-author: Mark Matheson
+author: mark
 ---
 
 Gidday! My name is Mark Matheson. I'm a Digital Business Consultant based in Sydney, Australia.
