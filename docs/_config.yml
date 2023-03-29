@@ -18,6 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+# Default
 title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
@@ -26,15 +27,18 @@ baseurl: "/home-assistant"  # the subpath of your site, e.g. /blog
 url: "https://nzrunner.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nzrunner
 github_username: nzrunner
+quote: "Consumer and now contributor of the open-source community."
 
 authors:
   mark:
     name: Mark Matheson
     display_name: Matho
+    avatar: "/assets/images/mark-circle-200x200.png"
     gravatar: 8db5ca9bd8374ed0efbab82888bc1e5c
     email: support@marathonsoftware.com.au
     web: https://marathonsoftware.com.au
     twitter: https://twitter.com/nzrunner
+    github: https://github.com/nzrunner
     description: "Consumer and now contributor of the open-source community."
 
 # Specific to Hamilton theme
@@ -77,6 +81,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-admin
+  # - jekyll-archives
   - jekyll-remote-theme  # add this line to the plugins list if you already have one
 
 # Exclude from processing.
