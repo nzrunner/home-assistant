@@ -29,6 +29,7 @@ __pycache__
 .storage
 .google.token
 deps
+docs/_site
 
 # Specific keeps
 !.gitkeep
@@ -41,6 +42,7 @@ deps
 !LICENSE.md
 !*.yaml
 !*.md
+!*.html
 !automations
 !automations/**
 !blueprints
