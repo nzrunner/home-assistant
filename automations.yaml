@@ -46,3 +46,15 @@
             group: Alarm
     default: []
   mode: single
+- id: '1680052852741'
+  alias: Alarm - Intruder Alert
+  description: Broadcast a message when an intruder is detected
+  trigger: []
+  condition: []
+  action:
+  - service: script.broadcast_message
+    data:
+      entity_id: media_player.media_player_all
+      message: Intruder Alert! Intruder Alert! Intruder Alert!
+      volume: '{{ states(''input_number.intruder_volume'') }}'
+  mode: single
