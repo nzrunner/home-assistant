@@ -10,7 +10,10 @@ tags:
   - voice
   - conversation
 author: mark
+excerpt: "I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion."
 ---
+
+# Voice
 
 I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.
 
@@ -147,6 +150,6 @@ Although I have several Google Home devices, I am not comfortable with the Googl
 
 I guess it's back to talking to myself again when I want my smart home to do something. \<ponders>
 
-#### Notes
+## Notes
 
 [^1]: I finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices (<https://www.home-assistant.io/docs/assist/apple>), and "Hey Siri, Assist" is now working nicely but still no joy getting voice working from within the mobile app.

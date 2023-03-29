@@ -10,7 +10,10 @@ tags:
   - welcome
   - first-post
 author: mark
+excerpt: "Recently, I decided to publish my Home Assistant configuration on GitHub. This led me down the GitHub rabbit hole, learning the features of GitHub and Git."
 ---
+
+# Welcome
 
 Gidday! My name is Mark Matheson. I'm a Digital Business Consultant based in Sydney, Australia.
 
