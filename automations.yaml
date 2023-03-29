@@ -58,3 +58,19 @@
       message: Intruder Alert! Intruder Alert! Intruder Alert!
       volume: '{{ states(''input_number.intruder_volume'') }}'
   mode: single
+- id: '1680085114691'
+  alias: System - Dropbox Sync
+  description: Activate the Dropbox Sync so all backup tar files are uploaded to Dropbox
+  trigger:
+  - platform: time
+    at: 02:00:00
+  - platform: time
+    at: '14:00:00'
+  condition: []
+  action:
+  - service: hassio.addon_stdin
+    data:
+      addon: 7be23ff5_dropbox_sync
+      input:
+        command: upload
+  mode: single
