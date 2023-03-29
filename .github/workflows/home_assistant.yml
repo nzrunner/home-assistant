@@ -1,9 +1,11 @@
 name: "Home Assistant CI"
 on:
   push:
+    branches-ignore:
+      - 'gh-pages'
   pull_request:
-    branches:
-      - main
+    branches-ignore:
+      - 'gh-pages'
   workflow_dispatch:
   schedule:
     - cron: 0 2 * * *
