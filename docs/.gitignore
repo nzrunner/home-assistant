@@ -1,5 +1,79 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+#################################################################################
+#
+#           _ _   _
+#      __ _(_) |_(_) __ _ _ __   ___  _ __ ___
+#     / _` | | __| |/ _` | '_ \ / _ \| '__/ _ \
+#    | (_| | | |_| | (_| | | | | (_) | | |  __/
+#   (_)__, |_|\__|_|\__, |_| |_|\___/|_|  \___|
+#     |___/         |___/
+#
+#################################################################################
+
+# Ignore everything to start with
+*
+
+# Generic ignores (should be covered by above, but just in case)
+*.log
+*.log.*
+*.db
+*.db-shm
+*.db-wal
+*.pyc
+._*
+__pycache__
+
+# Directory (contents) ignores
+.cloud
+.storage
+.google.token
+deps
+docs/_site
+
+# Specific keeps
+!.gitkeep
+!.gitignore
+!.stubs
+!.github
+!.github/ISSUE_TEMPLATE
+!.github/workflows
+!.HA_VERSION
+!LICENSE.md
+!*.yaml
+!*.md
+!automations
+!automations/**
+!blueprints
+!custom_sentences
+!custom_sentences/**
+!docs
+!docs/**
+!docs/_includes
+!entities
+!entities/**
+!includes
+!old_packages
+!scenes
+!scenes/**
+!scripts
+!scripts/**
+
+# Specific file ignores
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+*.jpg
+*.png
+*.ttf
+
+# Build-in blueprints ignores
+blueprints/*/homeassistant
+
+# Ignore files created by IDE's
+.vscode
+.theia
+.Trash*
+
+# Ignore vendored stuff
+custom_components
+themes
+www
