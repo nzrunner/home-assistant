@@ -21,6 +21,8 @@
 *.pyc
 ._*
 __pycache__
+.cspell
+.cpsell/**
 
 # Directory (contents) ignores
 .cloud
