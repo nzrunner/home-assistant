@@ -13,7 +13,6 @@
 # other YAML includes
 #################################################################################
 
-# The primary entrypoint
 homeassistant:
   # Load packages
   packages: !include_dir_named includes
