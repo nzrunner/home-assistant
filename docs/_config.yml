@@ -81,7 +81,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-admin
-  # - jekyll-archives
   - jekyll-remote-theme  # add this line to the plugins list if you already have one
 
 # Exclude from processing.
