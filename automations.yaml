@@ -1,0 +1,48 @@
+- id: '1680052350662'
+  alias: Alarm - Check All Doors
+  description: Chekc that all doors are closed. Run when leaving home and going to
+    bed
+  trigger: []
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ states | selectattr(''entity_id'', ''in'', state_attr(''binary_sensor.door_sensors_all'',''entity_id''))
+          | selectattr(''state'',''in'',[''on'',''open'']) | list | length == 1 }}'
+      sequence:
+      - service: notify.notify
+        data_template:
+          title: ALARM
+          message: '{% set open_doors = states | selectattr(''entity_id'', ''in'',
+            state_attr(''binary_sensor.door_sensors_all'',''entity_id'')) | selectattr(''state'',''in'',[''on'',''open''])
+            | map(attribute=''name'') | list %} The {{ open_doors[0] }} door is open.
+
+            '
+          data:
+            subtitle: Doors Open!
+            push:
+              interruption-level: time-sensitive
+            group: Alarm
+    - conditions:
+      - condition: template
+        value_template: '{{ states | selectattr(''entity_id'', ''in'', state_attr(''binary_sensor.door_sensors_all'',''entity_id''))
+          | selectattr(''state'',''in'',[''on'',''open'']) | list | length > 1}}'
+      sequence:
+      - service: notify.notify
+        data_template:
+          title: ALARM
+          message: '{% set open_doors = states | selectattr(''entity_id'', ''in'',
+            state_attr(''binary_sensor.door_sensors_all'',''entity_id'')) | selectattr(''state'',''in'',[''on'',''open''])
+            | map(attribute=''name'') | list %} The {{ open_doors[:-1] | join('',
+            '') }}{{'','' if open_doors | length > 2 else ''''}} and {{ open_doors[-1]}}
+            doors are open.
+
+            '
+          data:
+            subtitle: Doors Open!
+            push:
+              interruption-level: time-senstive
+            group: Alarm
+    default: []
+  mode: single
