@@ -13,7 +13,7 @@ tags:
   - home-assistant
   - backups
 author: mark
-header_image: "assets/images/mark-matheson-twitter.png"
+header_image: "assets/images/jekyll-github-fail.png"
 ---
 
 They say there are four different ways that people learn. These ways are: -
