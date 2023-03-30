@@ -47,7 +47,7 @@ docs/_site
 !custom_sentences/**
 !docs
 !docs/*
-!docs/_includes
+!docs/_includes/*
 !entities
 !entities/**
 !includes
