@@ -1,1 +1,5 @@
-<p><img src="{{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png" /></p>
+{%- if page.header_image -%}
+<p><img src="{{ site.baseurl }}/{{ page.header_image }}" width="1500px" /></p>
+{% else %}
+<p><img src=" {{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png" /></p>
+{% endif %}
