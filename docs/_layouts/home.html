@@ -34,9 +34,18 @@ layout: default
         </a>
         {%- endif -%}
       </p>
-      {%- if post.show_excerpts != false -%}
-      <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-      {%- endif -%}
+      <p>
+        {%- if post.header_image -%}
+        <span><img src="{{ site.baseurl }}/{{ post.header_image }}"
+            style="float: left; width: 25%; padding-right: 10px;" /></span>
+        {% else %}
+        <span><img src=" {{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png"
+            style="float: left; width: 25%; padding-right: 10px;" /></span>
+        {% endif %}
+        {%- if post.show_excerpts != false -%}
+        <span class="post-excerpt">{{ post.excerpt | strip_html }}</span>
+        {%- endif -%}
+      </p>
     </li>
     {%- endfor -%}
   </ul>
