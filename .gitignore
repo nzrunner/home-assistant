@@ -27,7 +27,6 @@ __pycache__
 .storage
 .google.token
 deps
-docs/_site
 
 # Specific keeps
 !.gitkeep
@@ -63,6 +62,7 @@ known_devices.yaml
 *.jpg
 *.png
 *.ttf
+docs/_site
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
