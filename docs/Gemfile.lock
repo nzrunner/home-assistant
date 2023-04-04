@@ -278,6 +278,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll-admin
   jekyll-feed (~> 0.12)
+  jekyll-mentions
   jekyll-seo-tag
   jekyll-sitemap
   minima (~> 2.5)

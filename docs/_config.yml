@@ -23,12 +23,13 @@ title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
   Blogging about my Home Assistant and GitHub experiences.
-baseurl: "/home-assistant"  # the subpath of your site, e.g. /blog
-url: "https://nzrunner.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""  # the subpath of your site, e.g. /blog
+url: "https://nzrunner.github.io/home-assistant"  # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nzrunner
 github_username: nzrunner
 quote: "Consumer and now contributor of the open-source community."
 
+# Author details
 authors:
   mark:
     name: Mark Matheson
@@ -81,7 +82,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-admin
-  - jekyll-remote-theme  # add this line to the plugins list if you already have one
+  - jekyll-mentions
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -105,10 +107,10 @@ exclude:
 
 # Jekyll Admin
 jekyll_admin:
+  homepage: "posts"
   hidden_links:
   # - posts
   # - pages
   # - staticfiles
   # - datafiles
   # - configuration
-  homepage: "posts"

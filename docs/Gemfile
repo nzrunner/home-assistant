@@ -40,3 +40,6 @@ gem 'jekyll-seo-tag'
 
 # Jekyll Admin
 gem 'jekyll-admin', group: :jekyll_plugins
+
+# Jekyll Mentions
+gem 'jekyll-mentions'
