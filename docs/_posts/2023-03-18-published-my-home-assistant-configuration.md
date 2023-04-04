@@ -13,7 +13,7 @@ author: mark
 excerpt: "Home Assistant is an awesome open-source home automation product that I have deployed to run my house."
 ---
 
-# Home Assistant
+## Home Assistant
 
 [Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.
 
@@ -34,7 +34,7 @@ Hopefully, as I have learned from others and "borrowed" sectons of their code, o
 
 Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the Acknowledgements section in my repository.
 
-# Summary
+## Summary
 
 This blog will endeavour to document the updates I make to my configuration along with my experiences using GitHub as my knowledge repository.
 

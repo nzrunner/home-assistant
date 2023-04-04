@@ -19,13 +19,13 @@ As part of my GitHub learning, I have tried to use as many of the available feat
 
 <!--more-->
 
-# The Idea
+## The Idea
 
 So I figured, "what the heck, it can't be that hard, let's deploy a website". Conceptually, a really simple idea, but in practice an experience fraught with angst and anger.
 
 Now let's be honest, I may have bought some of the angst on myself by trying to implement several modifcations to the basic model before actually deploying the basic model and testing it. And, to be fair, now I have it all running (this blog is the outcome), it's a really simple platform to maintain and update.
 
-# The Process
+## The Process
 
 So, what's involved?
 
@@ -45,7 +45,7 @@ So I decided to try a different tact, and use the option to [publish from a bran
 
 It was at this stage that I realised that although I could publish a very basic, static website using this method, it didn't give me what Jekyll offered. Having heard all about [Jekyll 🔗](https://jekyllrb.com/) and how it was designed to work with [GitHub Pages 🔗](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll), I was keen to use it.
 
-# Jekyll
+## Jekyll
 
 So down the next rabbit hole I went!
 
@@ -59,11 +59,11 @@ It was at this point, I shot myself in the foot!
 
 ![Shooting in the foot]({{ site.baseurl }}/assets/images/shooting-in-foot.jpg)
 
-# Themes
+## Themes
 
 As part of the process, I decided I didn't like the default theme, so I would use a custom theme. Again, GitGub provides really good [documentation 🔗](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for doing this. In retrospect, it would've been much smarter to use the default theme, get a website successfully published, and then change the theme. Meaning, if I broke something, I could use Git to revert back a few steps. Hindsight is a wonderful thing ☹
 
-# Debugging
+## Debugging
 
 Now I had a website that was completely empty, nothing on the front page, and when I tried to access any sub-page, I got the expected header and footer with a 404 error. It was at this stage I decided that going to bed was a better option than reverting to alcohol. After all, I had already pulled out clumps of hair, something I can ill afford to lose.
 
@@ -73,7 +73,7 @@ With the clarity of a new day, it didn't take me long to realise that the sample
 
 Now I could start reading into the plugins and finer points of customising the theme and start to build a website that looked like something I wanted to produce. Ironically, I abandoned the custom theme I had originally planned on using and settled on Hamilton. If you want a few places to check out custom Jekyll themes, have a look [here 🔗](https://jekyllrb.com/docs/themes/).
 
-# The Outcome
+## The Outcome
 
 So after hours of frustration and angst, I have a working website. Adding a new blog post is as easy as creating a markdown file in the \_posts folder with an [appropriate name 🔗](https://jekyllrb.com/docs/posts/) and pushing the change to GitHub.
 

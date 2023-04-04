@@ -13,7 +13,7 @@ author: mark
 excerpt: "I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion."
 ---
 
-# Voice
+## Voice
 
 I spent some time trying to get Home Assistant Voice working. I found it to be an extremely frustrating experience. The documentation while comprehensive, is confusing and disjointed. Just my humble opinion.
 
@@ -27,7 +27,7 @@ The code I currently have in each of them is as follows: -
 
 ### includes/intent_script.yaml
 
-```
+```text
 #################################################################################
 #
 #  _       _             _                     _       _
@@ -96,7 +96,7 @@ intent_script:
 
 ### custom_sentences/en/domestic.yaml
 
-```
+```text
 #################################################################################
 #
 #        _                           _   _
