@@ -1,5 +1,5 @@
 ---
-title: Home Assistant - Improved Backups
+title: Home Assistant ... Improved Backups
 layout: post
 excerpt_separator: "<!--more-->"
 date: "2023-04-04 12:33:00 +1100"
