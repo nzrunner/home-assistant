@@ -17,17 +17,17 @@ After last week's disaster when I almost lost all my Home Assistant configuratio
 
 <!--more-->
 
-# Components
+## Components
 
 I have been using the [Auto-Backup](https://github.com/jcwillox/hass-auto-backup) integration for some time. It saved my bacon when I deleted key files from my Home Assistant configuration. However, these snapshots are all stored locally and I felt I needed better coverage in case of an incident that rendered my local machine totally inacecssible.
 
 I researched and tried a couple of addons that supposedly enabled syncing these backups to Dropbox. I finally settled on [Dropback](https://github.com/matthewhadley/homeassistant-dropback). This is an addon that worked first time and included very clear documentation.
 
-# Process
+## Process
 
 The process is very simple. The automation runs and initialises a Home Assistant backup (AKA snapshot). Upon completion, the `sensor.auto_backup_template` changes from `on` to `off` and Dropback kicks in and uploads the snapshot to Dropbox. No manual effort required.
 
-# Automations
+## Automations
 
 I have three automations in place that complete the Auto-Backups. These include: -
 
@@ -43,9 +43,9 @@ Each of the backups include the necessary trigger and service call to initiate D
 
 _**Note:** The double braces (`{ {` and `} }`) in the code snippets below have a space between them to avoid a Jekyll Liquid syntax error_
 
-## Midday
+### Midday
 
-```
+```text
 alias: Backup - Midday
 description: Incremental backup run every 12 hours and kept for 2 days
 trigger:
@@ -71,9 +71,9 @@ action:
       input: sync
 ```
 
-## Midnight
+### Midnight
 
-```
+```text
 alias: Backup - Midnight
 description: >-
   Perform a full HASS backup once a day at 02:30, every day except Monday. They
@@ -106,9 +106,9 @@ action:
       input: sync
 ```
 
-## Weekly
+### Weekly
 
-```
+```text
 alias: Backup - Weekly
 description: >-
   Perform a full HASS backup every week, on a Monday at 02:30. It is retained
@@ -136,13 +136,13 @@ action:
       input: sync
 ```
 
-# Dashboard
+## Dashboard
 
 I have two custom buttons on my dashboard. These show the current status of the Home Assistant Backup and the Dropback Sync. When they are active, they flash red, otherwise they are set at 20% Opacity. A quick glance at the dashboard before I do anything effecting the system tells me whether a backup is running or not.
 
-## Lovelace Code for Custom Buttons
+### Lovelace Code for Custom Buttons
 
-```
+```text
 type: horizontal-stack
 cards:
   - type: custom:button-card
@@ -209,6 +209,6 @@ cards:
             - opacity: 0.2
 ```
 
-# Summary
+## Summary
 
 While my existing backup regime was robust and saved my bacon last week, adopting the additional step of offsite backups has given me additional peace of mind. I am currently checking Dropbox each morning to ensure the previous two backups have been uploaded. Once I get through a couple of weeks and am comfortable the backups are being correctly managed (uploaded/deleted), I'll be able to stop worrying and enjoy my morning coffee without concern!
