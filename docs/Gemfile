@@ -46,3 +46,6 @@ gem 'jekyll-mentions'
 
 # Jekyll Analytics
 gem 'jekyll-analytics'
+
+# Jekyll Github Metadata
+gem 'jekyll-github-metadata'
