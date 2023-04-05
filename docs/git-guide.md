@@ -8,7 +8,7 @@ permalink: /git-guide/
 
 To get the most benefit out of the ChangeLog module, the commit messages have to be in this format:
 
-```
+```text
 type(category): description [flags]
 ```
 
@@ -53,7 +53,7 @@ The types I am standardising on for this project are as follows: -
 
 From within the Home Assistant folder, run the following: -
 
-```bash
+```text
 changelog generate
 ```
 
@@ -65,10 +65,10 @@ changelog generate
 
 This is currently just a dumping ground for git recources that I have found.
 
-- <https://herewecode.io/blog/a-beginners-guide-to-git-how-to-write-a-good-commit-message>
-- <https://herewecode.io/blog/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/>
-- <https://keepachangelog.com/en/1.1.0/>
-- <https://www.conventionalcommits.org/en/v1.0.0/>
-- <https://udacity.github.io/git-styleguide/>
+- <https://herewecode.io/blog/a-beginners-guide-to-git-how-to-write-a-good-commit-message>{:target="\_blank"}
+- <https://herewecode.io/blog/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/>{:target="\_blank"}
+- <https://keepachangelog.com/en/1.1.0/>{:target="\_blank"}
+- <https://www.conventionalcommits.org/en/v1.0.0/>{:target="\_blank"}
+- <https://udacity.github.io/git-styleguide/>{:target="\_blank"}
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
