@@ -146,10 +146,10 @@ intents:
           - "good night"
 ```
 
-Although I have several Google Home devices, I am not comfortable with the Google servers being "fed" all the data relating to my devices, so won't be adding the Google Home integration at this point. Besides, it's a lot of work for little benefit. Check out the integration - <https://www.home-assistant.io/integrations/google_assistant/>
+Although I have several Google Home devices, I am not comfortable with the Google servers being "fed" all the data relating to my devices, so won't be adding the Google Home integration at this point. Besides, it's a lot of work for little benefit. Check out the integration - [https://www.home-assistant.io/integrations/google_assistant/](https://www.home-assistant.io/integrations/google_assistant/){:target="\_blank"}
 
 I guess it's back to talking to myself again when I want my smart home to do something. \<ponders>
 
 ## Notes
 
-[^1]: I finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices (<https://www.home-assistant.io/docs/assist/apple>), and "Hey Siri, Assist" is now working nicely but still no joy getting voice working from within the mobile app.
+[^1]: I finally stumbled on the Apple iPhone Shortcuts that I needed to make it work on my mobile devices ([https://www.home-assistant.io/docs/assist/apple](https://www.home-assistant.io/docs/assist/apple){:target="\_blank"}), and "Hey Siri, Assist" is now working nicely but still no joy getting voice working from within the mobile app.

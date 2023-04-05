@@ -28,10 +28,10 @@ In addition, I learnt about Git pre-commit hooks, and have a few of these runnin
 
 ## Home Assistant Configuration
 
-I have adopted a similar approach to [@frenck](https://github.com/frenck) and [@metbril](https://github.com/metbrill) and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even mildly interested, it is definitely worth investing the time and effort. Links to their configurations provided below: -
+I have adopted a similar approach to [@frenck](https://github.com/frenck){:target="\_blank"} and [@metbril](https://github.com/metbrill){:target="\_blank"} and have enhanced how my configuration file is split up. It was difficult to understand at first, but once I understood the structure, it made perfect sense. For anyone even mildly interested, it is definitely worth investing the time and effort. Links to their configurations provided below: -
 
-- @Frenck - <https://github.com/frenck/home-assistant-config>
-- @Metbril - <https://github.com/metbril/home-assistant-config>
+- @Frenck - [https://github.com/frenck/home-assistant-config](https://github.com/frenck/home-assistant-config){:target="\_blank"}
+- @Metbril - [https://github.com/metbril/home-assistant-config](https://github.com/metbril/home-assistant-config){:target="\_blank"}
 
 As a result of these major changes in my Git repository, my Home Assistant configuration is cleaner and much easier to understand.
 

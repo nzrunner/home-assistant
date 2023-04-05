@@ -15,13 +15,13 @@ excerpt: "Home Assistant is an awesome open-source home automation product that 
 
 ## Home Assistant
 
-[Home Assistant](https://home-assistant.io) is an awesome open-source home automation product that I have deployed to run my house.
+[Home Assistant](https://home-assistant.io){:target="\_blank"} is an awesome open-source home automation product that I have deployed to run my house.
 
 <!--more-->
 
 ![Home Assistant-Dashboard]({{ site.baseurl }}/assets/images/home-assistant-alternate.png)
 
-I created a [GitHub repository](https://github.com/nzrunner/home-assistant) to: -
+I created a [GitHub repository](https://github.com/nzrunner/home-assistant){:target="\_blank"} to: -
 
 - Document my configuration (always a good thing)
 - Have a backup of my configuration (another good thing)

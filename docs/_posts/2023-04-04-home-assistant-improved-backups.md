@@ -19,9 +19,9 @@ After last week's disaster when I almost lost all my Home Assistant configuratio
 
 ## Components
 
-I have been using the [Auto-Backup](https://github.com/jcwillox/hass-auto-backup) integration for some time. It saved my bacon when I deleted key files from my Home Assistant configuration. However, these snapshots are all stored locally and I felt I needed better coverage in case of an incident that rendered my local machine totally inacecssible.
+I have been using the [Auto-Backup](https://github.com/jcwillox/hass-auto-backup){:target="\_blank"} integration for some time. It saved my bacon when I deleted key files from my Home Assistant configuration. However, these snapshots are all stored locally and I felt I needed better coverage in case of an incident that rendered my local machine totally inacecssible.
 
-I researched and tried a couple of addons that supposedly enabled syncing these backups to Dropbox. I finally settled on [Dropback](https://github.com/matthewhadley/homeassistant-dropback). This is an addon that worked first time and included very clear documentation.
+I researched and tried a couple of addons that supposedly enabled syncing these backups to Dropbox. I finally settled on [Dropback](https://github.com/matthewhadley/homeassistant-dropback){:target="\_blank"}. This is an addon that worked first time and included very clear documentation.
 
 ## Process
 
