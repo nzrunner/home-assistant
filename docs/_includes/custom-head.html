@@ -4,6 +4,22 @@ Placeholder to allow defining custom head, in principle, you can add anything he
 1. Head over to https://realfavicongenerator.net/ to add your own favicons.
 2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function () {
+    var u = "https://analytics.marathonsoftware.com.au/";
+    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+    _paq.push(['setSiteId', '55']);
+    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+    g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
 <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}{{ site.baseurl}}/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}{{ site.baseurl}}/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}{{ site.baseurl}}/favicon-16x16.png">

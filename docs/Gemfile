@@ -49,3 +49,8 @@ gem 'jekyll-analytics'
 
 # Jekyll Github Metadata
 gem 'jekyll-github-metadata'
+
+# Jekyll Target Blank
+gem 'jekyll-target-blank'
+
+gem 'faraday-retry'

@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-# Default
+# Default Variables
 title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
@@ -30,7 +30,24 @@ github_username: nzrunner
 quote: "Consumer and now contributor of the open-source community."
 repository: nzrunner/home-assistant
 
-# Author details
+future: false                 # Show future dated posts
+profile: false                # Generate a Liquid rendering profile to help identify bottlenecks
+livereload: true              # Reload a page automatically on changes
+strict_front_matter: true     # Build will fail if their a YAML errors
+incremental: true             # Only rebuild pages that change
+regeneration: true            # Auto-regeneration when content changes
+
+# Variables specific to Hamilton theme
+location: "Sydney, Australia"
+skin: midnight
+date_format: "%-d %b %Y"
+author: "Mark Matheson"
+disqus: github-blog
+avatar: /assets/images/mark-circle-200x200.png
+subscribe: true
+paginate: 5
+
+# Authors details
 authors:
   mark:
     name: Mark Matheson
@@ -43,17 +60,7 @@ authors:
     github: https://github.com/nzrunner
     description: "Consumer and now contributor of the open-source community."
 
-# Specific to Hamilton theme
-location: "Sydney, Australia"
-skin: midnight
-date_format: "%-d %b %Y"
-author: "Mark Matheson"
-disqus: github-blog
-avatar: /assets/images/mark-circle-200x200.png
-subscribe: true
-paginate: 5
-
-# Jekyll SEO tag
+# Jekyll SEO Tag
 logo: /assets/images/mark-matheson-digital-business-consultant.png
 defaults:
   - scope:
@@ -77,8 +84,9 @@ social:
 # Build settings
 # theme: minima
 remote_theme: ngzhio/jekyll-theme-hamilton
-whitelist: [jekyll-analytics]
+whitelist: ["jekyll-analytics"]
 plugins:
+  - jekyll-analytics
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -86,8 +94,8 @@ plugins:
   - jekyll-admin
   - jekyll-mentions
   - jekyll-remote-theme
-  - jekyll-analytics
   - jekyll-github-metadata
+  - jekyll-target-blank
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -122,5 +130,5 @@ jekyll_admin:
 # Jekyll Analytics
 jekyll_analytics:
   Matomo:
-    url: analytics.marathonsoftware.com.au
+    url: https://analytics.marathonsoftware.com.au
     siteId: "55"
