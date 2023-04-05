@@ -34,7 +34,7 @@ authors:
   mark:
     name: Mark Matheson
     display_name: Matho
-    avatar: "/assets/images/mark-circle-200x200.png"
+    avatar: "assets/images/mark-circle-200x200.png"
     gravatar: 8db5ca9bd8374ed0efbab82888bc1e5c
     email: support@marathonsoftware.com.au
     web: https://marathonsoftware.com.au
