@@ -77,7 +77,8 @@ social:
 # Build settings
 # theme: minima
 remote_theme: ngzhio/jekyll-theme-hamilton
-whitelist: [jekyll-analytics]
+whitelist:
+  - jekyll-analytics
 plugins:
   - jekyll-feed
   - jekyll-sitemap
