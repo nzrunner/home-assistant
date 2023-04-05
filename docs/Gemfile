@@ -43,3 +43,6 @@ gem 'jekyll-admin', group: :jekyll_plugins
 
 # Jekyll Mentions
 gem 'jekyll-mentions'
+
+# Jekyll Analytics
+gem 'jekyll-analytics'

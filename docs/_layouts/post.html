@@ -30,9 +30,14 @@ layout: default
         alt="{{ author.display_name }}" height="28" width="28">
       {% endif %}
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-author h-card" itemprop="name">{{ author.name }}</span></span>
+        <span class="p-author h-card" itemprop="name">{{ author.name }}</span> </span>
       {%- if forloop.last == false %}, {% endif -%}
       {%- endif -%}
+      <span class="reading-time" title="Estimated read time">
+        {% assign words = content | strip_html | number_of_words %}
+        • Estimated reading time is {% if words < 360 %} 1 min {% else %} {{ words | divided_by:270 }} mins {% endif %}
+          </span>
+
     </p>
 
   </header>

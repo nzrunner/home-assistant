@@ -84,6 +84,7 @@ plugins:
   - jekyll-admin
   - jekyll-mentions
   - jekyll-remote-theme
+  - jekyll-analytics
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -114,3 +115,8 @@ jekyll_admin:
   # - staticfiles
   # - datafiles
   # - configuration
+
+# Jekyll Analytics
+Matomo:
+  url: analytics.marathonsoftware.com.au
+  siteId: '0'
