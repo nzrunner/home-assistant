@@ -11,9 +11,12 @@
     {% if site.author -%}
     <span style="font-size: 24px;">{{ site.author | escape }}</span><br />
     {%- endif %}
-    <span>
+    <p>
       {{ site.quote }}
-    </span>
+    </p>
+    <div><a href="https://www.buymeacoffee.com/nzrunner" target="_blank"><img
+          src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="28"
+          width="174"></a></div>
   </center>
 </div>
 {%- endif %}
@@ -23,26 +26,20 @@
     {% if site.location -%}
     <li>
       <i class="sidebar-icon fas fa-location-arrow"></i>
-      <a class="contact-info u-location" href="https://www.google.com/maps/search/{{ site.location }}">{{ site.location
+      <a class="contact-info u-location" href="https://www.google.com/maps/search/{{ site.location }}"
+        target="_blank">{{ site.location
         }}</a>
     </li>
     {%- endif %}
     {% if site.email -%}
     <li>
       <i class="sidebar-icon fas fa-envelope"></i>
-      <a class="contact-info u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a class="contact-info u-email" href="mailto:{{ site.email }}?subject=Inquiry from GitHub Blog">{{ site.email
+        }}</a>
     </li>
     {%- endif %}
   </ul>
 </div>
-
-{% if site.subscribe != false -%}
-<div class="sidebar-section feed-subscribe">
-  <a href="{{ 'feed.xml' | relative_url }}">
-    <i class="sidebar-icon fas fa-rss"></i><span>Subscribe</span>
-  </a>
-</div>
-{%- endif %}
 
 {% if site.data.social -%}
 <div class="sidebar-section">
@@ -56,12 +53,19 @@
   </ul>
 </div>
 {%- endif %}
-<center>
-  <h2>Github Repository</h2>
-  <a href="{{ site.github.repository_url }}" target="_blank"><img
-      src=" {{ site.baseurl }}/assets/images/mark-matheson-digital-business-consultant.png" />
-    <br /><br />
-    <h3 style="margin-bottom: 5px;">Matho's Home Assistant Configuration</h3>
+
+<div class="sidebar-section">
+  <div>
+    <a href="https://home-assistant.io" target="_blank"><img
+        src="https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge"
+        alt="Home Assistant Version"></a>
+  </div>
+</div>
+
+{% if site.subscribe != false -%}
+<div class="sidebar-section feed-subscribe">
+  <a href="{{ 'feed.xml' | relative_url }}">
+    <i class="sidebar-icon fas fa-rss"></i><span>Subscribe</span>
   </a>
-  <div>{{ site.github.project_tagline }}</div>
-</center>
+</div>
+{%- endif %}
