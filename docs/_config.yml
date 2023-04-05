@@ -119,6 +119,7 @@ jekyll_admin:
   # - configuration
 
 # Jekyll Analytics
-Matomo:
-  url: analytics.marathonsoftware.com.au
-  siteId: '55'
+jekyll_analytics:
+  Matomo:
+    url: analytics.marathonsoftware.com.au
+    siteId: "55"
