@@ -123,6 +123,7 @@ I will endeavour to update this occassionally.
 | HomeKit                            | <https://www.home-assistant.io/integrations/homekit>         |
 | Local IP                           | <https://www.home-assistant.io/integrations/local_ip>        |
 | Mobile App                         | <https://www.home-assistant.io/integrations/mobile_app>      |
+| NextCloud                          | <https://www.home-assistant.io/integrations/nextcloud/>      |
 | Philips Hue                        | <https://www.home-assistant.io/integrations/hue>             |
 | Pi-Hole                            | <https://www.home-assistant.io/integrations/pi_hole>         |
 | Plex Media Server                  | <https://www.home-assistant.io/integrations/pi_hole>         |
