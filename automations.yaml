@@ -2604,10 +2604,13 @@
         entity_id: media_player.living_room_speaker
         message: Welcome home {% set people = state_attr('zone.home', 'persons') %}
           {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
-          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M')
-          }}. The weather in Marsfield is {{ states('sensor.marsfield_extended_text_0')
+          = peoplestr.split(' ') %} {{ list1[0] }}! It's {{ now().strftime('%H:%M,
+          %A %d %B %Y') }}. The weather in Marsfield is forecast to be {{ states['sensor.marsfield_extended_text_0'].state
           }}. {{ states['sensor.marsfield_uv_summary'].state }}. {{ states['sensor.marsfield_fire_danger_summary'].state
-          }}. Have a great day!
+          }}. Sunset today is at {{ states['sensor.nextsunset'].state }}. {% if states('sensor.garbage_waste')
+          == 'tomorrow' %} Remember, the rubbish and {% if states['sensor.garbage_greens'].state
+          == "tomorrow" %} greens {% else %}  recycling {% endif %} bins need to go
+          out tonight.{% endif %} Have a great day!
         volume: '{{ states(''input_number.volume_default'') }}'
     else:
     - service: script.broadcast_message
