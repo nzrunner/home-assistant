@@ -76,6 +76,12 @@ Hopefully, as I have learned from others and "borrowed" sectons of their code, o
 
 Sadly, I didn't keep a good record of the initial Home Assistant configurations that inspired me. If I stumble over them again, I will add them to the [Acknowledgements](#acknowledgments) section.
 
+## Blog 🆕
+
+I am now blogging about my GitHub and Home Assistant experiences. Why not check out my blog created using GitHub Pages and Jekyll: -
+
+[![Home Assistant Blog][ha-blog]](https://nzrunner.github.io/home-assistant)
+
 ## Built With
 
 [![Home Assistant][hass.io]][home-assistant] [![Raspberry Pi][raspberry-pi]](https://www.raspberrypi.com) [![Debian](https://img.shields.io/badge/Debian-AB1D33?style=for-the-badge&logo=debian&logoColor=ffffff)](https://www.debian.org)
@@ -415,6 +421,7 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [github-sponsors-shield]: https://img.shields.io/github/sponsors/nzrunner?label=Sponsors&style=flat-square
 [github-sponsor-me-shield]: https://img.shields.io/badge/sponsor-lightgrey?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white
 [pull-request-shield]: https://img.shields.io/github/issues-pr-raw/nzrunner/home-assistant?label=Pull%20Requests&style=flat-square
+[ha-blog]: https://img.shields.io/badge/-Home%20Assistant%20Blog-blue?style=for-the-badge&logo=home-assistant
 
 <!-- URL's -->
 
