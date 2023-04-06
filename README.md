@@ -410,7 +410,7 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 [hass.io]: https://img.shields.io/badge/Home%20Assistant-blue?style=for-the-badge&logo=home-assistant&logoColor=#41BDF5
 [raspberry-pi]: https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=ffffff
 [homeassistantci-shield]: https://img.shields.io/github/actions/workflow/status/nzrunner/home-assistant/home_assistant.yml?label=Home%20Assistant%20CI&style=flat-square
-[ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.3-blue.svg?style=for-the-badge
+[ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2023.4-blue.svg?style=for-the-badge
 [github-sponsors-shield]: https://img.shields.io/github/sponsors/nzrunner?label=Sponsors&style=flat-square
 [github-sponsor-me-shield]: https://img.shields.io/badge/sponsor-lightgrey?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white
 [pull-request-shield]: https://img.shields.io/github/issues-pr-raw/nzrunner/home-assistant?label=Pull%20Requests&style=flat-square
