@@ -18,26 +18,39 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-# Default Variables
+# Base configuration
 title: "Matho's Home Assistant Blog"
 email: support@marathonsoftware.com.au
 description: >-  # this means to ignore newlines until "baseurl:"
   Blogging about my Home Assistant and GitHub experiences.
 baseurl: "/home-assistant"  # the subpath of your site, e.g. /blog
 url: "https://nzrunner.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
+
+# Custom site configuration
 twitter_username: nzrunner
 github_username: nzrunner
 quote: "Consumer and now contributor of the open-source community."
 repository: nzrunner/home-assistant
 
-future: false                 # Show future dated posts
-profile: false                # Generate a Liquid rendering profile to help identify bottlenecks
-livereload: true              # Reload a page automatically on changes
-strict_front_matter: true     # Build will fail if their a YAML errors
-incremental: true             # Only rebuild pages that change
-regeneration: true            # Auto-regeneration when content changes
+# Global configuration
+timezone: Australia/Sydney        # Set timezone for site
 
-# Variables specific to Hamilton theme
+# Build configuration
+future: false                     # Show future dated posts
+unpublished: false                # Show unpublished posts
+show_drafts: false                # Show draft posts
+incremental: true                 # Only rebuild pages that change
+regeneration: true                # Auto-regeneration when content changes
+strict_front_matter: true         # Build will fail if their a YAML errors
+profile: false                    # Generate a Liquid rendering profile to help identify bottlenecks
+
+# Serve configuration
+livereload: true                  # Reload a page automatically on changes
+
+# Front Matter configuration
+excerpt_separator: "<!--more-->"  # Excerpt separator
+
+# Configuration specific to Hamilton theme
 location: "Sydney, Australia"
 skin: midnight
 date_format: "%-d %b %Y"
@@ -84,9 +97,8 @@ social:
 # Build settings
 # theme: minima
 remote_theme: ngzhio/jekyll-theme-hamilton
-whitelist: ["jekyll-analytics"]
+whitelist: []
 plugins:
-  - jekyll-analytics
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -126,9 +138,3 @@ jekyll_admin:
   # - staticfiles
   # - datafiles
   # - configuration
-
-# Jekyll Analytics
-jekyll_analytics:
-  Matomo:
-    url: https://analytics.marathonsoftware.com.au
-    siteId: "55"
