@@ -1,7 +1,6 @@
 ---
 title: Published my Home Assistant configuration
 layout: post
-excerpt_separator: "<!--more-->"
 date: "2023-03-18 13:37:00 +1100"
 categories:
   - home-assistant

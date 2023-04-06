@@ -1,7 +1,6 @@
 ---
 title: GitHub Actions and Workflows (AKA CI)
 layout: post
-excerpt_separator: "<!--more-->"
 date: "2023-03-25 22:00:00 +1100"
 categories:
   - home-assistant

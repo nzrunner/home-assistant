@@ -1,7 +1,6 @@
 ---
 title: Home Assistant Voice
 layout: post
-excerpt_separator: "<!--more-->"
 date: "2023-03-26 22:16:00 +1100"
 categories:
   - home-assistant

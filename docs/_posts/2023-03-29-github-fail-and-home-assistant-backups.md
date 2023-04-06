@@ -1,7 +1,6 @@
 ---
 title: GitHub Fail ... and Home Assistant Backups
 layout: post
-excerpt_separator: "<!--more-->"
 date: "2023-03-29 12:33:00 +1100"
 categories:
   - github

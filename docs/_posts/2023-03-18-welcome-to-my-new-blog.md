@@ -1,7 +1,6 @@
 ---
 title: Welcome to my new Blog!
 layout: post
-excerpt_separator: "<!--more-->"
 date: "2023-03-18 11:55:00 +1100"
 categories:
   - github
