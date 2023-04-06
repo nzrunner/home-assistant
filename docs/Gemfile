@@ -53,4 +53,8 @@ gem 'jekyll-github-metadata'
 # Jekyll Target Blank
 # gem 'jekyll-target-blank'
 
+# Faraday-Retry
 gem 'faraday-retry'
+
+# Jekyll Include Cache
+gem 'jekyll-include-cache', group: :jekyll_plugins

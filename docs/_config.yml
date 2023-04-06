@@ -110,6 +110,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-github-metadata
   # - jekyll-target-blank
+  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
