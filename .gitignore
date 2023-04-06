@@ -75,6 +75,7 @@ blueprints/*/homeassistant
 .vscode
 .theia
 .Trash*
+.docs/jekyll-metadata
 
 # Ignore vendored stuff
 custom_components
