@@ -39,18 +39,18 @@ gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
 
 # Jekyll Admin
-gem 'jekyll-admin', group: :jekyll_plugins
+# gem 'jekyll-admin', group: :jekyll_plugins
 
 # Jekyll Mentions
 gem 'jekyll-mentions'
 
 # Jekyll Analytics
-gem 'jekyll-analytics'
+# gem 'jekyll-analytics'
 
 # Jekyll Github Metadata
 gem 'jekyll-github-metadata'
 
 # Jekyll Target Blank
-gem 'jekyll-target-blank'
+# gem 'jekyll-target-blank'
 
 gem 'faraday-retry'

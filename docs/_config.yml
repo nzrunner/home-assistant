@@ -34,6 +34,8 @@ repository: nzrunner/home-assistant
 
 # Global configuration
 timezone: Australia/Sydney        # Set timezone for site
+disable_disk_cache: false
+safe: false
 
 # Build configuration
 future: false                     # Show future dated posts
@@ -103,11 +105,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-  - jekyll-admin
+  # - jekyll-admin
   - jekyll-mentions
   - jekyll-remote-theme
   - jekyll-github-metadata
-  - jekyll-target-blank
+  # - jekyll-target-blank
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -130,11 +132,11 @@ exclude:
   - vendor/ruby/
 
 # Jekyll Admin
-jekyll_admin:
-  homepage: "posts"
-  hidden_links:
-  # - posts
-  # - pages
-  # - staticfiles
-  # - datafiles
-  # - configuration
+# jekyll_admin:
+#  homepage: "posts"
+#  hidden_links:
+#   - posts
+#   - pages
+#   - staticfiles
+#   - datafiles
+#   - configuration
