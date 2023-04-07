@@ -12,91 +12,8 @@
 # https://www.home-assistant.io/docs/configuration/customizing-devices/
 #################################################################################
 
-package.node_anchors:
-  common: &common
-    package: "sysmonitor"
-
-group.security_cameras:
-  entity_picture: /local/images/uvcflex.png
-  friendly_name: Security Cameras
-
-sensor.speedtest_download_average:
-  icon: mdi:download-outline
-  <<: *common
-
-sensor.speedtest_upload_average:
-  icon: mdi:upload-outline
-  <<: *common
-
-sensor.speedtest_download:
-  friendly_name: Speedtest Download
-  icon: mdi:download
-  state_class: measurement
-  unit_of_measurement: Mbit/s
-  <<: *common
-
-sensor.speedtest_upload:
-  friendly_name: Speedtest Upload
-  icon: mdi:upload
-  state_class: measurement
-  unit_of_measurement: Mbit/s
-  <<: *common
-
-sensor.speedtest_ping:
-  friendly_name: Speedtest Ping
-  icon: mdi:speedometer
-  state_class: measurement
-  unit_of_measurement: ms
-  <<: *common
-
-sensor.speedtest_result:
-  friendly_name: Speedtest Result
-  icon: mdi:speedometer-medium
-  <<: *common
-
-sensor.speedtest_lastrun:
-  friendly_name: Speedtest Last Run
-  icon: mdi:clock
-  device_class: timestamp
-  <<: *common
-
-sensor.last_boot:
-  friendly_name: Last Boot
-  device_class: timestamp
-  icon: mdi:clock
-
-binary_sensor.carport_motion_on_off:
-  friendly_name: Carport Motion
-
-binary_sensor.upstairs_motion_on_off:
-  friendly_name: Upstairs Motion
-
-binary_sensor.bedroom_motion_ias_zone:
-  friendly_name: Bedroom Motion
-
-binary_sensor.kitchen_motion_ias_zone:
-  friendly_name: Kitchen Motion
-
-binary_sensor.toilet_motion_ias_zone:
-  friendly_name: Toilet Motion
-
-binary_sensor.office_motion:
-  friendly_name: Office Motion
-
-binary_sensor.living_room_motion_on_off:
-  friendly_name: Living Room Motion
-
 sensor.office_motion_battery:
   battery_changed: "16/03/2023"
-
-sensor.radarr_status:
-  unit_of_measurement: ""
-
-sensor.docker01_version:
-  instance_name: Docker01
-
-sensor.docker_version:
-  instance_name: Docker
 
 sensor.uptimekuma_lidarr:
   domain: entertainment
@@ -145,3 +62,86 @@ sensor.uptimekuma_sonarr:
 sensor.uptimekuma_lunasea:
   domain: entertainment
   icon: mdi:multimedia
+
+# package.node_anchors:
+#   common: &common
+#     package: "sysmonitor"
+
+# group.security_cameras:
+#   entity_picture: /local/images/uvcflex.png
+#   friendly_name: Security Cameras
+
+# sensor.speedtest_download_average:
+#   icon: mdi:download-outline
+#   <<: *common
+
+# sensor.speedtest_upload_average:
+#   icon: mdi:upload-outline
+#   <<: *common
+
+# sensor.speedtest_download:
+#   friendly_name: Speedtest Download
+#   icon: mdi:download
+#   state_class: measurement
+#   unit_of_measurement: Mbit/s
+#   <<: *common
+
+# sensor.speedtest_upload:
+#   friendly_name: Speedtest Upload
+#   icon: mdi:upload
+#   state_class: measurement
+#   unit_of_measurement: Mbit/s
+#   <<: *common
+
+# sensor.speedtest_ping:
+#   friendly_name: Speedtest Ping
+#   icon: mdi:speedometer
+#   state_class: measurement
+#   unit_of_measurement: ms
+#   <<: *common
+
+# sensor.speedtest_result:
+#   friendly_name: Speedtest Result
+#   icon: mdi:speedometer-medium
+#   <<: *common
+
+# sensor.speedtest_lastrun:
+#   friendly_name: Speedtest Last Run
+#   icon: mdi:clock
+#   device_class: timestamp
+#   <<: *common
+
+# sensor.last_boot:
+#   friendly_name: Last Boot
+#   device_class: timestamp
+#   icon: mdi:clock
+
+# binary_sensor.carport_motion_on_off:
+#   friendly_name: Carport Motion
+
+# binary_sensor.upstairs_motion_on_off:
+#   friendly_name: Upstairs Motion
+
+# binary_sensor.bedroom_motion_ias_zone:
+#   friendly_name: Bedroom Motion
+
+# binary_sensor.kitchen_motion_ias_zone:
+#   friendly_name: Kitchen Motion
+
+# binary_sensor.toilet_motion_ias_zone:
+#   friendly_name: Toilet Motion
+
+# binary_sensor.office_motion:
+#   friendly_name: Office Motion
+
+# binary_sensor.living_room_motion_on_off:
+#   friendly_name: Living Room Motion
+
+# sensor.radarr_status:
+#   unit_of_measurement: ""
+
+# sensor.docker01_version:
+#   instance_name: Docker01
+
+# sensor.docker_version:
+#   instance_name: Docker
