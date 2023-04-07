@@ -13,7 +13,7 @@
 #################################################################################
 
 - platform: generic_thermostat
-  unique_id: living_room_heater_controller
+  unique_id: 9a9c74ec-d4ee-11ed-afa1-0242ac120002
   name: Living Room Heater Controller
   heater: switch.plug_3_on_off
   target_sensor: sensor.living_room_motion_temperature

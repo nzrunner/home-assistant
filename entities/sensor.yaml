@@ -29,6 +29,7 @@
 - platform: template
   sensors:
     marsfield_uv_summary:
+      unique_id: 18e798aa-d4ee-11ed-afa1-0242ac120002
       friendly_name: Marsfield UV Summary
       value_template: >
         UV Today: Sun Protection
@@ -37,6 +38,7 @@
         UV Index predicted to reach {{ states('sensor.marsfield_uv_max_index_0') }} [{{ states('sensor.marsfield_uv_category_0') }}]
       icon_template: mdi:weather-sunny-alert
     marsfield_fire_danger_summary:
+      unique_id: 3bd8a3c2-d4ee-11ed-afa1-0242ac120002
       friendly_name: Marsfield Fire Danger Summary
       value_template: "Fire Danger Today: {{ states('sensor.marsfield_fire_danger_0') }}"
       icon_template: mdi:fire-alert
@@ -101,6 +103,7 @@
 - platform: template
   sensors:
     quarantine_other_mark:
+      unique_id: 0fcce838-d4ee-11ed-afa1-0242ac120002
       friendly_name: Other locations
       value_template: >
         {{ 100 - (states("sensor.quarantine_times_home_mark")|round(2)
@@ -113,6 +116,7 @@
 - platform: template
   sensors:
     quarantine_hours_away_per_day_mark:
+      unique_id: 094a098c-d4ee-11ed-afa1-0242ac120002
       friendly_name: Hours home per day (Mark)
       value_template: >
         {% set home_value = states("sensor.quarantine_hours_home_mark")|round(2) %}
@@ -124,6 +128,7 @@
 - platform: template
   sensors:
     quarantine_hours_away_mark:
+      unique_id: d9f90c6e-d4ed-11ed-afa1-0242ac120002
       friendly_name: Hours outside (Mark)
       value_template: >-
         {{ 168 - states("sensor.quarantine_hours_home_mark")|round(2) }}
@@ -141,6 +146,7 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     lights_on_total:
+      unique_id: a9e8c6ea-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ expand('light.lights_all') | selectattr('state','eq','on') | list | count }}/{{ expand('light.lights_all') | list | count }}"
 
     # Count Cameras
@@ -151,10 +157,12 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     cameras_on_total:
+      unique_id: a3767ee2-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ expand('group.security_cameras') | list | count }}"
 
     # Count Buttons
     buttons_on_total:
+      unique_id: 9d8178ac-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ expand('group.buttons') | list | count }}"
 
     # Count Motion Sensors
@@ -165,6 +173,7 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     motions_on_total:
+      unique_id: 97afc8e8-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ expand('binary_sensor.motion_sensors_all') | selectattr('state','eq','on') | list | count }}
         /{{ expand('binary_sensor.motion_sensors_all') | list | count }}"
 
@@ -176,6 +185,7 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     temperatures_on_total:
+      unique_id: 905d043e-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ expand('sensor.temperature_sensors') | list | count }}"
 
     # Count Door Sensors
@@ -186,71 +196,85 @@
     # Source: https://community.home-assistant.io/t/counts-the-lights-on/105361/18
     # 05/01/2022 - Value Template changed to use a group
     doors_on_total:
+      unique_id: 89b54d80-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}
         /{{ expand('binary_sensor.door_sensors_all') | list | count }}"
 
     # Count Automations
     count_automations:
+      unique_id: 82a7fa24-d4ed-11ed-afa1-0242ac120002
       friendly_name: Automations
       value_template: "{{ states.automation | list | length }}"
 
     # Count Scripts
     count_scripts:
+      unique_id: 7d93a240-d4ed-11ed-afa1-0242ac120002
       friendly_name: Scripts
       value_template: "{{ states.script| list | length }}"
 
     # Count Device Trackers
     count_device_trackers:
+      unique_id: 78c770c0-d4ed-11ed-afa1-0242ac120002
       friendly_name: Device Trackers
       value_template: "{{ states.device_tracker | list | length }}"
 
     # Count Binary Sensors
     count_binary_sensors:
+      unique_id: 72ec649e-d4ed-11ed-afa1-0242ac120002
       friendly_name: Binary Sensors
       value_template: "{{ states.binary_sensor| list | length }}"
 
     # Count Sensors
     count_sensors:
+      unique_id: 6d59ae60-d4ed-11ed-afa1-0242ac120002
       friendly_name: Sensors
       value_template: "{{ states.sensor | list | length }}"
 
     # Count Switches
     count_switches:
+      unique_id: 6812036c-d4ed-11ed-afa1-0242ac120002
       friendly_name: Switches
       value_template: "{{ states.switch | list | length }}"
 
     # Count Zones
     count_zones:
+      unique_id: 62b27db6-d4ed-11ed-afa1-0242ac120002
       friendly_name: Zones
       value_template: "{{ states.zone | list | length }}"
 
     # Count Groups
     count_groups:
+      unique_id: 5d08e756-d4ed-11ed-afa1-0242ac120002
       friendly_name: Groups
       value_template: "{{ states.group | list | length }}"
 
     # Input Booleans
     count_input_booleans:
+      unique_id: 56ee98a2-d4ed-11ed-afa1-0242ac120002
       friendly_name: Input Booleans
       value_template: "{{ states.input_boolean | list | length }}"
 
     # Input Numbers
     count_input_numbers:
+      unique_id: 51b24fa0-d4ed-11ed-afa1-0242ac120002
       friendly_name: Input Numbers
       value_template: "{{ states.input_number | list | length }}"
 
     # Input Texts
     count_input_texts:
+      unique_id: 4be86da2-d4ed-11ed-afa1-0242ac120002
       friendly_name: Input Texts
       value_template: "{{ states.input_text | list | length }}"
 
     # Input Selects
     count_input_selects:
+      unique_id: 46924472-d4ed-11ed-afa1-0242ac120002
       friendly_name: Input Selects
       value_template: "{{ states.input_select | list | length }}"
 
     # Input Date Times
     count_input_datetimes:
+      unique_id: c9dc0350-d4ec-11ed-afa1-0242ac120002
       friendly_name: Input Date/Times
       value_template: "{{ states.input_datetime | list | length }}"
 
@@ -339,6 +363,7 @@
 - platform: template
   sensors:
     auto_backup_template:
+      unique_id: a366b1cc-d4ea-11ed-afa1-0242ac120002
       friendly_name: "Auto Backup Template"
       value_template: >
         {% if is_state('sensor.auto_backup', '0') %}
@@ -355,6 +380,7 @@
   sensors:
     # HASS Uptime
     custom_ha_uptime:
+      unique_id: 76eee786-d4ea-11ed-afa1-0242ac120002
       friendly_name: HASS Uptime
       value_template: >
         {%- set up = now().timestamp()-as_timestamp(states('sensor.hass_uptime')) %}
@@ -375,6 +401,7 @@
 
     # MAT-NAS-001 Uptime
     custom_mat_nas_001_uptime:
+      unique_id: 8b24fa4c-d4ea-11ed-afa1-0242ac120002
       friendly_name: MAT-NAS-001 Uptime
       value_template: >
         {%- set up = now().timestamp()-as_timestamp(states('sensor.mat_nas_001_last_boot')) %}
@@ -395,6 +422,7 @@
 
     # MAT-NAS-002 Uptime
     custom_mat_nas_002_uptime:
+      unique_id: 92b2359a-d4ea-11ed-afa1-0242ac120002
       friendly_name: MAT-NAS-002 Uptime
       value_template: >
         {%- set up = now().timestamp()-as_timestamp(states('sensor.mat_nas_002_last_boot')) %}
@@ -433,19 +461,23 @@
 - platform: template
   sensors:
     unifi_gateway_wan_cpu:
+      unique_id: a394fb34-d4ec-11ed-afa1-0242ac120002
       friendly_name: "CPU percentage"
       value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['cpu'] }}"
       unit_of_measurement: "%"
     unifi_gateway_wan_mem:
+      unique_id: ad3b0214-d4ec-11ed-afa1-0242ac120002
       friendly_name: "Memory percentage"
       value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['mem'] }}"
       unit_of_measurement: "%"
     # DISABLED: USG3 doesn't track temperature
     # unifi_gateway_wan_cpu_temp:
+    #  unique_id: bc9fe1a2-d4ec-11ed-afa1-0242ac120002
     #  friendly_name: "CPU temperature"
     #  value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['temps']['CPU']|replace('C', '') }}"
     #  unit_of_measurement: "°C"
     unifi_gateway_wan_ip:
+      unique_id: b37b77f8-d4ec-11ed-afa1-0242ac120002
       friendly_name: "WAN IP"
       value_template: "{{ states.sensor.unifi_gateway_wan.attributes.wan_ip }}"
 
@@ -457,10 +489,11 @@
     - type: disk_use_percent
       arg: /config
     - type: memory_use_percent
-    - type: processor_use
-    - type: last_boot
     - type: memory_use
     - type: memory_free
+    - type: processor_use
+    - type: processor_temperature
+    - type: last_boot
 
 #################################################################################
 # Synology Sensors
@@ -469,42 +502,52 @@
   sensors:
     # MAT-NAS-002 System Check
     mat_nas_002_system_check:
+      unique_id: 88618210-d4ec-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'systemCheck') }}"
 
     # MAT-NAS-002 Network Check
     mat_nas_002_network_check:
+      unique_id: 04296f8e-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'network') }}"
 
     # MAT-NAS-002 Malware Check
     mat_nas_002_malware_check:
+      unique_id: 09e7b462-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'malware') }}"
 
     # MAT-NAS-002 UserInfo Check
     mat_nas_002_userinfo_check:
+      unique_id: 10f032d4-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'userInfo') }}"
 
     # MAT-NAS-002 Apps Available
     mat_nas_002_apps_available:
+      unique_id: 18595e06-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.mat_nas_002_security_status', 'update') }}"
 
     # MAT-NAS-001 System Check
     piha_system_check:
+      unique_id: 20406b1e-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.piha_security_status', 'systemCheck') }}"
 
     # MAT-NAS-001 Network Check
     piha_network_check:
+      unique_id: 25be03ee-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.piha_security_status', 'network') }}"
 
     # MAT-NAS-001 Malware Check
     piha_malware_check:
+      unique_id: 2c2a47a6-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.piha_security_status', 'malware') }}"
 
     # MAT-NAS-001 UserInfo Check
     piha_userinfo_check:
+      unique_id: 31c148ae-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.piha_security_status', 'userInfo') }}"
 
     # MAT-NAS-001 Apps Available
     piha_apps_available:
+      unique_id: 3745bd1e-d4ed-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('binary_sensor.piha_security_status', 'update') }}"
 
 #################################################################################
@@ -514,21 +557,25 @@
   sensors:
     # Download Speed
     usg_download_speed:
+      unique_id: 6ada6626-d4ec-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'xput_down') }}"
       unit_of_measurement: Mb
 
     # Upload Speed
     usg_upload_speed:
+      unique_id: 716d18f8-d4ec-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'xput_up') }}"
       unit_of_measurement: Mb
 
     # Latency
     usg_latency:
+      unique_id: 64340eda-d4ec-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'latency') }}"
       unit_of_measurement: Mb
 
     # Download Speed
     usg_ping_speed:
+      unique_id: 5e3b669a-d4ec-11ed-afa1-0242ac120002
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'speedtest_ping') }}"
       unit_of_measurement: Mb
 
@@ -536,30 +583,53 @@
 # Speedtest
 #################################################################################
 - platform: average
+  unique_id: 50e956e2-d4e6-11ed-afa1-0242ac120002
   name: "Speedtest Download Average"
   entities:
     - sensor.speedtest_download
   start: "{{ 0 }}"
   end: "{{ now() }}"
+  precision: 2
+
+- platform: statistics
+  unique_id: 9f1088ea-d4e1-11ed-afa1-0242ac120002
+  name: "Average Speedtest Download"
+  entity_id: sensor.speedtest_download
+  state_characteristic: mean
+  max_age:
+    days: 365
+  precision: 2
 
 - platform: average
+  unique_id: 57bd36e6-d4e6-11ed-afa1-0242ac120002
   name: "Speedtest Upload Average"
   entities:
     - sensor.speedtest_upload
   start: "{{ 0 }}"
   end: "{{ now() }}"
+  precision: 2
+
+- platform: statistics
+  unique_id: 27f509de-d4e1-11ed-afa1-0242ac120002
+  name: "Average Speedtest Upload"
+  entity_id: sensor.speedtest_upload
+  state_characteristic: mean
+  max_age:
+    days: 365
+  precision: 2
 
 - platform: template
   sensors:
     speedtest_last_run:
-      friendly_name: "Last Run"
+      unique_id: e28f2e64-d4eb-11ed-afa1-0242ac120002
+      friendly_name: "Speedtest Last Run"
       value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%H:%M %Z') }}"
-      unique_id: speedtestlastrun
 
 #################################################################################
 # Host RPi CPU Temperature
 #################################################################################
 - platform: command_line
+  unique_id: 4408b426-d4ec-11ed-afa1-0242ac120002
   name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
   # If errors occur, make sure configuration file is encoded as UTF-8
@@ -571,68 +641,145 @@
 #################################################################################
 # Office Average Temperature
 - platform: average
+  unique_id: 60cb077c-d4e6-11ed-afa1-0242ac120002
   name: "Office Temperature Average"
   entities:
     - sensor.office_motion_temperature
   duration:
     days: 1
+  precision: 2
+
+- platform: statistics
+  unique_id: 82140aa9-c20c-4030-957f-e1fd1515ba04
+  name: "Average Office Temperature"
+  entity_id: sensor.office_motion_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
 
 # Computer Cabinet Average Temperature
 - platform: average
+  unique_id: 68dbdf54-d4e6-11ed-afa1-0242ac120002
   name: "Computer Cabinet Temperature Average"
   entities:
     - sensor.computer_weather_temperature
   duration:
     days: 1
+  precision: 2
+
+- platform: statistics
+  unique_id: 3a720906-a42e-45ad-bfea-e4d95c0767d9
+  name: "Average Computer Cabinet Temperature"
+  entity_id: sensor.computer_weather_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
 
 # Living Room Average Temperature
 - platform: average
+  unique_id: 760299d4-d4e6-11ed-afa1-0242ac120002
   name: "Living Room Temperature Average"
   entities:
     - sensor.living_room_motion_temperature
   duration:
     days: 1
+  precision: 2
+
+- platform: statistics
+  unique_id: a9d2746e-ee1b-455a-82fe-a458f69fd31b
+  name: "Average Living Room Temperature"
+  entity_id: sensor.living_room_motion_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
 
 # Bathroom Average Temperature
 - platform: average
+  unique_id: 7e1211fe-d4e6-11ed-afa1-0242ac120002
   name: "Bathroom Temperature Average"
   entities:
     - sensor.bathroom_temperature
   duration:
     days: 1
+  precision: 2
+
+- platform: statistics
+  unique_id: ca75f50c-07cb-4013-aaa9-fdee007623e5
+  name: "Average Bathroom Temperature"
+  entity_id: sensor.bathroom_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
 
 # Bedroom Average Temperature
 - platform: average
+  unique_id: 859ba908-d4e6-11ed-afa1-0242ac120002
   name: "Bedroom Temperature Average"
   entities:
     - sensor.bedroom_temperature
   duration:
     days: 1
+  precision: 2
+
+- platform: statistics
+  unique_id: be899ab4-cd59-4c17-b4a4-3d83226960b9
+  name: "Average Bedroom Temperature"
+  entity_id: sensor.bedroom_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
 
 # Courtyard Average Temperature
 - platform: average
+  unique_id: 8babff64-d4e6-11ed-afa1-0242ac120002
   name: "Courtyard Temperature Average"
   entities:
     - sensor.courtyard_temperature
   duration:
     days: 1
+  precision: 2
+
+- platform: statistics
+  unique_id: 36700639-20de-45ad-a597-c6bbe25c51fb
+  name: "Average Courtyard Temperature"
+  entity_id: sensor.courtyard_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
 
 #################################################################################
 # Average RPi CPU Temperature
 #################################################################################
 - platform: average
+  unique_id: 100c6347-182f-4830-8dec-0045cfa3ced3
   name: "Average RPi Temperature"
-  unique_id: average_rpi_temperature
   entities:
     - sensor.cpu_temperature
-#    - sensor.mat_rpi_003_cputemp
-#    - sensor.mat_rpi_004_cputemp
-#    - sensor.mat_rpi_005_cputemp
+    # - sensor.mat_rpi_003_cputemp
+    # - sensor.mat_rpi_004_cputemp
+    # - sensor.mat_rpi_005_cputemp
+  precision: 2
+
+- platform: statistics
+  unique_id: bd63aaac-83c2-4765-8992-466a88589065
+  name: "Average RPi Temperature NEW"
+  entity_id: sensor.cpu_temperature
+  state_characteristic: mean
+  max_age:
+    days: 14
+  precision: 2
 
 #################################################################################
 # Get the latest Docker version available from Github
 #################################################################################
 - platform: command_line
+  unique_id: 31e4a5e8-d4ec-11ed-afa1-0242ac120002
   name: Docker Latest Version
   command: 'curl -sL https://api.github.com/repos/moby/moby/releases/latest | jq -r ".tag_name | sub(\"v\"; \"\")"'
   scan_interval: 86400
@@ -643,11 +790,13 @@
 - platform: template
   sensors:
     nextsunrise:
+      unique_id: 202b2386-d4ec-11ed-afa1-0242ac120002
       friendly_name: "Next Sunrise"
       value_template: >
         {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
       icon_template: mdi:weather-sunset-up
     nextsunset:
+      unique_id: 28f7a836-d4ec-11ed-afa1-0242ac120002
       friendly_name: "Next Sunset"
       value_template: >
         {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}

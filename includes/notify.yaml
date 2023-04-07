@@ -14,6 +14,7 @@
 #################################################################################
 notify:
   - name: mark_ios_devices
+    unique_id: c1cb5d62-d4ee-11ed-afa1-0242ac120002
     platform: group
     services:
       - service: mobile_app_marks_iphone

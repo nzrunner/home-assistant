@@ -12,6 +12,7 @@
 #################################################################################
 
 - platform: universal
+  unique_id: ad636c7a-d4ee-11ed-afa1-0242ac120002
   name: living_room_media
   children:
     - media_player.sony_bravia_tv
@@ -43,4 +44,3 @@
     source: media_player.sony_bravia_tv|source
     source_list: media_player.sony_bravia_tv|source_list
   device_class: tv
-  unique_id: 987654321abcdefghi

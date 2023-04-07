@@ -13,7 +13,7 @@
 #################################################################################
 
 - platform: generic_thermostat
-  unique_id: bedroom_heater_controller
+  unique_id: 94991c44-d4ee-11ed-afa1-0242ac120002
   name: Bedroom Heater Controller
   heater: switch.plug_2_on_off
   target_sensor: sensor.bedroom_temperature

@@ -25,6 +25,7 @@ sensor:
   - platform: template
     sensors:
       washing_machine_status:
+        unique_id: 2f01c132-d4ef-11ed-afa1-0242ac120002
         friendly_name: "Washing Machine Status"
         value_template: >
           {% if states.sensor.washing_machine_power.state | float > 10.0 %}
@@ -35,6 +36,7 @@ sensor:
             {{ "Off" }}
           {% endif %}
       washing_machine_info:
+        unique_id: 35714272-d4ef-11ed-afa1-0242ac120002
         friendly_name: "Washing Machine Info"
         value_template: >
           {%- macro as_formatted_elapsed_time(now, other_date_time) %}
