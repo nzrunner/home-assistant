@@ -22,6 +22,7 @@ permalink: /resources/
 | Conversation                 | <https://www.home-assistant.io/integrations/conversation>{:target="\_blank"}      |
 | Assist on Apple Devices      | <https://www.home-assistant.io/docs/assist/apple>{:target="\_blank"}              |
 | Google Assistant integration | <https://www.home-assistant.io/integrations/google_assistant/>{:target="\_blank"} |
+| UUID Generator               | <https://www.uuidgenerator.net/>                                                  |
 
 ## GitHub
 
