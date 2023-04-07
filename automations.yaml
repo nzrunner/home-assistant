@@ -152,10 +152,8 @@
       entity_id:
       - sensor.auto_backup_template
       to: 'off'
-  - service: hassio.addon_stdin
-    data:
-      addon: 719b45ef_dropback
-      input: sync
+  - service: script.dropbox_sync
+    data: {}
 - id: '9876543211'
   alias: Backup - Midnight
   description: Perform a full HASS backup once a day at 02:30, every day except Monday.
@@ -182,10 +180,8 @@
       entity_id:
       - sensor.auto_backup_template
       to: 'off'
-  - service: hassio.addon_stdin
-    data:
-      addon: 719b45ef_dropback
-      input: sync
+  - service: script.dropbox_sync
+    data: {}
 - id: '9876543212'
   alias: Backup - Weekly
   description: Perform a full HASS backup every week, on a Monday at 02:30. It is
@@ -207,10 +203,8 @@
       entity_id:
       - sensor.auto_backup_template
       to: 'off'
-  - service: hassio.addon_stdin
-    data:
-      addon: 719b45ef_dropback
-      input: sync
+  - service: script.dropbox_sync
+    data: {}
 - id: '987654324'
   alias: System Notification - HASS Update
   description: A Home Assistant update is available!
@@ -1692,6 +1686,8 @@
     data:
       message: Home Assistant (Core) restarted
       title: System Notification
+  - service: script.dropbox_sync
+    data: {}
   mode: single
 - id: '1656887737576'
   alias: Alarm - Notify - Courtyard

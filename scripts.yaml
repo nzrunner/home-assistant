@@ -309,3 +309,12 @@ tv_mode:
         entity_id: automation.hue_dimmer_on_click
   mode: single
   icon: mdi:television
+dropbox_sync:
+  alias: Dropbox Sync
+  sequence:
+  - service: hassio.addon_stdin
+    data:
+      addon: 719b45ef_dropback
+      input: sync
+  mode: single
+  icon: mdi:dropbox
