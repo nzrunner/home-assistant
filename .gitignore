@@ -49,6 +49,7 @@ deps
 !entities
 !entities/**
 !includes
+!includes/**
 !old_packages
 !scenes
 !scenes/**
