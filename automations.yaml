@@ -2351,11 +2351,17 @@
   - service: script.broadcast_message
     data:
       entity_id: media_player.media_player_all
-      message: Oi, doofus, bring in your laundry!
+      message: Oi, {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, bring in your laundry!
       volume: '{{ states(''input_number.volume_default'') }}'
   - service: notify.mark_ios_devices
     data:
-      message: Oi, doofus, bring in your laundry!
+      message: Oi, {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, bring in your laundry!
       title: Laundry
       data:
         group: System
@@ -2381,15 +2387,23 @@
     data:
       entity_id: media_player.media_player_all
       message: '{% if states[''sensor.garbage_greens''].state == "tomorrow" %} {%
-        set type = "Green" %} {% endif %} Hey doofus, put the rubbish and{% if type
-        == "Green" %} garden {% else %} recycling {% endif %}bins out!'
+        set type = "Green" %} {% endif %} Hey {{ ["doofus", "moron", "idiot", "clown",
+        "goose", "jackass", "ninny", "dork", "nitwit", "turkey", "nincompoop", "knucklehead",
+        "dummy", "ding-a-ling", "dipstick", "ding-dong", "half-wit", "numbskull",
+        "fathead", "butt-head", "dumbbell", "chump", "dunce", "dodo"]|random }}, put
+        the rubbish and{% if type == "Green" %} garden {% else %} recycling {% endif
+        %}bins out!'
       volume: '{{ states(''input_number.volume_default'') }}'
   - service: notify.mobile_app_marks_iphone
     data:
       title: Rubbish
       message: '{% if states[''sensor.garbage_greens''].state == "tomorrow" %} {%
-        set type = "Green" %} {% endif %} Hey doofus, put the rubbish and{% if type
-        == "Green" %} garden {% else %} recycling {% endif %}bins out!'
+        set type = "Green" %} {% endif %} Hey {{ ["doofus", "moron", "idiot", "clown",
+        "goose", "jackass", "ninny", "dork", "nitwit", "turkey", "nincompoop", "knucklehead",
+        "dummy", "ding-a-ling", "dipstick", "ding-dong", "half-wit", "numbskull",
+        "fathead", "butt-head", "dumbbell", "chump", "dunce", "dodo"]|random }}, put
+        the rubbish and{% if type == "Green" %} garden {% else %} recycling {% endif
+        %}bins out!'
       data:
         push:
           interruption-level: time-sensitive
@@ -2417,15 +2431,23 @@
     data:
       entity_id: media_player.media_player_all
       message: '{% if states[''sensor.garbage_greens''].state == "today" %} {% set
-        type = "Green" %} {% endif %} Hey doofus, bring the rubbish and{% if type
-        == "Green" %} garden {% else %} recycling {% endif %}bins in!'
+        type = "Green" %} {% endif %} Hey {{ ["doofus", "moron", "idiot", "clown",
+        "goose", "jackass", "ninny", "dork", "nitwit", "turkey", "nincompoop", "knucklehead",
+        "dummy", "ding-a-ling", "dipstick", "ding-dong", "half-wit", "numbskull",
+        "fathead", "butt-head", "dumbbell", "chump", "dunce", "dodo"]|random }}, bring
+        the rubbish and{% if type == "Green" %} garden {% else %} recycling {% endif
+        %}bins in!'
       volume: '{{ states(''input_number.volume_default'') }}'
   - service: notify.mobile_app_marks_iphone
     data:
       title: Rubbish
       message: '{% if states[''sensor.garbage_greens''].state == "today" %} {% set
-        type = "Green" %} {% endif %} Hey doofus, bring the rubbish and{% if type
-        == "Green" %} garden {% else %} recycling {% endif %}bins in!'
+        type = "Green" %} {% endif %} Hey {{ ["doofus", "moron", "idiot", "clown",
+        "goose", "jackass", "ninny", "dork", "nitwit", "turkey", "nincompoop", "knucklehead",
+        "dummy", "ding-a-ling", "dipstick", "ding-dong", "half-wit", "numbskull",
+        "fathead", "butt-head", "dumbbell", "chump", "dunce", "dodo"]|random }}, bring
+        the rubbish and{% if type == "Green" %} garden {% else %} recycling {% endif
+        %}bins in!'
       data:
         push:
           interruption-level: time-sensitive
