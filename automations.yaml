@@ -300,7 +300,11 @@
   - service: script.broadcast_message
     data:
       entity_id: media_player.living_room_speaker
-      message: Bedtime! Get your butt up to bed.
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, it's bedtime! Get your butt
+        up to bed.
       volume: '{{ states(''input_number.volume_default'') }}'
   mode: single
 - id: '910112211'
@@ -526,8 +530,11 @@
   action:
   - service: notify.mobile_app_marks_iphone
     data:
-      message: The laundry has finished and the {{ states('sensor.washing_machine_info')
-        }}. Hang it on the line!
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, the laundry has finished
+        and the {{ states('sensor.washing_machine_info') }}. Hang it on the line!
       title: Laundry
       data:
         push:
@@ -536,8 +543,11 @@
   - service: script.broadcast_message
     data:
       entity_id: media_player.media_player_all
-      message: The laundry has finished and the {{ states('sensor.washing_machine_info')
-        }}. Hang it on the line!
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, the laundry has finished
+        and the {{ states('sensor.washing_machine_info') }}. Hang it on the line!
       volume: '{{ states(''input_number.volume_default'') }}'
   mode: single
 - id: '1642733157313'
@@ -841,7 +851,11 @@
           title: ALARM
           message: '{% set open_doors = states | selectattr(''entity_id'', ''in'',
             state_attr(''binary_sensor.door_sensors_all'',''entity_id'')) | selectattr(''state'',''in'',[''on'',''open''])
-            | map(attribute=''name'') | list %} The {{ open_doors[0] }} door is open.
+            | map(attribute=''name'') | list %} Hey {{ ["doofus", "moron", "idiot",
+            "clown", "goose", "jackass", "ninny", "dork", "nitwit", "turkey", "nincompoop",
+            "knucklehead", "dummy", "ding-a-ling", "dipstick", "ding-dong", "half-wit",
+            "numbskull", "fathead", "butt-head", "dumbbell", "chump", "dunce", "dodo"]|random
+            }}, the {{ open_doors[0] }} door is open.
 
             '
           data:
@@ -859,9 +873,12 @@
           title: ALARM
           message: '{% set open_doors = states | selectattr(''entity_id'', ''in'',
             state_attr(''binary_sensor.door_sensors_all'',''entity_id'')) | selectattr(''state'',''in'',[''on'',''open''])
-            | map(attribute=''name'') | list %} The {{ open_doors[:-1] | join('',
-            '') }}{{'','' if open_doors | length > 2 else ''''}} and {{ open_doors[-1]}}
-            doors are open.
+            | map(attribute=''name'') | list %} Hey {{ ["doofus", "moron", "idiot",
+            "clown", "goose", "jackass", "ninny", "dork", "nitwit", "turkey", "nincompoop",
+            "knucklehead", "dummy", "ding-a-ling", "dipstick", "ding-dong", "half-wit",
+            "numbskull", "fathead", "butt-head", "dumbbell", "chump", "dunce", "dodo"]|random
+            }}, the {{ open_doors[:-1] | join('', '') }}{{'','' if open_doors | length
+            > 2 else ''''}} and {{ open_doors[-1]}} doors are open.
 
             '
           data:
@@ -2529,7 +2546,11 @@
   action:
   - service: notify.mobile_app_marks_iphone
     data:
-      message: Your document has finished printing on the Brother printer.
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, your document has finished
+        printing on the Brother printer.
       title: Printing
       data:
         push:
@@ -2538,7 +2559,11 @@
   - service: script.broadcast_message
     data:
       entity_id: media_player.media_player_all
-      message: Your document has finished printing on the Brother printer.
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, your document has finished
+        printing on the Brother printer.
       volume: '{{ states(''input_number.volume_default'') }}'
   mode: single
 - id: '1678753836526'
@@ -2577,9 +2602,13 @@
   - service: notify.mobile_app_marks_iphone
     data:
       title: Bad Weather Warning
-      message: The weather is expected to be {{ states['weather.marsfield_hourly'].state
-        }} in the next hour! {% if (states['input_boolean.laundry_hung'].state) ==
-        'on' %} Check your laundry!{% endif %}
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, the weather is expected to
+        be {{ states['weather.marsfield_hourly'].state }} in the next hour! {% if
+        (states['input_boolean.laundry_hung'].state) == 'on' %} Check your laundry!{%
+        endif %}
       data:
         push:
           interruption-level: time-sensitive
@@ -2587,9 +2616,13 @@
   - service: script.broadcast_message
     data:
       entity_id: media_player.media_player_all
-      message: The weather is expected to be {{ states['weather.marsfield_hourly'].state
-        }} in the next hour! {% if (states['input_boolean.laundry_hung'].state) ==
-        'on' %} Check your laundry!{% endif %}
+      message: Hey {{ ["doofus", "moron", "idiot", "clown", "goose", "jackass", "ninny",
+        "dork", "nitwit", "turkey", "nincompoop", "knucklehead", "dummy", "ding-a-ling",
+        "dipstick", "ding-dong", "half-wit", "numbskull", "fathead", "butt-head",
+        "dumbbell", "chump", "dunce", "dodo"]|random }}, the weather is expected to
+        be {{ states['weather.marsfield_hourly'].state }} in the next hour! {% if
+        (states['input_boolean.laundry_hung'].state) == 'on' %} Check your laundry!{%
+        endif %}
       volume: '{{ states(''input_number.volume_default'') }}'
   mode: single
 - id: '1678778884106'
