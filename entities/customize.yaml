@@ -63,6 +63,11 @@ sensor.uptimekuma_lunasea:
   domain: entertainment
   icon: mdi:multimedia
 
+#################################################################################
+# DISABLED: No longer required
+# To be deleted once confirmed as not required
+#################################################################################
+
 # package.node_anchors:
 #   common: &common
 #     package: "sysmonitor"
