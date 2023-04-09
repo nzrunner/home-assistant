@@ -9,5 +9,4 @@
 #
 #################################################################################
 
-# climate: !include ../entities/climate.yaml
 climate: !include_dir_merge_list ../entities/climate

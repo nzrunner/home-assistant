@@ -18,5 +18,4 @@ frontend:
 
   # Extra Javascript module to load.
   extra_module_url:
-    # - /local/community/lovelace-card-mod/card-mod.js
     - /hacsfile/lovelace-card-mod/card-mod.js
