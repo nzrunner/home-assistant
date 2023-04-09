@@ -63,12 +63,6 @@ sensor.uptimekuma_lunasea:
   domain: entertainment
   icon: mdi:multimedia
 
-sensor.docker01_version:
-  instance_name: Docker01
-
-sensor.docker_version:
-  instance_name: Docker
-
 #################################################################################
 # DISABLED: No longer required
 # To be deleted once confirmed as not required
@@ -150,3 +144,9 @@ sensor.docker_version:
 
 # sensor.radarr_status:
 #   unit_of_measurement: ""
+
+# sensor.docker01_version:
+#   instance_name: Docker01
+
+# sensor.docker_version:
+#   instance_name: Docker

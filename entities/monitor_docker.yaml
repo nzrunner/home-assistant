@@ -12,14 +12,18 @@
 # https://github.com/ualex73/monitor_docker
 #################################################################################
 
-- name: Docker
+- name: MAT-RPI-002
   url: !secret mat_rpi_002_docker_url
   scan_interval: 45
 
-- name: Docker01
+- name: MAT-DOC-001
   url: !secret mat_doc_001_docker_url
   scan_interval: 45
 
 - name: MAT-DOC-002
   url: !secret mat_doc_002_docker_url
+  scan_interval: 45
+
+- name: MAT-DOC-003
+  url: !secret mat_doc_003_docker_url
   scan_interval: 45
