@@ -101,3 +101,43 @@
       unique_id: 6964810e-d4e8-11ed-afa1-0242ac120002
       state: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%H:%M, %A %-d %B %Y') }}"
       icon: "mdi:calendar-clock"
+
+- sensor:
+    - name: MAT-RPI-002 Info Purpose
+      state: Home Assistant
+    - name: MAT-RPI-002 Info Instance
+      state: mat-rpi-002
+    - name: MAT-RPI-002 Info IP Address
+      state: 192.168.4.48
+
+- sensor:
+    - name: MAT-DOC-001 Info Purpose
+      state: System
+    - name: MAT-DOC-001 Info Instance
+      state: mat-doc-001
+    - name: MAT-DOC-001 Info IP Address
+      state: 192.168.4.72
+
+- sensor:
+    - name: MAT-DOC-002 Info Purpose
+      state: Entertainment
+    - name: MAT-DOC-002 Info Instance
+      state: mat-doc-002
+    - name: MAT-DOC-002 Info IP Address
+      state: 192.168.4.73
+
+- sensor:
+    - name: MAT-DOC-003 Info Purpose
+      state: Database
+    - name: MAT-DOC-003 Info Instance
+      state: mat-doc-003
+    - name: MAT-DOC-003 Info IP Address
+      state: 192.168.4.99
+
+- sensor:
+    - name: MAT-NUC-001 Info Purpose
+      state: ProxMox
+    - name: MAT-NUC-001 Info Instance
+      state: mat-nuc-001
+    - name: MAT-NUC-001 Info IP Address
+      state: 192.168.4.65
