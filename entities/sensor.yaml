@@ -779,7 +779,7 @@
 # Get the latest Docker version available from Github
 #################################################################################
 - platform: command_line
-  unique_id: 2a5ec251-8933-4527-a3ea-33351869f7cc
+  unique_id: 2a5ec252-8933-4527-a3ea-33351869f7cc
   name: Docker Latest Version
   command: 'curl -sL https://api.github.com/repos/moby/moby/releases/latest | jq -r ".tag_name | sub(\"v\"; \"\")"'
   scan_interval: 86400
