@@ -584,7 +584,7 @@
 #################################################################################
 - platform: average
   unique_id: 50e956e2-d4e6-11ed-afa1-0242ac120002
-  name: "Speedtest Download Average"
+  name: Speedtest Download Average
   entities:
     - sensor.speedtest_download
   start: "{{ 0 }}"
@@ -602,7 +602,7 @@
 
 - platform: average
   unique_id: 57bd36e6-d4e6-11ed-afa1-0242ac120002
-  name: "Speedtest Upload Average"
+  name: Speedtest Upload Average
   entities:
     - sensor.speedtest_upload
   start: "{{ 0 }}"
