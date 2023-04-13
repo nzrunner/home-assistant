@@ -2210,11 +2210,11 @@
       entity_id: input_boolean.front_doorbell
   - service: media_player.play_media
     target:
-      entity_id: media_player.media_player_all
+      entity_id:
+      - media_player.media_player_all
     data:
-      media_content_id: /media/local/Westminster-chimes-doorbell.mp3
-      media_content_type: ''
-    metadata: {}
+      media_content_id: media-source://media_source/local/Westminster-chimes-doorbell.mp3
+      media_content_type: audio/mp3
   - service: notify.mark_ios_devices
     data:
       message: Someone is at the Front Door
@@ -2258,8 +2258,16 @@
       entity_id: media_player.media_player_all
     data:
       media_content_id: media-source://media_source/local/Ding-dong-sound-effect.mp3
-      media_content_type: ''
-    metadata: {}
+      media_content_type: audio/mpeg
+    metadata:
+      title: Ding-dong-sound-effect.mp3
+      thumbnail:
+      media_class: music
+      children_media_class:
+      navigateIds:
+      - {}
+      - media_content_type: app
+        media_content_id: media-source://media_source
   - service: notify.mark_ios_devices
     data:
       message: Someone is at the Kitchen Door
