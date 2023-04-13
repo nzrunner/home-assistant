@@ -104,40 +104,73 @@
 
 - sensor:
     - name: MAT-RPI-002 Info Purpose
+      unique_id: c50bf945-56aa-45dd-825b-22f031ae007e
       state: Home Assistant
     - name: MAT-RPI-002 Info Instance
+      unique_id: 0b817ccc-503f-4d75-8372-b576f5944366
       state: mat-rpi-002
     - name: MAT-RPI-002 Info IP Address
+      unique_id: bd601a43-aba6-46a0-8059-e33b4657577c
       state: 192.168.4.48
 
 - sensor:
     - name: MAT-DOC-001 Info Purpose
+      unique_id: 57bbc1cf-57cd-4896-b72d-0e551f82afbd
       state: System
     - name: MAT-DOC-001 Info Instance
+      unique_id: 20d162f5-7c30-4a2b-b842-cdea57449ce2
       state: mat-doc-001
     - name: MAT-DOC-001 Info IP Address
+      unique_id: cfca307f-1c33-446a-8c43-f6c9df5e3edc
       state: 192.168.4.72
 
 - sensor:
     - name: MAT-DOC-002 Info Purpose
+      unique_id: 98342dc9-3f22-4f24-8cef-db5150ee870f
       state: Entertainment
     - name: MAT-DOC-002 Info Instance
+      unique_id: 8470dd99-4d15-4a3f-8a1c-7df92533e852
       state: mat-doc-002
     - name: MAT-DOC-002 Info IP Address
+      unique_id: 80735ebf-de54-4f7c-a348-04a1c1847931
       state: 192.168.4.73
 
 - sensor:
     - name: MAT-DOC-003 Info Purpose
+      unique_id: 53e39055-3c58-4d0d-acec-bca9268512af
       state: Database
     - name: MAT-DOC-003 Info Instance
+      unique_id: a06f71e9-8394-4195-8234-06ccc4a5a9d3
       state: mat-doc-003
     - name: MAT-DOC-003 Info IP Address
+      unique_id: 3fca8c5c-b40a-4c7d-9234-8d27cce177a2
       state: 192.168.4.99
 
 - sensor:
     - name: MAT-NUC-001 Info Purpose
+      unique_id: 216da92e-70a5-4000-98c7-bc3a8be7c43c
       state: ProxMox
     - name: MAT-NUC-001 Info Instance
+      unique_id: 121e514e-21ff-4b3a-920d-19f1db3ea557
       state: mat-nuc-001
     - name: MAT-NUC-001 Info IP Address
+      unique_id: c2bd3410-0841-4e72-b67a-bf58c2ccfa92
       state: 192.168.4.65
+
+- sensor:
+    - name: MAT-RPI-002 Up-To-Date
+      unique_id: 160a2d9c-2cc7-4475-9698-eae6660803f5
+      state: >
+        {{ states('sensor.mat_rpi_002_version') == states('sensor.docker_latest_version') }}
+    - name: MAT-DOC-001 Up-To-Date
+      unique_id: f903ae25-6c5d-4296-9214-8ad662c317da
+      state: >
+        {{ states('sensor.mat_doc_001_version') == states('sensor.docker_latest_version') }}
+    - name: MAT-DOC-002 Up-To-Date
+      unique_id: 5aefe75e-bb59-4516-96ad-e9452b0f70e3
+      state: >
+        {{ states('sensor.mat_doc_002_version') == states('sensor.docker_latest_version') }}
+    - name: MAT-DOC-003 Up-To-Date
+      unique_id: fbd2812f-9608-416f-9456-bd205a3d86e6
+      state: >
+        {{ states('sensor.mat_doc_003_version') == states('sensor.docker_latest_version') }}
