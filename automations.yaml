@@ -295,7 +295,7 @@
   - scene: scene.master_bedroom_dimmed
   - service: scene.turn_on
     target:
-      entity_id: scene.living_room_moonlight
+      entity_id: scene.living_room_dimmed
     metadata: {}
   - service: script.broadcast_message
     data:
@@ -485,7 +485,6 @@
       data: {}
       target:
         entity_id:
-        - switch.plug_2_on_off
         - switch.plug_3_on_off
   - service: homeassistant.turn_on
     data: {}
@@ -669,14 +668,14 @@
         entity_id: media_player.master_bedroom_speaker
         message: Good morning {% set people = state_attr('zone.home', 'persons') %}
           {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
-          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M')
-          }}.
+          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M,
+          %A %d %B %Y') }}.
         volume: '{{ states(''input_number.volume_default'') }}'
     else:
     - service: script.broadcast_message
       data:
         entity_id: media_player.master_bedroom_speaker
-        message: Good morning. It's {{ now().strftime('%H:%M') }}.
+        message: Good morning. It's {{ now().strftime('%H:%M, %A %d %B %Y') }}.
         volume: '{{ states(''input_number.volume_default'') }}'
   - service: input_boolean.turn_off
     data: {}
