@@ -668,14 +668,17 @@
         entity_id: media_player.master_bedroom_speaker
         message: Good morning {% set people = state_attr('zone.home', 'persons') %}
           {% set peoplestr = state_attr(people[0], "friendly_name") %} {% set list1
-          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M,
-          %A %d %B %Y') }}.
+          = peoplestr.split(' ') %} {{ list1[0] }}. It's {{ now().strftime('%H:%M')
+          }}. {{ ["Happy", "Let's attack", "Welcome to", "Get up and embrace", "Have
+          a great"]|random }} {{ now().strftime('%A') }}.
         volume: '{{ states(''input_number.volume_default'') }}'
     else:
     - service: script.broadcast_message
       data:
         entity_id: media_player.master_bedroom_speaker
-        message: Good morning. It's {{ now().strftime('%H:%M, %A %d %B %Y') }}.
+        message: Good morning. It's {{ now().strftime('%H:%M') }}. {{ ["Happy", "Let's
+          attack", "Welcome to", "Get up and embrace", "Have a great"]|random }} {{
+          now().strftime('%A') }}.
         volume: '{{ states(''input_number.volume_default'') }}'
   - service: input_boolean.turn_off
     data: {}
