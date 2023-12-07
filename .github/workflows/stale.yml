@@ -16,7 +16,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/stale@v8
+    - uses: actions/stale@v9
       with:
         # Changed from secrets.GITHUB_TOKEN to see if the commit is verified
         repo-token: ${{ secrets.ACCESS_TOKEN }}
