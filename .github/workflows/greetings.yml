@@ -16,7 +16,7 @@ jobs:
         repo-token: ${{ secrets.ACCESS_TOKEN }}
         issue-message: "Gidday @${{ github.actor }}, thank you for submitting your first issue!"
         pr-message: "Gidday @${{ github.actor }}, thank you for submitting your first pull request!"
-    - uses: Code-Hex/first-label-interaction@v1.0.1
+    - uses: Code-Hex/first-label-interaction@v1.0.3
       with:
         # Changed from secrets.GITHUB_TOKEN to see if the commit is verified
         github-token: ${{ secrets.ACCESS_TOKEN }}
