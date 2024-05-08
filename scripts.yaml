@@ -11,12 +11,6 @@ broadcast_message:
       volume_level: '{{ volume }}'
   mode: single
   icon: hass:speaker
-update_speedtestnet:
-  alias: Update SpeedtestNet info
-  sequence:
-  - service: speedtestdotnet.speedtest
-  mode: single
-  icon: mdi:update
 check_config:
   alias: Check Configuration
   sequence: []
@@ -27,9 +21,10 @@ alarm_away:
   sequence:
   - service: automation.trigger
     data:
-      skip_condition: true
+      skip_condition: false
     target:
       entity_id: automation.check_all_doors
+    enabled: true
   - service: light.turn_off
     data: {}
     target:
@@ -38,26 +33,30 @@ alarm_away:
     device_id: 2e53d475d3d4aff442d2df10d6f77b24
     entity_id: switch.monitors
     domain: switch
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.plug_2_on_off
+      - switch.plug_3_on_off
   - service: remote.turn_off
     data: {}
     target:
       entity_id: remote.sony_bravia_tv
   - if:
     - condition: state
-      entity_id: input_boolean.use_heaters
-      state: 'on'
+      entity_id: input_select.air_conditioning_mode
+      state: Winter
     then:
-    - service: switch.turn_off
-      data: {}
+    - service: climate.set_preset_mode
+      data:
+        preset_mode: away
       target:
         entity_id:
         - climate.bedroom_heater_controller
         - climate.living_room_heater_controller
-  - if:
-    - condition: state
-      entity_id: input_boolean.use_fans
-      state: 'on'
-    then:
+        - climate.computer_fan_controller
+    else:
     - service: switch.turn_off
       data: {}
       target:
@@ -89,15 +88,62 @@ alarm_away:
 alarm_night:
   alias: Alarm - Night
   sequence:
+  - service: cover.close_cover
+    data: {}
+    target:
+      entity_id: cover.lumi_lumi_curtain_acn002_cover
+  - service: automation.trigger
+    data:
+      skip_condition: false
+    target:
+      entity_id: automation.check_all_doors
   - service: input_boolean.turn_on
     data: {}
     target:
       entity_id: input_boolean.gone_to_bed
-  - service: automation.trigger
-    data:
-      skip_condition: true
+  - service: light.turn_off
+    data: {}
     target:
-      entity_id: automation.check_all_doors
+      entity_id: light.lights_all
+  - type: turn_off
+    device_id: 2e53d475d3d4aff442d2df10d6f77b24
+    entity_id: switch.monitors
+    domain: switch
+  - if:
+    - condition: state
+      entity_id: input_select.air_conditioning_mode
+      state: Winter
+    then:
+    - service: climate.set_preset_mode
+      data:
+        preset_mode: sleep
+      target:
+        entity_id:
+        - climate.bedroom_heater_controller
+        - climate.living_room_heater_controller
+        - climate.computer_fan_controller
+    else:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id:
+        - switch.plug_2_on_off
+        - switch.plug_3_on_off
+  - service: remote.turn_off
+    data: {}
+    target:
+      entity_id: remote.sony_bravia_tv
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.washing_machine_on_off
+      - switch.plug_3
+      - switch.plug_2
+  - service: alarm_control_panel.alarm_arm_night
+    data: {}
+    target:
+      entity_id: alarm_control_panel.home_alarm
   - service: homeassistant.turn_on
     data: {}
     target:
@@ -107,44 +153,6 @@ alarm_night:
       - group.motion_notify_outside
       - automation.office_notify
     enabled: false
-  - service: light.turn_off
-    data: {}
-    target:
-      entity_id: light.lights_all
-  - type: turn_off
-    device_id: 2e53d475d3d4aff442d2df10d6f77b24
-    entity_id: switch.monitors
-    domain: switch
-  - service: remote.turn_off
-    data: {}
-    target:
-      entity_id: remote.sony_bravia_tv
-  - if:
-    - condition: state
-      entity_id: input_boolean.use_heaters
-      state: 'on'
-    then:
-    - service: switch.turn_off
-      data: {}
-      target:
-        entity_id:
-        - climate.bedroom_heater_controller
-        - climate.living_room_heater_controller
-  - if:
-    - condition: state
-      entity_id: input_boolean.use_fans
-      state: 'on'
-    then:
-    - service: switch.turn_off
-      data: {}
-      target:
-        entity_id:
-        - switch.plug_2_on_off
-        - switch.plug_3_on_off
-  - service: alarm_control_panel.alarm_arm_night
-    data: {}
-    target:
-      entity_id: alarm_control_panel.home_alarm
   - service: notify.mark_ios_devices
     data:
       title: ALARM
@@ -244,20 +252,18 @@ alarm_disarm:
       - switch.mat_nas_001_surveillance_station_home_mode
   - if:
     - condition: state
-      entity_id: input_boolean.use_heaters
-      state: 'on'
+      entity_id: input_select.air_conditioning_mode
+      state: Winter
     then:
-    - service: switch.turn_on
-      data: {}
+    - service: climate.set_preset_mode
+      data:
+        preset_mode: home
       target:
         entity_id:
         - climate.bedroom_heater_controller
         - climate.living_room_heater_controller
-  - if:
-    - condition: state
-      entity_id: input_boolean.use_fans
-      state: 'on'
-    then:
+        - climate.computer_fan_controller
+    else:
     - service: switch.turn_on
       data: {}
       target:
@@ -286,8 +292,14 @@ intruder_alert:
   - service: script.broadcast_message
     data:
       entity_id: media_player.media_player_all
-      message: INTRUDER ALERT! INTRUDER ALERT! INTRUDER ALERT!
+      message: INTRUDER! INTRUDER! INTRUDER!
       volume: '{{ states(''input_number.intruder_volume'') }}'
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+    enabled: true
   mode: single
   icon: mdi:alarm-light
 tv_mode:
