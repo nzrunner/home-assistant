@@ -32,7 +32,6 @@ door_notify_outside:
   name: Door - Notify - Outside
   icon: mdi:bell
   entities:
-    - automation.carport_door_notify
     - automation.front_gate_notify
 
 all_door_notifications:
@@ -44,6 +43,5 @@ all_door_notifications:
     - automation.side_sliding_door_notify
     - automation.kitchen_door_notify
     - automation.computer_cabinet_door_notify
-    - automation.carport_door_notify
     - automation.fridge_door_notify
     - automation.front_gate_notify

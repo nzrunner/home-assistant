@@ -18,3 +18,4 @@ security_cameras:
   entities:
     - camera.mat_nas_002_living_room
     - camera.mat_nas_002_courtyard_2
+    - camera.mat_nas_001_unv_ipc3615er3

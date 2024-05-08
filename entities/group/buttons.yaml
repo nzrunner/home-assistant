@@ -16,6 +16,13 @@ buttons:
   name: Buttons
   icon: mdi:button-pointer
   entities:
-    - sensor.desktop_button_battery_2
+    - sensor.rubbish_button_battery
     - sensor.lumi_lumi_remote_b1acn01_battery
     - sensor.laundry_button_battery
+
+asleep:
+  name: Asleep
+  icon: mdi:sleep
+  entities:
+    - input_boolean.gone_to_bed
+    - input_boolean.napping

@@ -23,7 +23,6 @@ motion_notify_upstairs:
   name: Motion - Notify - Upstairs
   icon: mdi:bell
   entities:
-    - automation.upstairs_notify
     - automation.office_notify
     - automation.bedroom_motion_notify
     - automation.toilet_motion_notify
@@ -38,7 +37,6 @@ all_motion_notifications:
   name: Motion - Notify - All
   icon: mdi:bell
   entities:
-    - automation.upstairs_notify
     - automation.office_notify
     - automation.living_room_notify
     - automation.carport_motion_notify
