@@ -16,12 +16,12 @@
   unique_id: 528f5ec6-d4ee-11ed-afa1-0242ac120002
   name: Computer Fan Controller
   heater: switch.plug_5_on_off
-  target_sensor: sensor.average_rpi_temperature
+  target_sensor: sensor.processor_temperature
   min_temp: 25
   max_temp: 90
   target_temp: 50
   ac_mode: true
-  cold_tolerance: 5
+  cold_tolerance: 3
   hot_tolerance: 5
   precision: 0.1
   min_cycle_duration:
@@ -29,3 +29,7 @@
   initial_hvac_mode: "cool"
   away_temp: 5
   home_temp: 50
+  sleep_temp: 40
+  # UNUSED: Preset modes
+  # comfort_temp: 18
+  # activity_temp: 18.5

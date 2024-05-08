@@ -13,23 +13,23 @@
 #################################################################################
 
 - platform: generic_thermostat
-  unique_id: 4431482a-b804-40a6-80d1-e75a54e05844
-  name: Living Room Heater Controller
+  unique_id: 59277d54-197e-4ba9-ad3e-1e80e448912b
+  name: Living Room Fan Controller
   heater: switch.plug_3_on_off
   target_sensor: sensor.living_room_motion_temperature
   min_temp: 5
-  max_temp: 30
-  target_temp: 17
-  ac_mode: false
+  max_temp: 40
+  target_temp: 24
+  ac_mode: true
   cold_tolerance: 0.2
   hot_tolerance: 0.2
   precision: 0.1
   min_cycle_duration:
     seconds: 30
-  initial_hvac_mode: "heat"
-  away_temp: 5
-  home_temp: 17
-  sleep_temp: 10
+  initial_hvac_mode: "cool"
+  away_temp: 40
+  home_temp: 24
+  sleep_temp: 30
   comfort_temp: 20
   # UNUSED: Preset modes
   # activity_temp: 18.5

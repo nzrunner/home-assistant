@@ -13,23 +13,23 @@
 #################################################################################
 
 - platform: generic_thermostat
-  unique_id: 94991c44-d4ee-11ed-afa1-0242ac120002
-  name: Bedroom Heater Controller
+  unique_id: aefb0789-0090-4442-8f9d-a6baf62b31c4
+  name: Bedroom Fan Controller
   heater: switch.plug_2_on_off
   target_sensor: sensor.bedroom_temperature
   min_temp: 5
-  max_temp: 30
-  target_temp: 17
-  ac_mode: false
+  max_temp: 40
+  target_temp: 24
+  ac_mode: true
   cold_tolerance: 0.2
   hot_tolerance: 0.2
   precision: 0.1
   min_cycle_duration:
     seconds: 30
-  initial_hvac_mode: "heat"
-  away_temp: 5
-  home_temp: 17
-  sleep_temp: 10
+  initial_hvac_mode: "cool"
+  away_temp: 40
+  home_temp: 24
+  sleep_temp: 30
   comfort_temp: 20
   # UNUSED: Preset modes
   # activity_temp: 18.5
