@@ -1,0 +1,4 @@
+logbook:
+  include:
+    domains:
+      - input_number

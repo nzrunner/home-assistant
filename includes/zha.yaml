@@ -14,4 +14,4 @@ zha:
     unique_id: 0b4344fa-d4ef-11ed-afa1-0242ac120002
     ota:
       otau_directory: /config/zigpy_ota
-      ikea_provider: true  # Auto update Trådfri devices
+      ikea_provider: true

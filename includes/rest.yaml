@@ -1,0 +1,19 @@
+rest:
+  resource_template: "https://mealie.marathonsoftware.au/api/groups/mealplans?start_date={{(now()).strftime('%Y-%m-%d')}}&end_date={{(now()).strftime('%Y-%m-%d')}}&queryFilter=entryType%3Ddinner"
+  method: GET
+  scan_interval: 60
+  headers:
+    Authorization: !secret mealie_api_token
+  sensor:
+    - name: "Today's Dinner"
+      unique_id: "mealie_dinner_today"
+      value_template: '{{ value_json["items"][0].recipe.name }}'
+    - name: "Today's Dinner Description"
+      unique_id: "mealie_dinner_today_desc"
+      value_template: '{{ value_json["items"][0].recipe.description }}'
+    - name: "Today's Dinner Slug"
+      unique_id: "mealie_dinner_today_slug"
+      value_template: '{{ value_json["items"][0].recipe.slug }}'
+    - name: "Today's Dinner ID"
+      unique_id: "mealie_dinner_today_id"
+      value_template: '{{ value_json["items"][0].recipe.id }}'

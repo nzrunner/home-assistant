@@ -17,18 +17,15 @@ recorder:
   purge_keep_days: 14
   auto_repack: true
   auto_purge: true
+  commit_interval: 10
   exclude:
     domains:
       - automation
       - update
     entity_globs:
-      - weather.marsfield*
-      - sensor.sydney_olympic_park*
-      - sensor.marsfield*
       - sensor.washing_machine*
     entities:
-      - sun.sun  # Don't record sun data
-      - sensor.last_boot  # Comes from 'systemmonitor' sensor platform
+      - sensor.last_boot
       - sensor.date
     event_types:
-      - call_service  # Don't record service calls
+      - call_service
