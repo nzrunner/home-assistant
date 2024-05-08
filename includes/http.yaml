@@ -21,10 +21,17 @@ http:
     - !secret reverse_proxy  # Reverse Proxy
     - !secret iotstack_lan  # IOTStack LAN
     - !secret iotstack_internal_lan  # IOTStack Internal Lan
+    - 192.168.4.0/24
+
+  cors_allowed_origins:
+    - readarr.marathonsoftware.com.au
+    - readarr.marathonsoftware.au
+    - lidarr.marathonsoftware.com.au
+    - lidarr.marathonsoftware.au
 
   ## Required for reverse proxy
   use_x_forwarded_for: true
 
   ## Included for better security
-  # ip_ban_enabled: true
-  # login_attempts_threshold: 10
+  ip_ban_enabled: true
+  login_attempts_threshold: 10
