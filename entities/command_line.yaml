@@ -1,0 +1,40 @@
+#################################################################################
+# Zigbee Controller is present/missing
+#################################################################################
+- binary_sensor:
+    unique_id: 3e7ffd69-a614-435c-bdb4-4e86ea07849f
+    name: Zigbee Controller
+    command: "test -e /dev/ttyACM0 && echo 'Exists' || echo 'Missing'"
+    payload_on: "Exists"
+    payload_off: "Missing"
+    scan_interval: 60
+    device_class: connectivity
+
+#################################################################################
+# Most recent backup
+#################################################################################
+- sensor:
+    unique_id: 48b088fe-7ed0-48de-af3b-a7c0adfdde90
+    name: Most Recent Backup
+    command: "ha backups list --raw-json | jq '.data.backups | sort_by(.date) | .[-1].name'"
+    scan_interval: 60
+
+#################################################################################
+# Get the latest Docker version available from Github
+#################################################################################
+- sensor:
+    unique_id: 99dc0206-f746-40c4-b51d-fd7bad96a873
+    name: Docker Latest Version
+    command: 'curl -sL https://api.github.com/repos/moby/moby/releases/latest | jq -r ".tag_name | sub(\"v\"; \"\")"'
+    scan_interval: 86400
+
+#################################################################################
+# Host RPi CPU Temperature
+#################################################################################
+- sensor:
+    unique_id: 4408b426-d4ec-11ed-afa1-0242ac120002
+    name: CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    # If errors occur, make sure configuration file is encoded as UTF-8
+    unit_of_measurement: "°C"
+    value_template: "{{ value | multiply(0.001) | round(1) }}"

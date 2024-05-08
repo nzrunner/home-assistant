@@ -14,18 +14,15 @@
 
 - name: MAT-RPI-002
   url: !secret mat_rpi_002_docker_url
-  scan_interval: 45
-  containers_exclude:
-    - hub-agent
 
 - name: MAT-DOC-001
   url: !secret mat_doc_001_docker_url
-  scan_interval: 45
 
 - name: MAT-DOC-002
   url: !secret mat_doc_002_docker_url
-  scan_interval: 45
 
 - name: MAT-DOC-003
   url: !secret mat_doc_003_docker_url
-  scan_interval: 45
+
+- name: MAT-DOC-004
+  url: !secret mat_doc_004_docker_url

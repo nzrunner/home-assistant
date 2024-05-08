@@ -10,6 +10,7 @@
 #################################################################################
 
 - sensor:
+    # Ubiquiti Upstairs Access Point
     - name: "MAT-AP-001"
       unique_id: 540aff2c-d4e8-11ed-afa1-0242ac120002
       icon: phu:ubiquiti-ap
@@ -20,7 +21,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Ubiquiti Downstairs Access Point
     - name: "MAT-AP-002"
       unique_id: 4421e5d0-d4e8-11ed-afa1-0242ac120002
       icon: phu:ubiquiti-ap
@@ -31,7 +32,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Ubiquiti Primary Switch
     - name: "MAT-SW-001"
       unique_id: 38d9c832-d4e8-11ed-afa1-0242ac120002
       icon: phu:ubiquiti-logo
@@ -42,7 +43,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Ubiquiti Entertainment Switch
     - name: "MAT-SW-002"
       unique_id: 31146df0-d4e8-11ed-afa1-0242ac120002
       icon: phu:ubiquiti-logo
@@ -53,7 +54,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Ubiquiti RPi Switch
     - name: "MAT-SW-003"
       unique_id: 28aa38e8-d4e8-11ed-afa1-0242ac120002
       icon: phu:ubiquiti-logo
@@ -64,7 +65,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Ubiquiti Cloud Key
     - name: "Cloud Key"
       unique_id: 9aa6b3a0-d4e7-11ed-afa1-0242ac120002
       icon: phu:ubiquiti
@@ -75,7 +76,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Ubiquiti USG 3 Router
     - name: "MAT-RT-001"
       unique_id: a0c5913e-d4e7-11ed-afa1-0242ac120002
       icon: phu:ubiquiti-usg-p3
@@ -86,7 +87,7 @@
           Offline
         {% endif %}
 
-- sensor:
+    # Philips Hue Bridge
     - name: "Philips Hue"
       unique_id: 5b854474-d4e8-11ed-afa1-0242ac120002
       state: >
@@ -96,13 +97,18 @@
           Offline
         {% endif %}
 
-- sensor:
-    - name: "Date and time"
-      unique_id: 6964810e-d4e8-11ed-afa1-0242ac120002
-      state: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%H:%M, %A %-d %B %Y') }}"
-      icon: "mdi:calendar-clock"
+    # Plex Status
+    - name: "Plex Status"
+      unique_id: 92656df2-ffa8-47ce-97b1-30fe92e0c8d7
+      icon: mdi:plex
+      state: >
+        {% if is_state('update.plex_media_server_mat_nas_002', 'unknown') %}
+          Up-To-Date
+        {% else %}
+          {{ states('update.plex_media_server_mat_nas_002') }}
+        {% endif %}
 
-- sensor:
+    # MAT-RPI-002 Additional Data
     - name: MAT-RPI-002 Info Purpose
       unique_id: c50bf945-56aa-45dd-825b-22f031ae007e
       state: Home Assistant
@@ -112,8 +118,12 @@
     - name: MAT-RPI-002 Info IP Address
       unique_id: bd601a43-aba6-46a0-8059-e33b4657577c
       state: 192.168.4.48
+    - name: MAT-RPI-002 Up-To-Date
+      unique_id: 160a2d9c-2cc7-4475-9698-eae6660803f5
+      state: >
+        {{ states('sensor.mat_rpi_002_version') == states('sensor.docker_latest_version') }}
 
-- sensor:
+    # MAT-DOC-001 Additional Data
     - name: MAT-DOC-001 Info Purpose
       unique_id: 57bbc1cf-57cd-4896-b72d-0e551f82afbd
       state: System
@@ -123,8 +133,12 @@
     - name: MAT-DOC-001 Info IP Address
       unique_id: cfca307f-1c33-446a-8c43-f6c9df5e3edc
       state: 192.168.4.72
+    - name: MAT-DOC-001 Up-To-Date
+      unique_id: f903ae25-6c5d-4296-9214-8ad662c317da
+      state: >
+        {{ states('sensor.mat_doc_001_version') == states('sensor.docker_latest_version') }}
 
-- sensor:
+    # MAT-DOC-002 Additional Data
     - name: MAT-DOC-002 Info Purpose
       unique_id: 98342dc9-3f22-4f24-8cef-db5150ee870f
       state: Entertainment
@@ -134,8 +148,12 @@
     - name: MAT-DOC-002 Info IP Address
       unique_id: 80735ebf-de54-4f7c-a348-04a1c1847931
       state: 192.168.4.73
+    - name: MAT-DOC-002 Up-To-Date
+      unique_id: 5aefe75e-bb59-4516-96ad-e9452b0f70e3
+      state: >
+        {{ states('sensor.mat_doc_002_version') == states('sensor.docker_latest_version') }}
 
-- sensor:
+    # MAT-DOC-003 Additional Data
     - name: MAT-DOC-003 Info Purpose
       unique_id: 53e39055-3c58-4d0d-acec-bca9268512af
       state: Database
@@ -145,8 +163,27 @@
     - name: MAT-DOC-003 Info IP Address
       unique_id: 3fca8c5c-b40a-4c7d-9234-8d27cce177a2
       state: 192.168.4.99
+    - name: MAT-DOC-003 Up-To-Date
+      unique_id: fbd2812f-9608-416f-9456-bd205a3d86e6
+      state: >
+        {{ states('sensor.mat_doc_003_version') == states('sensor.docker_latest_version') }}
 
-- sensor:
+    # MAT-DOC-004 Additional Data
+    - name: MAT-DOC-004 Info Purpose
+      unique_id: aec3ce4b-0332-4b1e-9b1b-0761f39ec979
+      state: Elastic Stack
+    - name: MAT-DOC-004 Info Instance
+      unique_id: 7dc3f1fc-b818-41e6-b95f-c0c576d7d49b
+      state: mat-doc-004
+    - name: MAT-DOC-004 Info IP Address
+      unique_id: 002e1a71-6ef4-4b51-bdb8-6ce15af43c88
+      state: 192.168.4.74
+    - name: MAT-DOC-004 Up-To-Date
+      unique_id: bf62fec7-4101-4b29-afe0-6dcbb6f1c153
+      state: >
+        {{ states('sensor.mat_doc_004_version') == states('sensor.docker_latest_version') }}
+
+    # MAT-NUC-001 Additioanal Data
     - name: MAT-NUC-001 Info Purpose
       unique_id: 216da92e-70a5-4000-98c7-bc3a8be7c43c
       state: ProxMox
@@ -157,20 +194,158 @@
       unique_id: c2bd3410-0841-4e72-b67a-bf58c2ccfa92
       state: 192.168.4.65
 
-- sensor:
-    - name: MAT-RPI-002 Up-To-Date
-      unique_id: 160a2d9c-2cc7-4475-9698-eae6660803f5
+    # Waste Bin Due Dates
+    # Rubbish Bin
+    - name: Rubbish Bin
+      unique_id: 244d7bd4-775f-4e70-807d-c9b35f38dc76
+      icon: mdi:trash-can
       state: >
-        {{ states('sensor.mat_rpi_002_version') == states('sensor.docker_latest_version') }}
-    - name: MAT-DOC-001 Up-To-Date
-      unique_id: f903ae25-6c5d-4296-9214-8ad662c317da
+        {% set t = now() %}
+        {% set midnight = today_at() %}
+        {% set event = state_attr('calendar.rubbish_collection', 'start_time') | as_datetime | as_local %}
+        {% set delta = event - midnight %}
+        {% set values = {0: 'today', 1:'tomorrow', 2:'day after tomorrow'} %}
+        {{ values.get(delta.days, 'in %s days'%delta.days) }}
+    # Recycling Bin
+    - name: Recycling Bin
+      unique_id: 88b286c7-0b05-4542-ab45-0ce56f8aad8d
+      icon: mdi:recycle
       state: >
-        {{ states('sensor.mat_doc_001_version') == states('sensor.docker_latest_version') }}
-    - name: MAT-DOC-002 Up-To-Date
-      unique_id: 5aefe75e-bb59-4516-96ad-e9452b0f70e3
+        {% set t = now() %}
+        {% set midnight = today_at() %}
+        {% set event = state_attr('calendar.recycling_collection', 'start_time') | as_datetime | as_local %}
+        {% set delta = event - midnight %}
+        {% set values = {0: 'today', 1:'tomorrow', 2:'day after tomorrow'} %}
+        {{ values.get(delta.days, 'in %s days'%delta.days) }}
+    # Greens Bin
+    - name: Greens Bin
+      unique_id: c4c43527-0cbf-4e60-b4ce-f75bebde2d76
+      icon: mdi:recycle-variant
       state: >
-        {{ states('sensor.mat_doc_002_version') == states('sensor.docker_latest_version') }}
-    - name: MAT-DOC-003 Up-To-Date
-      unique_id: fbd2812f-9608-416f-9456-bd205a3d86e6
+        {% set t = now() %}
+        {% set midnight = today_at() %}
+        {% set event = state_attr('calendar.greens_collection', 'start_time') | as_datetime | as_local %}
+        {% set delta = event - midnight %}
+        {% set values = {0: 'today', 1:'tomorrow', 2:'day after tomorrow'} %}
+        {{ values.get(delta.days, 'in %s days'%delta.days) }}
+    # Hard Rubbish
+    - name: Hard Rubbish
+      unique_id: 6b7e6c5d-7e5d-4397-84df-2803d5271101
+      icon: mdi:trash-can-outline
       state: >
-        {{ states('sensor.mat_doc_003_version') == states('sensor.docker_latest_version') }}
+        {% set t = now() %}
+        {% set midnight = today_at() %}
+        {% set event = state_attr('calendar.hard_rubbish_collection', 'start_time') | as_datetime | as_local %}
+        {% set delta = event - midnight %}
+        {% set values = {0: 'today', 1:'tomorrow', 2:'day after tomorrow'} %}
+        {{ values.get(delta.days, 'in %s days'%delta.days) }}
+
+    # Number of Doors Open
+    - name: Number of Doors Open
+      unique_id: 490bc102-0a40-4542-8e81-6b0f8cdbd5e4
+      icon: mdi:door-open
+      state_class: total
+      state: >
+        {%- set ns = namespace(doorsensors=[]) -%}
+        {%- set ns.doorsensors = states.binary_sensor
+                  | selectattr('attributes.device_class', 'defined')
+                  | selectattr('attributes.device_class', '==', 'door')
+                  | rejectattr('attributes.friendly_name', 'in', 'Fridge')
+                  | rejectattr('attributes.friendly_name', 'in', 'Computer Cabinet')
+                  | selectattr('state', 'eq', 'on')
+                  | map(attribute='name') | list -%}
+        {{ ns.doorsensors | count }}
+
+    # Names of Doors Open
+    - name: What Doors are Open
+      unique_id: 93fe5f9f-ab01-439d-8cf5-04f54514a10f
+      icon: mdi:door-open
+      state: >
+        {%- set ns = namespace(doorsensors=[]) -%}
+        {%- set ns.doorsensors = states.binary_sensor
+                  | selectattr('attributes.device_class', 'defined')
+                  | selectattr('attributes.device_class', '==', 'door')
+                  | rejectattr('attributes.friendly_name', 'in', 'Fridge')
+                  | rejectattr('attributes.friendly_name', 'in', 'Computer Cabinet')
+                  | selectattr('state', 'eq', 'on')
+                  | map(attribute='name') | list -%}
+        {%- if (ns.doorsensors | count > 0) -%}
+          {{ ns.doorsensors | list | join(', ') }}
+        {%- else -%}
+          unavailable
+        {%- endif -%}
+
+    # Number of Motion Sensors Active
+    - name: Number of Motion Sensors Active
+      unique_id: ccdf0f66-ab38-47cc-b579-0c224fc7c568
+      icon: mdi:motion-sensor
+      state_class: total
+      state: >
+        {%- set ns = namespace(motionsensors=[]) -%}
+        {%- set ns.motionsensors = states.binary_sensor
+                  | selectattr('attributes.device_class', 'defined')
+                  | selectattr('attributes.device_class', '==', 'motion')
+                  | rejectattr('attributes.type', '==', 'browser_mod')
+                  | selectattr('state', 'eq', 'on')
+                  | map(attribute='name') | list -%}
+        {{ ns.motionsensors | count }}
+
+    # Names of Motion Sensors Active
+    - name: What Motion Sensors are Active
+      unique_id: 64f456af-3bf7-4367-9a38-56c57b832dd8
+      icon: mdi:motion-sensor
+      state: >
+        {%- set ns = namespace(motionsensors=[]) -%}
+        {%- set ns.motionsensors = states.binary_sensor
+                  | selectattr('attributes.device_class', 'defined')
+                  | selectattr('attributes.device_class', '==', 'motion')
+                  | rejectattr('attributes.type', '==', 'browser_mod')
+                  | selectattr('state', 'eq', 'on')
+                  | map(attribute='name') | list -%}
+        {%- if (ns.motionsensors | count > 0) -%}
+          {{ ns.motionsensors | list | join(', ') }}
+        {%- else -%}
+          unavailable
+        {%- endif -%}
+
+    # Awake not Napping
+    - name: Awake not Napping
+      unique_id: c3ce9c23-a4c1-4658-9897-dd3d78ba0ac5
+      icon: mdi:sleep-off
+      state: >
+        {{ states('sensor.time_out_of_bed') | float - states('sensor.time_napping') | float }}
+
+    # Total Zone Time
+    - name: Total Zone Time
+      unique_id: d8086e48-f0f0-4891-864e-bcf1ac2812ad
+      icon: mdi:sigma
+      state: >
+        {{ states('sensor.home_occupancy') | float +
+          states('sensor.away_occupancy') | float +
+          states('sensor.rnk_espresso_occupancy') | float +
+          states('sensor.zig_zag_occupancy') | float +
+          states('sensor.woolies_occupancy') | float +
+          states('sensor.dan_murphys_occupancy') | float +
+          states('sensor.macquarie_centre_occupancy') | float +
+          states('sensor.coles_occupancy') | float +
+          states('sensor.springbok_delights_occupancy') | float +
+          states('sensor.kaos_s_place_occupancy') | float +
+          states('sensor.sop_occupancy') | float
+        }}
+
+    # Total State Time
+    - name: Total Awake/Sleep Time
+      unique_id: 7c3a6c47-92b5-4204-973a-2c07dd035103
+      icon: mdi:sleep-off
+      state: >
+        {{ states('sensor.time_in_bed') | float +
+            states('sensor.awake_not_napping') | float +
+            states('sensor.time_napping') | float
+        }}
+
+    # Blind close
+    - name: Blinds Close
+      unique_id: be96c1d1-12c6-4a48-8ead-7e23138673cf
+      icon: mdi:blinds-vertical-closed
+      state: >
+        {{ (as_timestamp(states('sensor.marsfield_sun_setting')) + (30 * 60)) | timestamp_custom('%-I:%M%p') }}

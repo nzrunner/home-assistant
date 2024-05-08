@@ -11,10 +11,38 @@
 # Customize Devices
 # https://www.home-assistant.io/docs/configuration/customizing-devices/
 #################################################################################
-
+# Battery Changes
+#################################################################################
 sensor.office_motion_battery:
   battery_changed: "16/03/2023"
 
+sensor.entertainment_motion_power:
+  battery_changed: "10/05/2023"
+
+sensor.desktop_button_battery_2:
+  battery_changed: "10/05/2023"
+
+sensor.front_door_motion_power:
+  battery_changed: "15/06/2023"
+
+sensor.laundry_button_battery:
+  battery_changed: "20/11/2023"
+
+sensor.computer_weather_power:
+  battery_changed: "30/12/2023"
+
+sensor.courtyard_temperature_power:
+  battery_changed: "30/12/2023"
+
+sensor.bathroom_temperature_power:
+  battery_changed: "30/12/2023"
+
+sensor.bedroom_temperature_power:
+  battery_changed: "30/12/2023"
+
+#################################################################################
+# Uptime icons and domain
+#################################################################################
 sensor.uptimekuma_lidarr:
   domain: entertainment
   icon: mdi:music
@@ -62,84 +90,16 @@ sensor.uptimekuma_sonarr:
 sensor.uptimekuma_lunasea:
   domain: entertainment
   icon: mdi:multimedia
+
+sensor.uptimekuma_whisparr:
+  domain: entertainment
+  icon: mdi:monitor-shimmer
+
+  #################################################################################
+# Security Status names
 #################################################################################
-# DISABLED: No longer required
-# To be deleted once confirmed as not required
-#################################################################################
+binary_sensor.mat_nas_002_security_status:
+  name: MAT-NAS-002
 
-# package.node_anchors:
-#   common: &common
-#     package: "sysmonitor"
-
-# group.security_cameras:
-#   entity_picture: /local/images/uvcflex.png
-#   friendly_name: Security Cameras
-
-# sensor.speedtest_download_average:
-#   icon: mdi:download-outline
-#   <<: *common
-
-# sensor.speedtest_upload_average:
-#   icon: mdi:upload-outline
-#   <<: *common
-
-# sensor.speedtest_download:
-#   friendly_name: Speedtest Download
-#   icon: mdi:download
-#   state_class: measurement
-#   unit_of_measurement: Mbit/s
-#   <<: *common
-
-# sensor.speedtest_upload:
-#   friendly_name: Speedtest Upload
-#   icon: mdi:upload
-#   state_class: measurement
-#   unit_of_measurement: Mbit/s
-#   <<: *common
-
-# sensor.speedtest_ping:
-#   friendly_name: Speedtest Ping
-#   icon: mdi:speedometer
-#   state_class: measurement
-#   unit_of_measurement: ms
-#   <<: *common
-
-# sensor.speedtest_result:
-#   friendly_name: Speedtest Result
-#   icon: mdi:speedometer-medium
-#   <<: *common
-
-# sensor.speedtest_lastrun:
-#   friendly_name: Speedtest Last Run
-#   icon: mdi:clock
-#   device_class: timestamp
-#   <<: *common
-
-# sensor.last_boot:
-#   friendly_name: Last Boot
-#   device_class: timestamp
-#   icon: mdi:clock
-
-# binary_sensor.carport_motion_on_off:
-#   friendly_name: Carport Motion
-
-# binary_sensor.upstairs_motion_on_off:
-#   friendly_name: Upstairs Motion
-
-# binary_sensor.bedroom_motion_ias_zone:
-#   friendly_name: Bedroom Motion
-
-# binary_sensor.kitchen_motion_ias_zone:
-#   friendly_name: Kitchen Motion
-
-# binary_sensor.toilet_motion_ias_zone:
-#   friendly_name: Toilet Motion
-
-# binary_sensor.office_motion:
-#   friendly_name: Office Motion
-
-# binary_sensor.living_room_motion_on_off:
-#   friendly_name: Living Room Motion
-
-# sensor.radarr_status:
-#   unit_of_measurement: ""
+binary_sensor.piha_security_status:
+  name: MAT-NAS-001

@@ -10,7 +10,6 @@
 #################################################################################
 # Create Sidebar items
 #################################################################################
-
 # Logs
 - name: panel-redirect
   # url_path needs to be unique for each panel_custom config
@@ -21,7 +20,8 @@
   config:
     # Where you want to redirect to
     target: /config/logs
-# Backups (Supervisor)
+
+    # Backups (Supervisor)
 - name: panel-redirect
   # url_path needs to be unique for each panel_custom config
   url_path: redirect-backups
