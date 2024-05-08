@@ -11,6 +11,7 @@
 
 #################################################################################
 # Date/Time
+# Required for template sensor
 #################################################################################
 - platform: time_date
   display_options:
@@ -21,7 +22,6 @@
     - "date_time_iso"
     - "time_date"
     - "time_utc"
-    - "beat"
 
 #################################################################################
 # Weather - BOM
@@ -32,15 +32,22 @@
       unique_id: 18e798aa-d4ee-11ed-afa1-0242ac120002
       friendly_name: Marsfield UV Summary
       value_template: >
-        UV Today: Sun Protection
-        {{ as_timestamp(states('sensor.marsfield_uv_start_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }}
-        to {{ as_timestamp(states('sensor.marsfield_uv_end_time_0'),default='n/a') | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }},
-        UV Index predicted to reach {{ states('sensor.marsfield_uv_max_index_0') }} [{{ states('sensor.marsfield_uv_category_0') }}]
+        {% if states('sensor.marsfield_uv_start_time_0') != 'unknown' %}
+        Sun protection is recommended between
+        {{ as_timestamp(states('sensor.marsfield_uv_start_time_0'),default='n/a')
+          | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }} and
+        {{ as_timestamp(states('sensor.marsfield_uv_end_time_0'),default='n/a')
+          | timestamp_custom(' %I:%M%p',default='n/a') | lower | replace(" 0", "") }}.{% endif %}
+        {% if states('sensor.marsfield_uv_category_0') != 'unknown' %}UV Index is predicted to reach
+          {{ states('sensor.marsfield_uv_max_index_0') }}, {{ states('sensor.marsfield_uv_category_0') }}.{% endif %}
       icon_template: mdi:weather-sunny-alert
     marsfield_fire_danger_summary:
       unique_id: 3bd8a3c2-d4ee-11ed-afa1-0242ac120002
       friendly_name: Marsfield Fire Danger Summary
-      value_template: "Fire Danger Today: {{ states('sensor.marsfield_fire_danger_0') }}"
+      value_template: >
+        {% if states('sensor.marsfield_fire_danger_0') != 'unknown' %}
+        Fire Danger is predicted to be {{ states('sensor.marsfield_fire_danger_0') }}.
+        {% endif %}
       icon_template: mdi:fire-alert
 
 #################################################################################
@@ -83,6 +90,15 @@
   end: "{{ now() }}"
 
 - platform: history_stats
+  name: Quarantine RNK Mark
+  entity_id: person.mark_matheson
+  state: "RNk Espresso"
+  type: ratio
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
   name: Quarantine Woolies Mark
   entity_id: person.mark_matheson
   state: "Woolies"
@@ -94,7 +110,7 @@
 - platform: history_stats
   name: Quarantine SOP Hockey Centre Mark
   entity_id: person.mark_matheson
-  state: "SOP Hockey Centre"
+  state: "Olympic Park"
   type: ratio
   duration:
     days: 7
@@ -106,11 +122,7 @@
       unique_id: 0fcce838-d4ee-11ed-afa1-0242ac120002
       friendly_name: Other locations
       value_template: >
-        {{ 100 - (states("sensor.quarantine_times_home_mark")|round(2)
-        + states("sensor.quarantine_zig_zag_mark")|round(2)
-        + states("sensor.quarantine_woolies_mark")|round(2)
-        + states("sensor.quarantine_sop_hockey_centre_mark")|round(2))
-        }}
+        {{ 100 - (states("sensor.quarantine_times_home_mark") | round(2)) }}
       icon_template: mdi:chili-hot
 
 - platform: template
@@ -174,7 +186,8 @@
     # 05/01/2022 - Value Template changed to use a group
     motions_on_total:
       unique_id: 97afc8e8-d4ed-11ed-afa1-0242ac120002
-      value_template: "{{ expand('binary_sensor.motion_sensors_all') | selectattr('state','eq','on') | list | count }}
+      value_template:
+        "{{ expand('binary_sensor.motion_sensors_all') | selectattr('state','eq','on') | list | count }}
         /{{ expand('binary_sensor.motion_sensors_all') | list | count }}"
 
     # Count Temperature Sensors
@@ -197,50 +210,9 @@
     # 05/01/2022 - Value Template changed to use a group
     doors_on_total:
       unique_id: 89b54d80-d4ed-11ed-afa1-0242ac120002
-      value_template: "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}
+      value_template:
+        "{{ expand('binary_sensor.door_sensors_all') | selectattr('state','eq','on') | list | count }}
         /{{ expand('binary_sensor.door_sensors_all') | list | count }}"
-
-    # Count Automations
-    count_automations:
-      unique_id: 82a7fa24-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Automations
-      value_template: "{{ states.automation | list | length }}"
-
-    # Count Scripts
-    count_scripts:
-      unique_id: 7d93a240-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Scripts
-      value_template: "{{ states.script| list | length }}"
-
-    # Count Device Trackers
-    count_device_trackers:
-      unique_id: 78c770c0-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Device Trackers
-      value_template: "{{ states.device_tracker | list | length }}"
-
-    # Count Binary Sensors
-    count_binary_sensors:
-      unique_id: 72ec649e-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Binary Sensors
-      value_template: "{{ states.binary_sensor| list | length }}"
-
-    # Count Sensors
-    count_sensors:
-      unique_id: 6d59ae60-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Sensors
-      value_template: "{{ states.sensor | list | length }}"
-
-    # Count Switches
-    count_switches:
-      unique_id: 6812036c-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Switches
-      value_template: "{{ states.switch | list | length }}"
-
-    # Count Zones
-    count_zones:
-      unique_id: 62b27db6-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Zones
-      value_template: "{{ states.zone | list | length }}"
 
     # Count Groups
     count_groups:
@@ -248,35 +220,84 @@
       friendly_name: Groups
       value_template: "{{ states.group | list | length }}"
 
+    # UPDATE: 11/01/2024 - Count sensors now provided by Spook integration
+    # Count Automations
+    # count_automations:
+    #   unique_id: 82a7fa24-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Automations
+    #   value_template: "{{ states.automation | list | length }}"
+
+    # Count Scripts
+    # count_scripts:
+    #   unique_id: 7d93a240-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Scripts
+    #   value_template: "{{ states.script| list | length }}"
+
+    # Count Device Trackers
+    # count_device_trackers:
+    #   unique_id: 78c770c0-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Device Trackers
+    #   value_template: "{{ states.device_tracker | list | length }}"
+
+    # Count Binary Sensors
+    # count_binary_sensors:
+    #   unique_id: 72ec649e-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Binary Sensors
+    #   value_template: "{{ states.binary_sensor| list | length }}"
+
+    # Count Sensors
+    # count_sensors:
+    #   unique_id: 6d59ae60-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Sensors
+    #   value_template: "{{ states.sensor | list | length }}"
+
+    # Count Switches
+    # count_switches:
+    #   unique_id: 6812036c-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Switches
+    #   value_template: "{{ states.switch | list | length }}"
+
+    # Count Zones
+    # count_zones:
+    #   unique_id: 62b27db6-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Zones
+    #   value_template: "{{ states.zone | list | length }}"
+
     # Input Booleans
-    count_input_booleans:
-      unique_id: 56ee98a2-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Input Booleans
-      value_template: "{{ states.input_boolean | list | length }}"
+    # count_input_booleans:
+    #   unique_id: 56ee98a2-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Input Booleans
+    #   value_template: "{{ states.input_boolean | list | length }}"
 
     # Input Numbers
-    count_input_numbers:
-      unique_id: 51b24fa0-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Input Numbers
-      value_template: "{{ states.input_number | list | length }}"
+    # count_input_numbers:
+    #   unique_id: 51b24fa0-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Input Numbers
+    #   value_template: "{{ states.input_number | list | length }}"
 
     # Input Texts
-    count_input_texts:
-      unique_id: 4be86da2-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Input Texts
-      value_template: "{{ states.input_text | list | length }}"
+    # count_input_texts:
+    #   unique_id: 4be86da2-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Input Texts
+    #   value_template: "{{ states.input_text | list | length }}"
 
     # Input Selects
-    count_input_selects:
-      unique_id: 46924472-d4ed-11ed-afa1-0242ac120002
-      friendly_name: Input Selects
-      value_template: "{{ states.input_select | list | length }}"
+    # count_input_selects:
+    #   unique_id: 46924472-d4ed-11ed-afa1-0242ac120002
+    #   friendly_name: Input Selects
+    #   value_template: "{{ states.input_select | list | length }}"
 
     # Input Date Times
-    count_input_datetimes:
-      unique_id: c9dc0350-d4ec-11ed-afa1-0242ac120002
-      friendly_name: Input Date/Times
-      value_template: "{{ states.input_datetime | list | length }}"
+    # count_input_datetimes:
+    #   unique_id: c9dc0350-d4ec-11ed-afa1-0242ac120002
+    #   friendly_name: Input Date/Times
+    #   value_template: "{{ states.input_datetime | list | length }}"
+
+    # Radarr Wanted
+    radarr_wanted:
+      unique_id: 4e9ade62-805d-4f3d-a279-3f5b865a4672
+      friendly_name: Radarr Wanted
+      value_template: "n/a"
 
 #################################################################################
 # Plex Recently Added - Movies
@@ -288,6 +309,8 @@
   port: !secret plex_port
   section_types:
     - movie
+  section_libraries:
+    - "Movies"
 
 #################################################################################
 # Plex Recently Added - TV Shows
@@ -299,31 +322,46 @@
   port: !secret plex_port
   section_types:
     - show
+  section_libraries:
+    - "TV Shows"
+
+#################################################################################
+# Plex Recently Added - Music
+#################################################################################
+- platform: plex_recently_added
+  name: Recently Added Music  # will create sensor.recently_added_music
+  token: !secret plex_token
+  host: !secret plex_host
+  port: !secret plex_port
+  section_types:
+    - artist
+  section_libraries:
+    - "Music"
 
 #################################################################################
 # Sonarr Upcoming
 #################################################################################
-- platform: sonarr_upcoming_media
-  api_key: !secret sonarr_api
-  host: !secret plex_host
-  port: !secret sonarr_port
-  urlbase: /
-  days: 60
-  ssl: false
-  max: 3
+# Now added in the UI as an integration
+# - platform: sonarr_upcoming_media
+#   api_key: !secret sonarr_api
+#   host: !secret sonarr_host
+#   port: !secret sonarr_port
+#   days: 60
+#   ssl: false
+#   max: 3
+#   urlbase: ""
 
-#################################################################################
+################################################################################
 # Radarr Upcoming
 #################################################################################
-- platform: radarr_upcoming_media
-  api_key: !secret radarr_api
-  host: !secret plex_host
-  port: !secret radarr_port
-  urlbase: /
-  days: 60
-  ssl: false
-  max: 3
-  # theaters: true
+# - platform: radarr_upcoming_media
+#   api_key: !secret radarr_api
+#   host: !secret radarr_host
+#   port: !secret radarr_port
+#   days: 60
+#   ssl: false
+#   max: 3
+#   urlbase: ""
 
 #################################################################################
 # Lidarr Upcoming
@@ -332,30 +370,89 @@
   api_key: !secret lidarr_api
   host: !secret lidarr_host
   port: !secret lidarr_port
-  urlbase: /
   days: 60
   ssl: false
   max: 3
+  urlbase: ""
+  ssl_host: !secret lidarr_ssl_host
 
 #################################################################################
-# Radarr Statistics
+# Readarr Upcoming
 #################################################################################
-# This uses a customised custom component.
-# If the core Radarr integration is ever fixed,
-# the custom component will need to be deleted
-- platform: radarr
-  api_key: !secret radarr_api
-  host: !secret plex_host
-  port: !secret radarr_port
+- platform: readarr_upcoming_media
+  api_key: !secret readarr_api
+  host: !secret readarr_host
+  port: !secret readarr_port
   days: 60
   ssl: false
-  unit: GB
-  monitored_conditions:
-    - movies
-    - upcoming
-    - status
-    - diskspace
-    # - commands
+  max: 3
+  urlbase: ""
+  ssl_host: !secret readarr_ssl_host
+
+#################################################################################
+# Overseerr Requests - Movies
+#################################################################################
+- platform: overseerr_requests
+  name: Overseerr Requests Movies
+  apikey: !secret overseerr_token
+  host: !secret overseerr_host
+  port: !secret overseerr_port
+  days: 60
+  ssl: false
+  max: 5
+  urlbase: ""
+  ssl_host: !secret overseerr_ssl_host
+  media_type:
+    - movie
+
+#################################################################################
+# Overseerr Requests - TV
+#################################################################################
+- platform: overseerr_requests
+  name: Overseerr Requests Shows
+  apikey: !secret overseerr_token
+  host: !secret overseerr_host
+  port: !secret overseerr_port
+  days: 60
+  ssl: false
+  max: 5
+  urlbase: ""
+  ssl_host: !secret overseerr_ssl_host
+  media_type:
+    - show
+
+#################################################################################
+# Overseerr Requests - Music
+#################################################################################
+- platform: overseerr_requests
+  name: Overseerr Requests Music
+  apikey: !secret overseerr_token
+  host: !secret overseerr_host
+  port: !secret overseerr_port
+  days: 60
+  ssl: false
+  max: 5
+  urlbase: ""
+  ssl_host: !secret overseerr_ssl_host
+  media_type:
+    - music
+
+#################################################################################
+# Overseerr Requests - Combined
+#################################################################################
+- platform: overseerr_requests
+  name: Overseerr Requests Combined
+  apikey: !secret overseerr_token
+  host: !secret overseerr_host
+  port: !secret overseerr_port
+  days: 60
+  ssl: false
+  max: 5
+  urlbase: ""
+  ssl_host: !secret overseerr_ssl_host
+  media_type:
+    - show
+    - movie
 
 #################################################################################
 # Auto Backup - On/Off
@@ -483,17 +580,19 @@
 
 #################################################################################
 # System Monitor
+# Deprecated in 2024.1
+# Moved to UI
 #################################################################################
-- platform: systemmonitor
-  resources:
-    - type: disk_use_percent
-      arg: /config
-    - type: memory_use_percent
-    - type: memory_use
-    - type: memory_free
-    - type: processor_use
-    - type: processor_temperature
-    - type: last_boot
+# - platform: systemmonitor
+#   resources:
+#     - type: disk_use_percent
+#       arg: /config
+#     - type: memory_use_percent
+#     - type: memory_use
+#     - type: memory_free
+#     - type: processor_use
+#     - type: processor_temperature
+#     - type: last_boot
 
 #################################################################################
 # Synology Sensors
@@ -558,39 +657,34 @@
     # Download Speed
     usg_download_speed:
       unique_id: 6ada6626-d4ec-11ed-afa1-0242ac120002
+      friendly_name: USG Download Speed
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'xput_down') }}"
       unit_of_measurement: Mb
 
     # Upload Speed
     usg_upload_speed:
       unique_id: 716d18f8-d4ec-11ed-afa1-0242ac120002
+      friendly_name: USG Upload Speed
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'xput_up') }}"
       unit_of_measurement: Mb
 
     # Latency
     usg_latency:
       unique_id: 64340eda-d4ec-11ed-afa1-0242ac120002
+      friendly_name: USG Latency
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'latency') }}"
       unit_of_measurement: Mb
 
     # Download Speed
     usg_ping_speed:
       unique_id: 5e3b669a-d4ec-11ed-afa1-0242ac120002
+      friendly_name: USG Ping Speed
       value_template: "{{ state_attr('sensor.unifi_gateway_www', 'speedtest_ping') }}"
       unit_of_measurement: Mb
 
 #################################################################################
 # Speedtest
 #################################################################################
-- platform: average
-  unique_id: 50e956e2-d4e6-11ed-afa1-0242ac120002
-  name: Speedtest Download Average
-  entities:
-    - sensor.speedtest_download
-  start: "{{ 0 }}"
-  end: "{{ now() }}"
-  precision: 2
-
 - platform: statistics
   unique_id: 9f1088ea-d4e1-11ed-afa1-0242ac120002
   name: "Average Speedtest Download"
@@ -598,15 +692,6 @@
   state_characteristic: mean
   max_age:
     days: 365
-  precision: 2
-
-- platform: average
-  unique_id: 57bd36e6-d4e6-11ed-afa1-0242ac120002
-  name: Speedtest Upload Average
-  entities:
-    - sensor.speedtest_upload
-  start: "{{ 0 }}"
-  end: "{{ now() }}"
   precision: 2
 
 - platform: statistics
@@ -625,30 +710,19 @@
       friendly_name: "Speedtest Last Run"
       value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%H:%M %Z') }}"
 
-#################################################################################
-# Host RPi CPU Temperature
-#################################################################################
-- platform: command_line
-  unique_id: 4408b426-d4ec-11ed-afa1-0242ac120002
-  name: CPU Temperature
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
-  # If errors occur, make sure configuration file is encoded as UTF-8
-  unit_of_measurement: "°C"
-  value_template: "{{ value | multiply(0.001) | round(1) }}"
+- platform: statistics
+  unique_id: 090ea173-cda4-4e64-aae0-8693ab3d8229
+  name: "Average Ping"
+  entity_id: sensor.speedtest_ping
+  state_characteristic: mean
+  max_age:
+    days: 365
+  precision: 2
 
 #################################################################################
 # Average Temperature Sensors
 #################################################################################
 # Office Average Temperature
-- platform: average
-  unique_id: 60cb077c-d4e6-11ed-afa1-0242ac120002
-  name: "Office Temperature Average"
-  entities:
-    - sensor.office_motion_temperature
-  duration:
-    days: 1
-  precision: 2
-
 - platform: statistics
   unique_id: 82140aa9-c20c-4030-957f-e1fd1515ba04
   name: "Average Office Temperature"
@@ -659,15 +733,6 @@
   precision: 2
 
 # Computer Cabinet Average Temperature
-- platform: average
-  unique_id: 68dbdf54-d4e6-11ed-afa1-0242ac120002
-  name: "Computer Cabinet Temperature Average"
-  entities:
-    - sensor.computer_weather_temperature
-  duration:
-    days: 1
-  precision: 2
-
 - platform: statistics
   unique_id: 3a720906-a42e-45ad-bfea-e4d95c0767d9
   name: "Average Computer Cabinet Temperature"
@@ -678,15 +743,6 @@
   precision: 2
 
 # Living Room Average Temperature
-- platform: average
-  unique_id: 760299d4-d4e6-11ed-afa1-0242ac120002
-  name: "Living Room Temperature Average"
-  entities:
-    - sensor.living_room_motion_temperature
-  duration:
-    days: 1
-  precision: 2
-
 - platform: statistics
   unique_id: a9d2746e-ee1b-455a-82fe-a458f69fd31b
   name: "Average Living Room Temperature"
@@ -697,15 +753,6 @@
   precision: 2
 
 # Bathroom Average Temperature
-- platform: average
-  unique_id: 7e1211fe-d4e6-11ed-afa1-0242ac120002
-  name: "Bathroom Temperature Average"
-  entities:
-    - sensor.bathroom_temperature
-  duration:
-    days: 1
-  precision: 2
-
 - platform: statistics
   unique_id: ca75f50c-07cb-4013-aaa9-fdee007623e5
   name: "Average Bathroom Temperature"
@@ -716,15 +763,6 @@
   precision: 2
 
 # Bedroom Average Temperature
-- platform: average
-  unique_id: 859ba908-d4e6-11ed-afa1-0242ac120002
-  name: "Bedroom Temperature Average"
-  entities:
-    - sensor.bedroom_temperature
-  duration:
-    days: 1
-  precision: 2
-
 - platform: statistics
   unique_id: be899ab4-cd59-4c17-b4a4-3d83226960b9
   name: "Average Bedroom Temperature"
@@ -735,15 +773,6 @@
   precision: 2
 
 # Courtyard Average Temperature
-- platform: average
-  unique_id: 8babff64-d4e6-11ed-afa1-0242ac120002
-  name: "Courtyard Temperature Average"
-  entities:
-    - sensor.courtyard_temperature
-  duration:
-    days: 1
-  precision: 2
-
 - platform: statistics
   unique_id: 36700639-20de-45ad-a597-c6bbe25c51fb
   name: "Average Courtyard Temperature"
@@ -753,35 +782,67 @@
     days: 1
   precision: 2
 
-#################################################################################
-# Average RPi CPU Temperature
-#################################################################################
-- platform: average
-  unique_id: 100c6347-182f-4830-8dec-0045cfa3ced3
-  name: "Average RPi Temperature"
-  entities:
-    - sensor.cpu_temperature
-    # - sensor.mat_rpi_003_cputemp
-    # - sensor.mat_rpi_004_cputemp
-    # - sensor.mat_rpi_005_cputemp
+# Fridge Average Temperature
+- platform: statistics
+  unique_id: c9dd43db-2f42-42d8-9521-c3587ed75649
+  name: "Average Fridge Temperature"
+  entity_id: sensor.fridge_door_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
   precision: 2
 
+# Front Gate Average Temperature
+- platform: statistics
+  unique_id: ad428d44-972c-400a-9112-28f9b0208f03
+  name: "Average Front Gate Temperature"
+  entity_id: sensor.front_gate_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
+
+# Kitchen Average Temperature
+- platform: statistics
+  unique_id: bc97cf72-bf0e-4d66-aca3-d2777961b37e
+  name: "Average Kitchen Temperature"
+  entity_id: sensor.kitchen_motion_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
+
+# Toilet Average Temperature
+- platform: statistics
+  unique_id: 75e3b23d-0667-4268-8815-b704ced72316
+  name: "Average Toilet Temperature"
+  entity_id: sensor.toilet_motion_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
+
+# RPi Average Temperature
+- platform: statistics
+  unique_id: e5dc27e2-7c2b-446a-b8e8-21443ce559e1
+  name: "Average RPi Temperature"
+  entity_id: sensor.mat_rpi_002_cpu_thermal_0_temperature
+  state_characteristic: mean
+  max_age:
+    days: 1
+  precision: 2
+
+#################################################################################
+# Average RPi Processor Temperature
+#################################################################################
 - platform: statistics
   unique_id: bd63aaac-83c2-4765-8992-466a88589065
-  name: "Average RPi Temperature NEW"
-  entity_id: sensor.cpu_temperature
+  name: "Average RPi Temperature"
+  entity_id: sensor.processor_temperature
   state_characteristic: mean
   max_age:
     days: 14
   precision: 2
-
-#################################################################################
-# Get the latest Docker version available from Github
-#################################################################################
-- platform: command_line
-  name: Docker Latest Version
-  command: 'curl -sL https://api.github.com/repos/moby/moby/releases/latest | jq -r ".tag_name | sub(\"v\"; \"\")"'
-  scan_interval: 86400
 
 #################################################################################
 # Sunrise/Sunset
@@ -792,11 +853,547 @@
       unique_id: 202b2386-d4ec-11ed-afa1-0242ac120002
       friendly_name: "Next Sunrise"
       value_template: >
-        {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+        {{ as_timestamp(states('sensor.marsfield_sun_rising'), '%Y-%m-%d %H:%M:%S') | timestamp_custom("%-I:%M %p") }}
       icon_template: mdi:weather-sunset-up
     nextsunset:
       unique_id: 28f7a836-d4ec-11ed-afa1-0242ac120002
       friendly_name: "Next Sunset"
       value_template: >
-        {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+        {{ as_timestamp(states('sensor.marsfield_sun_setting'), '%Y-%m-%d %H:%M:%S') | timestamp_custom("%-I:%M %p") }}
       icon_template: mdi:weather-sunset-down
+
+#################################################################################
+# Sun2
+# https://github.com/pnbruckner/ha-sun2
+#################################################################################
+# - platform: sun2
+#   entity_namespace: sun2
+#   monitored_conditions:
+#     - solar_midnight
+#     # - astronomical_dawn
+#     # - nautical_dawn
+#     - dawn
+#     - sunrise
+#     - solar_noon
+#     - sunset
+#     - dusk
+#     # - nautical_dusk
+#     # - astronomical_dusk
+#     - daylight
+#     # - civil_daylight
+#     # - nautical_daylight
+#     # - astronomical_daylight
+#     - night
+#     # - civil_night
+#     # - nautical_night
+#     # - astronomical_night
+#     - elevation
+#     - min_elevation
+#     - max_elevation
+#     - sun_phase
+
+#################################################################################
+# Occupancy
+#################################################################################
+- platform: history_stats
+  unique_id: eb66d3e4-7bc0-4f44-a64d-ba9c33f364b3
+  type: time
+  name: Office Occupancy Today
+  entity_id: binary_sensor.office_motion
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+#################################################################################
+# Heater turned on
+#################################################################################
+- platform: history_stats
+  unique_id: 302b5588-a94d-44d1-a65d-f26bd3bffa3e
+  type: time
+  name: Living Room Heater Turned On
+  entity_id: switch.plug_3_on_off
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+#################################################################################
+# Lights turned on
+#################################################################################
+- platform: history_stats
+  unique_id: 8bd4b4f2-fd22-4d96-a4cf-fcfae7bac695
+  type: time
+  name: Living Room Lights Turned On
+  entity_id: light.living_room
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+#################################################################################
+# Who is home
+#################################################################################
+- platform: template
+  sensors:
+    who_home:
+      unique_id: 9fbb95a4-f1d2-42eb-b093-7c753a1c2eb0
+      friendly_name: Name of person who is home alone
+      value_template: >
+        {% set people = state_attr('zone.home', 'persons') %}
+        {% set peoplestr = state_attr(people[0], "friendly_name") %}
+        {% set list1 = peoplestr.split(' ') %}
+        {% if states('zone.home') > '1' %}
+        Multiple People
+        {% else %}
+        {{ list1[0] }}
+        {% endif %}
+      icon_template: mdi:home
+
+#################################################################################
+# Zone Count
+#################################################################################
+- platform: history_stats
+  unique_id: 545bed21-683e-497c-a6eb-b3735caffbdb
+  type: count
+  name: RNK Espresso visits
+  entity_id: person.mark_matheson
+  state: "RNK Espresso"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: e8c0bb4a-d5b6-47de-937c-79c983b34af5
+  type: count
+  name: Zig-Zag visits
+  entity_id: person.mark_matheson
+  state: "Zig Zag"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 4c5ee9e9-6ccd-42cb-8209-a23899e4ce7d
+  type: count
+  name: Woolies visits
+  entity_id: person.mark_matheson
+  state: "Woolies"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 0dfb4686-d6bf-4205-aed8-508eae06df2f
+  type: count
+  name: Coles visits
+  entity_id: person.mark_matheson
+  state: "Coles"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: cc790716-9c78-41eb-a39f-f22f1bdd7ce7
+  type: count
+  name: Dan Murphys visits
+  entity_id: person.mark_matheson
+  state: "Dan Murphys"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: ec445e09-5571-4f7b-84ee-e56eebd58716
+  type: count
+  name: Kaos's Place visits
+  entity_id: person.mark_matheson
+  state: "Kaos Place"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 3f620f61-c61f-414f-bbb4-b5477a7a13d9
+  type: count
+  name: SOP visits
+  entity_id: person.mark_matheson
+  state: "Olympic Park"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 8c9b1c16-705d-445b-b072-004082a4582b
+  type: count
+  name: Macquarie Centre visits
+  entity_id: person.mark_matheson
+  state: "Macquarie Centre"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 64c4e1dd-be58-40ad-b465-2415f576c3fe
+  type: count
+  name: Springbok Delights visits
+  entity_id: person.mark_matheson
+  state: "Springbok Delights"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: a437a7d6-6544-4240-b74b-abe2451df696
+  type: count
+  name: Newcastle Hockey Visits
+  entity_id: person.mark_matheson
+  state: "newcastle_hockey"
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+#################################################################################
+# Zone Occupancy
+#################################################################################
+- platform: history_stats
+  unique_id: 7c8c4137-5d39-4a4d-8c10-0e2a4f443052
+  type: time
+  name: Zig-Zag Occupancy
+  entity_id: person.mark_matheson
+  state: "Zig Zag"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 9e1b3144-4270-44cf-8d0f-2eae717d46f4
+  type: time
+  name: RNK Espresso Occupancy
+  entity_id: person.mark_matheson
+  state: "RNK Espresso"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 5db85a56-98f1-4d23-b119-0c5a8bf0b415
+  type: time
+  name: Woolies Occupancy
+  entity_id: person.mark_matheson
+  state: "Woolies"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 7616b0ad-9a6d-4389-9209-22b04db26de2
+  type: time
+  name: Coles Occupancy
+  entity_id: person.mark_matheson
+  state: "Coles"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: b958199e-20fd-479d-b01d-ed0dfea8566d
+  type: time
+  name: Dan Murphys Occupancy
+  entity_id: person.mark_matheson
+  state: "Dan Murphys"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: b235ccbb-e70f-41f3-ac80-229e306cc59f
+  type: time
+  name: Kaos's Place Occupancy
+  entity_id: person.mark_matheson
+  state: "Kaos Place"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 11f64848-b447-45e1-bf50-64d1e3c57f10
+  type: time
+  name: Springbok Delights Occupancy
+  entity_id: person.mark_matheson
+  state: "Springbok Delights"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 3897da6b-6c6f-411e-9799-f6db951a3e3c
+  type: time
+  name: SOP Occupancy
+  entity_id: person.mark_matheson
+  state: "Olypmic Park"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: a27ae41b-1ca3-46ff-a5ee-236e6b22faad
+  type: time
+  name: Macquarie Centre Occupancy
+  entity_id: person.mark_matheson
+  state: "Macquarie Centre"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 2aaae24a-9f2e-4dd3-a953-34cb7399089e
+  type: time
+  name: Away Occupancy
+  entity_id: person.mark_matheson
+  state: "not_home"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: f180ca5d-3636-432d-8300-083da0ab18d3
+  type: time
+  name: Home Occupancy
+  entity_id: person.mark_matheson
+  state: "home"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: cf4d35cc-6e31-4bba-9c5b-81fd4b45f710
+  type: time
+  name: Newcastle Hockey Occupancy
+  entity_id: person.mark_matheson
+  state: "newcastle_hockey"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 431207b5-b9b3-4ccd-b2aa-da5471f1693c
+  type: time
+  name: Not At Home
+  entity_id: person.mark_matheson
+  state:
+    - not_home
+    - "Zig Zag"
+    - "RNK Espresso"
+    - "Coles"
+    - "Woolies"
+    - "Kaos Place"
+    - "Dan Murphys"
+    - "Springbok Delights"
+    - "Olympic Park"
+    - "Macquarie Centre"
+    - "Newcastle Hockey"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+#################################################################################
+# Awake/Asleep
+#################################################################################
+# Time in Bed
+- platform: history_stats
+  unique_id: 3c22ac8f-03c7-4478-8cbe-dd4034c0f89a
+  type: time
+  name: Time In Bed
+  entity_id: input_boolean.gone_to_bed
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+# Time Out Of Bed
+- platform: history_stats
+  unique_id: a347851c-29a6-4c6c-b00f-edc6b756e06f
+  type: time
+  name: Time Out Of Bed
+  entity_id: input_boolean.gone_to_bed
+  state: "off"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+# Time Napping
+- platform: history_stats
+  unique_id: 34620dcf-2658-4c80-9f16-161d54c1ab27
+  type: time
+  name: Time Napping
+  entity_id: input_boolean.napping
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+#################################################################################
+# Backup Duration
+#################################################################################
+# Old Sensors
+- platform: history_stats
+  unique_id: 46807ec7-51b4-4900-9e5d-4a486d9f54ac
+  type: time
+  name: Backup Active
+  entity_id: input_boolean.backup_active
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 60df4d1a-ebfa-40ac-ac8b-7faf557f6b2b
+  type: time
+  name: Backup Active Midnight
+  entity_id: input_boolean.backup_active_midnight
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: 3766cf9b-6e4e-4098-bc1e-52db4e96d6e3
+  type: time
+  name: Backup Active Manual
+  entity_id: input_boolean.backup_active_manual
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+  # New Sensors
+# - platform: history_stats
+#   unique_id: cf70aefa-83ac-4a4d-972d-4279e20332fd
+#   type: time
+#   name: Backup Active Midday
+#   entity_id: sensor.auto_backup_template
+#   state: "on"
+#   start: "{{ now().replace(hour=12).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now().replace(hour=23).replace(minute=59).replace(second=59) }}"
+
+# - platform: history_stats
+#   unique_id: d3ed9219-36cc-4322-a5d3-9db6787444d6
+#   type: time
+#   name: Backup Active Midnight 1
+#   entity_id: sensor.auto_backup_template
+#   state: "on"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now().replace(hour=11).replace(minute=59).replace(second=59) }}"
+
+#################################################################################
+# Backup Sync Duration
+#################################################################################
+# Old Sensors
+- platform: history_stats
+  unique_id: eb215042-0fea-4834-9582-b8310ff5d988
+  type: time
+  name: Backup Sync Active
+  entity_id: input_boolean.backup_sync_active
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: dc64ab00-9652-4af0-aa33-d6f30c9e0bf2
+  type: time
+  name: Backup Sync Active Midnight
+  entity_id: input_boolean.backup_sync_active_midnight
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  unique_id: d45754eb-8ac7-4fda-8304-c341934af04a
+  type: time
+  name: Backup Sync Manual
+  entity_id: input_boolean.backup_sync_manual
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+# New Sensors
+# - platform: history_stats
+#   unique_id: 4831d3dd-140a-4733-9edd-4fa3589e4e49
+#   type: time
+#   name: Backup Sync Active Midday
+#   entity_id: sensor.dropback_sync
+#   state: "on"
+#   start: "{{ now().replace(hour=12).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now().replace(hour=23).replace(minute=59).replace(second=59) }}"
+
+# - platform: history_stats
+#   unique_id: 16d150f6-da87-4491-abb7-eb49802b2257
+#   type: time
+#   name: Backup Sync Active Midnight 1
+#   entity_id: sensor.dropback_sync
+#   state: "on"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now().replace(hour=11).replace(minute=59).replace(second=59) }}"
+
+#################################################################################
+# Air Quality
+#################################################################################
+- platform: rest
+  unique_id: 0324d372-2047-4d34-9cb6-7f0b8aae1252
+  resource: https://data.airquality.nsw.gov.au/api/Data/get_Observations
+  name: macquarie_park_air_quality
+  method: POST
+  payload: '{ "Parameters": [ "AQC" ], "Sites": [ 113 ], "StartDate": + "{{ now().timestamp() | timestamp_custom("%Y-%m-%d") }}", "EndDate": "{{ (now() + timedelta(days=1)).timestamp() | timestamp_custom("%Y-%m-%d") }}", "Categories": [ "Site AQC" ], "SubCategories": [ "Hourly" ], "Frequency": [ "Hourly average" ] }'
+  headers:
+    accept: application/json
+    Content-Type: application/json
+  value_template: "{{ value_json[now().timestamp() | timestamp_custom('%H') | int - 1].AirQualityCategory }}"
+  json_attributes_path: $.[?(@.Site_Id==113)]
+  json_attributes:
+    - Site_Id
+    - Date
+    - Hour
+    - HourDescription
+    - Value
+    - AirQualityCategory
+    - DeterminingPollutant
+    - Parameter
+  scan_interval: 60
+
+- platform: rest
+  unique_id: 9f0b2e07-1c07-44ff-9f4b-6ce1274671c6
+  resource: https://data.airquality.nsw.gov.au/api/Data/get_Observations
+  name: Macquarie Park Pollen Count
+  method: POST
+  payload: '{ "Parameters": [ "PM2.5" ], "Sites": [ 113 ], "StartDate": + "{{ now().timestamp() | timestamp_custom("%Y-%m-%d") }}", "EndDate": "{{ (now() + timedelta(days=1)).timestamp() | timestamp_custom("%Y-%m-%d") }}", "Categories": [ "Averages" ], "SubCategories": [ "Hourly" ], "Frequency": [ "Hourly average" ] }'
+  headers:
+    accept: application/json
+    Content-Type: application/json
+  value_template: "{{ value_json[now().timestamp() | timestamp_custom('%H') | int - 1].Value }}"
+  json_attributes_path: $.[?(@.Site_Id==113)]
+  json_attributes:
+    - Site_Id
+    - Date
+    - Hour
+    - HourDescription
+    - Value
+    - AirQualityCategory
+    - DeterminingPollutant
+    - Parameter
+    - Value
+  scan_interval: 60
+
+#################################################################################
+# Most Recent Backup Sync
+#################################################################################
+- platform: template
+  sensors:
+    most_recent_backup_sync:
+      unique_id: d33a95e7-4108-47b5-af02-7e7af1061e66
+      friendly_name: Most Recent Backup Sync
+      value_template: "{{ states['sensor.dropback_last'].state | regex_findall_index('^[^_]*\/(.*).tar') }}"
+      icon_template: mdi:dropbox
+
+#################################################################################
+# Mealie Sensors
+#################################################################################
+- platform: rest
+  resource: "https://mealie.marathonsoftware.au/api/groups/mealplans/today"
+  unique_id: 11fdfeb6-ebe6-458a-87d7-09ee7e9113a8
+  method: GET
+  name: Mealie todays meal
+  headers:
+    Authorization: !secret mealie_api_token
+  value_template: "{{ value_json[0].recipe.name }}"
+  force_update: true
+  scan_interval: 30
+
+- platform: rest
+  resource: "https://mealie.marathonsoftware.au/api/groups/mealplans/today"
+  unique_id: 654431b7-05fb-43a2-bd3e-f4aad11d2463
+  method: GET
+  name: Mealie todays meal ID
+  headers:
+    Authorization: !secret mealie_api_token
+  value_template: "{{ value_json[0].recipe.id }}"
+  force_update: true
+  scan_interval: 30
