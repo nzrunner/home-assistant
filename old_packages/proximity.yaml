@@ -1,0 +1,67 @@
+proximity:
+  home:
+    zone: home
+    devices:
+      - person.mark_matheson
+    tolerance: 50
+    unit_of_measurement: m
+  zig_zag:
+    zone: zig_zag
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  sop:
+    zone: sop
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  coles:
+    zone: coles
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  woolies:
+    zone: woolies
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  springbok_delights:
+    zone: springbok_delights
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  dan_murphys:
+    zone: dan_murphys
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  macquarie_centre:
+    zone: macquarie_centre
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  kaos_place:
+    zone: kaos_place
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  newcastle_hockey:
+    zone: newcastle_hockey
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
+  rnk_espresso:
+    zone: rnk_espresso
+    devices:
+      - person.mark_matheson
+    tolerance: 5
+    unit_of_measurement: m
