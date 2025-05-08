@@ -60,7 +60,7 @@ jobs:
           # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
       - name: 🚀 Prettify code
-        uses: creyD/prettier_action@v4.3
+        uses: creyD/prettier_action@v4.5
         with:
           # DISABLED: Dry run mode for testing
           # dry: True
