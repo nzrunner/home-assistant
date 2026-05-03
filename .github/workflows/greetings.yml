@@ -10,7 +10,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
+    - uses: actions/first-interaction@v3
       with:
         # Changed from secrets.GITHUB_TOKEN to see if the commit is verified
         repo-token: ${{ secrets.ACCESS_TOKEN }}
